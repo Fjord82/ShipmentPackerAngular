@@ -1,3 +1,65 @@
-<p>
-  add-project works!
-</p>
+<head><script src="https://use.fontawesome.com/cae5d5a75e.js"></script></head>
+<div class="container">
+  <br>
+  <div class="row">
+    <button class="btn btn-outline-info" (click)="backbtn()">Back</button>
+    <h2 class="offset-4">
+      Add project
+    </h2>
+  </div>
+  <hr>
+  <br>
+  <div class="col-8 offset-3">
+    <form (ngSubmit)="save()" novalidate>
+      <dl class="form-row">
+        <dt class="col-md-3">
+          Project name:
+        </dt>
+        <dd class="col-md-7">
+          <input type="text" class="form-control" placeholder="Project name">
+        </dd>
+        <dt class="col-md-3">
+          Customer name:
+        </dt>
+        <dd class="col-md-7">
+          <input type="text" class="form-control" placeholder="Customer name">
+        </dd>
+        <dt class="col-md-3">
+          Manager name:
+        </dt>
+        <dd class="col-md-7">
+          <input type="text" class="form-control" placeholder="Manager name">
+        </dd>
+        <dt class="col-md-3">
+          Freight type:
+        </dt>
+        <dd class="col-md-7">
+          <select id="selectbasic" name="selectbasic" class="form-control">
+            <option value="">Courier</option>
+            <option value="">Road</option>
+            <option value="">Sea</option>
+            <option value="">Air</option>
+          </select>
+        </dd>
+        <dt class="col-md-3">
+          Delivery date:
+        </dt>
+        <dd class="col-md-7">
+          <!-- INSERT DATEPICKER -->
+          <input type="text" class="form-control" placeholder="INSERT DATEPICKER">
+        </dd>
+        <dt class="col-md-3">
+          Delivery address:
+        </dt>
+        <dd class="col-md-7">
+          <input type="text" class="form-control" placeholder="Country, City, Zip, Street, Nr">
+        </dd>
+
+      </dl>
+      <div class="row col-md-7 offset-3 justify-content-between">
+        <button class="btn btn-outline-danger" (click)="backbtn()">Cancel</button>
+        <button type="submit" class="btn btn-outline-success">Save</button>
+      </div>
+    </form>
+  </div>
+</div>
