@@ -8,11 +8,13 @@ import { ProjectListComponent } from './office/project/project-list/project-list
 import { WorkshopProjectListComponent } from './workshop/project/workshop-project-list/workshop-project-list.component';
 import {RouterModule, Routes} from '@angular/router';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import { AddProjectComponent } from './office/project/add-project/add-project.component';
 
 const appRoutes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'office', component: ProjectListComponent },
   { path: 'workshop', component: WorkshopProjectListComponent },
+  { path: 'add-project', component: AddProjectComponent },
   {
     path: '',
     redirectTo: '/login',
@@ -25,7 +27,8 @@ const appRoutes: Routes = [
     AppComponent,
     LoginComponent,
     ProjectListComponent,
-    WorkshopProjectListComponent
+    WorkshopProjectListComponent,
+    AddProjectComponent
   ],
   imports: [
     BrowserModule,
