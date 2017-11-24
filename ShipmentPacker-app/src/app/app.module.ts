@@ -10,12 +10,14 @@ import {RouterModule, Routes} from '@angular/router';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { AddProjectComponent } from './office/project/add-project/add-project.component';
 import {FormsModule} from '@angular/forms';
+import { ProjectDetailComponent } from './office/project/project-detail/project-detail.component';
 
 const appRoutes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'office', component: ProjectListComponent },
   { path: 'workshop', component: WorkshopProjectListComponent },
   { path: 'add-project', component: AddProjectComponent },
+  { path: 'projectName', component: ProjectDetailComponent },
   {
     path: '',
     redirectTo: '/login',
@@ -29,7 +31,8 @@ const appRoutes: Routes = [
     LoginComponent,
     ProjectListComponent,
     WorkshopProjectListComponent,
-    AddProjectComponent
+    AddProjectComponent,
+    ProjectDetailComponent
   ],
   imports: [
     BrowserModule,
