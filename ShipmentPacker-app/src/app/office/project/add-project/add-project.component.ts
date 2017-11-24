@@ -21,7 +21,6 @@ export class AddProjectComponent implements OnInit {
 
   backbtn() {
     this.router.navigateByUrl('/office');
-
   }
 
 }
