@@ -9,6 +9,7 @@ import { WorkshopProjectListComponent } from './workshop/project/workshop-projec
 import {RouterModule, Routes} from '@angular/router';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { AddProjectComponent } from './office/project/add-project/add-project.component';
+import {FormsModule} from '@angular/forms';
 
 const appRoutes: Routes = [
   { path: 'login', component: LoginComponent },
@@ -33,7 +34,8 @@ const appRoutes: Routes = [
   imports: [
     BrowserModule,
     RouterModule.forRoot(appRoutes),
-    NgbModule.forRoot()
+    NgbModule.forRoot(),
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
