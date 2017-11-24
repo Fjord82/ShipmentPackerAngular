@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-workshop-project-list',
@@ -7,9 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class WorkshopProjectListComponent implements OnInit {
 
-  constructor() { }
+  constructor(private router: Router) {
+  }
 
   ngOnInit() {
   }
 
+  logoutbtn() {
+    this.router.navigateByUrl('/login');
+
+  }
 }
