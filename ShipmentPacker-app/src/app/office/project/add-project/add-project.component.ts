@@ -23,7 +23,5 @@ export class AddProjectComponent implements OnInit {
     this.router.navigateByUrl('/office');
 
   }
+
 }
-
-
-

@@ -1,4 +1,4 @@
-<head><script src="https://use.fontawesome.com/cae5d5a75e.js"></script></head>
+<head><script src="https://use.fontawesome.com/766a240126.js"></script></head>
 <div class="container">
   <br>
   <div class="row">
@@ -45,8 +45,12 @@
           Delivery date:
         </dt>
         <dd class="col-md-7">
-          <!-- INSERT DATEPICKER -->
-          <input type="text" class="form-control" placeholder="INSERT DATEPICKER">
+          <div class="input-group">
+            <input class="form-control" placeholder="yyyy-mm-dd" name="dp" [(ngModel)]="model" ngbDatepicker #d="ngbDatepicker">
+            <button class="input-group-addon" (click)="d.toggle()" type="button">
+              <i class="fa fa-calendar" aria-hidden="true"></i>
+            </button>
+          </div>
         </dd>
         <dt class="col-md-3">
           Delivery address:
@@ -54,7 +58,7 @@
         <dd class="col-md-7">
           <input type="text" class="form-control" placeholder="Country, City, Zip, Street, Nr">
         </dd>
-
+        
       </dl>
       <div class="row col-md-7 offset-3 justify-content-between">
         <button class="btn btn-outline-danger" (click)="backbtn()">Cancel</button>
