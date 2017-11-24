@@ -1,0 +1,9 @@
+.navbar-text {
+  position: absolute;
+  width: 100%;
+  left: 0;
+  text-align: center;
+  margin: auto;
+  display: inline-block;
+  line-height: 0.42 !important;
+}
