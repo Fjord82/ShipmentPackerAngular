@@ -5,7 +5,7 @@
 .set-back {
   z-index: -1;
 }
-.navbar-text {
+.my-local-center {
   position: absolute;
   width: 100%;
   left: 0;
