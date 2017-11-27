@@ -2,9 +2,36 @@
   <br>
   <div class="row">
     <div class="col-12">
-      <h2 class="navbar-text">Workshop</h2>
-      <button style="display: inline-block;" type="button" class="btn btn-outline-success float-right" (click)="back()">Back</button>
+      <h2 class="my-local-center">PackingList</h2>
+      <button style="display: inline-block;" type="button" class="btn btn-outline-info float-left" (click)="back()">Back</button>
     </div>
   </div>
   <hr>
+
+  <div class="col-md-10 offset-1">
+    <div class="list-group">
+      <a class="list-group-item">
+        <div class="row">
+          <h4 class="col-md-5">ItemName</h4>
+          <h4 class="col-md-5">Quantity = 4</h4>
+          <label class="btn btn-outline-success buttons-right">
+            <input type="checkbox" autocomplete="off"> done
+          </label>
+        </div>
+      </a>
+      <a class="list-group-item">
+        <div class="row">
+          <h4 class="col-md-5">ItemName</h4>
+          <h4 class="col-md-5">Quantity = 5</h4>
+          <label class="btn btn-outline-success buttons-right">
+            <input type="checkbox" autocomplete="off"> done
+          </label>
+        </div>
+      </a>
+    </div>
+    <br>
+    <div class="progress">
+      <div class="progress-bar bg-success" style="width:50%">50</div>
+    </div>
+  </div>
 </div>

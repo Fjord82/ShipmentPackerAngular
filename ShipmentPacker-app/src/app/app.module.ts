@@ -14,6 +14,8 @@ import { ProjectDetailComponent } from './office/project/project-detail/project-
 import { PackingDetailComponent } from './office/packing/packing-detail/packing-detail.component';
 import { PackingDetailWorkshopComponent } from './workshop/packing/packing-detail-workshop/packing-detail-workshop.component';
 import { AddPackingListComponent } from './office/packing/add-packing-list/add-packing-list.component';
+import { EditProjectComponent } from './office/project/edit-project/edit-project.component';
+import { AddColliComponent } from './workshop/colli/add-colli/add-colli.component';
 
 const appRoutes: Routes = [
   { path: 'login', component: LoginComponent },
@@ -24,6 +26,8 @@ const appRoutes: Routes = [
   { path: 'packingName', component: PackingDetailComponent },
   { path: 'packingDetailWorkshop', component: PackingDetailWorkshopComponent },
   { path: 'addPackingList', component: AddPackingListComponent },
+  { path: 'editProject', component: EditProjectComponent },
+  { path: 'addColli', component: AddColliComponent },
   {
     path: '',
     redirectTo: '/login',
@@ -42,6 +46,8 @@ const appRoutes: Routes = [
     PackingDetailComponent,
     PackingDetailWorkshopComponent,
     AddPackingListComponent
+    EditProjectComponent,
+    AddColliComponent
   ],
   imports: [
     BrowserModule,
