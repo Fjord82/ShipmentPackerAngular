@@ -6,4 +6,5 @@
   margin: auto;
   display: inline-block;
   line-height: 0.42 !important;
+  z-index: -1;
 }

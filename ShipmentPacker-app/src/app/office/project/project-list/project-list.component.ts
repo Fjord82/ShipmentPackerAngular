@@ -20,4 +20,8 @@ export class ProjectListComponent implements OnInit {
   addProject() {
     this.router.navigateByUrl('/add-project');
   }
+
+  clickProject() {
+    this.router.navigateByUrl('/projectName');
+  }
 }
