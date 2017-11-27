@@ -2,11 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8f516e00-f284-41bc-85e5-2fe05cc18e05" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ShipmentPacker-app/src/app/office/project/project-detail/project-detail.component.css" afterPath="$PROJECT_DIR$/ShipmentPacker-app/src/app/office/project/project-detail/project-detail.component.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ShipmentPacker-app/src/app/office/project/project-list/project-list.component.css" afterPath="$PROJECT_DIR$/ShipmentPacker-app/src/app/office/project/project-list/project-list.component.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ShipmentPacker-app/src/app/workshop/project/workshop-project-list/workshop-project-list.component.css" afterPath="$PROJECT_DIR$/ShipmentPacker-app/src/app/workshop/project/workshop-project-list/workshop-project-list.component.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ShipmentPacker-app/src/styles.css" afterPath="$PROJECT_DIR$/ShipmentPacker-app/src/styles.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ShipmentPacker-app/src/app/office/packing/packing-detail/packing-detail.component.html" afterPath="$PROJECT_DIR$/ShipmentPacker-app/src/app/office/packing/packing-detail/packing-detail.component.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ShipmentPacker-app/src/app/office/packing/packing-detail/packing-detail.component.ts" afterPath="$PROJECT_DIR$/ShipmentPacker-app/src/app/office/packing/packing-detail/packing-detail.component.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ShipmentPacker-app/src/app/office/project/project-detail/project-detail.component.html" afterPath="$PROJECT_DIR$/ShipmentPacker-app/src/app/office/project/project-detail/project-detail.component.html" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -20,23 +18,21 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="project-list.component.html" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/ShipmentPacker-app/src/app/office/project/project-list/project-list.component.html">
+      <file leaf-file-name="packing-detail.component.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ShipmentPacker-app/src/app/office/packing/packing-detail/packing-detail.component.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="206">
-              <caret line="16" column="28" lean-forward="false" selection-start-line="16" selection-start-column="28" selection-end-line="16" selection-end-column="28" />
-              <folding>
-                <element signature="n#style#0;n#button#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-              </folding>
+            <state relative-caret-position="210">
+              <caret line="14" column="44" lean-forward="false" selection-start-line="14" selection-start-column="44" selection-end-line="14" selection-end-column="44" />
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="project-detail.component.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ShipmentPacker-app/src/app/office/project/project-detail/project-detail.component.css">
+      <file leaf-file-name="project-detail.component.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/ShipmentPacker-app/src/app/office/project/project-detail/project-detail.component.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state relative-caret-position="120">
+              <caret line="8" column="50" lean-forward="false" selection-start-line="8" selection-start-column="50" selection-end-line="8" selection-end-column="50" />
               <folding />
             </state>
           </provider>
@@ -146,7 +142,17 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
               <item name="office" type="462c0819:PsiDirectoryNode" />
-              <item name="project" type="462c0819:PsiDirectoryNode" />
+              <item name="packing" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ShipmentPackerAngular" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ShipmentPackerAngular" type="462c0819:PsiDirectoryNode" />
+              <item name="ShipmentPacker-app" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="office" type="462c0819:PsiDirectoryNode" />
+              <item name="packing" type="462c0819:PsiDirectoryNode" />
+              <item name="packing-detail" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="ShipmentPackerAngular" type="b2602c69:ProjectViewProjectNode" />
@@ -156,7 +162,6 @@
               <item name="app" type="462c0819:PsiDirectoryNode" />
               <item name="office" type="462c0819:PsiDirectoryNode" />
               <item name="project" type="462c0819:PsiDirectoryNode" />
-              <item name="add-project" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="ShipmentPackerAngular" type="b2602c69:ProjectViewProjectNode" />
@@ -270,7 +275,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="14586000" />
+    <option name="totallyTimeSpent" value="14587000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="5" y="22" width="1275" height="778" extended-state="0" />
@@ -384,7 +389,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -442,7 +446,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -472,7 +475,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -501,7 +503,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="315">
           <caret line="23" column="3" lean-forward="true" selection-start-line="23" selection-start-column="3" selection-end-line="23" selection-end-column="3" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -534,9 +535,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="285">
           <caret line="19" column="1" lean-forward="false" selection-start-line="19" selection-start-column="1" selection-end-line="19" selection-end-column="1" />
-          <folding>
-            <element signature="e#0#50#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -544,7 +542,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="75">
           <caret line="5" column="16" lean-forward="false" selection-start-line="5" selection-start-column="16" selection-end-line="5" selection-end-column="16" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -552,51 +549,18 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#73#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ShipmentPacker-app/src/app/shared/shared.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ShipmentPacker-app/src/app/shared/shared.component.spec.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="25" column="0" lean-forward="true" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ShipmentPacker-app/src/app/shared/shared.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ShipmentPacker-app/src/app/shared/shared.component.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="14" column="14" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/ShipmentPacker-app/src/app/shared/shared.component.html" />
+    <entry file="file://$PROJECT_DIR$/ShipmentPacker-app/src/app/shared/shared.component.spec.ts" />
+    <entry file="file://$PROJECT_DIR$/ShipmentPacker-app/src/app/shared/shared.component.ts" />
+    <entry file="file://$PROJECT_DIR$/ShipmentPacker-app/src/app/shared/shared.component.css" />
     <entry file="file://$PROJECT_DIR$/ShipmentPacker-app/src/app/app.module.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="65">
           <caret line="20" column="0" lean-forward="false" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
-          <folding>
-            <marker date="1511773169000" expanded="true" signature="1336:1349" ph="[...]" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -604,7 +568,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="15">
           <caret line="1" column="0" lean-forward="true" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -612,14 +575,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/ShipmentPacker-app/src/app/office/project/project-detail/project-detail.component.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="22" lean-forward="false" selection-start-line="5" selection-start-column="22" selection-end-line="5" selection-end-column="22" />
+        <state relative-caret-position="120">
+          <caret line="8" column="50" lean-forward="false" selection-start-line="8" selection-start-column="50" selection-end-line="8" selection-end-column="50" />
           <folding />
         </state>
       </provider>
@@ -628,7 +590,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -636,7 +597,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="299">
           <caret line="23" column="2" lean-forward="false" selection-start-line="23" selection-start-column="2" selection-end-line="23" selection-end-column="2" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -644,7 +604,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -660,7 +619,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
