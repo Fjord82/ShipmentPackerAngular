@@ -1,6 +1,7 @@
 .right-buttons {
   width:100px;
   position:relative;
+  right: -5%;
 }
 
 .navbar-text {
