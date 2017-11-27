@@ -17,4 +17,8 @@ export class ProjectDetailComponent implements OnInit {
     this.router.navigateByUrl('/office');
   }
 
+  packingClick() {
+    this.router.navigateByUrl('/packingName');
+  }
+
 }
