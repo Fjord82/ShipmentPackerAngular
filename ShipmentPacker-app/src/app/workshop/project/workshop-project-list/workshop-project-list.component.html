@@ -7,4 +7,33 @@
   </div>
   </div>
   <hr>
+
+  <div class="col-md-10 offset-1">
+    <div class="list-group">
+      <a (click)="clickPackingDetail()" class="list-group-item list-group-item-action">
+        <div class="row">
+          <h4 class="col-md-5">PackingList</h4>
+          <h4 class="col-md-5">ManagerName</h4>
+          <div class="right-buttons">
+            <div *ngIf="!projectToDelete || projectToDelete.id != project.id">
+              <button class="btn btn-outline-warning" (click)="edit(project)">
+                <i class="fa fa-pencil" aria-hidden="true"></i>
+              </button>
+              <button class="btn btn-outline-danger" (click)="delete(project, $event)">
+                <i class="fa fa-trash-o" aria-hidden="true"></i>
+              </button>
+            </div>
+            <div *ngIf="projectToDelete && projectToDelete.id == project.id">
+              <button class="btn btn-outline-info" (click)="deleteAborted($event)">
+                <i class="fa fa-pencil" aria-hidden="true"></i> Cancel
+              </button>
+              <button class="btn btn-outline-danger" (click)="deleteConfirmed($event)">
+                <i class="fa fa-trash-o" aria-hidden="true"></i> Confirm
+              </button>
+            </div>
+          </div>
+        </div>
+      </a>
+    </div>
+  </div>
 </div>

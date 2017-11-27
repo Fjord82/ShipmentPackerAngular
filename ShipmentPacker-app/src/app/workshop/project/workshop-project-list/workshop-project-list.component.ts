@@ -16,6 +16,8 @@ export class WorkshopProjectListComponent implements OnInit {
 
   logoutbtn() {
     this.router.navigateByUrl('/login');
-
+  }
+  clickPackingDetail() {
+    this.router.navigateByUrl('/packingDetailWorkshop')
   }
 }
