@@ -13,6 +13,8 @@ import {FormsModule} from '@angular/forms';
 import { ProjectDetailComponent } from './office/project/project-detail/project-detail.component';
 import { PackingDetailComponent } from './office/packing/packing-detail/packing-detail.component';
 import { PackingDetailWorkshopComponent } from './workshop/packing/packing-detail-workshop/packing-detail-workshop.component';
+import { EditProjectComponent } from './office/project/edit-project/edit-project.component';
+import { AddColliComponent } from './workshop/colli/add-colli/add-colli.component';
 
 const appRoutes: Routes = [
   { path: 'login', component: LoginComponent },
@@ -22,6 +24,8 @@ const appRoutes: Routes = [
   { path: 'projectName', component: ProjectDetailComponent },
   { path: 'packingName', component: PackingDetailComponent },
   { path: 'packingDetailWorkshop', component: PackingDetailWorkshopComponent },
+  { path: 'editProject', component: EditProjectComponent },
+  { path: 'addColli', component: AddColliComponent },
   {
     path: '',
     redirectTo: '/login',
@@ -38,7 +42,9 @@ const appRoutes: Routes = [
     AddProjectComponent,
     ProjectDetailComponent,
     PackingDetailComponent,
-    PackingDetailWorkshopComponent
+    PackingDetailWorkshopComponent,
+    EditProjectComponent,
+    AddColliComponent
   ],
   imports: [
     BrowserModule,

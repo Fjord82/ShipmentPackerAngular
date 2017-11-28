@@ -24,4 +24,8 @@ export class ProjectListComponent implements OnInit {
   clickProject() {
     this.router.navigateByUrl('/projectName');
   }
+
+  edit(){
+    this.router.navigateByUrl('/editProject')
+  }
 }

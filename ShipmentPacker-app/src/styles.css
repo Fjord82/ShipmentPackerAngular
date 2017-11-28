@@ -1,12 +1,11 @@
 .right-buttons {
-  width:100px;
   position:relative;
   right: -7%;
 }
 .set-back {
   z-index: -1;
 }
-.navbar-text {
+.my-local-center {
   position: absolute;
   width: 100%;
   left: 0;
