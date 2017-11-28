@@ -45,7 +45,7 @@ const appRoutes: Routes = [
     ProjectDetailComponent,
     PackingDetailComponent,
     PackingDetailWorkshopComponent,
-    AddPackingListComponent
+    AddPackingListComponent,
     EditProjectComponent,
     AddColliComponent
   ],
