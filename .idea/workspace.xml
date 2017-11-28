@@ -3,14 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="8f516e00-f284-41bc-85e5-2fe05cc18e05" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ShipmentPacker-app/src/app/office/packing/packing-detail/packing-detail.component.html" afterPath="$PROJECT_DIR$/ShipmentPacker-app/src/app/office/packing/packing-detail/packing-detail.component.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ShipmentPacker-app/src/app/office/project/project-detail/project-detail.component.html" afterPath="$PROJECT_DIR$/ShipmentPacker-app/src/app/office/project/project-detail/project-detail.component.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ShipmentPacker-app/src/app/office/project/project-list/project-list.component.html" afterPath="$PROJECT_DIR$/ShipmentPacker-app/src/app/office/project/project-list/project-list.component.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ShipmentPacker-app/src/app/utility/login/login.component.css" afterPath="$PROJECT_DIR$/ShipmentPacker-app/src/app/utility/login/login.component.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ShipmentPacker-app/src/app/utility/login/login.component.html" afterPath="$PROJECT_DIR$/ShipmentPacker-app/src/app/utility/login/login.component.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ShipmentPacker-app/src/app/workshop/packing/packing-detail-workshop/packing-detail-workshop.component.html" afterPath="$PROJECT_DIR$/ShipmentPacker-app/src/app/workshop/packing/packing-detail-workshop/packing-detail-workshop.component.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ShipmentPacker-app/src/app/workshop/project/workshop-project-list/workshop-project-list.component.html" afterPath="$PROJECT_DIR$/ShipmentPacker-app/src/app/workshop/project/workshop-project-list/workshop-project-list.component.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ShipmentPacker-app/src/styles.css" afterPath="$PROJECT_DIR$/ShipmentPacker-app/src/styles.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ShipmentPacker-app/src/app/office/packing/add-packing-list/add-packing-list.component.html" afterPath="$PROJECT_DIR$/ShipmentPacker-app/src/app/office/packing/add-packing-list/add-packing-list.component.html" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -24,51 +17,23 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="login.component.html" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/ShipmentPacker-app/src/app/utility/login/login.component.html">
+      <file leaf-file-name="project-list.component.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ShipmentPacker-app/src/app/office/project/project-list/project-list.component.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="356">
-              <caret line="37" column="6" lean-forward="false" selection-start-line="37" selection-start-column="6" selection-end-line="37" selection-end-column="6" />
-              <folding />
+            <state relative-caret-position="240">
+              <caret line="16" column="28" lean-forward="false" selection-start-line="15" selection-start-column="2" selection-end-line="16" selection-end-column="28" />
+              <folding>
+                <element signature="n#style#0;n#button#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="login.component.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ShipmentPacker-app/src/app/utility/login/login.component.css">
+      <file leaf-file-name="add-packing-list.component.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/ShipmentPacker-app/src/app/office/packing/add-packing-list/add-packing-list.component.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="10" column="0" lean-forward="true" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="styles.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ShipmentPacker-app/src/styles.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="18" column="0" lean-forward="true" selection-start-line="8" selection-start-column="1" selection-end-line="18" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="add-project.component.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ShipmentPacker-app/src/app/office/project/add-project/add-project.component.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="add-project.component.ts" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ShipmentPacker-app/src/app/office/project/add-project/add-project.component.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="315">
-              <caret line="23" column="3" lean-forward="true" selection-start-line="23" selection-start-column="3" selection-end-line="23" selection-end-column="3" />
+            <state relative-caret-position="240">
+              <caret line="16" column="10" lean-forward="false" selection-start-line="16" selection-start-column="10" selection-end-line="16" selection-end-column="10" />
               <folding />
             </state>
           </provider>
@@ -80,11 +45,8 @@
     <findStrings>
       <find>/office/project/projec</find>
       <find>item-header</find>
-      <find>input</find>
-      <find>center</find>
-      <find>white</find>
-      <find>offset</find>
-      <find>row</find>
+      <find>f</find>
+      <find>my</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -96,21 +58,23 @@
         <option value="$PROJECT_DIR$/npm-debug.log" />
         <option value="$PROJECT_DIR$/ShipmentPacker-app/src/app/app.component.html" />
         <option value="$PROJECT_DIR$/ShipmentPacker-app/.angular-cli.json" />
+        <option value="$PROJECT_DIR$/ShipmentPacker-app/src/app/utility/login/login.component.html" />
         <option value="$PROJECT_DIR$/ShipmentPacker-app/src/app/utility/login/login.component.ts" />
         <option value="$PROJECT_DIR$/ShipmentPacker-app/src/app/office/project/project-list/project-list.component.ts" />
-        <option value="$PROJECT_DIR$/ShipmentPacker-app/src/app/office/project/project-list/project-list.component.html" />
         <option value="$PROJECT_DIR$/ShipmentPacker-app/src/app/workshop/project/workshop-project-list/workshop-project-list.component.html" />
         <option value="$PROJECT_DIR$/ShipmentPacker-app/src/app/office/project/project-list/project-list.component.css" />
         <option value="$PROJECT_DIR$/ShipmentPacker-app/src/app/shared/shared.component.css" />
         <option value="$PROJECT_DIR$/ShipmentPacker-app/src/app/shared/shared.component.ts" />
         <option value="$PROJECT_DIR$/ShipmentPacker-app/src/app/office/project/project-detail/project-detail.component.css" />
+        <option value="$PROJECT_DIR$/ShipmentPacker-app/src/styles.css" />
+        <option value="$PROJECT_DIR$/ShipmentPacker-app/src/app/workshop/project/workshop-project-list/workshop-project-list.component.css" />
+        <option value="$PROJECT_DIR$/ShipmentPacker-app/src/app/office/project/project-list/project-list.component.html" />
         <option value="$PROJECT_DIR$/ShipmentPacker-app/src/app/app.module.ts" />
         <option value="$PROJECT_DIR$/ShipmentPacker-app/src/app/office/project/project-detail/project-detail.component.html" />
-        <option value="$PROJECT_DIR$/ShipmentPacker-app/src/app/workshop/project/workshop-project-list/workshop-project-list.component.css" />
-        <option value="$PROJECT_DIR$/ShipmentPacker-app/src/app/office/project/add-project/add-project.component.css" />
-        <option value="$PROJECT_DIR$/ShipmentPacker-app/src/styles.css" />
-        <option value="$PROJECT_DIR$/ShipmentPacker-app/src/app/utility/login/login.component.css" />
-        <option value="$PROJECT_DIR$/ShipmentPacker-app/src/app/utility/login/login.component.html" />
+        <option value="$PROJECT_DIR$/ShipmentPacker-app/src/app/office/project/project-detail/project-detail.component.ts" />
+        <option value="$PROJECT_DIR$/ShipmentPacker-app/src/app/office/packing/add-packing-list/add-packing-list.component.ts" />
+        <option value="$PROJECT_DIR$/ShipmentPacker-app/src/app/office/packing/add-packing-list/add-packing-list.component.html" />
+        <option value="$PROJECT_DIR$/ShipmentPacker-app/package.json" />
       </list>
     </option>
   </component>
@@ -185,6 +149,35 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
               <item name="office" type="462c0819:PsiDirectoryNode" />
+              <item name="packing" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ShipmentPackerAngular" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ShipmentPackerAngular" type="462c0819:PsiDirectoryNode" />
+              <item name="ShipmentPacker-app" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="office" type="462c0819:PsiDirectoryNode" />
+              <item name="packing" type="462c0819:PsiDirectoryNode" />
+              <item name="add-packing-list" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ShipmentPackerAngular" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ShipmentPackerAngular" type="462c0819:PsiDirectoryNode" />
+              <item name="ShipmentPacker-app" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="office" type="462c0819:PsiDirectoryNode" />
+              <item name="packing" type="462c0819:PsiDirectoryNode" />
+              <item name="packing-detail" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ShipmentPackerAngular" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ShipmentPackerAngular" type="462c0819:PsiDirectoryNode" />
+              <item name="ShipmentPacker-app" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="office" type="462c0819:PsiDirectoryNode" />
               <item name="project" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -195,7 +188,17 @@
               <item name="app" type="462c0819:PsiDirectoryNode" />
               <item name="office" type="462c0819:PsiDirectoryNode" />
               <item name="project" type="462c0819:PsiDirectoryNode" />
-              <item name="add-project" type="462c0819:PsiDirectoryNode" />
+              <item name="project-detail" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ShipmentPackerAngular" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ShipmentPackerAngular" type="462c0819:PsiDirectoryNode" />
+              <item name="ShipmentPacker-app" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="office" type="462c0819:PsiDirectoryNode" />
+              <item name="project" type="462c0819:PsiDirectoryNode" />
+              <item name="project-list" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="ShipmentPackerAngular" type="b2602c69:ProjectViewProjectNode" />
@@ -213,6 +216,33 @@
               <item name="app" type="462c0819:PsiDirectoryNode" />
               <item name="utility" type="462c0819:PsiDirectoryNode" />
               <item name="login" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ShipmentPackerAngular" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ShipmentPackerAngular" type="462c0819:PsiDirectoryNode" />
+              <item name="ShipmentPacker-app" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="workshop" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ShipmentPackerAngular" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ShipmentPackerAngular" type="462c0819:PsiDirectoryNode" />
+              <item name="ShipmentPacker-app" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="workshop" type="462c0819:PsiDirectoryNode" />
+              <item name="project" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ShipmentPackerAngular" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ShipmentPackerAngular" type="462c0819:PsiDirectoryNode" />
+              <item name="ShipmentPacker-app" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="workshop" type="462c0819:PsiDirectoryNode" />
+              <item name="project" type="462c0819:PsiDirectoryNode" />
+              <item name="workshop-project-list" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -262,7 +292,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="18428000" />
+    <option name="totallyTimeSpent" value="18973000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="5" y="22" width="1275" height="778" extended-state="0" />
@@ -278,23 +308,23 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22986823" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.329429" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="TypeScript" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="13" side_tool="true" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.329429" sideWeight="0.5" order="15" side_tool="false" content_ui="tabs" />
+      <window_info id="TypeScript" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="16" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24960127" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -308,35 +338,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/ShipmentPacker-app/src/app/office/project/project-list/project-list.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="19" column="2" lean-forward="false" selection-start-line="19" selection-start-column="2" selection-end-line="19" selection-end-column="2" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ShipmentPacker-app/src/app/office/project/project-list/project-list.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" column="23" lean-forward="false" selection-start-line="3" selection-start-column="23" selection-end-line="3" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/npm-debug.log" />
-    <entry file="file://$PROJECT_DIR$/ShipmentPacker-app/src/app/app.component.spec.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ShipmentPacker-app/src/app/app.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" column="0" lean-forward="true" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/ShipmentPacker-app/src/app/app.component.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -369,6 +370,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -426,6 +428,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -455,6 +458,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -465,6 +469,13 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/ShipmentPacker-app/src/app/utility/login/login.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="16" column="6" lean-forward="true" selection-start-line="16" selection-start-column="6" selection-end-line="16" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/ShipmentPacker-app/src/app/workshop/project/workshop-project-list/workshop-project-list.component.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
@@ -472,10 +483,19 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/ShipmentPacker-app/src/app/office/project/add-project/add-project.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="23" column="3" lean-forward="true" selection-start-line="23" selection-start-column="3" selection-end-line="23" selection-end-column="3" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/ShipmentPacker-app/src/app/office/project/project-list/project-list.component.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="75">
           <caret line="5" column="0" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -496,10 +516,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ShipmentPacker-app/src/app/office/project/project-detail/project-detail.component.ts">
+    <entry file="file://$PROJECT_DIR$/ShipmentPacker-app/src/app/office/project/add-project/add-project.component.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="19" column="1" lean-forward="false" selection-start-line="19" selection-start-column="1" selection-end-line="19" selection-end-column="1" />
+        <state relative-caret-position="75">
+          <caret line="5" column="16" lean-forward="false" selection-start-line="5" selection-start-column="16" selection-end-line="5" selection-end-column="16" />
         </state>
       </provider>
     </entry>
@@ -507,6 +527,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#73#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -514,13 +537,6 @@
     <entry file="file://$PROJECT_DIR$/ShipmentPacker-app/src/app/shared/shared.component.spec.ts" />
     <entry file="file://$PROJECT_DIR$/ShipmentPacker-app/src/app/shared/shared.component.ts" />
     <entry file="file://$PROJECT_DIR$/ShipmentPacker-app/src/app/shared/shared.component.css" />
-    <entry file="file://$PROJECT_DIR$/ShipmentPacker-app/src/app/app.module.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="65">
-          <caret line="20" column="0" lean-forward="false" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/ShipmentPacker-app/src/app/app.component.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="15">
@@ -528,11 +544,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ShipmentPacker-app/src/app/office/project/project-detail/project-detail.component.html">
+    <entry file="file://$PROJECT_DIR$/ShipmentPacker-app/src/app/utility/login/login.component.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" column="50" lean-forward="false" selection-start-line="8" selection-start-column="50" selection-end-line="8" selection-end-column="50" />
-          <folding />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -547,6 +562,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="299">
           <caret line="23" column="2" lean-forward="false" selection-start-line="23" selection-start-column="2" selection-end-line="23" selection-end-column="2" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -561,51 +577,18 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ShipmentPacker-app/src/app/office/project/project-detail/project-detail.component.css">
+    <entry file="file://$PROJECT_DIR$/ShipmentPacker-app/src/app/office/project/add-project/add-project.component.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ShipmentPacker-app/src/app/office/project/add-project/add-project.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="149">
-          <caret line="18" column="42" lean-forward="false" selection-start-line="18" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ShipmentPacker-app/src/app/office/project/project-list/project-list.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" column="26" lean-forward="true" selection-start-line="3" selection-start-column="26" selection-end-line="3" selection-end-column="26" />
-          <folding>
-            <element signature="n#style#0;n#button#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ShipmentPacker-app/node_modules/bootstrap/dist/css/bootstrap.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="3652" column="1" lean-forward="false" selection-start-line="3652" selection-start-column="1" selection-end-line="3652" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ShipmentPacker-app/src/app/office/project/add-project/add-project.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="23" column="3" lean-forward="true" selection-start-line="23" selection-start-column="3" selection-end-line="23" selection-end-column="3" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ShipmentPacker-app/src/app/office/project/add-project/add-project.component.css">
+    <entry file="file://$PROJECT_DIR$/ShipmentPacker-app/src/app/office/project/project-detail/project-detail.component.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -615,24 +598,96 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/ShipmentPacker-app/src/styles.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="18" column="0" lean-forward="true" selection-start-line="8" selection-start-column="1" selection-end-line="18" selection-end-column="0" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="4" selection-end-column="1" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ShipmentPacker-app/src/app/utility/login/login.component.css">
+    <entry file="file://$PROJECT_DIR$/ShipmentPacker-app/src/app/app.module.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" column="0" lean-forward="true" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+        <state relative-caret-position="140">
+          <caret line="25" column="25" lean-forward="false" selection-start-line="25" selection-start-column="11" selection-end-line="25" selection-end-column="25" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ShipmentPacker-app/src/app/utility/login/login.component.html">
+    <entry file="file://$PROJECT_DIR$/ShipmentPacker-app/src/app/office/packing/add-packing-list/add-packing-list.component.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="356">
-          <caret line="37" column="6" lean-forward="false" selection-start-line="37" selection-start-column="6" selection-end-line="37" selection-end-column="6" />
+        <state relative-caret-position="180">
+          <caret line="12" column="14" lean-forward="true" selection-start-line="12" selection-start-column="14" selection-end-line="12" selection-end-column="14" />
+          <folding>
+            <element signature="e#0#50#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ShipmentPacker-app/src/app/office/packing/packing-detail/packing-detail.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="17" column="3" lean-forward="true" selection-start-line="15" selection-start-column="2" selection-end-line="17" selection-end-column="3" />
+          <folding>
+            <element signature="e#0#50#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ShipmentPacker-app/src/app/office/project/project-detail/project-detail.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="405">
+          <caret line="27" column="1" lean-forward="true" selection-start-line="27" selection-start-column="1" selection-end-line="27" selection-end-column="1" />
+          <folding>
+            <element signature="e#0#50#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ShipmentPacker-app/src/app/office/packing/packing-detail/packing-detail.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="8" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ShipmentPacker-app/src/app/office/project/project-detail/project-detail.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" column="141" lean-forward="false" selection-start-line="8" selection-start-column="99" selection-end-line="8" selection-end-column="141" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ShipmentPacker-app/src/app/office/project/project-list/project-list.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="16" column="28" lean-forward="false" selection-start-line="15" selection-start-column="2" selection-end-line="16" selection-end-column="28" />
+          <folding>
+            <element signature="n#style#0;n#button#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$APPLICATION_HOME_DIR$/lib/webstorm.jar!/resources/html5-schema/html5/common.rnc">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="166">
+          <caret line="120" column="18" lean-forward="false" selection-start-line="120" selection-start-column="18" selection-end-line="120" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ShipmentPacker-app/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="283">
+          <caret line="27" column="0" lean-forward="false" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ShipmentPacker-app/src/app/office/packing/add-packing-list/add-packing-list.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="16" column="10" lean-forward="false" selection-start-line="16" selection-start-column="10" selection-end-line="16" selection-end-column="10" />
           <folding />
         </state>
       </provider>
