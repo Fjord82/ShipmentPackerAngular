@@ -2,9 +2,25 @@
   <br>
   <div class="row">
     <div class="col-12">
-    <h2 class="navbar-text">Workshop</h2>
+    <h2 class="my-local-center">Workshop</h2>
     <button style="display: inline-block;" type="button" class="btn btn-outline-success float-right" (click)="logoutbtn()">Log Out</button>
   </div>
   </div>
   <hr>
+
+  <div class="col-md-10 offset-1">
+    <div class="list-group">
+      <a (click)="clickPackingDetail()" class="list-group-item list-group-item-action">
+        <div class="row">
+          <h4 class="col-md-5">PackingList</h4>
+          <h4 class="col-md-5">ManagerName</h4>
+          <div class="col-2">
+          <div class="progress">
+            <div class="progress-bar bg-success" style="width:100%">100%</div>
+          </div>
+          </div>
+        </div>
+      </a>
+    </div>
+  </div>
 </div>
