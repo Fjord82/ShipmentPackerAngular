@@ -25,7 +25,13 @@
     <div class="list-group">
       <a (click)="packingClick()" class="list-group-item list-group-item-action">
         <div class="row">
-          <h4 class="col-md-10">Packing List Name</h4>
+          <h4 class="col-md-4">Packing List Name</h4>
+          <div class="col-4">
+            <div class="progress">
+              <div class="progress-bar bg-success" style="width:100%">100%</div>
+            </div>
+          </div>
+          <div class="col-2"></div>
           <div class="right-buttons">
             <div *ngIf="!projectToDelete || projectToDelete.id != project.id">
               <button class="btn btn-outline-warning" (click)="edit(project)">
