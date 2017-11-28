@@ -12,8 +12,13 @@ export class PackingDetailWorkshopComponent implements OnInit {
 
   ngOnInit() {
   }
+
   back() {
     this.router.navigateByUrl('/workshop')
+  }
+
+  addColli() {
+    this.router.navigateByUrl('/addColli')
   }
 
 }
