@@ -5,7 +5,7 @@ import {Observable} from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
 import {environment} from "../../../../environments/environment";
 
-const url = environment.apiEndpoint + '/guilds';
+const url = environment.apiEndpoint + '/projects';
 
 @Injectable()
 export class ProjectServiceService {
@@ -16,5 +16,26 @@ export class ProjectServiceService {
     return this.http
       .post<Project>(url, project);
   }
+
+  getProjects(): Observable<Project[]> {
+    return this.http
+      .get<Project[]>(url);
+  }
+
+  getById(id: number): Observable<Project> {
+    return this.http
+      .get<Project>(url + '/' + id);
+  }
+
+  delete(id: number): Observable<Project> {
+    return this.http
+      .delete<Project>(url + '/' + id);
+  }
+
+  update(project: Project): Observable<Project> {
+    return this.http.put(url + '/' + project.Id, project);
+  }
+
+
 
 }
