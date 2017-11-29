@@ -5,7 +5,7 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './utility/login/login.component';
 import { ProjectListComponent } from './office/project/project-list/project-list.component';
-import { WorkshopProjectListComponent } from './workshop/project/workshop-project-list/workshop-project-list.component';
+import { WorkshopPackingListComponent } from './workshop/packingList/workshop-packing-list/workshop-packing-list.component';
 import {RouterModule, Routes} from '@angular/router';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { AddProjectComponent } from './office/project/add-project/add-project.component';
@@ -22,8 +22,8 @@ import {HttpClientModule} from '@angular/common/http';
 const appRoutes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'office', component: ProjectListComponent },
-  { path: 'workshop', component: WorkshopProjectListComponent },
-  { path: 'add-project', component: AddProjectComponent },
+  { path: 'workshop', component: WorkshopPackingListComponent },
+  { path: 'add-packingList', component: AddProjectComponent },
   { path: 'projectName', component: ProjectDetailComponent },
   { path: 'packingName', component: PackingDetailComponent },
   { path: 'packingDetailWorkshop', component: PackingDetailWorkshopComponent },
@@ -42,7 +42,7 @@ const appRoutes: Routes = [
     AppComponent,
     LoginComponent,
     ProjectListComponent,
-    WorkshopProjectListComponent,
+    WorkshopPackingListComponent,
     AddProjectComponent,
     ProjectDetailComponent,
     PackingDetailComponent,
