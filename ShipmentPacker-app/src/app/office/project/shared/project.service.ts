@@ -17,4 +17,25 @@ export class ProjectService {
       .post<Project>(url, project);
   }
 
+  getProjects(): Observable<Project[]> {
+    return this.http
+      .get<Project[]>(url);
+  }
+
+  getById(id: number): Observable<Project> {
+    return this.http
+      .get<Project>(url + '/' + id);
+  }
+
+  delete(id: number): Observable<Project> {
+    return this.http
+      .delete<Project>(url + '/' + id);
+  }
+
+  update(project: Project): Observable<Project> {
+    return this.http.put(url + '/' + project.Id, project);
+  }
+
+
+
 }
