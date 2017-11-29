@@ -1,0 +1,10 @@
+.this-center {
+  width: 100%;
+  left: 0;
+  text-align: center;
+  margin: auto;
+}
+
+.container {
+  background-color: rgba(148, 0, 105, 0.29);
+}

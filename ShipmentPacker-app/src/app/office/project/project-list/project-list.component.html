@@ -2,9 +2,10 @@
     <br>
     <div class="row">
       <div class="col-12">
-        <h2 class="navbar-text">Projects</h2>
+        <h2 class="my-local-center">Projects</h2>
         <button style="display: inline-block;" type="button" class="btn btn-outline-success float-right" (click)="logout()">Log Out</button>
-        <button style="margin-right:5px; display: inline-block;" type="button" class="btn btn-outline-primary float-right" (click)="addProject()">Add project</button>
+        <button style="margin-right:5px; display: inline-block;" type="button" class="btn btn-outline-primary float-right" (click)="addProject()"><i class="fa fa-plus" aria-hidden="true"></i>
+           Add project</button>
       </div>
     </div>
     <hr>
@@ -13,32 +14,18 @@
   <br>
 
   <div class="col-md-10 offset-1">
-    <div class="list-group">
+    <div  *ngFor="let project of projects" class="list-group">
       <a (click)="clickProject()" class="list-group-item list-group-item-action">
         <div class="row">
-          <h4 class="col-md-10">ProjectName</h4>
-          <div class="right-buttons">
-            <div *ngIf="!projectToDelete || projectToDelete.id != project.id">
-              <button class="btn btn-outline-warning" (click)="edit(project)">
+          <h4 class="col-md-5">{{project.projectName}}</h4>
+          <h4 class="col-md-5">{{project.creatorName}}</h4>
+              <button class="btn btn-outline-warning this-button" (click)="edit()">
                 <i class="fa fa-pencil" aria-hidden="true"></i>
               </button>
-              <button class="btn btn-outline-danger" (click)="delete(project, $event)">
-                <i class="fa fa-trash-o" aria-hidden="true"></i>
-              </button>
-            </div>
-            <div *ngIf="projectToDelete && projectToDelete.id == project.id">
-              <button class="btn btn-outline-info" (click)="deleteAborted($event)">
-                <i class="fa fa-pencil" aria-hidden="true"></i> Cancel
-              </button>
-              <button class="btn btn-outline-danger" (click)="deleteConfirmed($event)">
-                <i class="fa fa-trash-o" aria-hidden="true"></i> Confirm
-              </button>
-            </div>
-          </div>
         </div>
       </a>
+      <br>
     </div>
-    <br>
 
 
 

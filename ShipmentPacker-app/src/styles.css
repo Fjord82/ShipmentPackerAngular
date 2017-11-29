@@ -1,1 +1,17 @@
-/* You can add global styles to this file, and also import other style files */
+.right-buttons {
+  position:relative;
+  right: -7%;
+}
+.set-back {
+  z-index: -1;
+}
+.my-local-center {
+  position: absolute;
+  width: 100%;
+  left: 0;
+  text-align: center;
+  margin: auto;
+  display: inline-block;
+  line-height: 0.42 !important;
+  z-index: -1;
+}
