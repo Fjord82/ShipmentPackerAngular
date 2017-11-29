@@ -3,5 +3,4 @@ export class Project {
   ProjectName?: string;
   CreatorName?: string;
   CustomerName?: string;
-  FreightType?: string;
 }

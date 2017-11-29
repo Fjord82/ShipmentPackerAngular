@@ -5,10 +5,10 @@ import {Observable} from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
 import {environment} from "../../../../environments/environment";
 
-const url = environment.apiEndpoint + '/guilds';
+const url = environment.apiEndpoint + '/projects';
 
 @Injectable()
-export class ProjectServiceService {
+export class ProjectService {
 
   constructor(private http: HttpClient) { }
 

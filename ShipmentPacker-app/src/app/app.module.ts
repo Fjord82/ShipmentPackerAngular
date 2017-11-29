@@ -9,13 +9,15 @@ import { WorkshopProjectListComponent } from './workshop/project/workshop-projec
 import {RouterModule, Routes} from '@angular/router';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { AddProjectComponent } from './office/project/add-project/add-project.component';
-import {FormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { ProjectDetailComponent } from './office/project/project-detail/project-detail.component';
 import { PackingDetailComponent } from './office/packing/packing-detail/packing-detail.component';
 import { PackingDetailWorkshopComponent } from './workshop/packing/packing-detail-workshop/packing-detail-workshop.component';
 import { AddPackingListComponent } from './office/packing/add-packing-list/add-packing-list.component';
 import { EditProjectComponent } from './office/project/edit-project/edit-project.component';
 import { AddColliComponent } from './workshop/colli/add-colli/add-colli.component';
+import {ProjectService} from './office/project/shared/project.service';
+import {HttpClientModule} from '@angular/common/http';
 
 const appRoutes: Routes = [
   { path: 'login', component: LoginComponent },
@@ -51,11 +53,13 @@ const appRoutes: Routes = [
   ],
   imports: [
     BrowserModule,
+    ReactiveFormsModule,
     RouterModule.forRoot(appRoutes),
     NgbModule.forRoot(),
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [ProjectService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
