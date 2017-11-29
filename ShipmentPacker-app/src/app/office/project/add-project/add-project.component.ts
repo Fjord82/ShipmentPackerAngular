@@ -38,9 +38,9 @@ export class AddProjectComponent implements OnInit {
     save() {
     const values = this.projectGroup.value;
     const project: Project = {
-      ProjectName: values.projectName,
-      CustomerName: values.customerName,
-      CreatorName: values.creatorName,
+      projectName: values.projectName,
+      customerName: values.customerName,
+      creatorName: values.creatorName,
     };
     this.projectService.create(project)
       .subscribe(proj => console.log(project));

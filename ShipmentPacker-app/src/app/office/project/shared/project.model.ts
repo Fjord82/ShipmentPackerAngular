@@ -1,6 +1,6 @@
 export class Project {
-  Id?: number;
-  ProjectName?: string;
-  CreatorName?: string;
-  CustomerName?: string;
+  id?: number;
+  projectName?: string;
+  creatorName?: string;
+  customerName?: string;
 }
