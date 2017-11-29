@@ -6,7 +6,7 @@
     <div class="col-md-12">
     <button class="btn btn-outline-info" (click)="backbtn()">Back</button>
     <h2 class="my-local-center">ProjectName</h2>
-      <button type="button" class="btn btn-primary pull-right"><i class="fa fa-plus" aria-hidden="true"></i>
+      <button type="button" (click)="addPackingClick()" class="btn btn-outline-primary pull-right"><i class="fa fa-plus" aria-hidden="true"></i>
          New packing list</button>
     </div>
   </div>
@@ -25,9 +25,15 @@
     <div class="list-group">
       <a (click)="packingClick()" class="list-group-item list-group-item-action">
         <div class="row">
-          <h4 class="col-md-10">Packing List Name</h4>
+          <h4 class="col-md-4">Packing List Name</h4>
+          <div class="col-4">
+            <div class="progress">
+              <div class="progress-bar bg-success" style="width:100%">100%</div>
+            </div>
+          </div>
+          <div class="col-2"></div>
           <div class="right-buttons">
-            <div *ngIf="!projectToDelete || projectToDelete.id != project.id">
+            <!--<div *ngIf="!projectToDelete || projectToDelete.id != project.id">
               <button class="btn btn-outline-warning" (click)="edit(project)">
                 <i class="fa fa-pencil" aria-hidden="true"></i>
               </button>
@@ -42,7 +48,7 @@
               <button class="btn btn-outline-danger" (click)="deleteConfirmed($event)">
                 <i class="fa fa-trash-o" aria-hidden="true"></i> Confirm
               </button>
-            </div>
+            </div>-->
           </div>
         </div>
       </a>

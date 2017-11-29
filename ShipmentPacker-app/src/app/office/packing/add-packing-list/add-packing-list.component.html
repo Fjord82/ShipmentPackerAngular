@@ -1,0 +1,78 @@
+<div class="container">
+  <br>
+  <div class="row">
+    <div class="col-md-12">
+      <button class="btn btn-outline-info" (click)="backbtn()">Back</button>
+      <h2 class="my-local-center">Add Packing List</h2>
+    </div>
+  </div>
+  <hr>
+
+  <div class="col-md-12">
+    <div class="row">
+      <div class="col-md-5">
+        <dl>
+          <form class="form-horizontal">
+            <fieldset>
+              <dt class="">
+                Freight type:
+              </dt>
+              <dd class="">
+                <select id="selectbasic" name="selectbasic" class="form-control">
+                  <option value="">Courier</option>
+                  <option value="">Road</option>
+                  <option value="">Sea</option>
+                  <option value="">Air</option>
+                </select>
+              </dd>
+              <dt class="">
+                Delivery date:
+              </dt>
+              <dd class="">
+                <div class="input-group">
+                  <input class="form-control" placeholder="yyyy-mm-dd" name="dp" ngbDatepicker #d="ngbDatepicker"> <!--[(ngModel)]="model"-->
+                  <button class="input-group-addon" (click)="d.toggle()" type="button">
+                    <i class="fa fa-calendar" aria-hidden="true"></i>
+                  </button>
+                </div>
+              </dd>
+              <dt class="">
+                Order items:
+              </dt>
+              <dd class="">
+                <select id="selectmultiple" name="selectmultiple" class="form-control" multiple="multiple">
+                  <option value="1">Option one</option>
+                  <option value="2">Option two</option>
+                  <option value="3">Option three</option>
+                  <option value="4">Option four</option>
+                  <option value="5">Option five</option></select>
+                <br>
+                <button id="singlebutton" name="singlebutton" class="btn btn-outline-primary"><i class="fa fa-plus" aria-hidden="true"></i>
+                  Add</button>
+              </dd>
+            </fieldset>
+          </form>
+        </dl>
+      </div>
+      <div class="col-2"></div>
+      <div class="col-md-5">
+        <dl>
+          <dt>
+            Packing list:
+          </dt>
+          <dd>
+            <select name="selectmultiple" class="form-control" multiple="multiple">
+              <option value="1">Option one</option>
+              <option value="2">Option two</option>
+              <option value="3">Option three</option>
+              <option value="4">Option four</option>
+              <option value="5">Option five</option></select>
+          </dd>
+        </dl>
+      </div>
+    </div>
+  </div>
+  <button class="btn btn-lg btn-outline-success float-right">
+    Accept
+  </button>
+</div>

@@ -17,4 +17,12 @@ export class AddColliComponent implements OnInit {
     this.router.navigateByUrl('packingDetailWorkshop')
   }
 
+  add() {
+
+  }
+
+  save() {
+
+  }
+
 }
