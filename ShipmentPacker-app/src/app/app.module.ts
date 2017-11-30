@@ -24,12 +24,12 @@ const appRoutes: Routes = [
   { path: 'office', component: ProjectListComponent },
   { path: 'workshop', component: WorkshopProjectListComponent },
   { path: 'add-project', component: AddProjectComponent },
-  { path: 'projectName', component: ProjectDetailComponent },
   { path: 'packingName', component: PackingDetailComponent },
   { path: 'packingDetailWorkshop', component: PackingDetailWorkshopComponent },
   { path: 'addPackingList', component: AddPackingListComponent },
   { path: 'editProject', component: EditProjectComponent },
   { path: 'addColli', component: AddColliComponent },
+  { path: 'project-detail/:id', component: ProjectDetailComponent },
   {
     path: '',
     redirectTo: '/login',

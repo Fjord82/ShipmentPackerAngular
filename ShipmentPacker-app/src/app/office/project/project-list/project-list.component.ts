@@ -11,7 +11,8 @@ import {ProjectService} from '../shared/project.service';
 export class ProjectListComponent implements OnInit {
 
   projects: Project[];
-  constructor(private router: Router, private projectService: ProjectService) { }
+  constructor(private router: Router,
+              private projectService: ProjectService) { }
 
   ngOnInit() {
     this.projectService.getProjects().subscribe(
@@ -28,8 +29,8 @@ export class ProjectListComponent implements OnInit {
     this.router.navigateByUrl('/add-project');
   }
 
-  clickProject() {
-    this.router.navigateByUrl('/projectName');
+  clickProject(project: Project) {
+    this.router.navigateByUrl('/project-detail/'+project.id);
   }
 
   edit(){

@@ -5,7 +5,7 @@
   <div class="row">
     <div class="col-md-12">
     <button class="btn btn-outline-info" (click)="backbtn()">Back</button>
-    <h2 class="my-local-center">ProjectName</h2>
+    <h2 class="my-local-center">{{project.projectName}}</h2>
       <button type="button" (click)="addPackingClick()" class="btn btn-outline-primary pull-right"><i class="fa fa-plus" aria-hidden="true"></i>
          New packing list</button>
     </div>
@@ -13,14 +13,13 @@
   <hr>
   <br>
   <div class="row">
-    <div class="col-md-4"><h4>Project Name:</h4><p>ProjectName</p></div>
-    <div class="col-md-4"><h4>Customer Name:</h4><p>CustomerName</p></div>
-    <div class="col-md-4"><h4>Manager Name:</h4><p>ManagerName</p></div>
+    <div class="col-md-4"><h4>Project Name:</h4><p>{{project.projectName}}</p></div>
+    <div class="col-md-4"><h4>Customer Name:</h4><p>{{project.customerName}}</p></div>
+    <div class="col-md-4"><h4>Manager Name:</h4><p>{{project.creatorName}}</p></div>
     <div class="col-md-4"><h4>Delivery Date:</h4><p>DeliveryDate</p></div>
     <div class="col-md-4"><h4>Delivery Address:</h4><p>DeliveryAddress</p></div>
   </div>
   <br>
-
   <div class="col-md-12">
     <div class="list-group">
       <a (click)="packingClick()" class="list-group-item list-group-item-action">
