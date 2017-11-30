@@ -3,10 +3,10 @@ import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-workshop-project-list',
-  templateUrl: './workshop-project-list.component.html',
-  styleUrls: ['./workshop-project-list.component.css']
+  templateUrl: './workshop-packing-list.component.html',
+  styleUrls: ['./workshop-packing-list.component.css']
 })
-export class WorkshopProjectListComponent implements OnInit {
+export class WorkshopPackingListComponent implements OnInit {
 
   constructor(private router: Router) {
   }
@@ -16,6 +16,8 @@ export class WorkshopProjectListComponent implements OnInit {
 
   logoutbtn() {
     this.router.navigateByUrl('/login');
-
+  }
+  clickPackingDetail() {
+    this.router.navigateByUrl('/packingDetailWorkshop')
   }
 }

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {Router} from '@angular/router';
+import {Packing} from '../shared/packing.model';
 
 @Component({
   selector: 'app-packing-detail',
@@ -8,13 +9,18 @@ import {Router} from '@angular/router';
 })
 export class PackingDetailComponent implements OnInit {
 
+  packing: Packing;
   constructor(private router: Router) { }
 
   ngOnInit() {
   }
 
-  backbtn() {
-    this.router.navigateByUrl('/projectName');
+  back() {
+    this.router.navigateByUrl('/office');
+  }
+
+  clickProject() {
+
   }
 
 }
