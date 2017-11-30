@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import {Router} from '@angular/router';
+import {ActivatedRoute, Router} from '@angular/router';
 import {NgbDateStruct} from '@ng-bootstrap/ng-bootstrap';
+import {Project} from '../shared/project.model';
+import {ProjectService} from '../shared/project.service';
 
 @Component({
   selector: 'app-edit-project',
@@ -9,9 +11,14 @@ import {NgbDateStruct} from '@ng-bootstrap/ng-bootstrap';
 })
 export class EditProjectComponent implements OnInit {
 
-  constructor(private router: Router) { }
+  project: Project;
+  constructor(private router: Router,
+              private projectService: ProjectService,
+              private route: ActivatedRoute) { }
 
   ngOnInit() {
+    this.route.paramMap.switchMap(params => this.projectService.getById(+params.get('id')))
+      .subscribe(project => this.project = project);
   }
 
   model: NgbDateStruct;
@@ -22,6 +29,6 @@ export class EditProjectComponent implements OnInit {
   }
 
   save() {
-
+    this.router.navigateByUrl('/office')
   }
 }
