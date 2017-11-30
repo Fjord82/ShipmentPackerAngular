@@ -3,6 +3,7 @@ import {ActivatedRoute, Router} from '@angular/router';
 import {ProjectService} from '../shared/project.service';
 import {Project} from '../shared/project.model';
 import 'rxjs/add/operator/switchMap';
+import {Packing} from '../../packing/shared/packing.model';
 
 @Component({
   selector: 'app-project-detail',

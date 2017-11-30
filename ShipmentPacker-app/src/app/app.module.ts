@@ -22,7 +22,7 @@ import {HttpClientModule} from '@angular/common/http';
 const appRoutes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'office', component: ProjectListComponent },
-  { path: 'workshop', component: WorkshopProjectListComponent },
+  { path: 'workshop', component: WorkshopPackingListComponent },
   { path: 'add-project', component: AddProjectComponent },
   { path: 'packingName', component: PackingDetailComponent },
   { path: 'packingDetailWorkshop', component: PackingDetailWorkshopComponent },
