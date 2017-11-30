@@ -30,6 +30,7 @@ const appRoutes: Routes = [
   { path: 'editProject', component: EditProjectComponent },
   { path: 'addColli', component: AddColliComponent },
   { path: 'project-detail/:id', component: ProjectDetailComponent },
+  { path: 'packing-detail/:id', component: PackingDetailComponent },
   {
     path: '',
     redirectTo: '/login',

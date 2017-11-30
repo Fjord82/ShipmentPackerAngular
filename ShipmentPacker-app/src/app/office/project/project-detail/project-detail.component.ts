@@ -11,6 +11,8 @@ import 'rxjs/add/operator/switchMap';
 })
 export class ProjectDetailComponent implements OnInit {
 
+  packing: Packing;
+  packings: Packing[];
   project: Project;
   constructor(private router: Router,
               private route: ActivatedRoute,
@@ -25,8 +27,8 @@ export class ProjectDetailComponent implements OnInit {
     this.router.navigateByUrl('/office');
   }
 
-  packingClick() {
-    this.router.navigateByUrl('/packingName');
+  packingClick(packing: Packing) {
+    this.router.navigateByUrl('/packing-detail/'+packing.id);
   }
 
   addPackingClick() {
