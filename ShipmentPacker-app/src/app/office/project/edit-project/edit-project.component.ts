@@ -20,4 +20,8 @@ export class EditProjectComponent implements OnInit {
   backbtn() {
     this.router.navigateByUrl('/office');
   }
+
+  save() {
+
+  }
 }

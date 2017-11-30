@@ -2,11 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import {Router} from '@angular/router';
 
 @Component({
-  selector: 'app-packing-detail',
-  templateUrl: './packing-detail.component.html',
-  styleUrls: ['./packing-detail.component.css']
+  selector: 'app-add-packing-list',
+  templateUrl: './add-packing-list.component.html',
+  styleUrls: ['./add-packing-list.component.css']
 })
-export class PackingDetailComponent implements OnInit {
+export class AddPackingListComponent implements OnInit {
 
   constructor(private router: Router) { }
 
@@ -15,10 +15,6 @@ export class PackingDetailComponent implements OnInit {
 
   backbtn() {
     this.router.navigateByUrl('/project-detail');
-  }
-
-  clickProject() {
-
   }
 
 }

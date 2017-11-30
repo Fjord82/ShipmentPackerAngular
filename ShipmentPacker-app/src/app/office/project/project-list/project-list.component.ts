@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {Router} from '@angular/router';
+import {Project} from '../shared/project.model';
+import {ProjectService} from '../shared/project.service';
 
 @Component({
   selector: 'app-project-list',
@@ -8,9 +10,15 @@ import {Router} from '@angular/router';
 })
 export class ProjectListComponent implements OnInit {
 
-  constructor(private router: Router) { }
+  projects: Project[];
+  constructor(private router: Router,
+              private projectService: ProjectService) { }
 
   ngOnInit() {
+    this.projectService.getProjects().subscribe(
+      projects => {
+        this.projects = projects;
+      });
   }
 
   logout() {
@@ -18,11 +26,11 @@ export class ProjectListComponent implements OnInit {
   }
 
   addProject() {
-    this.router.navigateByUrl('/add-project');
+    this.router.navigateByUrl('/add-packingList');
   }
 
-  clickProject() {
-    this.router.navigateByUrl('/projectName');
+  clickProject(project: Project) {
+    this.router.navigateByUrl('/project-detail/'+project.id);
   }
 
   edit(){
