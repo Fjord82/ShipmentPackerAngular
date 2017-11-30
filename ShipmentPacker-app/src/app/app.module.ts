@@ -27,7 +27,7 @@ const appRoutes: Routes = [
   { path: 'packingName', component: PackingDetailComponent },
   { path: 'packingDetailWorkshop', component: PackingDetailWorkshopComponent },
   { path: 'addPackingList', component: AddPackingListComponent },
-  { path: 'editProject', component: EditProjectComponent },
+  { path: 'edit-project/:id', component: EditProjectComponent },
   { path: 'addColli', component: AddColliComponent },
   { path: 'project-detail/:id', component: ProjectDetailComponent },
   { path: 'packing-detail/:id', component: PackingDetailComponent },

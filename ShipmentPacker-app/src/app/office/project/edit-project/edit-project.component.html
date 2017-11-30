@@ -3,7 +3,7 @@
   <br>
   <div class="row col-12">
     <button class="btn btn-outline-info " (click)="backbtn()">Back</button>
-    <h2 class="navbar-text">
+    <h2 class="my-local-center">
       Edit project
     </h2>
   </div>
@@ -16,19 +16,19 @@
           Project name:
         </dt>
         <dd class="col-md-7">
-          <input type="text" class="form-control" placeholder="Project name">
+          <input type="text" class="form-control" placeholder="{{project?.projectName}}">
         </dd>
         <dt class="col-md-3">
           Customer name:
         </dt>
         <dd class="col-md-7">
-          <input type="text" class="form-control" placeholder="Customer name">
+          <input type="text" class="form-control" placeholder="{{project?.customerName}}">
         </dd>
         <dt class="col-md-3">
-          Manager name:
+          Creater name:
         </dt>
         <dd class="col-md-7">
-          <input type="text" class="form-control" placeholder="Manager name">
+          <input type="text" class="form-control" placeholder="{{project?.creatorName}}">
         </dd>
         <dt class="col-md-3">
           Freight type:

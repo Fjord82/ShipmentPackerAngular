@@ -26,14 +26,14 @@ export class ProjectListComponent implements OnInit {
   }
 
   addProject() {
-    this.router.navigateByUrl('/add-packingList');
+    this.router.navigateByUrl('/add-project');
   }
 
   clickProject(project: Project) {
     this.router.navigateByUrl('/project-detail/'+project.id);
   }
 
-  edit(){
-    this.router.navigateByUrl('/editProject')
+  edit(project: Project){
+    this.router.navigateByUrl('/edit-project/'+project.id)
   }
 }
