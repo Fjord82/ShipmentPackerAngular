@@ -14,7 +14,7 @@ export class PackingDetailComponent implements OnInit {
   }
 
   backbtn() {
-    this.router.navigateByUrl('/projectName');
+    this.router.navigateByUrl('/project-detail');
   }
 
   clickProject() {

@@ -22,14 +22,15 @@ import {HttpClientModule} from '@angular/common/http';
 const appRoutes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'office', component: ProjectListComponent },
-  { path: 'workshop', component: WorkshopPackingListComponent },
-  { path: 'add-packingList', component: AddProjectComponent },
-  { path: 'projectName', component: ProjectDetailComponent },
+  { path: 'workshop', component: WorkshopProjectListComponent },
+  { path: 'add-project', component: AddProjectComponent },
   { path: 'packingName', component: PackingDetailComponent },
   { path: 'packingDetailWorkshop', component: PackingDetailWorkshopComponent },
   { path: 'addPackingList', component: AddPackingListComponent },
   { path: 'editProject', component: EditProjectComponent },
   { path: 'addColli', component: AddColliComponent },
+  { path: 'project-detail/:id', component: ProjectDetailComponent },
+  { path: 'packing-detail/:id', component: PackingDetailComponent },
   {
     path: '',
     redirectTo: '/login',
