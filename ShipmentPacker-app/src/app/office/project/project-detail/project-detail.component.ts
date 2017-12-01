@@ -24,7 +24,7 @@ export class ProjectDetailComponent implements OnInit {
       .subscribe(project => this.project = project);
   }
 
-  backbtn() {
+  back() {
     this.router.navigateByUrl('/office');
   }
 

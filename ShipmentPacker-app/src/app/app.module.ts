@@ -18,6 +18,7 @@ import { EditProjectComponent } from './office/project/edit-project/edit-project
 import { AddColliComponent } from './workshop/colli/add-colli/add-colli.component';
 import {ProjectService} from './office/project/shared/project.service';
 import {HttpClientModule} from '@angular/common/http';
+import {PackingService} from './office/packing/shared/packing.service';
 
 const appRoutes: Routes = [
   { path: 'login', component: LoginComponent },
@@ -60,7 +61,7 @@ const appRoutes: Routes = [
     FormsModule,
     HttpClientModule
   ],
-  providers: [ProjectService],
+  providers: [ProjectService, PackingService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
