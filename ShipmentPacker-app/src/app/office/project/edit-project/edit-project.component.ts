@@ -26,9 +26,6 @@ export class EditProjectComponent implements OnInit {
   });
   }
 
-  model: NgbDateStruct;
-  date: {year: number, month: number};
-
   ngOnInit() {
     this.route.paramMap.switchMap(params => this.projectService.getById(+params.get('id')))
       .subscribe(project => this.project = project);
