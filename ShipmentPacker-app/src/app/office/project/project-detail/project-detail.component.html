@@ -4,47 +4,31 @@
   <br>
   <div class="row">
     <div class="col-md-12">
-    <button class="btn btn-outline-info" (click)="backbtn()">Back</button>
-    <h2 class="navbar-text">ProjectName</h2>
-      <button type="button" class="btn btn-primary pull-right"><i class="fa fa-plus" aria-hidden="true"></i>
+    <button class="btn btn-outline-info" (click)="back()">Back</button>
+    <h2 class="my-local-center">{{project?.projectName}}</h2>
+      <button type="button" (click)="addPackingClick()" class="btn btn-outline-primary pull-right"><i class="fa fa-plus" aria-hidden="true"></i>
          New packing list</button>
     </div>
   </div>
   <hr>
   <br>
   <div class="row">
-    <div class="col-md-4"><h4>Project Name:</h4><p>ProjectName</p></div>
-    <div class="col-md-4"><h4>Customer Name:</h4><p>CustomerName</p></div>
-    <div class="col-md-4"><h4>Manager Name:</h4><p>ManagerName</p></div>
-    <div class="col-md-4"><h4>Delivery Date:</h4><p>DeliveryDate</p></div>
-    <div class="col-md-4"><h4>Delivery Address:</h4><p>DeliveryAddress</p></div>
+    <div class="col-md-4"><h4>Project Name:</h4><p>{{project?.projectName}}</p></div>
+    <div class="col-md-4"><h4>Customer Name:</h4><p>{{project?.customerName}}</p></div>
+    <div class="col-md-4"><h4>Manager Name:</h4><p>{{project?.creatorName}}</p></div>
   </div>
   <br>
-
   <div class="col-md-12">
-    <div class="list-group">
-      <a (click)="packingClick()" class="list-group-item list-group-item-action">
+    <div *ngFor="let packing of packings" class="list-group">
+      <a (click)="packingClick(packing)" class="list-group-item list-group-item-action">
         <div class="row">
-          <h4 class="col-md-10">Packing List Name</h4>
-          <div class="right-buttons">
-            <div *ngIf="!projectToDelete || projectToDelete.id != project.id">
-              <button class="btn btn-outline-warning" (click)="edit(project)">
-                <i class="fa fa-pencil" aria-hidden="true"></i>
-              </button>
-              <button class="btn btn-outline-danger" (click)="delete(project, $event)">
-                <i class="fa fa-trash-o" aria-hidden="true"></i>
-              </button>
-            </div>
-            <div *ngIf="projectToDelete && projectToDelete.id == project.id">
-              <button class="btn btn-outline-info" (click)="deleteAborted($event)">
-                <i class="fa fa-pencil" aria-hidden="true"></i> Cancel
-              </button>
-              <button class="btn btn-outline-danger" (click)="deleteConfirmed($event)">
-                <i class="fa fa-trash-o" aria-hidden="true"></i> Confirm
-              </button>
+          <h4 class="col-md-4">{{packing.packingName}}</h4>
+          <div class="col-4">
+            <div class="progress">
+              <div class="progress-bar bg-success" style="width:100%">100%</div>
             </div>
           </div>
-        </div>
+         </div>
       </a>
     </div>
     <br>
