@@ -26,7 +26,7 @@ export class ProjectListComponent implements OnInit {
   }
 
   addProject() {
-    this.router.navigateByUrl('/add-packingList');
+    this.router.navigateByUrl('/add-project');
   }
 
   clickProject(project: Project) {
