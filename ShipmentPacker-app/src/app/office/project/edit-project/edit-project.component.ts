@@ -38,6 +38,10 @@ export class EditProjectComponent implements OnInit {
     this.router.navigateByUrl('/office');
   }
 
+  inactive() {
+    this.router.navigateByUrl('/office');
+  }
+
   save() {
     const values = this.projectGroup.value;
     if (values.projectName == "") values.projectName = this.project.projectName;
