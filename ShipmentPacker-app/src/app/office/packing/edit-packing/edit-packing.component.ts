@@ -3,6 +3,7 @@ import {ActivatedRoute, Router} from '@angular/router';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {Packing} from '../shared/packing.model';
 import {PackingService} from '../shared/packing.service';
+import {NgbDateStruct} from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-edit-packing',
@@ -10,6 +11,9 @@ import {PackingService} from '../shared/packing.service';
   styleUrls: ['./edit-packing.component.css']
 })
 export class EditPackingComponent implements OnInit {
+
+  model: NgbDateStruct;
+  date: { year: number, month: number };
 
   packing: Packing;
   packingGroup: FormGroup;
