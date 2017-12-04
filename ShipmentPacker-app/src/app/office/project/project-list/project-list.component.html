@@ -14,47 +14,18 @@
   <br>
 
   <div class="col-md-10 offset-1">
-    <div  *ngFor="let project of projects" class="list-group">
+    <div *ngFor="let project of projects" class="list-group">
       <a (click)="clickProject(project)" class="list-group-item list-group-item-action">
         <div class="row">
           <h4 class="col-md-5">{{project.projectName}}</h4>
           <h4 class="col-md-5">{{project.creatorName}}</h4>
-              <button class="btn btn-outline-warning this-button" (click)="edit()">
+              <button class="btn btn-outline-warning this-button" (click)="edit(project)">
                 <i class="fa fa-pencil" aria-hidden="true"></i>
               </button>
         </div>
       </a>
       <br>
     </div>
-
-
-
-    <!--<div *ngFor="let volunteer of volunteers" class="list-group">
-      <div class="list-group-item">
-        <div class="col-md-3">
-          <img class="rounded float-left img" src="http://via.placeholder.com/128x128">
-        </div>
-        <h5>{{volunteer.firstName}} {{volunteer.lastName}}</h5>
-        <div *ngIf="!volunteerToDelete || volunteerToDelete.id != volunteer.id" class="pull-right">
-          <button class="btn btn-outline-warning" (click)="edit(volunteer)">
-            <i class="fa fa-pencil" aria-hidden="true"></i>
-          </button>
-          <button class="btn btn-outline-danger" (click)="delete(volunteer, $event)">
-            <i class="fa fa-trash-o" aria-hidden="true"></i>
-          </button>
-        </div>
-
-        <div *ngIf="volunteerToDelete && volunteerToDelete.id == volunteer.id" class="pull-right">
-          <button class="btn btn-outline-info" (click)="deleteAborted($event)">
-            <i class="fa fa-pencil" aria-hidden="true"></i> Cancel
-          </button>
-          <button class="btn btn-outline-danger" (click)="deleteConfirmed($event)">
-            <i class="fa fa-trash-o" aria-hidden="true"></i> Confirm
-          </button>
-        </div>
-      </div>
-      <br>
-    </div>-->
   </div>
 </div>
 

@@ -19,6 +19,7 @@ import { AddColliComponent } from './workshop/colli/add-colli/add-colli.componen
 import {ProjectService} from './office/project/shared/project.service';
 import {HttpClientModule} from '@angular/common/http';
 import {PackingService} from './office/packing/shared/packing.service';
+import { EditPackingComponent } from './office/packing/edit-packing/edit-packing.component';
 
 const appRoutes: Routes = [
   { path: 'login', component: LoginComponent },
@@ -28,10 +29,11 @@ const appRoutes: Routes = [
   { path: 'packingName', component: PackingDetailComponent },
   { path: 'packingDetailWorkshop', component: PackingDetailWorkshopComponent },
   { path: 'addPackingList', component: AddPackingListComponent },
-  { path: 'editProject', component: EditProjectComponent },
+  { path: 'edit-project/:id', component: EditProjectComponent },
   { path: 'addColli', component: AddColliComponent },
   { path: 'project-detail/:id', component: ProjectDetailComponent },
   { path: 'packing-detail/:id', component: PackingDetailComponent },
+  { path: 'edit-packing/:id', component: EditPackingComponent },
   {
     path: '',
     redirectTo: '/login',
@@ -51,7 +53,8 @@ const appRoutes: Routes = [
     PackingDetailWorkshopComponent,
     AddPackingListComponent,
     EditProjectComponent,
-    AddColliComponent
+    AddColliComponent,
+    EditPackingComponent
   ],
   imports: [
     BrowserModule,

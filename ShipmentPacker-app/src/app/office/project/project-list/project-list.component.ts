@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {Router} from '@angular/router';
 import {Project} from '../shared/project.model';
 import {ProjectService} from '../shared/project.service';
+import {Packing} from '../../packing/shared/packing.model';
 
 @Component({
   selector: 'app-project-list',
@@ -33,7 +34,8 @@ export class ProjectListComponent implements OnInit {
     this.router.navigateByUrl('/project-detail/'+project.id);
   }
 
-  edit(){
-    this.router.navigateByUrl('/editProject')
+  edit(project: Project){
+    this.router.navigateByUrl('/edit-project/'+project.id)
   }
+
 }
