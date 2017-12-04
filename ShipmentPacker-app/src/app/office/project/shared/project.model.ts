@@ -3,4 +3,5 @@ export class Project {
   projectName?: string;
   creatorName?: string;
   customerName?: string;
+  isActive?: boolean;
 }
