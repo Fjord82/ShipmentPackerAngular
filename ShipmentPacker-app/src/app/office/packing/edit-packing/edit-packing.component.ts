@@ -43,14 +43,14 @@ export class EditPackingComponent implements OnInit {
     if (values.packingName == "") values.packingName = this.packing.packingName;
     if (values.creatorName == "") values.creatorName = this.packing.creatorName;
     if (values.deliveryAddress == "") values.deliveryAddress = this.packing.deliveryAddress;
-    if (values.deliveryDate == "") values.deliveryDate = this.packing.deliveryDate;
+    if (values.deliveryDate.toString() == "") values.deliveryDate = this.packing.deliveryDate.toString();
 
     this.packing = {
       id: this.packing.id,
       packingName: values.packingName,
       creatorName: values.creatorName,
       deliveryAddress: values.deliveryAddress,
-      deliveryDate: values.deliveryDate
+      deliveryDate: values.deliveryDate.toString()
     };
     this.packingService.update(this.packing).subscribe(pack => this.back());
   }
