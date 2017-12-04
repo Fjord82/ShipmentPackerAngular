@@ -19,7 +19,7 @@
   </div>
   <br>
   <div class="col-md-12">
-    <div *ngFor="let packing of packings" class="list-group">
+    <div *ngFor="let packing of project?.packingLists" class="list-group">
       <a (click)="packingClick(packing)" class="list-group-item list-group-item-action">
         <div class="row">
           <h4 class="col-md-4">{{packing.packingName}}</h4>
