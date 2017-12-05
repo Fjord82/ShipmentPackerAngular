@@ -31,11 +31,11 @@ export class PackingDetailWorkshopComponent implements OnInit {
   }
 
   editColli(colliList: ColliList) {
-
+    this.router.navigateByUrl('/edit-colli/'+colliList.id)
   }
 
-  clickColli(colliList: ColliList) {
-
+  colliClick(colliList: ColliList) {
+    this.router.navigateByUrl('/colli-detail/'+colliList.id)
   }
 
 }
