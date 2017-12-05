@@ -45,7 +45,7 @@ export class EditPackingComponent implements OnInit {
     if (values.deliveryAddress == "") values.deliveryAddress = this.packing.deliveryAddress;
     if (values.deliveryDate.toString() == "") values.deliveryDate = this.packing.deliveryDate.toString();
 
-    this.packing = {
+    this.packing = <Packing> {
       id: this.packing.id,
       packingName: values.packingName,
       creatorName: values.creatorName,
