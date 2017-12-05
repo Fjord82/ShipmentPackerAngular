@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import {Router} from '@angular/router';
+import {ActivatedRoute, Router} from '@angular/router';
+import {Packing} from '../../../office/packing/shared/packing.model';
+import {PackingService} from '../../../office/packing/shared/packing.service';
+import {ColliList} from '../../colli/shared/colli.model';
 
 @Component({
   selector: 'app-packing-detail-workshop',
@@ -8,9 +11,15 @@ import {Router} from '@angular/router';
 })
 export class PackingDetailWorkshopComponent implements OnInit {
 
-  constructor(private router: Router) { }
+  packing: Packing;
+  constructor(private router: Router,
+              private packingService: PackingService,
+              private route: ActivatedRoute){
+  }
 
   ngOnInit() {
+    this.route.paramMap.switchMap(params => this.packingService.getById(+params.get('id')))
+      .subscribe(packing => this.packing = packing);
   }
 
   back() {
@@ -18,7 +27,15 @@ export class PackingDetailWorkshopComponent implements OnInit {
   }
 
   addColli() {
-    this.router.navigateByUrl('/addColli')
+    this.router.navigateByUrl('/addColli/'+this.packing.id)
+  }
+
+  editColli(colliList: ColliList) {
+
+  }
+
+  clickColli(colliList: ColliList) {
+
   }
 
 }

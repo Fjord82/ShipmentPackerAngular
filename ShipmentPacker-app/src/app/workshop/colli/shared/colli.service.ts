@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {Observable} from 'rxjs/Observable';
-import {Colli} from './colli.model';
+import {ColliList} from './colli.model';
 import {environment} from '../../../../environments/environment';
 
 const url=environment.apiEndpoint + '/colliLists';
@@ -11,27 +11,27 @@ export class ColliService {
 
   constructor(private http: HttpClient) { }
 
-  create(colli: Colli): Observable<Colli> {
+  create(colli: ColliList): Observable<ColliList> {
     return this.http
-      .post<Colli>(url, colli);
+      .post<ColliList>(url, colli);
   }
 
-  getCollis(): Observable<Colli[]> {
+  getCollis(): Observable<ColliList[]> {
     return this.http
-      .get<Colli[]>(url);
+      .get<ColliList[]>(url);
   }
 
-  getById(id: number): Observable<Colli> {
+  getById(id: number): Observable<ColliList> {
     return this.http
-      .get<Colli>(url + '/' + id);
+      .get<ColliList>(url + '/' + id);
   }
 
-  delete(id: number): Observable<Colli> {
+  delete(id: number): Observable<ColliList> {
     return this.http
-      .delete<Colli>(url + '/' + id);
+      .delete<ColliList>(url + '/' + id);
   }
 
-  update(colli: Colli): Observable<Colli> {
+  update(colli: ColliList): Observable<ColliList> {
     return this.http.put(url + '/' + colli.id, colli);
   }
 
