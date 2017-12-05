@@ -4,8 +4,8 @@ import {PackingService} from '../../office/packing/shared/packing.service';
 import {ProjectService} from '../../office/project/shared/project.service';
 import {Project} from '../../office/project/shared/project.model';
 import {Packing} from '../../office/packing/shared/packing.model';
-import {Colli} from '../../workshop/colli/shared/colli.model';
 import {ColliService} from '../../workshop/colli/shared/colli.service';
+import {ColliList} from '../../workshop/colli/shared/colli.model';
 
 @Component({
   selector: 'app-admin',
@@ -16,8 +16,8 @@ export class AdminComponent implements OnInit {
 
 
 
-  colli: Colli;
-  collis: Colli[];
+  colli: ColliList;
+  collis: ColliList[];
   packing: Packing;
   packings: Packing[];
   project: Project;
@@ -66,7 +66,7 @@ export class AdminComponent implements OnInit {
     this.router.navigateByUrl('/admin-packing-detail/'+packing.id);
   }
 
-  clickColli(colli: Colli) {
+  clickColli(colli: ColliList) {
     this.router.navigateByUrl('/admin-colli-detail/'+colli.id);
   }
 
