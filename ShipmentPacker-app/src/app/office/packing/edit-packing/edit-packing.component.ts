@@ -12,8 +12,7 @@ import {NgbDateStruct} from '@ng-bootstrap/ng-bootstrap';
 })
 export class EditPackingComponent implements OnInit {
 
-  model: NgbDateStruct;
-  date: { year: number, month: number };
+  model;
 
   packing: Packing;
   packingGroup: FormGroup;
@@ -31,7 +30,13 @@ export class EditPackingComponent implements OnInit {
 
   ngOnInit() {
     this.route.paramMap.switchMap(params => this.packingService.getById(+params.get('id')))
-      .subscribe(packing => this.packing = packing);
+      .subscribe(packing => {this.packing = packing
+
+      let date = new Date(this.packing.deliveryDate);
+      this.model = {year: date.getFullYear(), month: date.getMonth() +1,
+      /* Month is +1 because TypeScript months ranges from 0-11 and SQL ranges from 1-12 */
+      day: date.getDate()}
+      });
   }
 
   back() {
@@ -43,14 +48,14 @@ export class EditPackingComponent implements OnInit {
     if (values.packingName == "") values.packingName = this.packing.packingName;
     if (values.creatorName == "") values.creatorName = this.packing.creatorName;
     if (values.deliveryAddress == "") values.deliveryAddress = this.packing.deliveryAddress;
-    if (values.deliveryDate.toString() == "") values.deliveryDate = this.packing.deliveryDate.toString();
+    if (values.deliveryDate == "") values.deliveryDate = this.packing.deliveryDate;
 
     this.packing = <Packing> {
       id: this.packing.id,
       packingName: values.packingName,
       creatorName: values.creatorName,
       deliveryAddress: values.deliveryAddress,
-      deliveryDate: values.deliveryDate.toString()
+      deliveryDate: values.deliveryDate
     };
     this.packingService.update(this.packing).subscribe(pack => this.back());
   }
