@@ -1,6 +1,6 @@
 import {Packing} from '../../../office/packing/shared/packing.model';
 
-export class Colli {
+export class ColliList {
   id?: number;
   projectName?: string;
   workshopName?: string;

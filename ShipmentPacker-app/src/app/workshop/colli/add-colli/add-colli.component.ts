@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {ActivatedRoute, Router} from '@angular/router';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {ColliService} from '../shared/colli.service';
-import {Colli} from '../shared/colli.model';
+import {ColliList} from '../shared/colli.model';
 import {ProjectService} from '../../../office/project/shared/project.service';
 import {Project} from '../../../office/project/shared/project.model';
 import {Packing} from '../../../office/packing/shared/packing.model';
@@ -17,7 +17,7 @@ export class AddColliComponent implements OnInit {
 
   colliGroup: FormGroup;
   packing: Packing;
-  colli: Colli;
+  colli: ColliList;
   constructor(private router: Router,
               private fb: FormBuilder,
               private packingService: PackingService,
@@ -49,7 +49,7 @@ export class AddColliComponent implements OnInit {
     if (values.totalWeight == "") values.totalWeight = this.colli.totalWeight;
     if (values.dimensions == "") values.dimensions = this.colli.dimensions;
     if (values.freightType == "") values.freightType = this.colli.freightType;
-    this.colli = <Colli> {
+    this.colli = <ColliList> {
       totalWeight: values.totalWeight,
       dimensions: values.dimensions,
       freightType: values.freightType,
@@ -57,6 +57,7 @@ export class AddColliComponent implements OnInit {
     this.colli.itemType = 'itemType';
     this.colli.packingListIds = [];
     this.colli.packingListIds.push(this.packing.id);
+    this.colli.isActive = true;
     this.colliService.create(this.colli).subscribe(coll => this.back());
   }
 }
