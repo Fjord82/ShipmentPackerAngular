@@ -40,10 +40,19 @@ export class EditColliComponent implements OnInit {
     if (values.dimensions == "") values.dimensions = this.colli.dimensions;
     if (values.freightType == "") values.freightType = this.colli.freightType;
     this.colli = <ColliList> {
+      id: this.colli.id,
+      projectName: this.colli.projectName,
+      netWeight: this.colli.netWeight,
+      worker: this.colli.worker,
       totalWeight: values.totalWeight,
       dimensions: values.dimensions,
       freightType: values.freightType,
+      isActive: this.colli.isActive,
+      itemType: this.colli.itemType,
+      packingListIds: this.colli.packingListIds,
+      packingLists: this.colli.packingLists
     };
+
     this.colliService.update(this.colli).subscribe(colli => this.back());
   }
 

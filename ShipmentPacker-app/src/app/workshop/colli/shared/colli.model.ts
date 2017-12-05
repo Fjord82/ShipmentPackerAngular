@@ -4,8 +4,8 @@ export class ColliList {
   id?: number;
   projectName?: string;
   worker?: string;
-  totalWeight?: string;
-  netWeight?: string;
+  totalWeight?: number;
+  netWeight?: number;
   dimensions?: string;
   freightType?: string;
   isActive?: boolean;
