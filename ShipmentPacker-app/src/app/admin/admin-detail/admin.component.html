@@ -4,6 +4,11 @@
     <div class="col-12">
       <h2 class="my-local-center">Admin</h2>
       <button style="display: inline-block;" type="button" class="btn btn-outline-success float-right" (click)="logout()">Log Out</button>
+    </div>
+  </div>
+  <hr>
+  <div class="row">
+    <div class="col-md-12">
       <button style="margin-right:5px; display: inline-block;" type="button"
               class="btn btn-outline-primary float-right" (click)="manageUsers()">
         Manage Users</button>
@@ -12,7 +17,7 @@
         Manage Items</button>
     </div>
   </div>
-  <hr>
+  <br>
   <div class="col-10 offset-1">
     <ngb-accordion #acc="ngbAccordion">
       <ngb-panel title="Projects">
