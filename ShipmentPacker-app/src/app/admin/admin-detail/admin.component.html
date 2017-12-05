@@ -1,0 +1,94 @@
+<div class="container">
+  <br>
+  <div class="row">
+    <div class="col-12">
+      <h2 class="my-local-center">Admin</h2>
+      <button style="display: inline-block;" type="button" class="btn btn-outline-success float-right" (click)="logout()">Log Out</button>
+      <button style="margin-right:5px; display: inline-block;" type="button"
+              class="btn btn-outline-primary float-right" (click)="manageUsers()">
+        Manage Users</button>
+      <button style="margin-right:5px; display: inline-block;" type="button"
+              class="btn btn-outline-primary float-right" (click)="manageItems()">
+        Manage Items</button>
+    </div>
+  </div>
+  <hr>
+  <div class="col-10 offset-1">
+    <ngb-accordion #acc="ngbAccordion">
+      <ngb-panel title="Projects">
+        <ng-template ngbPanelContent>
+          <div class="row">
+            <div class="input-group">
+              <input type="text" class="form-control" placeholder="Search projects">
+              <span class="input-group-btn">
+                <button class="btn btn-success" type="button"><i class="fa fa-search" aria-hidden="true"></i></button>
+              </span>
+            </div>
+          </div>
+          <hr>
+          <div *ngFor="let project of projects" class="list-group">
+            <a (click)="clickProject(project)" class="list-group-item list-group-item-action">
+              <div class="row">
+                <h4 class="col-md-5">{{project?.projectName}}</h4>
+                <h4 class="col-md-5">{{project?.creatorName}}</h4>
+                <button class="btn btn-outline-warning this-button" (click)="edit(project)">
+                  <i class="fa fa-pencil" aria-hidden="true"></i>
+                </button>
+              </div>
+            </a>
+            <br>
+          </div>
+        </ng-template>
+      </ngb-panel>
+      <ngb-panel title="PackingLists">
+        <ng-template ngbPanelContent>
+          <div class="row">
+            <div class="input-group">
+              <input type="text" class="form-control" placeholder="Search packings">
+              <span class="input-group-btn">
+                <button class="btn btn-success" type="button"><i class="fa fa-search" aria-hidden="true"></i></button>
+              </span>
+            </div>
+          </div>
+          <hr>
+          <div *ngFor="let packing of packings" class="list-group">
+            <a (click)="clickPacking(packing)" class="list-group-item list-group-item-action">
+              <div class="row">
+                <h4 class="col-md-11">{{packing?.packingName}}</h4>
+                <button class="btn-outline-warning" (click)="edit(packing)">
+                  <i class="fa fa-pencil" aria-hidden="true"></i>
+                </button>
+              </div>
+            </a>
+            <br>
+          </div>
+        </ng-template>
+      </ngb-panel>
+      <ngb-panel title="ColliLists">
+        <ng-template ngbPanelContent>
+          <div class="row">
+            <div class="input-group">
+              <input type="text" class="form-control" placeholder="Search collis">
+              <span class="input-group-btn">
+                <button class="btn btn-success" type="button"><i class="fa fa-search" aria-hidden="true"></i></button>
+              </span>
+            </div>
+          </div>
+          <hr>
+          <div *ngFor="let colli of collis" class="list-group">
+            <a (click)="clickColli(colli)" class="list-group-item list-group-item-action">
+              <div class="row">
+                <h4 class="col-md-5">ID: {{colli?.id}}</h4>
+                <button class="btn btn-outline-warning this-button" (click)="edit(colli)">
+                  <i class="fa fa-pencil" aria-hidden="true"></i>
+                </button>
+              </div>
+            </a>
+            <br>
+          </div>
+        </ng-template>
+      </ngb-panel>
+    </ngb-accordion>
+  </div>
+  <br>
+</div>
