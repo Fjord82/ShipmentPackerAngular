@@ -28,6 +28,7 @@ export class AddPackingListComponent implements OnInit {
       packingName: ['', Validators.required],
       deliveryAddress: ['', Validators.required],
       deliveryDate: ['', Validators.required],
+      freightType: ['', Validators.required],
     });
   }
 
@@ -50,9 +51,9 @@ export class AddPackingListComponent implements OnInit {
     const packing: Packing = <Packing> {
       packingName: values.packingName,
       deliveryAddress: values.deliveryAddress,
-      deliveryDate: values.deliveryDate
+      deliveryDate: values.deliveryDate,
+      freightType: values.freightType
     };
-    packing.freightType = 'Hej';
     packing.itemType = 'Hej';
     packing.creatorName = 'Hej';
     packing.projectIds = [];
