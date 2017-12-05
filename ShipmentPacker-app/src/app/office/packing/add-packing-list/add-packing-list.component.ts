@@ -15,7 +15,9 @@ import {ProjectService} from "../../project/shared/project.service";
 export class AddPackingListComponent implements OnInit {
 
   project: Project;
+  model;
 
+  packing: Packing;
   packingGroup: FormGroup;
   constructor(private router: Router,
               private route: ActivatedRoute,
@@ -30,13 +32,15 @@ export class AddPackingListComponent implements OnInit {
     });
   }
 
-  ngOnInit(){
+  ngOnInit() {
     this.route.paramMap.switchMap(params => this.projectService.getById(+params.get('id')))
       .subscribe(project => this.project = project);
+
+    let date = new Date(this.packing.deliveryDate);
+    this.model = {year: date.getFullYear(), month: date.getMonth() +1,
+      day: date.getDate()}
   }
 
-  model: NgbDateStruct;
-  date: { year: number, month: number };
 
   back() {
     this.router.navigateByUrl('/project-detail/'+this.project.id);

@@ -31,7 +31,13 @@ export class EditPackingComponent implements OnInit {
 
   ngOnInit() {
     this.route.paramMap.switchMap(params => this.packingService.getById(+params.get('id')))
-      .subscribe(packing => this.packing = packing);
+      .subscribe(packing => {this.packing = packing
+
+      let date = new Date(this.packing.deliveryDate);
+      this.model = {year: date.getFullYear(), month: date.getMonth() +1,
+      /* Month is +1 because TypeScript months ranges from 0-11 and SQL ranges from 1-12 */
+      day: date.getDate()}
+      });
   }
 
   back() {
