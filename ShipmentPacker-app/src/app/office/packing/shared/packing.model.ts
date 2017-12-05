@@ -6,4 +6,5 @@ export class Packing {
   deliveryDate?: string;
   itemType?: string;
   freightType?: string;
+  projectIds?: number[];
 }

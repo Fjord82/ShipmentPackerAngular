@@ -40,7 +40,7 @@ export class ProjectDetailComponent implements OnInit {
   }
 
   addPackingClick() {
-    this.router.navigateByUrl('/addPackingList');
+    this.router.navigateByUrl('/addPackingList/'+this.project.id);
   }
 
   editPacking(packing: Packing){

@@ -36,7 +36,11 @@ export class EditProjectComponent implements OnInit {
   }
 
   inactive() {
-    this.router.navigateByUrl('/office');
+
+
+    this.project.isActive = false;
+
+    this.projectService.update(this.project).subscribe(proj => this.back());
   }
 
   save() {

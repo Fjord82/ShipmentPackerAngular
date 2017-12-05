@@ -29,7 +29,7 @@ const appRoutes: Routes = [
   { path: 'add-project', component: AddProjectComponent },
   { path: 'packingName', component: PackingDetailComponent },
   { path: 'packingDetailWorkshop/:id', component: PackingDetailWorkshopComponent },
-  { path: 'addPackingList', component: AddPackingListComponent },
+  { path: 'addPackingList/:id', component: AddPackingListComponent },
   { path: 'edit-project/:id', component: EditProjectComponent },
   { path: 'addColli', component: AddColliComponent },
   { path: 'project-detail/:id', component: ProjectDetailComponent },
