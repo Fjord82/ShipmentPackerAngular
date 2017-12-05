@@ -3,7 +3,7 @@ import {Packing} from '../../../office/packing/shared/packing.model';
 export class ColliList {
   id?: number;
   projectName?: string;
-  workshopName?: string;
+  worker?: string;
   totalWeight?: string;
   netWeight?: string;
   dimensions?: string;
