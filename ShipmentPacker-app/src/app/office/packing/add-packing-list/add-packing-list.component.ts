@@ -36,7 +36,7 @@ export class AddPackingListComponent implements OnInit {
 
   save() {
     const values = this.packingGroup.value;
-    const packing: Packing = {
+    const packing: Packing = <Packing> {
       packingName: values.packingName,
       deliveryAddress: values.deliveryAddress,
       deliveryDate: values.deliveryDate,

@@ -4,23 +4,24 @@
     <div class="col-12">
       <h2 class="my-local-center">ColliList</h2>
       <button style="display: inline-block;" type="button" class="btn btn-outline-info float-left" (click)="back()">Back</button>
+      <button style="display: inline-block;" type="button" class="btn btn-outline-success float-right" (click)="save()">Save</button>
     </div>
   </div>
   <hr>
   <div class="col-12">
     <form (ngSubmit)="save()" novalidate>
-      <dl class="form-row">
+      <dl class="form-row" [formGroup]="colliGroup">
         <dt class="col-md-2">
           Project Name:
         </dt>
         <dd class="col-md-4">
-          <input type="text" class="form-control" placeholder="Project Name" disabled>
+          <input class="form-control" placeholder="{{colli?.projectName}}" disabled>
         </dd>
         <dt class="col-md-2">
           Total weight:
         </dt>
         <dd class="col-md-4">
-          <input type="text" class="form-control" placeholder="Total Kg">
+          <input class="form-control" formControlName="totalWeight" placeholder="Total Kg">
         </dd>
         <dt class="col-md-2">
           Colli Nr.:
@@ -32,7 +33,7 @@
           Dimensions:
         </dt>
         <dd class="col-md-4">
-          <input type="text" class="form-control" placeholder="Length x Weidth x hight">
+          <input type="text" class="form-control" formControlName="dimensions" placeholder="Length x Weidth x hight">
         </dd>
         <dt class="col-md-2">
           Workshop Worker:
@@ -44,7 +45,7 @@
           Freight Type:
         </dt>
         <dd class="col-md-4">
-          <input type="text" class="form-control" placeholder="Freight Type">
+          <input type="text" class="form-control" formControlName="freightType" placeholder="Freight Type">
         </dd>
       </dl>
     </form>
