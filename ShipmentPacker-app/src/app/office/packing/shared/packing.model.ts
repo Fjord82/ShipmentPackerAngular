@@ -1,3 +1,5 @@
+import {Project} from '../../project/shared/project.model';
+
 export class Packing {
   id?: number;
   packingName?: string;
@@ -7,4 +9,5 @@ export class Packing {
   itemType?: string;
   freightType?: string;
   projectIds?: number[];
+  projects?: Project[];
 }

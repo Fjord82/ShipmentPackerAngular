@@ -1,10 +1,12 @@
 import { Component, OnInit } from '@angular/core';
-import {Router} from '@angular/router';
+import {ActivatedRoute, Router} from '@angular/router';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {ColliService} from '../shared/colli.service';
 import {Colli} from '../shared/colli.model';
 import {ProjectService} from '../../../office/project/shared/project.service';
 import {Project} from '../../../office/project/shared/project.model';
+import {Packing} from '../../../office/packing/shared/packing.model';
+import {PackingService} from '../../../office/packing/shared/packing.service';
 
 @Component({
   selector: 'app-add-colli',
@@ -14,11 +16,12 @@ import {Project} from '../../../office/project/shared/project.model';
 export class AddColliComponent implements OnInit {
 
   colliGroup: FormGroup;
-  project: Project;
+  packing: Packing;
   colli: Colli;
   constructor(private router: Router,
               private fb: FormBuilder,
-              private projectService: ProjectService,
+              private packingService: PackingService,
+              private route: ActivatedRoute,
               private colliService: ColliService) {
     this.colliGroup = this.fb.group({
       totalWeight: ['', Validators.required],
@@ -28,11 +31,13 @@ export class AddColliComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.route.paramMap.switchMap(params => this.packingService.getById(+params.get('id')))
+      .subscribe(packing => this.packing = packing);
 
   }
 
   back() {
-    this.router.navigateByUrl('packingDetailWorkshop')
+    this.router.navigateByUrl('packingDetailWorkshop/'+this.packing.id)
   }
 
   add() {
@@ -49,6 +54,9 @@ export class AddColliComponent implements OnInit {
       dimensions: values.dimensions,
       freightType: values.freightType,
     };
+    this.colli.itemType = 'itemType';
+    this.colli.packingListIds = [];
+    this.colli.packingListIds.push(this.packing.id);
     this.colliService.create(this.colli).subscribe(coll => this.back());
   }
 }
