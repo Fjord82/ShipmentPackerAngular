@@ -26,7 +26,6 @@ export class AdminComponent implements OnInit {
   projects: Project[];
   items: Item[];
   constructor(private router: Router,
-              private route: ActivatedRoute,
               private projectService: ProjectService,
               private packingService: PackingService,
               private colliService: ColliService,

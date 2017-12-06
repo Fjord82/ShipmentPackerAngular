@@ -3,9 +3,9 @@ import {ActivatedRoute, Router} from '@angular/router';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {PackingService} from '../shared/packing.service';
 import {Packing} from '../shared/packing.model';
-import {NgbDateStruct} from '@ng-bootstrap/ng-bootstrap';
 import {Project} from "../../project/shared/project.model";
 import {ProjectService} from "../../project/shared/project.service";
+import {NgbDateParserFormatter, NgbDateStruct} from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-add-packing-list',
@@ -15,15 +15,14 @@ import {ProjectService} from "../../project/shared/project.service";
 export class AddPackingListComponent implements OnInit {
 
   project: Project;
-  model;
-
   packing: Packing;
   packingGroup: FormGroup;
   constructor(private router: Router,
               private route: ActivatedRoute,
               private fb: FormBuilder,
               private packingService: PackingService,
-              private projectService: ProjectService) {
+              private projectService: ProjectService,
+              private ngbDateParserFormatter: NgbDateParserFormatter) {
     this.packingGroup = this.fb.group({
       packingName: ['', Validators.required],
       deliveryAddress: ['', Validators.required],
@@ -35,12 +34,7 @@ export class AddPackingListComponent implements OnInit {
   ngOnInit() {
     this.route.paramMap.switchMap(params => this.projectService.getById(+params.get('id')))
       .subscribe(project => this.project = project);
-
-    let date = new Date(this.packing.deliveryDate);
-    this.model = {year: date.getFullYear(), month: date.getMonth() +1,
-      day: date.getDate()}
   }
-
 
   back() {
     this.router.navigateByUrl('/project-detail/'+this.project.id);
@@ -51,7 +45,7 @@ export class AddPackingListComponent implements OnInit {
     const packing: Packing = <Packing> {
       packingName: values.packingName,
       deliveryAddress: values.deliveryAddress,
-      deliveryDate: values.deliveryDate,
+      deliveryDate: this.ngbDateParserFormatter.format(values.deliveryDate),
       freightType: values.freightType
     };
     packing.itemType = 'Hej';
