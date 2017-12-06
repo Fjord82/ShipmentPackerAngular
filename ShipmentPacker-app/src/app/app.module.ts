@@ -12,7 +12,7 @@ import { AddProjectComponent } from './office/project/add-project/add-project.co
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { ProjectDetailComponent } from './office/project/project-detail/project-detail.component';
 import { PackingDetailComponent } from './office/packing/packing-detail/packing-detail.component';
-import { PackingDetailWorkshopComponent } from './workshop/packing/packing-detail-workshop/packing-detail-workshop.component';
+import { PackingDetailWorkshopComponent } from './workshop/packingList/packing-detail-workshop/packing-detail-workshop.component';
 import { AddPackingListComponent } from './office/packing/add-packing-list/add-packing-list.component';
 import { EditProjectComponent } from './office/project/edit-project/edit-project.component';
 import { AddColliComponent } from './workshop/colli/add-colli/add-colli.component';
@@ -29,6 +29,8 @@ import { ManageItemsComponent } from './admin/manage-items/manage-items.componen
 import { ManageUsersComponent } from './admin/manage-users/manage-users.component';
 import { ColliDetailComponent } from './workshop/colli/colli-detail/colli-detail.component';
 import { EditColliComponent } from './workshop/colli/edit-colli/edit-colli.component';
+import { AddItemComponent } from './admin/item/add-item/add-item.component';
+import {ItemService} from './admin/item/shared/item.service';
 
 const appRoutes: Routes = [
   { path: 'login', component: LoginComponent },
@@ -51,6 +53,7 @@ const appRoutes: Routes = [
   { path: 'manage-users', component: ManageUsersComponent },
   { path: 'colli-detail/:id', component: ColliDetailComponent },
   { path: 'edit-colli/:id', component: EditColliComponent },
+  { path: 'add-item', component: AddItemComponent },
   {
     path: '',
     redirectTo: '/login',
@@ -79,7 +82,8 @@ const appRoutes: Routes = [
     ManageItemsComponent,
     ManageUsersComponent,
     ColliDetailComponent,
-    EditColliComponent
+    EditColliComponent,
+    AddItemComponent
   ],
   imports: [
     BrowserModule,
@@ -89,7 +93,7 @@ const appRoutes: Routes = [
     FormsModule,
     HttpClientModule
   ],
-  providers: [ProjectService, PackingService, ColliService],
+  providers: [ProjectService, PackingService, ColliService, ItemService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
