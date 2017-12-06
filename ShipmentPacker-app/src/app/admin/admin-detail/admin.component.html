@@ -41,7 +41,7 @@
               <div class="row">
                 <h4 class="col-md-5">{{project?.projectName}}</h4>
                 <h4 class="col-md-5">{{project?.creatorName}}</h4>
-                <button class="btn btn-outline-warning this-button" (click)="edit(project)">
+                <button class="btn btn-outline-warning this-button" (click)="editProject(project)">
                   <i class="fa fa-pencil" aria-hidden="true"></i>
                 </button>
               </div>
@@ -66,7 +66,7 @@
             <a (click)="clickPacking(packing)" class="list-group-item list-group-item-action">
               <div class="row">
                 <h4 class="col-md-11">{{packing?.packingName}}</h4>
-                <button class="btn-outline-warning" (click)="edit(packing)">
+                <button class="btn-outline-warning" (click)="editPacking(packing)">
                   <i class="fa fa-pencil" aria-hidden="true"></i>
                 </button>
               </div>
@@ -91,7 +91,32 @@
             <a (click)="clickColli(colli)" class="list-group-item list-group-item-action">
               <div class="row">
                 <h4 class="col-md-5">ID: {{colli?.id}}</h4>
-                <button class="btn btn-outline-warning this-button" (click)="edit(colli)">
+                <button class="btn btn-outline-warning this-button" (click)="editColli(colli)">
+                  <i class="fa fa-pencil" aria-hidden="true"></i>
+                </button>
+              </div>
+            </a>
+            <br>
+          </div>
+        </ng-template>
+      </ngb-tab>
+      <ngb-tab title="Items">
+        <ng-template ngbTabContent>
+          <br>
+          <div class="row">
+            <div class="input-group">
+              <input type="text" class="form-control" placeholder="Search items">
+              <span class="input-group-btn">
+                <button class="btn btn-success" type="button"><i class="fa fa-search" aria-hidden="true"></i></button>
+              </span>
+            </div>
+          </div>
+          <br>
+          <div *ngFor="let item of items" class="list-group">
+            <a (click)="clickItem(colli)" class="list-group-item list-group-item-action">
+              <div class="row">
+                <h4 class="col-md-5">Item: #{{item?.id}} {{item?.itemName}}</h4>
+                <button class="btn btn-outline-warning this-button" (click)="editItem(item)">
                   <i class="fa fa-pencil" aria-hidden="true"></i>
                 </button>
               </div>
