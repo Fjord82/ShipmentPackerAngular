@@ -32,7 +32,7 @@ export class AddProjectComponent implements OnInit {
 
     save() {
     const values = this.projectGroup.value;
-    const project: Project = {
+    const project: Project = <Project>{
       projectName: values.projectName,
       customerName: values.customerName,
       creatorName: values.creatorName,

@@ -20,6 +20,15 @@ import {ProjectService} from './office/project/shared/project.service';
 import {HttpClientModule} from '@angular/common/http';
 import {PackingService} from './office/packing/shared/packing.service';
 import { EditPackingComponent } from './office/packing/edit-packing/edit-packing.component';
+import {ColliService} from './workshop/colli/shared/colli.service';
+import { AdminComponent } from './admin/admin-detail/admin.component';
+import { AdminProjectDetailComponent } from './admin/admin-project-detail/admin-project-detail.component';
+import { AdminPackingDetailComponent } from './admin/admin-packing-detail/admin-packing-detail.component';
+import { AdminColliDetailComponent } from './admin/admin-colli-detail/admin-colli-detail.component';
+import { ManageItemsComponent } from './admin/manage-items/manage-items.component';
+import { ManageUsersComponent } from './admin/manage-users/manage-users.component';
+import { ColliDetailComponent } from './workshop/colli/colli-detail/colli-detail.component';
+import { EditColliComponent } from './workshop/colli/edit-colli/edit-colli.component';
 
 const appRoutes: Routes = [
   { path: 'login', component: LoginComponent },
@@ -27,13 +36,21 @@ const appRoutes: Routes = [
   { path: 'workshop', component: WorkshopPackingListComponent },
   { path: 'add-project', component: AddProjectComponent },
   { path: 'packingName', component: PackingDetailComponent },
-  { path: 'packingDetailWorkshop', component: PackingDetailWorkshopComponent },
-  { path: 'addPackingList', component: AddPackingListComponent },
+  { path: 'packingDetailWorkshop/:id', component: PackingDetailWorkshopComponent },
+  { path: 'addPackingList/:id', component: AddPackingListComponent },
   { path: 'edit-project/:id', component: EditProjectComponent },
-  { path: 'addColli', component: AddColliComponent },
+  { path: 'addColli/:id', component: AddColliComponent },
   { path: 'project-detail/:id', component: ProjectDetailComponent },
   { path: 'packing-detail/:id', component: PackingDetailComponent },
   { path: 'edit-packing/:id', component: EditPackingComponent },
+  { path: 'admin', component: AdminComponent },
+  { path: 'admin-project-detail/:id', component: AdminProjectDetailComponent },
+  { path: 'admin-packing-detail/:id', component: AdminPackingDetailComponent },
+  { path: 'admin-colli-detail/:id', component: AdminColliDetailComponent },
+  { path: 'manage-items', component: ManageItemsComponent },
+  { path: 'manage-users', component: ManageUsersComponent },
+  { path: 'colli-detail/:id', component: ColliDetailComponent },
+  { path: 'edit-colli/:id', component: EditColliComponent },
   {
     path: '',
     redirectTo: '/login',
@@ -54,7 +71,15 @@ const appRoutes: Routes = [
     AddPackingListComponent,
     EditProjectComponent,
     AddColliComponent,
-    EditPackingComponent
+    EditPackingComponent,
+    AdminComponent,
+    AdminProjectDetailComponent,
+    AdminPackingDetailComponent,
+    AdminColliDetailComponent,
+    ManageItemsComponent,
+    ManageUsersComponent,
+    ColliDetailComponent,
+    EditColliComponent
   ],
   imports: [
     BrowserModule,
@@ -64,7 +89,7 @@ const appRoutes: Routes = [
     FormsModule,
     HttpClientModule
   ],
-  providers: [ProjectService, PackingService],
+  providers: [ProjectService, PackingService, ColliService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
