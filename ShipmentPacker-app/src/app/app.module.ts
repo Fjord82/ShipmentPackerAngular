@@ -31,6 +31,7 @@ import { ColliDetailComponent } from './workshop/colli/colli-detail/colli-detail
 import { EditColliComponent } from './workshop/colli/edit-colli/edit-colli.component';
 import { AddItemComponent } from './admin/item/add-item/add-item.component';
 import {ItemService} from './admin/item/shared/item.service';
+import { EditItemComponent } from './admin/item/edit-item/edit-item.component';
 
 const appRoutes: Routes = [
   { path: 'login', component: LoginComponent },
@@ -54,6 +55,7 @@ const appRoutes: Routes = [
   { path: 'colli-detail/:id', component: ColliDetailComponent },
   { path: 'edit-colli/:id', component: EditColliComponent },
   { path: 'add-item', component: AddItemComponent },
+  { path: 'edit-item/:id', component: EditItemComponent },
   {
     path: '',
     redirectTo: '/login',
@@ -83,7 +85,8 @@ const appRoutes: Routes = [
     ManageUsersComponent,
     ColliDetailComponent,
     EditColliComponent,
-    AddItemComponent
+    AddItemComponent,
+    EditItemComponent
   ],
   imports: [
     BrowserModule,

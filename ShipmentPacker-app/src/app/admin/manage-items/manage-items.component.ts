@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import {Router} from '@angular/router';
+import {ActivatedRoute, Router} from '@angular/router';
+import {Item} from '../item/shared/item.model';
+import {ItemService} from '../item/shared/item.service';
 
 @Component({
   selector: 'app-manage-items',
@@ -8,13 +10,30 @@ import {Router} from '@angular/router';
 })
 export class ManageItemsComponent implements OnInit {
 
-  constructor(private router: Router) { }
+  items: Item[];
+  item: Item;
+  constructor(private router: Router,
+              private route: ActivatedRoute,
+              private itemService: ItemService) {
+
+  }
 
   ngOnInit() {
+    this.route.paramMap.switchMap(params => this.itemService.getById(+params.get('id')))
+      .subscribe(item => this.item = item);
+
+    this.itemService.getItems().subscribe(
+      items => {
+        this.items = items;
+      });
   }
 
   back() {
     this.router.navigateByUrl('/admin');
+  }
+
+  edit(item: Item){
+    this.router.navigateByUrl('/edit-item/'+item.id)
   }
 
 }
