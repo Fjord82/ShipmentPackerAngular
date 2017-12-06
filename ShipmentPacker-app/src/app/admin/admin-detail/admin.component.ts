@@ -23,21 +23,11 @@ export class AdminComponent implements OnInit {
   project: Project;
   projects: Project[];
   constructor(private router: Router,
-              private route: ActivatedRoute,
               private projectService: ProjectService,
               private packingService: PackingService,
               private colliService: ColliService) { }
 
   ngOnInit() {
-    this.route.paramMap.switchMap(params => this.projectService.getById(+params.get('id')))
-      .subscribe(project => this.project = project);
-
-    this.route.paramMap.switchMap(params => this.packingService.getById(+params.get('id')))
-      .subscribe(packing => this.packing = packing);
-
-    this.route.paramMap.switchMap(params => this.colliService.getById(+params.get('id')))
-      .subscribe(colli => this.colli = colli);
-
     this.projectService.getProjects().subscribe(
       projects => {
         this.projects = projects;
