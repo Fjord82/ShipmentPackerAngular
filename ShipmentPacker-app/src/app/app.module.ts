@@ -77,7 +77,7 @@ const appRoutes: Routes = [
     AdminPackingDetailComponent,
     AdminColliDetailComponent,
     ManageItemsComponent,
-    ManageUsersComponent
+    ManageUsersComponent,
     ColliDetailComponent,
     EditColliComponent
   ],
