@@ -18,11 +18,18 @@ export class AddColliComponent implements OnInit {
   colliGroup: FormGroup;
   packing: Packing;
   colli: ColliList;
+
+  netWeight: number;
+  worker: string;
+
   constructor(private router: Router,
               private fb: FormBuilder,
               private packingService: PackingService,
               private route: ActivatedRoute,
               private colliService: ColliService) {
+
+    this.netWeight = 500;
+    this.worker = 'Billy Placeholder';
     this.colliGroup = this.fb.group({
       totalWeight: ['', Validators.required],
       dimensions: ['', Validators.required],
@@ -57,7 +64,11 @@ export class AddColliComponent implements OnInit {
     this.colli.itemType = 'itemType';
     this.colli.packingListIds = [];
     this.colli.packingListIds.push(this.packing.id);
+    this.colli.projectName = this.packing.projects[0].projectName;
+    this.colli.worker = this.worker;
+    this.colli.netWeight = this.netWeight;
     this.colli.isActive = true;
     this.colliService.create(this.colli).subscribe(coll => this.back());
   }
+
 }
