@@ -31,11 +31,14 @@ export class EditItemComponent implements OnInit {
   }
 
   back() {
-    this.router.navigateByUrl('/manage-items');
+    this.router.navigateByUrl('/admin');
   }
 
   save() {
     const values = this.itemGroup.value;
+    if (values.itemName == "") values.itemName = this.item.itemName;
+    if (values.dimension == "") values.dimension = this.item.dimension;
+    if (values.weight == "") values.weight = this.item.weight;
     const item: Item = <Item>{
       id: this.item.id,
       itemName: values.itemName,
