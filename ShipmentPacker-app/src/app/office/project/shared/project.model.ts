@@ -1,4 +1,6 @@
-import {PackingList} from "../../../workshop/packingList/shared/packingList.model";
+
+
+import {Packing} from '../../packing/shared/packing.model';
 
 export class Project {
   id?: number;
@@ -6,5 +8,5 @@ export class Project {
   creatorName?: string;
   customerName?: string;
   isActive?: boolean;
-  packingLists?: PackingList[];
+  packingLists?: Packing[];
 }

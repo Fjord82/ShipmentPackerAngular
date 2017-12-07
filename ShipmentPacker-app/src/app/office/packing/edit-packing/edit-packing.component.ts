@@ -54,4 +54,10 @@ export class EditPackingComponent implements OnInit {
     this.packingService.update(this.packing).subscribe(pack => this.back());
   }
 
+  inactive() {
+    this.packing.isActive = false;
+
+    this.packingService.update(this.packing).subscribe(packing => this.back());
+  }
+
 }

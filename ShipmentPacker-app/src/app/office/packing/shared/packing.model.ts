@@ -13,4 +13,5 @@ export class Packing {
   projects?: Project[];
   colliListIds?: number[];
   colliLists?: ColliList[];
+  isActive?: boolean;
 }

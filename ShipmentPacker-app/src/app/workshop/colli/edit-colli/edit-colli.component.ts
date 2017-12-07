@@ -55,5 +55,13 @@ export class EditColliComponent implements OnInit {
 
     this.colliService.update(this.colli).subscribe(colli => this.back());
   }
+ 
+  inactive() {
+
+
+    this.colli.isActive = false;
+
+    this.colliService.update(this.colli).subscribe(colli => this.back());
+  }
 
 }
