@@ -43,7 +43,7 @@ export class EditProjectComponent implements OnInit {
     this.projectService.update(this.project).subscribe(proj => this.back());
   }
 
-  save() {
+  update() {
     const values = this.projectGroup.value;
     if (values.projectName == "") values.projectName = this.project.projectName;
     if (values.customerName == "") values.customerName = this.project.customerName;
