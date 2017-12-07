@@ -6,6 +6,8 @@ import {Project} from '../../office/project/shared/project.model';
 import {Packing} from '../../office/packing/shared/packing.model';
 import {ColliService} from '../../workshop/colli/shared/colli.service';
 import {ColliList} from '../../workshop/colli/shared/colli.model';
+import {ItemService} from '../item/shared/item.service';
+import {Item} from '../item/shared/item.model';
 
 @Component({
   selector: 'app-admin',
@@ -22,22 +24,14 @@ export class AdminComponent implements OnInit {
   packings: Packing[];
   project: Project;
   projects: Project[];
+  items: Item[];
   constructor(private router: Router,
-              private route: ActivatedRoute,
               private projectService: ProjectService,
               private packingService: PackingService,
-              private colliService: ColliService) { }
+              private colliService: ColliService,
+              private itemService: ItemService) { }
 
   ngOnInit() {
-    this.route.paramMap.switchMap(params => this.projectService.getById(+params.get('id')))
-      .subscribe(project => this.project = project);
-
-    this.route.paramMap.switchMap(params => this.packingService.getById(+params.get('id')))
-      .subscribe(packing => this.packing = packing);
-
-    this.route.paramMap.switchMap(params => this.colliService.getById(+params.get('id')))
-      .subscribe(colli => this.colli = colli);
-
     this.projectService.getProjects().subscribe(
       projects => {
         this.projects = projects;
@@ -52,6 +46,11 @@ export class AdminComponent implements OnInit {
       collis => {
         this.collis = collis;
       });
+
+    this.itemService.getItems().subscribe(
+      items => {
+        this.items = items;
+      });
   }
 
   logout() {
@@ -62,12 +61,27 @@ export class AdminComponent implements OnInit {
     this.router.navigateByUrl('/admin-project-detail/'+project.id);
   }
 
+  editProject(project: Project) {
+  }
+
   clickPacking(packing: Packing) {
     this.router.navigateByUrl('/admin-packing-detail/'+packing.id);
   }
 
+  editPacking(packing: Packing) {
+  }
+
   clickColli(colli: ColliList) {
     this.router.navigateByUrl('/admin-colli-detail/'+colli.id);
+  }
+
+  editColli(colli: ColliList) {
+  }
+
+  clickItem(item: Item) {
+  }
+
+  editItem(item: Item) {
   }
 
   manageUsers() {
