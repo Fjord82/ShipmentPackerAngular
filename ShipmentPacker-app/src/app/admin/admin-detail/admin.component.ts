@@ -25,6 +25,7 @@ export class AdminComponent implements OnInit {
   project: Project;
   projects: Project[];
   items: Item[];
+  item: Item;
   constructor(private router: Router,
               private projectService: ProjectService,
               private packingService: PackingService,
@@ -79,17 +80,24 @@ export class AdminComponent implements OnInit {
   }
 
   clickItem(item: Item) {
+
+  }
+
+  addItem() {
+    this.router.navigateByUrl('/add-item')
   }
 
   editItem(item: Item) {
+    this.router.navigateByUrl('/edit-item/'+item.id)
+  }
+
+  deleteItem(item: Item) {
+    this.itemService.delete(item.id).subscribe(item=> window.location.reload())
   }
 
   manageUsers() {
     this.router.navigateByUrl('/manage-users');
   }
 
-  manageItems() {
-    this.router.navigateByUrl('/manage-items');
-  }
 
 }

@@ -15,10 +15,6 @@
               class="btn btn-outline-primary float-right" (click)="manageUsers()">
         Manage Users
       </button>
-      <button style="margin-right:5px; display: inline-block;" type="button"
-              class="btn btn-outline-primary float-right" (click)="manageItems()">
-        Manage Items
-      </button>
     </div>
   </div>
   <br>
@@ -107,21 +103,24 @@
             <div class="input-group">
               <input type="text" class="form-control" placeholder="Search items">
               <span class="input-group-btn">
-                <button class="btn btn-success" type="button"><i class="fa fa-search" aria-hidden="true"></i></button>
+                <button style="margin-right: 10px" class="btn btn-success" type="button"><i class="fa fa-search" aria-hidden="true"></i></button>
+                <button type="button" class="btn btn-outline-success float-right" (click)="addItem()">Add Item</button>
               </span>
             </div>
           </div>
           <br>
           <div *ngFor="let item of items" class="list-group">
-            <a (click)="clickItem(colli)" class="list-group-item list-group-item-action">
+            <a class="list-group-item list-group-item-action">
               <div class="row">
-                <h4 class="col-md-5">Item: #{{item?.id}} {{item?.itemName}}</h4>
-                <button class="btn btn-outline-warning this-button" (click)="editItem(item)">
+                <h6 class="col-md-3">Item Name: {{item?.itemName}}</h6>
+                <h6 class="col-md-4">Item Dimension: {{item?.dimension}}</h6>
+                <h6 class="col-md-3">Item Weight: {{item?.weight}}</h6>
+                <button style="margin-right:10px;" class="btn btn-outline-warning" (click)="editItem(item)">
                   <i class="fa fa-pencil" aria-hidden="true"></i>
                 </button>
+                <button class="btn btn-outline-danger" (click)="deleteItem(item)">Delete</button>
               </div>
             </a>
-            <br>
           </div>
         </ng-template>
       </ngb-tab>
