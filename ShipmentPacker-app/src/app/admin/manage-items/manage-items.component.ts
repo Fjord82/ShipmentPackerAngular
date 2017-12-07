@@ -19,8 +19,6 @@ export class ManageItemsComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.route.paramMap.switchMap(params => this.itemService.getById(+params.get('id')))
-      .subscribe(item => this.item = item);
 
     this.itemService.getItems().subscribe(
       items => {

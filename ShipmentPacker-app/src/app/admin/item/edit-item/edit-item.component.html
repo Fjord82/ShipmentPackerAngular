@@ -30,10 +30,10 @@
           <input class="form-control" formControlName="weight" placeholder="Weight" value="{{item?.weight}}">
         </dd>
         <dt class="col-md-2">
-          DangoursGoods:
+          Dangerous Goods:
         </dt>
         <label class="btn btn-outline-success">
-          <input type="checkbox" autocomplete="off" formControlName="dangerousGoods">
+          <input type="checkbox" formControlName="dangerousGoods" [checked]="item.dangerousGoods" (change)="item.dangerousGoods =!item.dangerousGoods">
         </label>
       </dl>
     </form>

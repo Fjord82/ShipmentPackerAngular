@@ -36,14 +36,14 @@ export class EditItemComponent implements OnInit {
 
   save() {
     const values = this.itemGroup.value;
-    const item: Item = <Item> {
+    const item: Item = <Item>{
       id: this.item.id,
       itemName: values.itemName,
       dimension: values.dimension,
       weight: values.weight,
       dangerousGoods: values.dangerousGoods
     };
-    this.itemService.update(this.item).subscribe(item => this.back());
+    this.itemService.update(item).subscribe(item => this.back());
   }
 
 }
