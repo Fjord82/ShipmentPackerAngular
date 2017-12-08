@@ -58,7 +58,25 @@
             </div>
           </div>
           <br>
-          <div *ngFor="let packing of packings" class="list-group">
+          <h4>
+            Active Lists:
+          </h4>
+          <div *ngFor="let packing of active" class="list-group">
+            <a (click)="clickPacking(packing)" class="list-group-item list-group-item-action">
+              <div class="row">
+                <h4 class="col-md-11">{{packing?.packingName}}</h4>
+                <button class="btn-outline-warning" (click)="editPacking(packing)">
+                  <i class="fa fa-pencil" aria-hidden="true"></i>
+                </button>
+              </div>
+            </a>
+            <br>
+          </div>
+          <br>
+          <h4>
+            Inactive Lists:
+          </h4>
+          <div *ngFor="let packing of inactive" class="list-group">
             <a (click)="clickPacking(packing)" class="list-group-item list-group-item-action">
               <div class="row">
                 <h4 class="col-md-11">{{packing?.packingName}}</h4>

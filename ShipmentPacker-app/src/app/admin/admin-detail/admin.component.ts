@@ -8,6 +8,7 @@ import {ColliService} from '../../workshop/colli/shared/colli.service';
 import {ColliList} from '../../workshop/colli/shared/colli.model';
 import {ItemService} from '../item/shared/item.service';
 import {Item} from '../item/shared/item.model';
+import {UtilityService} from '../../shared/utility.service';
 
 @Component({
   selector: 'app-admin',
@@ -17,7 +18,8 @@ import {Item} from '../item/shared/item.model';
 export class AdminComponent implements OnInit {
 
 
-
+  inactive: Packing[];
+  active: Packing[];
   colli: ColliList;
   collis: ColliList[];
   packing: Packing;
@@ -30,7 +32,8 @@ export class AdminComponent implements OnInit {
               private projectService: ProjectService,
               private packingService: PackingService,
               private colliService: ColliService,
-              private itemService: ItemService) { }
+              private itemService: ItemService,
+              private utilityService: UtilityService) { }
 
   ngOnInit() {
     this.projectService.getProjects().subscribe(
@@ -40,7 +43,7 @@ export class AdminComponent implements OnInit {
 
     this.packingService.getPackings().subscribe(
       packings => {
-        this.packings = packings;
+        this.sortPackinglists(packings);
       });
 
     this.colliService.getCollis().subscribe(
@@ -52,6 +55,13 @@ export class AdminComponent implements OnInit {
       items => {
         this.items = items;
       });
+  }
+
+  sortPackinglists(packing: Packing[]) {
+    this.active = [];
+    this.active = this.utilityService.activeList(packing);
+    this.inactive = [];
+    this.inactive = this.utilityService.inactiveList(packing);
   }
 
   logout() {
