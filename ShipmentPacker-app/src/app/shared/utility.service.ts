@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import {Packing} from '../office/packing/shared/packing.model';
+import {IEntity} from "./IEntity";
 
 @Injectable()
 export class UtilityService {
@@ -8,21 +9,21 @@ export class UtilityService {
   constructor() { }
 
 
-  activeList(list: Packing[]): Packing[] {
-    const active: Packing[] = [];
-    for (let packing of list) {
-      if (packing.isActive) {
-        active.push(packing);
+  activeList(list: IEntity[]): IEntity[] {
+    const active: IEntity[] = [];
+    for (let ent of list) {
+      if (ent.isActive) {
+        active.push(ent);
       }
     }
     return active;
   }
 
-  inactiveList(list: Packing[]): Packing[] {
-    const inactive: Packing[] = [];
-    for (let packing of list) {
-      if (!packing.isActive) {
-        inactive.push(packing);
+  inactiveList(list: IEntity[]): IEntity[] {
+    const inactive: IEntity[] = [];
+    for (let ent of list) {
+      if (!ent.isActive) {
+        inactive.push(ent);
       }
     }
     return inactive;
