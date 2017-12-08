@@ -22,21 +22,19 @@
     <div *ngFor="let packing of project?.packingLists" class="list-group">
       <a (click)="packingClick(packing)" class="list-group-item list-group-item-action">
         <div class="row">
-          <h4 class="col-md-4">{{packing.packingName}}</h4>
+          <h4 class="col-md-6">{{packing.packingName}}</h4>
           <div class="col-4">
             <div class="progress">
               <div class="progress-bar bg-success" style="width:100%">100%</div>
             </div>
           </div>
-          <button class="btn-outline-warning" (click)="editPacking(packing)">
+          <button class="btn-outline-warning offset-1" (click)="editPacking(packing)">
             <i class="fa fa-pencil" aria-hidden="true"></i>
           </button>
          </div>
       </a>
-      <br>
+      <hr>
     </div>
     <br>
-
-
-</div>
+  </div>
 </div>

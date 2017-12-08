@@ -25,12 +25,12 @@ import { AdminComponent } from './admin/admin-detail/admin.component';
 import { AdminProjectDetailComponent } from './admin/admin-project-detail/admin-project-detail.component';
 import { AdminPackingDetailComponent } from './admin/admin-packing-detail/admin-packing-detail.component';
 import { AdminColliDetailComponent } from './admin/admin-colli-detail/admin-colli-detail.component';
-import { ManageItemsComponent } from './admin/manage-items/manage-items.component';
 import { ManageUsersComponent } from './admin/manage-users/manage-users.component';
 import { ColliDetailComponent } from './workshop/colli/colli-detail/colli-detail.component';
 import { EditColliComponent } from './workshop/colli/edit-colli/edit-colli.component';
 import { AddItemComponent } from './admin/item/add-item/add-item.component';
-import {ItemService} from './admin/item/shared/item.service';
+import { ItemService} from './admin/item/shared/item.service';
+import { EditItemComponent } from './admin/item/edit-item/edit-item.component';
 
 const appRoutes: Routes = [
   { path: 'login', component: LoginComponent },
@@ -49,11 +49,11 @@ const appRoutes: Routes = [
   { path: 'admin-project-detail/:id', component: AdminProjectDetailComponent },
   { path: 'admin-packing-detail/:id', component: AdminPackingDetailComponent },
   { path: 'admin-colli-detail/:id', component: AdminColliDetailComponent },
-  { path: 'manage-items', component: ManageItemsComponent },
   { path: 'manage-users', component: ManageUsersComponent },
   { path: 'colli-detail/:id', component: ColliDetailComponent },
   { path: 'edit-colli/:id', component: EditColliComponent },
   { path: 'add-item', component: AddItemComponent },
+  { path: 'edit-item/:id', component: EditItemComponent },
   {
     path: '',
     redirectTo: '/login',
@@ -79,11 +79,11 @@ const appRoutes: Routes = [
     AdminProjectDetailComponent,
     AdminPackingDetailComponent,
     AdminColliDetailComponent,
-    ManageItemsComponent,
     ManageUsersComponent,
     ColliDetailComponent,
     EditColliComponent,
-    AddItemComponent
+    AddItemComponent,
+    EditItemComponent
   ],
   imports: [
     BrowserModule,
