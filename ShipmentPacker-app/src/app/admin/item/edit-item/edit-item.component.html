@@ -33,7 +33,7 @@
           Dangerous Goods:
         </dt>
         <label class="btn btn-outline-success">
-          <input type="checkbox" formControlName="dangerousGoods" [checked]="item.dangerousGoods" (change)="item.dangerousGoods =!item.dangerousGoods">
+          <input type="checkbox" formControlName="dangerousGoods" [checked]="item?.dangerousGoods" (change)="item.dangerousGoods =!item.dangerousGoods">
         </label>
       </dl>
     </form>
