@@ -17,14 +17,12 @@ export class WorkshopPackingListComponent implements OnInit {
               private route: ActivatedRoute) { }
 
   ngOnInit() {
-    this.route.paramMap.switchMap(params => this.packingService.getById(+params.get('id')))
-      .subscribe(packing => this.packing = packing);
-
     this.packingService.getPackings().subscribe(
       packings => {
         this.packings = packings;
       });
   }
+
 
   logoutbtn() {
     this.router.navigateByUrl('/login');
