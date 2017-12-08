@@ -3,6 +3,8 @@
   <div class="row">
     <div class="col-md-12">
       <button class="btn btn-outline-info" (click)="back()">Back</button>
+        <button *ngIf="packing?.isActive;" style="display: inline-block;" type="button" class="btn btn-outline-danger float-right" (click)="setInactive()">Inactive</button>
+        <button *ngIf="!packing?.isActive;" style="display: inline-block;" type="button" class="btn btn-outline-success float-right" (click)="setActive()">Active</button>
       <h2 class="my-local-center">Edit Packing List</h2>
     </div>
   </div>
@@ -36,7 +38,7 @@
               </dt>
               <dd class="">
                 <div class="input-group">
-                  <input class="form-control" formControlName="deliveryDate" placeholder="{{packing?.deliveryDate}}" value="{{packing?.deliveryDate}}" [(ngModel)]="model" name="dp" ngbDatepicker #d="ngbDatepicker" type="text">
+                  <input class="form-control" formControlName="deliveryDate" placeholder="{{packing?.deliveryDate}}" ngbDatepicker #d="ngbDatepicker">
                   <button class="input-group-addon" (click)="d.toggle()" type="button">
                     <i class="fa fa-calendar" aria-hidden="true"></i>
                   </button>

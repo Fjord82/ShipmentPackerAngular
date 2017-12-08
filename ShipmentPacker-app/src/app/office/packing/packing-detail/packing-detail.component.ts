@@ -22,7 +22,7 @@ export class PackingDetailComponent implements OnInit {
   }
 
   back() {
-    this.router.navigateByUrl('/office');
+    this.router.navigateByUrl('/project-detail/'+this.packing.projectIds[0]);
   }
 
   clickProject() {

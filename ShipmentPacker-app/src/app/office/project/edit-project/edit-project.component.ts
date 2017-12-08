@@ -36,15 +36,19 @@ export class EditProjectComponent implements OnInit {
   }
 
   inactive() {
-    this.router.navigateByUrl('/office');
+
+
+    this.project.isActive = false;
+
+    this.projectService.update(this.project).subscribe(proj => this.back());
   }
 
-  save() {
+  update() {
     const values = this.projectGroup.value;
     if (values.projectName == "") values.projectName = this.project.projectName;
     if (values.customerName == "") values.customerName = this.project.customerName;
     if (values.creatorName == "") values.creatorName = this.project.creatorName;
-    this.project = {
+    this.project = <Project> {
       id: this.project.id,
       projectName: values.projectName,
       customerName: values.customerName,

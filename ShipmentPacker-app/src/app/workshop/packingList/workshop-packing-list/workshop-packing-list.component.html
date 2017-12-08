@@ -9,11 +9,11 @@
   <hr>
 
   <div class="col-md-10 offset-1">
-    <div class="list-group">
-      <a (click)="clickPackingDetail()" class="list-group-item list-group-item-action">
+    <div *ngFor="let packing of packings" class="list-group">
+      <a (click)="clickPackingDetail(packing)" class="list-group-item list-group-item-action">
         <div class="row">
-          <h4 class="col-md-5">packingList</h4>
-          <h4 class="col-md-5">creatorName</h4>
+          <h4 class="col-md-5">{{packing?.packingName}}</h4>
+          <h4 class="col-md-5">{{packing?.creatorName}}</h4>
           <div class="col-2">
           <div class="progress">
             <div class="progress-bar bg-success" style="width:100%">100%</div>
@@ -21,6 +21,7 @@
           </div>
         </div>
       </a>
+      <br>
     </div>
   </div>
 </div>
