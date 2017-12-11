@@ -52,11 +52,8 @@
               </dt>
               <dd class="">
                 <select id="selectmultiple" name="selectmultiple" class="form-control" multiple="multiple"> <!--formControlName="itemType"-->
-                  <option value="1">Option one</option>
-                  <option value="2">Option two</option>
-                  <option value="3">Option three</option>
-                  <option value="4">Option four</option>
-                  <option value="5">Option five</option></select>
+                  <option *ngFor="let item of items" value="1">{{item?.itemName}}</option>
+                  </select>
                 <br>
                 <button id="singlebutton" name="singlebutton" class="btn btn-outline-primary"><i class="fa fa-plus" aria-hidden="true"></i>
                   Add</button>
@@ -73,11 +70,7 @@
           </dt>
           <dd>
             <select name="selectmultiple" class="form-control" multiple="multiple">
-              <option value="1">Option one</option>
-              <option value="2">Option two</option>
-              <option value="3">Option three</option>
-              <option value="4">Option four</option>
-              <option value="5">Option five</option></select>
+              </select>
           </dd>
         </dl>-
       </div>
