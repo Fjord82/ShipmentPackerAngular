@@ -5,7 +5,7 @@ import {Observable} from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
 import {Packing} from "./packing.model";
 
-const url = environment.apiEndpoint + '/packings';
+const url = environment.apiEndpoint + '/packinglists';
 
 @Injectable()
 export class PackingService {

@@ -1,0 +1,148 @@
+<div class="container">
+  <br>
+  <div class="row">
+    <div class="col-12">
+      <h2 class="my-local-center">Admin</h2>
+      <button style="display: inline-block;" type="button" class="btn btn-outline-success float-right"
+              (click)="logout()">Log Out
+      </button>
+    </div>
+  </div>
+  <hr>
+  <div class="row">
+    <div class="col-md-12">
+      <button style="margin-right:5px; display: inline-block;" type="button"
+              class="btn btn-outline-primary float-right" (click)="manageUsers()">
+        Manage Users
+      </button>
+    </div>
+  </div>
+  <br>
+  <div class="col-10 offset-1">
+    <ngb-tabset>
+      <ngb-tab title="Projects">
+        <ng-template ngbTabContent>
+          <br>
+          <div class="row">
+            <div class="input-group">
+              <input type="text" class="form-control" placeholder="Search projects">
+              <span class="input-group-btn">
+                <button class="btn btn-success" type="button"><i class="fa fa-search" aria-hidden="true"></i></button>
+              </span>
+            </div>
+          </div>
+          <br>
+          <div *ngFor="let project of projects" class="list-group">
+            <a (click)="clickProject(project)" class="list-group-item list-group-item-action">
+              <div class="row">
+                <h4 class="col-md-5">{{project?.projectName}}</h4>
+                <h4 class="col-md-5">{{project?.creatorName}}</h4>
+                <button class="btn btn-outline-warning this-button" (click)="editProject(project)">
+                  <i class="fa fa-pencil" aria-hidden="true"></i>
+                </button>
+              </div>
+            </a>
+            <br>
+          </div>
+        </ng-template>
+      </ngb-tab>
+      <ngb-tab title="Packings">
+        <ng-template ngbTabContent>
+          <br>
+          <div class="row">
+            <div class="input-group">
+              <input type="text" class="form-control" placeholder="Search packings">
+              <span class="input-group-btn">
+                <button class="btn btn-success" type="button"><i class="fa fa-search" aria-hidden="true"></i></button>
+              </span>
+            </div>
+          </div>
+          <br>
+          <h4>
+            Active Lists:
+          </h4>
+          <div *ngFor="let packing of active" class="list-group">
+            <a (click)="clickPacking(packing)" class="list-group-item list-group-item-action">
+              <div class="row">
+                <h4 class="col-md-11">{{packing?.packingName}}</h4>
+                <button class="btn-outline-warning" (click)="editPacking(packing)">
+                  <i class="fa fa-pencil" aria-hidden="true"></i>
+                </button>
+              </div>
+            </a>
+            <br>
+          </div>
+          <br>
+          <h4>
+            Inactive Lists:
+          </h4>
+          <div *ngFor="let packing of inactive" class="list-group">
+            <a (click)="clickPacking(packing)" class="list-group-item list-group-item-action">
+              <div class="row">
+                <h4 class="col-md-11">{{packing?.packingName}}</h4>
+                <button class="btn-outline-warning" (click)="editPacking(packing)">
+                  <i class="fa fa-pencil" aria-hidden="true"></i>
+                </button>
+              </div>
+            </a>
+            <br>
+          </div>
+        </ng-template>
+      </ngb-tab>
+      <ngb-tab title="Collis">
+        <ng-template ngbTabContent>
+          <br>
+          <div class="row">
+            <div class="input-group">
+              <input type="text" class="form-control" placeholder="Search collis">
+              <span class="input-group-btn">
+                <button class="btn btn-success" type="button"><i class="fa fa-search" aria-hidden="true"></i></button>
+              </span>
+            </div>
+          </div>
+          <br>
+          <div *ngFor="let colli of collis" class="list-group">
+            <a (click)="clickColli(colli)" class="list-group-item list-group-item-action">
+              <div class="row">
+                <h4 class="col-md-5">ID: {{colli?.id}}</h4>
+                <button class="btn btn-outline-warning this-button" (click)="editColli(colli)">
+                  <i class="fa fa-pencil" aria-hidden="true"></i>
+                </button>
+              </div>
+            </a>
+            <br>
+          </div>
+        </ng-template>
+      </ngb-tab>
+      <ngb-tab title="Items">
+        <ng-template ngbTabContent>
+          <br>
+          <div class="row">
+            <div class="input-group">
+              <input type="text" class="form-control" placeholder="Search items">
+              <span class="input-group-btn">
+                <button style="margin-right: 10px" class="btn btn-success" type="button"><i class="fa fa-search" aria-hidden="true"></i></button>
+                <button type="button" class="btn btn-outline-success float-right" (click)="addItem()">Add Item</button>
+              </span>
+            </div>
+          </div>
+          <br>
+          <div *ngFor="let item of items" class="list-group">
+            <a class="list-group-item list-group-item-action">
+              <div class="row">
+                <h6 class="col-md-3">Item Name: {{item?.itemName}}</h6>
+                <h6 class="col-md-4">Item Dimension: {{item?.dimension}}</h6>
+                <h6 class="col-md-3">Item Weight: {{item?.weight}}</h6>
+                <button style="margin-right:10px;" class="btn btn-outline-warning" (click)="editItem(item)">
+                  <i class="fa fa-pencil" aria-hidden="true"></i>
+                </button>
+                <button class="btn btn-outline-danger" (click)="deleteItem(item)">Delete</button>
+              </div>
+            </a>
+          </div>
+        </ng-template>
+      </ngb-tab>
+    </ngb-tabset>
+  </div>
+  <br>
+</div>

@@ -1,66 +1,40 @@
-<head><script src="https://use.fontawesome.com/766a240126.js"></script></head>
 <div class="container">
   <br>
-  <div class="row col-12">
-    <button class="btn btn-outline-info " (click)="backbtn()">Back</button>
-    <h2 class="navbar-text">
+  <div class="row">
+  <div class="col-12">
+    <h2 class="my-local-center">
       Edit project
     </h2>
+    <button style="display: inline-block;" type="button" class="btn btn-outline-info float-left" (click)="back()">Back</button>
+    <button style="display: inline-block;" type="button" class="btn btn-outline-danger float-right" (click)="inactive()">Inactive</button>
+  </div>
   </div>
   <hr>
   <br>
   <div class="col-8 offset-3">
-    <form (ngSubmit)="save()" novalidate>
+    <form (ngSubmit)="update()" [formGroup]="projectGroup" novalidate>
       <dl class="form-row">
         <dt class="col-md-3">
           Project name:
         </dt>
         <dd class="col-md-7">
-          <input type="text" class="form-control" placeholder="Project name">
+          <input type="text" class="form-control" formControlName="projectName" placeholder="projName" value="{{project?.projectName}}">
         </dd>
         <dt class="col-md-3">
           Customer name:
         </dt>
         <dd class="col-md-7">
-          <input type="text" class="form-control" placeholder="Customer name">
+          <input type="text" class="form-control" formControlName="customerName" placeholder="custName" value="{{project?.customerName}}">
         </dd>
         <dt class="col-md-3">
-          Manager name:
+          Creator name:
         </dt>
         <dd class="col-md-7">
-          <input type="text" class="form-control" placeholder="Manager name">
-        </dd>
-        <dt class="col-md-3">
-          Freight type:
-        </dt>
-        <dd class="col-md-7">
-          <select id="selectbasic" name="selectbasic" class="form-control">
-            <option value="">Courier</option>
-            <option value="">Road</option>
-            <option value="">Sea</option>
-            <option value="">Air</option>
-          </select>
-        </dd>
-        <dt class="col-md-3">
-          Delivery date:
-        </dt>
-        <dd class="col-md-7">
-          <div class="input-group">
-            <input class="form-control" placeholder="yyyy-mm-dd" name="dp" [(ngModel)]="model" ngbDatepicker #d="ngbDatepicker">
-            <button class="input-group-addon" (click)="d.toggle()" type="button">
-              <i class="fa fa-calendar" aria-hidden="true"></i>
-            </button>
-          </div>
-        </dd>
-        <dt class="col-md-3">
-          Delivery address:
-        </dt>
-        <dd class="col-md-7">
-          <input type="text" class="form-control" placeholder="Country, City, Zip, Street, Nr">
+          <input type="text" class="form-control" formControlName="creatorName" placeholder="creatorName" value="{{project?.creatorName}}">
         </dd>
       </dl>
       <div class="row col-md-7 offset-3 justify-content-between">
-        <button class="btn btn-outline-danger" (click)="backbtn()">Cancel</button>
+        <button class="btn btn-outline-danger" (click)="back()">Cancel</button>
         <button type="submit" class="btn btn-outline-success">Save</button>
       </div>
     </form>

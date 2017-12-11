@@ -2,35 +2,46 @@
   <br>
   <div class="row">
     <div class="col-md-12">
-      <button class="btn btn-outline-info" (click)="backbtn()">Back</button>
+      <button class="btn btn-outline-info" (click)="back()">Back</button>
       <h2 class="my-local-center">Add Packing List</h2>
     </div>
   </div>
   <hr>
-
   <div class="col-md-12">
     <div class="row">
       <div class="col-md-5">
-        <dl>
-          <form class="form-horizontal">
+       <dl>
+          <form class="form-horizontal" [formGroup]="packingGroup" novalidate>
             <fieldset>
+              <dt class="">
+                Title
+              </dt>
+              <dd class="">
+                <input type="text" formControlName="packingName" placeholder="Packing title" class="form-control">
+              </dd>
               <dt class="">
                 Freight type:
               </dt>
               <dd class="">
-                <select id="selectbasic" name="selectbasic" class="form-control">
-                  <option value="">Courier</option>
-                  <option value="">Road</option>
-                  <option value="">Sea</option>
-                  <option value="">Air</option>
+                <select id="selectbasic"  name="selectbasic" class="form-control" formControlName="freightType">
+                  <option value="Courier">Courier</option>
+                  <option value="Road">Road</option>
+                  <option value="Sea">Sea</option>
+                  <option value="Air">Air</option>
                 </select>
+              </dd>
+              <dt class="">
+                Delivery address:
+              </dt>
+              <dd class="">
+                <input class="form-control" formControlName="deliveryAddress" id="4" placeholder="Country, City, Zip, Street, Nr">
               </dd>
               <dt class="">
                 Delivery date:
               </dt>
               <dd class="">
                 <div class="input-group">
-                  <input class="form-control" placeholder="yyyy-mm-dd" name="dp" ngbDatepicker #d="ngbDatepicker"> <!--[(ngModel)]="model"-->
+                  <input class="form-control" formControlName="deliveryDate" placeholder="yyyy-mm-dd" ngbDatepicker #d="ngbDatepicker">
                   <button class="input-group-addon" (click)="d.toggle()" type="button">
                     <i class="fa fa-calendar" aria-hidden="true"></i>
                   </button>
@@ -40,7 +51,7 @@
                 Order items:
               </dt>
               <dd class="">
-                <select id="selectmultiple" name="selectmultiple" class="form-control" multiple="multiple">
+                <select id="selectmultiple" name="selectmultiple" class="form-control" multiple="multiple"> <!--formControlName="itemType"-->
                   <option value="1">Option one</option>
                   <option value="2">Option two</option>
                   <option value="3">Option three</option>
@@ -68,11 +79,11 @@
               <option value="4">Option four</option>
               <option value="5">Option five</option></select>
           </dd>
-        </dl>
+        </dl>-
       </div>
     </div>
   </div>
-  <button class="btn btn-lg btn-outline-success float-right">
+  <button type="submit" (click)="submit()" class="btn btn-lg btn-outline-success float-right">
     Accept
   </button>
 </div>

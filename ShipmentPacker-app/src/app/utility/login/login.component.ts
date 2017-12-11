@@ -21,4 +21,8 @@ export class LoginComponent implements OnInit {
     this.router.navigateByUrl('/workshop');
   }
 
+  admin() {
+    this.router.navigateByUrl('/admin');
+  }
+
 }
