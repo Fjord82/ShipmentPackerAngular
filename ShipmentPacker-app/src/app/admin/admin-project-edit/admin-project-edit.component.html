@@ -1,12 +1,14 @@
 <div class="container">
   <br>
   <div class="row">
-  <div class="col-12">
-    <h2 class="my-local-center">
-      Edit project
-    </h2>
-    <button style="display: inline-block;" type="button" class="btn btn-outline-info float-left" (click)="back()">Back</button>
-  </div>
+    <div class="col-12">
+      <h2 class="my-local-center">
+        Edit project
+      </h2>
+      <button style="display: inline-block;" type="button" class="btn btn-outline-info float-left" (click)="back()">Back</button>
+      <button *ngIf="project?.isActive;" style="display: inline-block;" type="button" class="btn btn-outline-danger float-right" (click)="setInactive()">Deactivate</button>
+      <button *ngIf="!project?.isActive;" style="display: inline-block;" type="button" class="btn btn-outline-success float-right" (click)="setActive()">Activate</button>
+    </div>
   </div>
   <hr>
   <br>
