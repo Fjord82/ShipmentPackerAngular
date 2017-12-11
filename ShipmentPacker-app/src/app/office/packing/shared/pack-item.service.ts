@@ -16,6 +16,11 @@ export class PackItemService {
       .post<PackItem>(url, packItem);
   }
 
+  createList(packItems: PackItem[]): Observable<PackItem[]> {
+    return this.http
+      .post<PackItem[]>(url+"/list", packItems);
+  }
+
   getPackItems(): Observable<PackItem[]> {
     return this.http
       .get<PackItem[]>(url);

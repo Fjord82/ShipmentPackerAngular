@@ -34,7 +34,7 @@ export class EditPackingComponent implements OnInit {
 
 
   back() {
-    this.router.navigateByUrl('/office');
+    this.router.navigateByUrl('/project-detail/' + this.packing.projectIds[0]);
   }
 
   save() {

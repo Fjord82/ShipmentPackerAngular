@@ -16,7 +16,7 @@ export class Packing implements IEntity {
   colliListIds?: number[];
   colliLists?: ColliList[];
   isActive?: boolean;
-  packItemsIds?: number;
+  packItemsIds?: number[];
   packItems?: PackItem[];
 
   toString(): string {

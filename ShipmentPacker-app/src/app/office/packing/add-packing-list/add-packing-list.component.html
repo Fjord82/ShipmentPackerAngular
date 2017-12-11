@@ -52,11 +52,9 @@
               </dt>
               <dd class="">
                 <select id="selectmultiple" name="selectmultiple" class="form-control" multiple="multiple"> <!--formControlName="itemType"-->
-                  <option *ngFor="let item of items" value="1">{{item?.itemName}}</option>
+                  <option (click)="addItem(item)" *ngFor="let item of items" value="1">{{item?.itemName}}</option>
                   </select>
                 <br>
-                <button id="singlebutton" name="singlebutton" class="btn btn-outline-primary"><i class="fa fa-plus" aria-hidden="true"></i>
-                  Add</button>
               </dd>
             </fieldset>
           </form>
@@ -66,13 +64,16 @@
       <div class="col-md-5">
         <dl>
           <dt>
-            Packing list:
+            Packing List:
           </dt>
           <dd>
-            <select name="selectmultiple" class="form-control" multiple="multiple">
-              </select>
+            <div *ngFor="let packItem of packItems">
+              <a (click)="removeItem(packItem)" class="list-group-item list-group-item-action" >{{packItem?.item.itemName}} - Amount: {{packItem?.count}}
+                <button class="fa fa-trash pull-right btn btn-outline-danger" (click)="removeAll(packItem)">
+                </button></a>
+            </div>
           </dd>
-        </dl>-
+        </dl>
       </div>
     </div>
   </div>
