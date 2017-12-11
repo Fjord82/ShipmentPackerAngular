@@ -17,17 +17,24 @@ import {UtilityService} from '../../shared/utility.service';
 })
 export class AdminComponent implements OnInit {
 
-
-  inactive: Packing[];
-  active: Packing[];
-  colli: ColliList;
-  collis: ColliList[];
   packing: Packing;
   packings: Packing[];
+  inactivePacking: Packing[];
+  activePacking: Packing[];
+
+  colli: ColliList;
+  collis: ColliList[];
+  inactiveColli: ColliList[];
+  activeColli: ColliList[];
+
   project: Project;
   projects: Project[];
+  inactiveProjects: Project[];
+  activeProjects: Project[];
+
   items: Item[];
   item: Item;
+
   constructor(private router: Router,
               private projectService: ProjectService,
               private packingService: PackingService,
@@ -38,7 +45,7 @@ export class AdminComponent implements OnInit {
   ngOnInit() {
     this.projectService.getProjects().subscribe(
       projects => {
-        this.projects = projects;
+        this.sortProjects(projects);
       });
 
     this.packingService.getPackings().subscribe(
@@ -48,7 +55,7 @@ export class AdminComponent implements OnInit {
 
     this.colliService.getCollis().subscribe(
       collis => {
-        this.collis = collis;
+        this.sortColliLists(collis);
       });
 
     this.itemService.getItems().subscribe(
@@ -56,12 +63,19 @@ export class AdminComponent implements OnInit {
         this.items = items;
       });
   }
+  sortProjects(project: Project[]) {
+    this.activeProjects = this.utilityService.activeList(project);
+    this.inactiveProjects = this.utilityService.inactiveList(project);
+  }
 
   sortPackinglists(packing: Packing[]) {
-    this.active = [];
-    this.active = this.utilityService.activeList(packing);
-    this.inactive = [];
-    this.inactive = this.utilityService.inactiveList(packing);
+    this.activePacking = this.utilityService.activeList(packing);
+    this.inactivePacking = this.utilityService.inactiveList(packing);
+  }
+
+  sortColliLists(colli: ColliList[]) {
+    this.activeColli = this.utilityService.activeList(colli);
+    this.inactiveColli = this.utilityService.inactiveList(colli);
   }
 
   logout() {
@@ -73,6 +87,7 @@ export class AdminComponent implements OnInit {
   }
 
   editProject(project: Project) {
+    this.router.navigateByUrl('/edit-project/'+project.id);
   }
 
   clickPacking(packing: Packing) {
@@ -80,6 +95,7 @@ export class AdminComponent implements OnInit {
   }
 
   editPacking(packing: Packing) {
+    this.router.navigateByUrl('/edit-packing/'+packing.id);
   }
 
   clickColli(colli: ColliList) {
@@ -87,10 +103,11 @@ export class AdminComponent implements OnInit {
   }
 
   editColli(colli: ColliList) {
+    this.router.navigateByUrl('/edit-colli/'+colli.id);
   }
 
   clickItem(item: Item) {
-
+    this.router.navigateByUrl('/edit-item/'+item.id)
   }
 
   addItem() {
