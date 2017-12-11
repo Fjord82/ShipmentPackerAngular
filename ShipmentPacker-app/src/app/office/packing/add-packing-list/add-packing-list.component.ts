@@ -6,6 +6,8 @@ import {Packing} from '../shared/packing.model';
 import {Project} from "../../project/shared/project.model";
 import {ProjectService} from "../../project/shared/project.service";
 import {NgbDateParserFormatter, NgbDateStruct} from '@ng-bootstrap/ng-bootstrap';
+import {Item} from '../../../admin/item/shared/item.model';
+import {ItemService} from '../../../admin/item/shared/item.service';
 
 @Component({
   selector: 'app-add-packing-list',
@@ -14,6 +16,8 @@ import {NgbDateParserFormatter, NgbDateStruct} from '@ng-bootstrap/ng-bootstrap'
 })
 export class AddPackingListComponent implements OnInit {
 
+
+  items: Item[];
   project: Project;
   packing: Packing;
   packingGroup: FormGroup;
@@ -21,6 +25,7 @@ export class AddPackingListComponent implements OnInit {
               private route: ActivatedRoute,
               private fb: FormBuilder,
               private packingService: PackingService,
+              private itemService: ItemService,
               private projectService: ProjectService,
               private ngbDateParserFormatter: NgbDateParserFormatter) {
     this.packingGroup = this.fb.group({
@@ -34,6 +39,8 @@ export class AddPackingListComponent implements OnInit {
   ngOnInit() {
     this.route.paramMap.switchMap(params => this.projectService.getById(+params.get('id')))
       .subscribe(project => this.project = project);
+
+    this.itemService.getItems().subscribe(items => {this.items = items;});
   }
 
   back() {
