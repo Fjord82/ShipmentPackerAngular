@@ -37,6 +37,10 @@ export class PackItemService {
   }
 
   update(packItem: PackItem): Observable<PackItem> {
-    return this.http.put(url + '/' + packItem.id, packItem);
+    return this.http.put<PackItem>(url + '/' + packItem.id, packItem);
+  }
+
+  updateList(packItems: PackItem[]): Observable<PackItem[]> {
+    return this.http.put<PackItem[]>(url + '/list', packItems);
   }
 }

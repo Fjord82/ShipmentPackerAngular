@@ -69,10 +69,10 @@ export class AddPackingListComponent implements OnInit {
     packing.projectIds = [];
     packing.projectIds.push(this.project.id);
     this.packingService.create(packing)
-      .subscribe(pack => this.addPackItems(pack));
+      .subscribe(pack => this.createPackItems(pack));
   }
 
-  addPackItems(packing: Packing){
+  createPackItems(packing: Packing){
     if(this.packItems.length!= 0){
       for(let packItem of this.packItems){
         packItem.packingListId = packing.id;

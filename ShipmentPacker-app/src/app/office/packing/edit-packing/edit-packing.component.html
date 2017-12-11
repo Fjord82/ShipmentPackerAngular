@@ -77,8 +77,8 @@
           <dd>
           <dd>
             <div *ngFor="let packItem of packing?.packItems">
-              <a style="margin-bottom: 5px" class="list-group-item list-group-item-action" >{{packItem?.item.itemName}} - Amount: {{packItem?.count}}
-                <button class="fa fa-trash pull-right btn btn-outline-danger">
+              <a style="margin-bottom: 5px" (click)="removeItemCurrent(packItem)" class="list-group-item list-group-item-action" >{{packItem?.item.itemName}} - Amount: {{packItem?.count}}
+                <button class="fa fa-trash pull-right btn btn-outline-danger" (click)="removeAllCurrent(packItem)">
                 </button></a>
             </div>
           </dd>
@@ -99,7 +99,7 @@
       </div>
     </div>
   </div>
-  <button type="button" (click)="save()" class="btn btn-lg btn-outline-success float-right">
+  <button type="button" (click)="submit()" class="btn btn-lg btn-outline-success float-right">
     Accept
   </button>
 </div>

@@ -36,7 +36,7 @@
             Active Projects:
           </h4>
           <div *ngFor="let project of activeProjects" class="list-group">
-            <a (click)="clickProject(project)" class="list-group-item list-group-item-action">
+            <a style="margin-bottom: 5px" (click)="clickProject(project)" class="list-group-item list-group-item-action">
               <div class="row">
                 <h4 class="col-md-5">{{project?.projectName}}</h4>
                 <h4 class="col-md-5">{{project?.creatorName}}</h4>
@@ -53,7 +53,7 @@
             Inactive Projects:
           </h4>
           <div *ngFor="let project of inactiveProjects" class="list-group">
-            <a (click)="clickProject(project)" class="list-group-item list-group-item-action">
+            <a style="margin-bottom: 5px" (click)="clickProject(project)" class="list-group-item list-group-item-action">
               <div class="row">
                 <h4 class="col-md-5">{{project?.projectName}}</h4>
                 <h4 class="col-md-5">{{project?.creatorName}}</h4>
@@ -83,7 +83,7 @@
             Active Lists:
           </h4>
           <div *ngFor="let packing of activePacking" class="list-group">
-            <a (click)="clickPacking(packing)" class="list-group-item list-group-item-action">
+            <a style="margin-bottom: 5px" (click)="clickPacking(packing)" class="list-group-item list-group-item-action">
               <div class="row">
                 <h4 class="col-md-10">{{packing?.packingName}}</h4>
                 <button style="margin-right:10px;" class="btn btn-outline-warning" (click)="editPacking(packing)">
@@ -99,7 +99,7 @@
             Inactive Lists:
           </h4>
           <div *ngFor="let packing of inactivePacking" class="list-group">
-            <a (click)="clickPacking(packing)" class="list-group-item list-group-item-action">
+            <a style="margin-bottom: 5px" (click)="clickPacking(packing)" class="list-group-item list-group-item-action">
               <div class="row">
                 <h4 class="col-md-10">{{packing?.packingName}}</h4>
                 <button style="margin-right:10px;" class="btn btn-outline-warning" (click)="editPacking(packing)">
@@ -128,7 +128,7 @@
             Active Colli:
           </h4>
           <div *ngFor="let colli of activeColli" class="list-group">
-            <a (click)="clickColli(colli)" class="list-group-item list-group-item-action">
+            <a style="margin-bottom: 5px" (click)="clickColli(colli)" class="list-group-item list-group-item-action">
               <div class="row">
                 <h4 class="col-md-10">ID: {{colli?.id}}</h4>
                 <button style="margin-right:10px;" class="btn btn-outline-warning this-button" (click)="editColli(colli)">
@@ -144,7 +144,7 @@
             Inactive Colli:
           </h4>
           <div *ngFor="let colli of inactiveColli" class="list-group">
-            <a (click)="clickColli(colli)" class="list-group-item list-group-item-action">
+            <a style="margin-bottom: 5px" (click)="clickColli(colli)" class="list-group-item list-group-item-action">
               <div class="row">
                 <h4 class="col-md-10">ID: {{colli?.id}}</h4>
                 <button style="margin-right:10px;" class="btn btn-outline-warning this-button" (click)="editColli(colli)">
@@ -171,7 +171,7 @@
           </div>
           <br>
           <div *ngFor="let item of items" class="list-group">
-            <a class="list-group-item list-group-item-action">
+            <a style="margin-bottom: 5px" class="list-group-item list-group-item-action">
               <div class="row">
                 <h6 class="col-md-3">Item Name: {{item?.itemName}}</h6>
                 <h6 class="col-md-4">Item Dimension: {{item?.dimension}}</h6>
