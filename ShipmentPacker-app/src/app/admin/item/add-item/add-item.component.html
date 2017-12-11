@@ -1,0 +1,42 @@
+<div class="container">
+  <br>
+  <div class="row">
+    <div class="col-md-12">
+      <button class="btn btn-outline-info" (click)="back()">Back</button>
+      <h2 class="my-local-center">Add Item</h2>
+      <button class="btn btn-outline-success float-right" type="submit" (click)="save()">Save</button>
+    </div>
+  </div>
+  <hr>
+  <div class="col-12">
+    <form (ngSubmit)="save()" novalidate>
+      <dl class="form-row" [formGroup]="itemGroup">
+        <dt class="col-md-2">
+          Item Name:
+        </dt>
+        <dd class="col-md-4">
+          <input class="form-control" formControlName="itemName" placeholder="Item Name">
+        </dd>
+        <dt class="col-md-2">
+          Dimension:
+        </dt>
+        <dd class="col-md-4">
+          <input class="form-control" formControlName="dimension" placeholder="Length x Hight x Width">
+        </dd>
+        <dt class="col-md-2">
+          Weight:
+        </dt>
+        <dd class="col-md-4">
+          <input class="form-control" formControlName="weight" placeholder="Weight">
+        </dd>
+        <dt class="col-md-2">
+          Dangerous Goods:
+        </dt>
+        <label class="btn btn-outline-success">
+          <input type="checkbox" autocomplete="off" formControlName="dangerousGoods">
+        </label>
+      </dl>
+    </form>
+  </div>
+</div>
+

@@ -36,15 +36,9 @@ export class AddProjectComponent implements OnInit {
       projectName: values.projectName,
       customerName: values.customerName,
       creatorName: values.creatorName,
+      isActve: true
     };
-    this.projectService.create(project)
-      .subscribe(proj => console.log(project));
+      this.projectService.create(project).subscribe(proj => this.back());
     }
-
-    submit() {
-    this.save();
-    this.back();
-    }
-
 }
 
