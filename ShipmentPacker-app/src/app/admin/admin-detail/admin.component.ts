@@ -103,7 +103,7 @@ export class AdminComponent implements OnInit {
   }
 
   editColli(colli: ColliList) {
-    this.router.navigateByUrl('/edit-colli/'+colli.id);
+    this.router.navigateByUrl('/admin-edit-colli/'+colli.id);
   }
 
   clickItem(item: Item) {

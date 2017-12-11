@@ -5,6 +5,8 @@
       <h2 class="my-local-center">Edit Colli</h2>
       <button style="display: inline-block;" type="button" class="btn btn-outline-info float-left" (click)="back()">Back</button>
       <button style="display: inline-block;" type="button" class="btn btn-outline-success float-right" (click)="save()">Save</button>
+      <button *ngIf="colli?.isActive;" style="display: inline-block;" type="button" class="btn btn-outline-danger float-right" (click)="setInactive()">Deactivate</button>
+      <button *ngIf="!colli?.isActive;" style="display: inline-block;" type="button" class="btn btn-outline-success float-right" (click)="setActive()">Activate</button>
     </div>
   </div>
   <hr>
