@@ -32,6 +32,7 @@ import { AddItemComponent } from './admin/item/add-item/add-item.component';
 import { ItemService} from './admin/item/shared/item.service';
 import { EditItemComponent } from './admin/item/edit-item/edit-item.component';
 import {UtilityService} from './shared/utility.service';
+import {PackItemService} from './office/packing/shared/pack-item.service';
 
 const appRoutes: Routes = [
   { path: 'login', component: LoginComponent },
@@ -94,7 +95,7 @@ const appRoutes: Routes = [
     FormsModule,
     HttpClientModule
   ],
-  providers: [ProjectService, PackingService, ColliService, ItemService, UtilityService],
+  providers: [ProjectService, PackingService, PackItemService, ColliService, ItemService, UtilityService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

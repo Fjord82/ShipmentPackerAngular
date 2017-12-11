@@ -1,6 +1,7 @@
 import {Project} from '../../project/shared/project.model';
 import {ColliList} from '../../../workshop/colli/shared/colli.model';
 import {IEntity} from "../../../shared/IEntity";
+import {PackItem} from './packItem.model';
 
 export class Packing implements IEntity {
   id?: number;
@@ -15,6 +16,8 @@ export class Packing implements IEntity {
   colliListIds?: number[];
   colliLists?: ColliList[];
   isActive?: boolean;
+  packItemsIds?: number;
+  packItems?: PackItem[];
 
   toString(): string {
     return "#" + this.id + " " + this.packingName;

@@ -64,18 +64,18 @@ export class AdminComponent implements OnInit {
       });
   }
   sortProjects(project: Project[]) {
-    this.activeProjects = this.utilityService.activeList(project);
-    this.inactiveProjects = this.utilityService.inactiveList(project);
+    this.activeProjects = <Project[]>this.utilityService.activeList(project);
+    this.inactiveProjects = <Project[]>this.utilityService.inactiveList(project);
   }
 
   sortPackinglists(packing: Packing[]) {
-    this.activePacking = this.utilityService.activeList(packing);
-    this.inactivePacking = this.utilityService.inactiveList(packing);
+    this.activePacking = <Packing[]>this.utilityService.activeList(packing);
+    this.inactivePacking = <Packing[]>this.utilityService.inactiveList(packing);
   }
 
   sortColliLists(colli: ColliList[]) {
-    this.activeColli = this.utilityService.activeList(colli);
-    this.inactiveColli = this.utilityService.inactiveList(colli);
+    this.activeColli = <ColliList[]>this.utilityService.activeList(colli);
+    this.inactiveColli = <ColliList[]>this.utilityService.inactiveList(colli);
   }
 
   logout() {
