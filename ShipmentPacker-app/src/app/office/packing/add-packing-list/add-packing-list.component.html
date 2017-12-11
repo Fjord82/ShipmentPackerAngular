@@ -68,7 +68,7 @@
           </dt>
           <dd>
             <div *ngFor="let packItem of packItems">
-              <a (click)="removeItem(packItem)" class="list-group-item list-group-item-action" >{{packItem?.item.itemName}} - Amount: {{packItem?.count}}
+              <a style="margin-bottom: 5px" (click)="removeItem(packItem)" class="list-group-item list-group-item-action" >{{packItem?.item.itemName}} - Amount: {{packItem?.count}}
                 <button class="fa fa-trash pull-right btn btn-outline-danger" (click)="removeAll(packItem)">
                 </button></a>
             </div>

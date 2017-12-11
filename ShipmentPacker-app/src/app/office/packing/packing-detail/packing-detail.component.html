@@ -16,11 +16,9 @@
   </div>
   <br>
   <div class="col-md-10 offset-1">
-    <div class="list-group">
+    <div *ngFor="let packItem of packing?.packItems" class="list-group">
       <a class="list-group-item list-group-item-action">
-        <div class="row">
-          <h4 class="col-md-10">Order Item</h4>
-        </div>
+        {{packItem?.item.itemName}} | Amount: {{packItem?.count}} | Packed: {{packItem?.packed}}
       </a>
     </div>
   </div>

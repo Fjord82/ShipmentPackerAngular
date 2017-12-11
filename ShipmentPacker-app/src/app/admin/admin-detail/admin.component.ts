@@ -90,6 +90,10 @@ export class AdminComponent implements OnInit {
     this.router.navigateByUrl('/edit-project/'+project.id);
   }
 
+  deleteProject(project: Project) {
+    this.projectService.delete(project.id).subscribe(project=> window.location.reload())
+  }
+
   clickPacking(packing: Packing) {
     this.router.navigateByUrl('/admin-packing-detail/'+packing.id);
   }
@@ -98,12 +102,20 @@ export class AdminComponent implements OnInit {
     this.router.navigateByUrl('/edit-packing/'+packing.id);
   }
 
+  deletePacking(packing: Packing) {
+    this.packingService.delete(packing.id).subscribe(packing=> window.location.reload())
+  }
+
   clickColli(colli: ColliList) {
     this.router.navigateByUrl('/admin-colli-detail/'+colli.id);
   }
 
   editColli(colli: ColliList) {
     this.router.navigateByUrl('/edit-colli/'+colli.id);
+  }
+
+  deleteColli(colli: ColliList) {
+    this.colliService.delete(colli.id).subscribe(colli=> window.location.reload())
   }
 
   clickItem(item: Item) {

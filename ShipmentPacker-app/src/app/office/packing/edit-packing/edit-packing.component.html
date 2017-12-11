@@ -60,14 +60,9 @@
               </dt>
               <dd class="">
                 <select id="selectmultiple" name="selectmultiple" class="form-control" multiple="multiple"> <!--formControlName="itemType"-->
-                  <option value="1">Option one</option>
-                  <option value="2">Option two</option>
-                  <option value="3">Option three</option>
-                  <option value="4">Option four</option>
-                  <option value="5">Option five</option></select>
+                  <option (click)="addItem(item)" *ngFor="let item of items" value="1">{{item?.itemName}}</option>
+                </select>
                 <br>
-                <button id="singlebutton" name="singlebutton" class="btn btn-outline-primary"><i class="fa fa-plus" aria-hidden="true"></i>
-                  Add</button>
               </dd>
             </fieldset>
           </form>
@@ -77,15 +72,28 @@
       <div class="col-md-5">
         <dl>
           <dt>
-            Packing list:
+            Current packing list:
           </dt>
           <dd>
-            <select name="selectmultiple" class="form-control" multiple="multiple">
-              <option value="1">Option one</option>
-              <option value="2">Option two</option>
-              <option value="3">Option three</option>
-              <option value="4">Option four</option>
-              <option value="5">Option five</option></select>
+          <dd>
+            <div *ngFor="let packItem of packing?.packItems">
+              <a style="margin-bottom: 5px" class="list-group-item list-group-item-action" >{{packItem?.item.itemName}} - Amount: {{packItem?.count}}
+                <button class="fa fa-trash pull-right btn btn-outline-danger">
+                </button></a>
+            </div>
+          </dd>
+        </dl>
+        <dl>
+          <dt>
+            New items:
+          </dt>
+          <dd>
+          <dd>
+            <div *ngFor="let packItem of newPackItems">
+              <a style="margin-bottom: 5px" (click)="removeItem(packItem)" class="list-group-item list-group-item-action" >{{packItem?.item.itemName}} - Amount: {{packItem?.count}}
+                <button class="fa fa-trash pull-right btn btn-outline-danger" (click)="removeAll(packItem)">
+                </button></a>
+            </div>
           </dd>
         </dl>
       </div>
