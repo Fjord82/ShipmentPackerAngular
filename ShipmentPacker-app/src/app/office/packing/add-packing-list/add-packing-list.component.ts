@@ -53,7 +53,8 @@ export class AddPackingListComponent implements OnInit {
       packingName: values.packingName,
       deliveryAddress: values.deliveryAddress,
       deliveryDate: this.ngbDateParserFormatter.format(values.deliveryDate),
-      freightType: values.freightType
+      freightType: values.freightType,
+      isActive: true
     };
     packing.itemType = 'Hej';
     packing.creatorName = 'Hej';

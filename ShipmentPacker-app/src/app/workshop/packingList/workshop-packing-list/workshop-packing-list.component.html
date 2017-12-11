@@ -9,7 +9,10 @@
   <hr>
 
   <div class="col-md-10 offset-1">
-    <div *ngFor="let packing of packings" class="list-group">
+    <h4>
+      Active packinglists:
+    </h4>
+    <div *ngFor="let packing of active" class="list-group">
       <a (click)="clickPackingDetail(packing)" class="list-group-item list-group-item-action">
         <div class="row">
           <h4 class="col-md-5">{{packing?.packingName}}</h4>
@@ -21,7 +24,7 @@
           </div>
         </div>
       </a>
-      <br>
+      <hr>
     </div>
   </div>
 </div>

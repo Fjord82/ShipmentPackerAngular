@@ -8,6 +8,7 @@ import {ColliService} from '../../workshop/colli/shared/colli.service';
 import {ColliList} from '../../workshop/colli/shared/colli.model';
 import {ItemService} from '../item/shared/item.service';
 import {Item} from '../item/shared/item.model';
+import {UtilityService} from '../../shared/utility.service';
 
 @Component({
   selector: 'app-admin',
@@ -16,42 +17,65 @@ import {Item} from '../item/shared/item.model';
 })
 export class AdminComponent implements OnInit {
 
-
+  packing: Packing;
+  packings: Packing[];
+  inactivePacking: Packing[];
+  activePacking: Packing[];
 
   colli: ColliList;
   collis: ColliList[];
-  packing: Packing;
-  packings: Packing[];
+  inactiveColli: ColliList[];
+  activeColli: ColliList[];
+
   project: Project;
   projects: Project[];
+  inactiveProjects: Project[];
+  activeProjects: Project[];
+
   items: Item[];
   item: Item;
+
   constructor(private router: Router,
               private projectService: ProjectService,
               private packingService: PackingService,
               private colliService: ColliService,
-              private itemService: ItemService) { }
+              private itemService: ItemService,
+              private utilityService: UtilityService) { }
 
   ngOnInit() {
     this.projectService.getProjects().subscribe(
       projects => {
-        this.projects = projects;
+        this.sortProjects(projects);
       });
 
     this.packingService.getPackings().subscribe(
       packings => {
-        this.packings = packings;
+        this.sortPackinglists(packings);
       });
 
     this.colliService.getCollis().subscribe(
       collis => {
-        this.collis = collis;
+        this.sortColliLists(collis);
       });
 
     this.itemService.getItems().subscribe(
       items => {
         this.items = items;
       });
+  }
+  sortProjects(project: Project[]) {
+    this.activeProjects = this.utilityService.activeList(project);
+    this.inactiveProjects = this.utilityService.inactiveList(project);
+  }
+
+  sortPackinglists(packing: Packing[]) {
+    this.activePacking = this.utilityService.activeList(packing);
+    this.inactivePacking = this.utilityService.inactiveList(packing);
+  }
+
+  sortColliLists(colli: ColliList[]) {
+    this.activeColli = this.utilityService.activeList(colli);
+    this.inactiveColli = this.utilityService.inactiveList(colli);
   }
 
   logout() {
@@ -63,6 +87,7 @@ export class AdminComponent implements OnInit {
   }
 
   editProject(project: Project) {
+    this.router.navigateByUrl('/edit-project/'+project.id);
   }
 
   clickPacking(packing: Packing) {
@@ -70,6 +95,7 @@ export class AdminComponent implements OnInit {
   }
 
   editPacking(packing: Packing) {
+    this.router.navigateByUrl('/edit-packing/'+packing.id);
   }
 
   clickColli(colli: ColliList) {
@@ -77,10 +103,11 @@ export class AdminComponent implements OnInit {
   }
 
   editColli(colli: ColliList) {
+    this.router.navigateByUrl('/edit-colli/'+colli.id);
   }
 
   clickItem(item: Item) {
-
+    this.router.navigateByUrl('/edit-item/'+item.id)
   }
 
   addItem() {
