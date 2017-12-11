@@ -29,4 +29,16 @@ export class UtilityService {
     return inactive;
   }
 
+  filterList(list: IEntity[], filter: string): IEntity[] {
+    const filtered: IEntity[] = [];
+
+    for (let ent of list) {
+      if (ent.toString().includes(filter)) {
+        filtered.push(ent);
+      }
+
+      return filtered;
+    }
+  }
+
 }
