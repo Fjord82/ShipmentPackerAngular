@@ -87,7 +87,7 @@ export class AdminComponent implements OnInit {
   }
 
   editProject(project: Project) {
-    this.router.navigateByUrl('/edit-project/'+project.id);
+    this.router.navigateByUrl('/admin-edit-project/'+project.id);
   }
 
   clickPacking(packing: Packing) {
