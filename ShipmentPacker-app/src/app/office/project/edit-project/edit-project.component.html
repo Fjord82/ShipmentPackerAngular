@@ -1,0 +1,41 @@
+<div class="container">
+  <br>
+  <div class="row">
+  <div class="col-12">
+    <h2 class="my-local-center">
+      Edit project
+    </h2>
+    <button style="display: inline-block;" type="button" class="btn btn-outline-info float-left" (click)="back()">Back</button>
+  </div>
+  </div>
+  <hr>
+  <br>
+  <div class="col-8 offset-3">
+    <form (ngSubmit)="update()" [formGroup]="projectGroup" novalidate>
+      <dl class="form-row">
+        <dt class="col-md-3">
+          Project name:
+        </dt>
+        <dd class="col-md-7">
+          <input type="text" class="form-control" formControlName="projectName" placeholder="projName" value="{{project?.projectName}}">
+        </dd>
+        <dt class="col-md-3">
+          Customer name:
+        </dt>
+        <dd class="col-md-7">
+          <input type="text" class="form-control" formControlName="customerName" placeholder="custName" value="{{project?.customerName}}">
+        </dd>
+        <dt class="col-md-3">
+          Creator name:
+        </dt>
+        <dd class="col-md-7">
+          <input type="text" class="form-control" formControlName="creatorName" placeholder="creatorName" value="{{project?.creatorName}}">
+        </dd>
+      </dl>
+      <div class="row col-md-7 offset-3 justify-content-between">
+        <button class="btn btn-outline-danger" (click)="back()">Cancel</button>
+        <button type="submit" class="btn btn-outline-success">Save</button>
+      </div>
+    </form>
+  </div>
+</div>

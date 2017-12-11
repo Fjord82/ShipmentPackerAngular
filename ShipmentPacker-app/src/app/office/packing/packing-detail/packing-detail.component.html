@@ -2,20 +2,26 @@
   <br>
   <div class="row">
     <div class="col-md-12">
-      <button class="btn btn-outline-info" (click)="backbtn()">Back</button>
-      <h2 class="my-local-center">ProjectName</h2>
+      <button class="btn btn-outline-info" (click)="back()">Back</button>
+      <h2 class="my-local-center">{{packing?.packingName}}</h2>
     </div>
   </div>
   <hr>
-
+  <div class="row">
+    <div class="col-md-4"><h4>Delivery Date: </h4><p>{{packing?.deliveryDate}}</p></div>
+    <div class="col-md-4"><h4>Delivery Address: </h4><p>{{packing?.deliveryAddress}}</p></div>
+    <div class="col-md-4"><h4>Manager Name: </h4><p>{{packing?.creatorName}}</p></div>
+    <div class="col-md-4"><h4>Freight Type: </h4><p>{{packing?.freightType}}</p></div>
+    <div class="col-md-4"><h4>ID: </h4><p>{{packing?.id}}</p></div>
+  </div>
+  <br>
   <div class="col-md-10 offset-1">
     <div class="list-group">
-      <a (click)="clickProject()" class="list-group-item list-group-item-action">
+      <a class="list-group-item list-group-item-action">
         <div class="row">
-          <h4 class="col-md-10">Packing</h4>
+          <h4 class="col-md-10">Order Item</h4>
         </div>
       </a>
     </div>
   </div>
-
 </div>

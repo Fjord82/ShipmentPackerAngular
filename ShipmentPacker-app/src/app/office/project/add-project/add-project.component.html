@@ -1,68 +1,39 @@
-<head><script src="https://use.fontawesome.com/766a240126.js"></script></head>
 <div class="container">
   <br>
-  <div class="row">
-    <button class="btn btn-outline-info" (click)="backbtn()">Back</button>
-    <h2 class="offset-4">
+  <div class="row col-12">
+    <button class="btn btn-outline-info" (click)="back()">Back</button>
+    <h2 class="my-local-center">
       Add project
     </h2>
   </div>
   <hr>
   <br>
   <div class="col-8 offset-3">
-    <form (ngSubmit)="save()" novalidate>
+    <form (ngSubmit)="save()" [formGroup]="projectGroup" novalidate>
       <dl class="form-row">
         <dt class="col-md-3">
           Project name:
         </dt>
         <dd class="col-md-7">
-          <input type="text" class="form-control" placeholder="Project name">
+          <input class="form-control" id="1" formControlName="projectName" placeholder="Project name">
         </dd>
         <dt class="col-md-3">
           Customer name:
         </dt>
         <dd class="col-md-7">
-          <input type="text" class="form-control" placeholder="Customer name">
+          <input class="form-control" id="2" formControlName="customerName" placeholder="Customer name">
         </dd>
         <dt class="col-md-3">
           Manager name:
         </dt>
         <dd class="col-md-7">
-          <input type="text" class="form-control" placeholder="Manager name">
+          <input class="form-control" id="3" formControlName="creatorName" placeholder="Manager name">
         </dd>
-        <dt class="col-md-3">
-          Freight type:
-        </dt>
-        <dd class="col-md-7">
-          <select id="selectbasic" name="selectbasic" class="form-control">
-            <option value="">Courier</option>
-            <option value="">Road</option>
-            <option value="">Sea</option>
-            <option value="">Air</option>
-          </select>
-        </dd>
-        <dt class="col-md-3">
-          Delivery date:
-        </dt>
-        <dd class="col-md-7">
-          <div class="input-group">
-            <input class="form-control" placeholder="yyyy-mm-dd" name="dp" [(ngModel)]="model" ngbDatepicker #d="ngbDatepicker">
-            <button class="input-group-addon" (click)="d.toggle()" type="button">
-              <i class="fa fa-calendar" aria-hidden="true"></i>
-            </button>
-          </div>
-        </dd>
-        <dt class="col-md-3">
-          Delivery address:
-        </dt>
-        <dd class="col-md-7">
-          <input type="text" class="form-control" placeholder="Country, City, Zip, Street, Nr">
-        </dd>
-      </dl>
-      <div class="row col-md-7 offset-3 justify-content-between">
-        <button class="btn btn-outline-danger" (click)="backbtn()">Cancel</button>
-        <button type="submit" class="btn btn-outline-success">Save</button>
-      </div>
+        <div class="row col-md-7 offset-3 justify-content-between">
+          <button type="submit" class="btn btn-outline-success">Save</button>
+          <button class="btn btn-outline-danger" (click)="back()">Cancel</button>
+        </div>
+     </dl>
     </form>
   </div>
 </div>

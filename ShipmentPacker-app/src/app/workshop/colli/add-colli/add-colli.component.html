@@ -1,0 +1,81 @@
+<div class="container">
+  <br>
+  <div class="row">
+    <div class="col-12">
+      <h2 class="my-local-center">Add Colli</h2>
+      <button style="display: inline-block;" type="button" class="btn btn-outline-info float-left" (click)="back()">Back</button>
+      <button style="display: inline-block;" type="button" class="btn btn-outline-success float-right" (click)="save()">Save</button>
+    </div>
+  </div>
+  <hr>
+  <div class="col-12">
+    <form (ngSubmit)="save()" novalidate>
+      <dl class="form-row" [formGroup]="colliGroup">
+        <dt class="col-md-2">
+          Project Name:
+        </dt>
+        <dd class="col-md-4">
+          <input class="form-control" placeholder="{{packing?.projects[0].projectName}}" disabled>
+        </dd>
+        <dt class="col-md-2">
+        Dimensions:
+        </dt>
+        <dd class="col-md-4">
+        <input type="text" class="form-control" formControlName="dimensions" placeholder="Length x Weidth x hight">
+        </dd>
+        <dt class="col-md-2">
+          Net Weight:
+        </dt>
+        <dd class="col-md-4">
+          <input type="text" class="form-control" placeholder="{{netWeight}}" disabled>
+        </dd>
+        <dt class="col-md-2">
+          Total weight:
+        </dt>
+        <dd class="col-md-4">
+          <input class="form-control" formControlName="totalWeight" placeholder="Total Kg">
+        </dd>
+        <dt class="col-md-2">
+        Workshop Worker:
+        </dt>
+        <dd class="col-md-4">
+        <input type="text" class="form-control" placeholder="{{worker}}" disabled>
+        </dd>
+        <dt class="col-md-2">
+        Freight Type:
+        </dt>
+        <dd class="col-md-4">
+          <input type="text" class="form-control" formControlName="freightType" placeholder="Freight Type">
+        </dd>
+      </dl>
+    </form>
+  </div>
+  <hr>
+  <div class="row">
+  <div class="col-4">
+      <select id="selectmultiple" name="selectmultiple" class="form-control" multiple="multiple">
+        <option value="1">Option one</option>
+        <option value="2">Option two</option>
+        <option value="3">Option three</option>
+        <option value="4">Option four</option>
+        <option value="5">Option five</option>
+      </select>
+    </div>
+    <div class="col-1"></div>
+    <div class="col-2">
+      <button class="btn btn-outline-info button-middle" (click)="add()">Move Item To colli</button>
+  </div>
+    <div class="col-1"></div>
+  <div class="col-4">
+    <div class="list-group">
+      <select name="selectmultiple" class="form-control" multiple="multiple">
+        <option value="1">This is empty</option>
+        <option value="2">This is empty</option>
+        <option value="3">This is empty</option>
+        <option value="4">This is empty</option>
+        <option value="5">This is empty</option>
+      </select>
+    </div>
+  </div>
+</div>
+</div>

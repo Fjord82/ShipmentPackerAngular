@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import {Router} from '@angular/router';
+import {ActivatedRoute, Router} from '@angular/router';
+import {Packing} from '../shared/packing.model';
+import {PackingService} from '../shared/packing.service';
 
 @Component({
   selector: 'app-packing-detail',
@@ -8,13 +10,23 @@ import {Router} from '@angular/router';
 })
 export class PackingDetailComponent implements OnInit {
 
-  constructor(private router: Router) { }
-
-  ngOnInit() {
+  packing: Packing;
+  constructor(private router: Router,
+              private route: ActivatedRoute,
+              private packingService: PackingService) {
   }
 
-  backbtn() {
-    this.router.navigateByUrl('/projectName');
+  ngOnInit() {
+    this.route.paramMap.switchMap(params => this.packingService.getById(+params.get('id')))
+      .subscribe(packing => this.packing = packing);
+  }
+
+  back() {
+    this.router.navigateByUrl('/project-detail/'+this.packing.projectIds[0]);
+  }
+
+  clickProject() {
+
   }
 
 }

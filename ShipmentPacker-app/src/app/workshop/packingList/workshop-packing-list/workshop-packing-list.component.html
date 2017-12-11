@@ -1,0 +1,30 @@
+<div class="container">
+  <br>
+  <div class="row">
+    <div class="col-12">
+    <h2 class="my-local-center">Workshop</h2>
+    <button style="display: inline-block;" type="button" class="btn btn-outline-success float-right" (click)="logoutbtn()">Log Out</button>
+  </div>
+  </div>
+  <hr>
+
+  <div class="col-md-10 offset-1">
+    <h4>
+      Active packinglists:
+    </h4>
+    <div *ngFor="let packing of active" class="list-group">
+      <a (click)="clickPackingDetail(packing)" class="list-group-item list-group-item-action">
+        <div class="row">
+          <h4 class="col-md-5">{{packing?.packingName}}</h4>
+          <h4 class="col-md-5">{{packing?.creatorName}}</h4>
+          <div class="col-2">
+          <div class="progress">
+            <div class="progress-bar bg-success" style="width:100%">100%</div>
+          </div>
+          </div>
+        </div>
+      </a>
+      <hr>
+    </div>
+  </div>
+</div>
