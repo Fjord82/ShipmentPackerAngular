@@ -8,7 +8,6 @@ import {Item} from "../../../admin/item/shared/item.model";
 import {PackItemService} from "../shared/pack-item.service";
 import {ItemService} from "../../../admin/item/shared/item.service";
 import {PackItem} from "../shared/packItem.model";
-import {forEach} from "@angular/router/src/utils/collection";
 
 @Component({
   selector: 'app-edit-packing',
@@ -53,6 +52,7 @@ export class EditPackingComponent implements OnInit {
     {
       if (packingItem.item.id == item.id)
       {
+        this.currentPackingChanged = true;
         packingItem.count++;
         existsOld = true;
       }
@@ -102,8 +102,6 @@ export class EditPackingComponent implements OnInit {
     this.packItemService.delete(packItem.id).subscribe();
     const index = this.packing.packItems.indexOf(packItem);
     this.packing.packItems.splice(index, 1);
-    //const IdIndex = this.packing.packItemsIds.indexOf(packItem.id);
-    //this.packing.packItemsIds.splice(IdIndex,1);
   }
 
   removeItemCurrent(packItem: PackItem) {
@@ -115,8 +113,6 @@ export class EditPackingComponent implements OnInit {
       this.packItemService.delete(packItem.id).subscribe();
       const index = this.packing.packItems.indexOf(packItem);
       this.packing.packItems.splice(index, 1);
-      //const IdIndex = this.packing.packItemsIds.indexOf(packItem.id);
-      //this.packing.packItemsIds.splice(IdIndex,1);
       this.packItemService.delete(packItem.id);
     }
   }
@@ -167,11 +163,17 @@ export class EditPackingComponent implements OnInit {
 
   createPackItems(){
 
-    for(let packItem of this.newPackItems){
-      packItem.packingListId = this.packing.id;
-      packItem.packingList = this.packing;
+    if (this.newPackItems.length != 0) {
+      for (let packItem of this.newPackItems) {
+        packItem.packingListId = this.packing.id;
+        packItem.packingList = this.packing;
+      }
+      this.packItemService.createList(this.newPackItems).subscribe(pi => this.updatePackItems());
     }
-    this.packItemService.createList(this.newPackItems).subscribe(pi=> this.updatePackItems());
+    else
+    {
+      this.updatePackItems();
+    }
   }
 
   updatePackItems() {
@@ -191,7 +193,6 @@ export class EditPackingComponent implements OnInit {
       this.packItemService.update(pack).subscribe();
       }
       this.save();
-    //this.packItemService.updateList(this.packing.packItems).subscribe(pi => this.save());
     }
     else
     {
