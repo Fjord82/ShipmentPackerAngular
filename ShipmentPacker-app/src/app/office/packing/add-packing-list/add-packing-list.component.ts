@@ -8,6 +8,8 @@ import {ProjectService} from "../../project/shared/project.service";
 import {NgbDateParserFormatter, NgbDateStruct} from '@ng-bootstrap/ng-bootstrap';
 import {Item} from '../../../admin/item/shared/item.model';
 import {ItemService} from '../../../admin/item/shared/item.service';
+import {PackItem} from '../shared/packItem.model';
+import {PackItemService} from '../shared/pack-item.service';
 
 @Component({
   selector: 'app-add-packing-list',
@@ -20,6 +22,8 @@ export class AddPackingListComponent implements OnInit {
   items: Item[];
   project: Project;
   packing: Packing;
+  packItems: PackItem[];
+  packItemIds: number[];
   packingGroup: FormGroup;
   constructor(private router: Router,
               private route: ActivatedRoute,
@@ -27,6 +31,7 @@ export class AddPackingListComponent implements OnInit {
               private packingService: PackingService,
               private itemService: ItemService,
               private projectService: ProjectService,
+              private packItemService: PackItemService,
               private ngbDateParserFormatter: NgbDateParserFormatter) {
     this.packingGroup = this.fb.group({
       packingName: ['', Validators.required],
@@ -34,6 +39,9 @@ export class AddPackingListComponent implements OnInit {
       deliveryDate: ['', Validators.required],
       freightType: ['', Validators.required],
     });
+    this.packItems = [];
+    this.packItemIds = [];
+
   }
 
   ngOnInit() {
@@ -61,7 +69,55 @@ export class AddPackingListComponent implements OnInit {
     packing.projectIds = [];
     packing.projectIds.push(this.project.id);
     this.packingService.create(packing)
-      .subscribe(pack => this.back());
+      .subscribe(pack => this.createPackItems(pack));
+  }
+
+  createPackItems(packing: Packing){
+    if(this.packItems.length!= 0){
+      for(let packItem of this.packItems){
+        packItem.packingListId = packing.id;
+        packItem.packingList = packing;
+      }
+      this.packItemService.createList(this.packItems).subscribe(pi=> this.back());
+    }
+    else{
+      this.back();
+    }
+  }
+
+  addItem(item: Item) {
+    let exists: boolean = false;
+    for(let packingItem of this.packItems){
+      if(packingItem.item.valueOf() == item.valueOf()){
+        packingItem.count++;
+        exists = true;
+      }
+    }
+    if (exists == false){
+      const packItem: PackItem = <PackItem> {
+        item: item,
+        itemId: item.id,
+        count: 1,
+        packed: 0,
+        packingListId: 0,
+      }
+      this.packItems.push(packItem);
+    }
+  }
+
+  removeItem(packItem: PackItem){
+    if(packItem.count >1){
+      packItem.count--;
+    }
+    else {
+      const index = this.packItems.indexOf(packItem);
+      this.packItems.splice(index, 1);
+    }
+  }
+
+  removeAll(packItem: PackItem){
+    const index = this.packItems.indexOf(packItem);
+    this.packItems.splice(index, 1);
   }
 
   submit() {

@@ -36,13 +36,14 @@
             Active Projects:
           </h4>
           <div *ngFor="let project of activeProjects" class="list-group">
-            <a (click)="clickProject(project)" class="list-group-item list-group-item-action">
+            <a style="margin-bottom: 5px" (click)="clickProject(project)" class="list-group-item list-group-item-action">
               <div class="row">
                 <h4 class="col-md-5">{{project?.projectName}}</h4>
                 <h4 class="col-md-5">{{project?.creatorName}}</h4>
-                <button class="btn btn-outline-warning this-button" (click)="editProject(project)">
+                <button style="margin-right:10px;" class="btn btn-outline-warning this-button" (click)="editProject(project)">
                   <i class="fa fa-pencil" aria-hidden="true"></i>
                 </button>
+                <button class="btn btn-outline-danger fa fa-trash" (click)="deleteProject(project)"></button>
               </div>
             </a>
             <br>
@@ -52,13 +53,14 @@
             Inactive Projects:
           </h4>
           <div *ngFor="let project of inactiveProjects" class="list-group">
-            <a (click)="clickProject(project)" class="list-group-item list-group-item-action">
+            <a style="margin-bottom: 5px" (click)="clickProject(project)" class="list-group-item list-group-item-action">
               <div class="row">
                 <h4 class="col-md-5">{{project?.projectName}}</h4>
                 <h4 class="col-md-5">{{project?.creatorName}}</h4>
-                <button class="btn btn-outline-warning this-button" (click)="editProject(project)">
+                <button style="margin-right:10px;" class="btn btn-outline-warning this-button" (click)="editProject(project)">
                   <i class="fa fa-pencil" aria-hidden="true"></i>
                 </button>
+                <button class="btn btn-outline-danger fa fa-trash" (click)="deleteProject(project)"></button>
               </div>
             </a>
             <br>
@@ -81,12 +83,13 @@
             Active Lists:
           </h4>
           <div *ngFor="let packing of activePacking" class="list-group">
-            <a (click)="clickPacking(packing)" class="list-group-item list-group-item-action">
+            <a style="margin-bottom: 5px" (click)="clickPacking(packing)" class="list-group-item list-group-item-action">
               <div class="row">
-                <h4 class="col-md-11">{{packing?.packingName}}</h4>
-                <button class="btn-outline-warning" (click)="editPacking(packing)">
+                <h4 class="col-md-10">{{packing?.packingName}}</h4>
+                <button style="margin-right:10px;" class="btn btn-outline-warning" (click)="editPacking(packing)">
                   <i class="fa fa-pencil" aria-hidden="true"></i>
                 </button>
+                <button class="btn btn-outline-danger fa fa-trash" (click)="deletePacking(packing)"></button>
               </div>
             </a>
             <br>
@@ -96,12 +99,13 @@
             Inactive Lists:
           </h4>
           <div *ngFor="let packing of inactivePacking" class="list-group">
-            <a (click)="clickPacking(packing)" class="list-group-item list-group-item-action">
+            <a style="margin-bottom: 5px" (click)="clickPacking(packing)" class="list-group-item list-group-item-action">
               <div class="row">
-                <h4 class="col-md-11">{{packing?.packingName}}</h4>
-                <button class="btn-outline-warning" (click)="editPacking(packing)">
+                <h4 class="col-md-10">{{packing?.packingName}}</h4>
+                <button style="margin-right:10px;" class="btn btn-outline-warning" (click)="editPacking(packing)">
                   <i class="fa fa-pencil" aria-hidden="true"></i>
                 </button>
+                <button class="btn btn-outline-danger fa fa-trash" (click)="deletePacking(packing)"></button>
               </div>
             </a>
             <br>
@@ -124,12 +128,13 @@
             Active Colli:
           </h4>
           <div *ngFor="let colli of activeColli" class="list-group">
-            <a (click)="clickColli(colli)" class="list-group-item list-group-item-action">
+            <a style="margin-bottom: 5px" (click)="clickColli(colli)" class="list-group-item list-group-item-action">
               <div class="row">
-                <h4 class="col-md-5">ID: {{colli?.id}}</h4>
-                <button class="btn btn-outline-warning this-button" (click)="editColli(colli)">
+                <h4 class="col-md-10">ID: {{colli?.id}}</h4>
+                <button style="margin-right:10px;" class="btn btn-outline-warning this-button" (click)="editColli(colli)">
                   <i class="fa fa-pencil" aria-hidden="true"></i>
                 </button>
+                <button class="btn btn-outline-danger fa fa-trash" (click)="deleteColli(colli)"></button>
               </div>
             </a>
             <br>
@@ -139,12 +144,13 @@
             Inactive Colli:
           </h4>
           <div *ngFor="let colli of inactiveColli" class="list-group">
-            <a (click)="clickColli(colli)" class="list-group-item list-group-item-action">
+            <a style="margin-bottom: 5px" (click)="clickColli(colli)" class="list-group-item list-group-item-action">
               <div class="row">
-                <h4 class="col-md-5">ID: {{colli?.id}}</h4>
-                <button class="btn btn-outline-warning this-button" (click)="editColli(colli)">
+                <h4 class="col-md-10">ID: {{colli?.id}}</h4>
+                <button style="margin-right:10px;" class="btn btn-outline-warning this-button" (click)="editColli(colli)">
                   <i class="fa fa-pencil" aria-hidden="true"></i>
                 </button>
+                <button class="btn btn-outline-danger fa fa-trash" (click)="deleteColli(colli)"></button>
               </div>
             </a>
             <br>
@@ -165,7 +171,7 @@
           </div>
           <br>
           <div *ngFor="let item of items" class="list-group">
-            <a class="list-group-item list-group-item-action">
+            <a style="margin-bottom: 5px" class="list-group-item list-group-item-action">
               <div class="row">
                 <h6 class="col-md-3">Item Name: {{item?.itemName}}</h6>
                 <h6 class="col-md-4">Item Dimension: {{item?.dimension}}</h6>
@@ -173,7 +179,7 @@
                 <button style="margin-right:10px;" class="btn btn-outline-warning" (click)="editItem(item)">
                   <i class="fa fa-pencil" aria-hidden="true"></i>
                 </button>
-                <button class="btn btn-outline-danger" (click)="deleteItem(item)">Delete</button>
+                <button class="btn btn-outline-danger fa fa-trash" (click)="deleteItem(item)"></button>
               </div>
             </a>
           </div>
