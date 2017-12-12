@@ -52,6 +52,7 @@ export class EditPackingComponent implements OnInit {
     {
       if (packingItem.item.id == item.id)
       {
+        this.currentPackingChanged = true;
         packingItem.count++;
         existsOld = true;
       }
@@ -98,10 +99,9 @@ export class EditPackingComponent implements OnInit {
 
   removeAllCurrent(packItem: PackItem) {
     this.currentPackingChanged = true;
-      const index = this.packing.packItems.indexOf(packItem);
-      this.packing.packItems.splice(index, 1);
-      const IdIndex = this.packing.packItemsIds.indexOf(packItem.id);
-      this.packing.packItemsIds.splice(IdIndex,1);
+    this.packItemService.delete(packItem.id).subscribe();
+    const index = this.packing.packItems.indexOf(packItem);
+    this.packing.packItems.splice(index, 1);
   }
 
   removeItemCurrent(packItem: PackItem) {
@@ -110,10 +110,9 @@ export class EditPackingComponent implements OnInit {
       packItem.count--;
     }
     else {
+      this.packItemService.delete(packItem.id).subscribe();
       const index = this.packing.packItems.indexOf(packItem);
       this.packing.packItems.splice(index, 1);
-      const IdIndex = this.packing.packItemsIds.indexOf(packItem.id);
-      this.packing.packItemsIds.splice(IdIndex,1);
       this.packItemService.delete(packItem.id);
     }
   }
@@ -164,25 +163,36 @@ export class EditPackingComponent implements OnInit {
 
   createPackItems(){
 
-    for(let packItem of this.newPackItems){
-      packItem.packingListId = this.packing.id;
-      packItem.packingList = this.packing;
+    if (this.newPackItems.length != 0) {
+      for (let packItem of this.newPackItems) {
+        packItem.packingListId = this.packing.id;
+        packItem.packingList = this.packing;
+      }
+      this.packItemService.createList(this.newPackItems).subscribe(pi => this.updatePackItems());
     }
-    this.packItemService.createList(this.newPackItems).subscribe(pi=> this.addNewPackItemToPacking(pi));
-  }
-
-  addNewPackItemToPacking(packItems: PackItem[]){
-    for (let packItem of packItems)
+    else
     {
-      this.packing.packItemsIds.push(packItem.id);
+      this.updatePackItems();
     }
-    this.updatePackItems();
   }
 
   updatePackItems() {
     if (this.currentPackingChanged)
     {
-    this.packItemService.updateList(this.packing.packItems).subscribe(pi => this.save());
+      for(let packItem of this.packing.packItems)
+      {
+        let pack: PackItem = {
+          id: packItem.id,
+          packed: packItem.packed,
+          count: packItem.count,
+          item: packItem.item,
+          itemId: packItem.itemId,
+          packingList: packItem.packingList,
+          packingListId: packItem.packingListId
+      }
+      this.packItemService.update(pack).subscribe();
+      }
+      this.save();
     }
     else
     {

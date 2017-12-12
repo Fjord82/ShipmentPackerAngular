@@ -31,8 +31,6 @@ export class PackingDetailComponent implements OnInit {
     this.router.navigateByUrl('/project-detail/'+this.packing.projectIds[0]);
   }
 
-  clickProject() {
 
-  }
 
 }

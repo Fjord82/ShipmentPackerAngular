@@ -44,7 +44,12 @@ export class EditItemComponent implements OnInit {
       itemName: values.itemName,
       dimension: values.dimension,
       weight: values.weight,
-      dangerousGoods: values.dangerousGoods
+      dangerousGoods: values.dangerousGoods,
+      colliItemsIds: this.item.colliItemsIds,
+      freightConditionIds: this.item.freightConditionIds,
+      packItems: this.item.packItems,
+      packItemsIds: this.item.packItemsIds,
+
     };
     this.itemService.update(item).subscribe(item => this.back());
   }

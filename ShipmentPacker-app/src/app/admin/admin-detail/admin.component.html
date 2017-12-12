@@ -171,7 +171,7 @@
           </div>
           <br>
           <div *ngFor="let item of items" class="list-group">
-            <a style="margin-bottom: 5px" class="list-group-item list-group-item-action">
+            <a (click)="editItem(item)" style="margin-bottom: 5px" class="list-group-item list-group-item-action">
               <div class="row">
                 <h6 class="col-md-3">Item Name: {{item?.itemName}}</h6>
                 <h6 class="col-md-4">Item Dimension: {{item?.dimension}}</h6>

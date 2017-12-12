@@ -87,7 +87,7 @@ export class AdminComponent implements OnInit {
   }
 
   editProject(project: Project) {
-    this.router.navigateByUrl('/edit-project/'+project.id);
+    this.router.navigateByUrl('/admin-edit-project/'+project.id);
   }
 
   deleteProject(project: Project) {
@@ -99,7 +99,7 @@ export class AdminComponent implements OnInit {
   }
 
   editPacking(packing: Packing) {
-    this.router.navigateByUrl('/edit-packing/'+packing.id);
+    this.router.navigateByUrl('/admin-edit-packing/'+packing.id);
   }
 
   deletePacking(packing: Packing) {
@@ -111,7 +111,7 @@ export class AdminComponent implements OnInit {
   }
 
   editColli(colli: ColliList) {
-    this.router.navigateByUrl('/edit-colli/'+colli.id);
+    this.router.navigateByUrl('/admin-edit-colli/'+colli.id);
   }
 
   deleteColli(colli: ColliList) {
