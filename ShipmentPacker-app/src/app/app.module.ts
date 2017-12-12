@@ -36,6 +36,7 @@ import { AdminProjectEditComponent } from './admin/admin-project-edit/admin-proj
 import { AdminColliEditComponent } from './admin/admin-colli-edit/admin-colli-edit.component';
 import {PackItemService} from './office/packing/shared/pack-item.service';
 import { AdminPackingEditComponent } from './admin/admin-packing-edit/admin-packing-edit.component';
+import {ColliItemService} from './workshop/colli/shared/colli-item.service';
 
 const appRoutes: Routes = [
   { path: 'login', component: LoginComponent },
@@ -104,7 +105,7 @@ const appRoutes: Routes = [
     FormsModule,
     HttpClientModule
   ],
-  providers: [ProjectService, PackingService, PackItemService, ColliService, ItemService, UtilityService],
+  providers: [ProjectService, PackingService, PackItemService, ColliService, ItemService, ColliItemService, UtilityService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

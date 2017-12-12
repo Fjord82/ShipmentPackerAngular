@@ -53,29 +53,23 @@
   <hr>
   <div class="row">
     <div class="col-4">
-      <select id="selectmultiple" name="selectmultiple" class="form-control" multiple="multiple">
-        <option value="1">Option one</option>
-        <option value="2">Option two</option>
-        <option value="3">Option three</option>
-        <option value="4">Option four</option>
-        <option value="5">Option five</option>
-      </select>
+      <div *ngFor="let packItem of packing?.packItems">
+        <a style="margin-bottom: 5px" (click)="addItem(packItem)" class="list-group-item list-group-item-action" value="1">{{packItem?.item.itemName}} - Amount: {{packItem?.count}} - Packed: {{packItem?.packed}}</a>
+      </div>
     </div>
-    <div class="col-1"></div>
-    <div class="col-2">
-      <button class="btn btn-outline-info button-middle" (click)="add()">Move Item To colli</button>
-      <button class="btn btn-outline-danger button-middle" (click)="remove()">Remove from  colli</button>
-    </div>
-    <div class="col-1"></div>
+    <div class="col-2"></div>
+    <div class="row">
+    <h4>Currently packed items</h4>
     <div class="col-4">
-      <div class="list-group">
-        <select name="selectmultiple" class="form-control" multiple="multiple">
-          <option value="1">This is empty</option>
-          <option value="2">This is empty</option>
-          <option value="3">This is empty</option>
-          <option value="4">This is empty</option>
-          <option value="5">This is empty</option>
-        </select>
+      <div *ngFor="let packItem of packing?.packItems">
+        <a style="margin-bottom: 5px" (click)="removeItem(colliItem)" class="list-group-item list-group-item-action" >{{packItem?.item.itemName}} - Amount: {{packItem?.count}}
+        </a>
+      </div>
+    </div>
+    <h4>New items</h4>
+      <div *ngFor="let colliItem of colliItems">
+        <a style="margin-bottom: 5px" (click)="removeItem(colliItem)" class="list-group-item list-group-item-action" >{{colliItem?.item.itemName}} - Amount: {{colliItem?.count}}
+          <button class="fa fa-trash pull-right btn btn-outline-danger" (click)="removeAll(colliItem)"></button></a>
       </div>
     </div>
   </div>

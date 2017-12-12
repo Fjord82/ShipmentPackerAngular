@@ -4,6 +4,7 @@ import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {ColliService} from '../shared/colli.service';
 import {Packing} from '../../../office/packing/shared/packing.model';
 import {ColliList} from '../shared/colli.model';
+import {PackingService} from '../../../office/packing/shared/packing.service';
 
 @Component({
   selector: 'app-edit-colli',
@@ -14,10 +15,12 @@ export class EditColliComponent implements OnInit {
 
   colli: ColliList;
   colliGroup: FormGroup;
+  packing: Packing;
   constructor(private router: Router,
               private fb: FormBuilder,
               private route: ActivatedRoute,
-              private colliService: ColliService) {
+              private colliService: ColliService,
+              private packingService: PackingService) {
     this.colliGroup = this.fb.group({
       totalWeight: ['', Validators.required],
       dimensions: ['', Validators.required],
@@ -27,8 +30,12 @@ export class EditColliComponent implements OnInit {
 
   ngOnInit() {
     this.route.paramMap.switchMap(params => this.colliService.getById(+params.get('id')))
-      .subscribe(colli => this.colli = colli);
+      .subscribe(colli => this.getPacking(colli));
+  }
 
+  getPacking(colli: ColliList){
+    this.colli = colli;
+    this.packingService.getById(colli.packingListIds[0]).subscribe(packing => this.packing = packing);
   }
 
   back() {
@@ -55,10 +62,8 @@ export class EditColliComponent implements OnInit {
 
     this.colliService.update(this.colli).subscribe(colli => this.back());
   }
- 
+
   inactive() {
-
-
     this.colli.isActive = false;
 
     this.colliService.update(this.colli).subscribe(colli => this.back());

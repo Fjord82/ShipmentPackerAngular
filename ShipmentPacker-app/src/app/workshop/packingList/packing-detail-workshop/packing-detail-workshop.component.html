@@ -39,24 +39,16 @@
   </div>
 
   <div class="col-md-10 offset-1">
-    <div class="list-group">
-      <a class="list-group-item">
-        <div class="row">
-          <h4 class="col-md-5">ItemName</h4>
-          <h4 class="col-md-5">Quantity = 4</h4>
-          <label class="btn btn-outline-success buttons-right">
-            <input type="checkbox" autocomplete="off"> done
-          </label>
-        </div>
-      </a>
-      <a class="list-group-item">
-        <div class="row">
-          <h4 class="col-md-5">ItemName</h4>
-          <h4 class="col-md-5">Quantity = 5</h4>
-          <label class="btn btn-outline-success buttons-right">
-            <input type="checkbox" autocomplete="off"> done
-          </label>
-        </div>
+    <div *ngFor="let packItem of packing?.packItems" class="list-group">
+      <a class="list-group-item list-group-item-action" style="margin-bottom: 5px">
+          <div class="row">
+          <h4 class="col-md-3">{{packItem?.item.itemName}}</h4>
+          <h4 class="col-md-3">Total: {{packItem?.count}}</h4>
+            <h4 class="col-md-4">Packed: {{packItem?.packed}}</h4>
+          <button class="btn btn-outline-success buttons-right" disabled>
+            <input type="checkbox" autocomplete="off" disabled >
+          </button>
+          </div>
       </a>
     </div>
     <br>
@@ -74,17 +66,16 @@
   <hr>
   <div class="col-md-10 offset-1">
     <div *ngFor="let colli of packing?.colliLists" class="list-group">
-      <a (click)="colliClick(colli)" class="list-group-item list-group-item-action">
+      <a (click)="colliClick(colli)" class="list-group-item list-group-item-action" style="margin-bottom: 5px">
         <div class="row">
           <h4 class="col-md-7">Colli Id: {{colli.id}}</h4>
           <div class="col-4">
           </div>
-          <button class="btn-outline-warning" (click)="editColli(colli)">
+          <button class="btn btn-outline-warning" (click)="editColli(colli)">
             <i class="fa fa-pencil" aria-hidden="true"></i>
           </button>
         </div>
       </a>
-      <br>
     </div>
   </div>
 </div>

@@ -53,16 +53,16 @@
   <hr>
   <div class="row">
   <div class="col-4">
-    <div (click)="addItem(item)">
-      <a style="margin-bottom: 5px"*ngFor="let packItem of packing?.packItems" class="list-group-item list-group-item-action" value="1">{{packItem?.item.itemName}} - Amount: {{packItem?.count}}</a>
+    <div *ngFor="let packItem of packing?.packItems">
+      <a style="margin-bottom: 5px" (click)="addItem(packItem)" class="list-group-item list-group-item-action" value="1">{{packItem?.item.itemName}} - Amount: {{packItem?.count}} - Packed: {{packItem?.packed}}</a>
     </div>
   </div>
     <div class="col-2"></div>
     <div class="col-2"></div>
   <div class="col-4">
-    <div *ngFor="let packItem of packItems">
-      <a style="margin-bottom: 5px" (click)="removeItem(packItem)" class="list-group-item list-group-item-action" >{{packItem?.item.itemName}} - Amount: {{packItem?.count}}
-        <button class="fa fa-trash pull-right btn btn-outline-danger" (click)="removeAll(packItem)">
+    <div *ngFor="let colliItem of colliItems">
+      <a style="margin-bottom: 5px" (click)="removeItem(colliItem)" class="list-group-item list-group-item-action" >{{colliItem?.item.itemName}} - Amount: {{colliItem?.count}}
+        <button class="fa fa-trash pull-right btn btn-outline-danger" (click)="removeAll(colliItem)">
         </button></a>
     </div>
   </div>

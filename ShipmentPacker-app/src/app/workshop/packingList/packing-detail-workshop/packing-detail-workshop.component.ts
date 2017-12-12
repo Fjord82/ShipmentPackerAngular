@@ -3,6 +3,7 @@ import {ActivatedRoute, Router} from '@angular/router';
 import {Packing} from '../../../office/packing/shared/packing.model';
 import {PackingService} from '../../../office/packing/shared/packing.service';
 import {ColliList} from '../../colli/shared/colli.model';
+import {PackItem} from '../../../office/packing/shared/packItem.model';
 
 @Component({
   selector: 'app-packing-detail-workshop',
@@ -37,5 +38,4 @@ export class PackingDetailWorkshopComponent implements OnInit {
   colliClick(colliList: ColliList) {
     this.router.navigateByUrl('/colli-detail/'+colliList.id)
   }
-
 }
