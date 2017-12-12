@@ -3,7 +3,7 @@
   <div class="row">
     <div class="col-md-12">
       <button class="btn btn-outline-info" (click)="back()">Back</button>
-      <h2 class="my-local-center">Add Item</h2>
+      <h2 class="my-local-center">Edit Item</h2>
       <button class="btn btn-outline-success float-right" type="submit" (click)="save()">Save</button>
     </div>
   </div>
@@ -15,7 +15,7 @@
           Item Name:
         </dt>
         <dd class="col-md-4">
-          <input type="text" class="form-control" formControlName="itemName" placeholder="ItemName" value="{{item?.itemName}}">
+          <input type="text" class="form-control" formControlName="itemName" placeholder="Name" value="{{item?.itemName}}">
         </dd>
         <dt class="col-md-2">
           Dimension:
@@ -39,3 +39,4 @@
     </form>
   </div>
 </div>
+

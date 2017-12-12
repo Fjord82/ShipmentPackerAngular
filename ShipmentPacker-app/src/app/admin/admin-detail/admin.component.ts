@@ -99,7 +99,7 @@ export class AdminComponent implements OnInit {
   }
 
   editPacking(packing: Packing) {
-    this.router.navigateByUrl('/edit-packing/'+packing.id);
+    this.router.navigateByUrl('/admin-edit-packing/'+packing.id);
   }
 
   deletePacking(packing: Packing) {
