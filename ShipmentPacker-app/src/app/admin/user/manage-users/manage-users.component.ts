@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {Router} from '@angular/router';
+import {User} from '../shared/user.model';
+import {UserService} from '../shared/user.service';
 
 @Component({
   selector: 'app-manage-users',
@@ -8,9 +10,15 @@ import {Router} from '@angular/router';
 })
 export class ManageUsersComponent implements OnInit {
 
-  constructor(private router: Router) { }
+  users: User[];
+  constructor(private router: Router,
+              private userService: UserService) { }
 
   ngOnInit() {
+    this.userService.getUsers().subscribe(
+      users => {
+        this.users = users;
+      });
   }
 
   back() {
