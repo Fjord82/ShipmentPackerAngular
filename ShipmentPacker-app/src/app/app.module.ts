@@ -39,6 +39,8 @@ import { AdminPackingEditComponent } from './admin/admin-packing-edit/admin-pack
 import {ColliItemService} from './workshop/colli/shared/colli-item.service';
 import { AddUserComponent } from './admin/user/add-user/add-user.component';
 import {UserService} from './admin/user/shared/user.service';
+import {FreightConditionService} from './admin/freightCondition/shared/freightCondition.service';
+import { AddFreightConditionComponent } from './admin/freightCondition/add-freight-condition/add-freight-condition.component';
 
 const appRoutes: Routes = [
   { path: 'login', component: LoginComponent },
@@ -66,6 +68,7 @@ const appRoutes: Routes = [
   { path: 'admin-edit-colli/:id', component: AdminColliEditComponent },
   { path: 'admin-edit-packing/:id', component: AdminPackingEditComponent },
   { path: 'add-user', component: AddUserComponent },
+  { path: 'add-freightCondition', component: AddFreightConditionComponent },
   {
     path: '',
     redirectTo: '/login',
@@ -99,7 +102,8 @@ const appRoutes: Routes = [
     AdminProjectEditComponent,
     AdminColliEditComponent,
     AdminPackingEditComponent,
-    AddUserComponent
+    AddUserComponent,
+    AddFreightConditionComponent
   ],
   imports: [
     BrowserModule,
@@ -110,7 +114,7 @@ const appRoutes: Routes = [
     HttpClientModule
   ],
 
-  providers: [ProjectService, PackingService, PackItemService, ColliService, ItemService, ColliItemService, UtilityService, UserService],
+  providers: [ProjectService, PackingService, PackItemService, ColliService, ItemService, ColliItemService, FreightConditionService, UtilityService, UserService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,4 +1,4 @@
-import {Item} from './item.model';
+import {Item} from '../../item/shared/item.model';
 
 export class FreightCondition {
   id?: number;
