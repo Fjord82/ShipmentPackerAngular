@@ -4,7 +4,7 @@
     <div class="col-12">
       <h2 class="my-local-center">Edit Colli</h2>
       <button style="display: inline-block;" type="button" class="btn btn-outline-info float-left" (click)="back()">Back</button>
-      <button style="display: inline-block;" type="button" class="btn btn-outline-success float-right" (click)="save()">Save</button>
+      <button style="display: inline-block;" type="button" class="btn btn-outline-success float-right" (click)="submit()">Save</button>
     </div>
   </div>
   <hr>
@@ -45,7 +45,7 @@
           Freight Type:
         </dt>
         <dd class="col-md-4">
-          <input type="text" class="form-control" formControlName="freightType" placeholder="{{colli?.freightType}}">
+          <input type="text" class="form-control" placeholder="{{colli?.freightType}}" disabled>
         </dd>
       </dl>
     </form>
@@ -53,24 +53,24 @@
   <hr>
   <div class="row">
     <div class="col-4">
+    <h4>PackingList</h4>
       <div *ngFor="let packItem of packing?.packItems">
         <a style="margin-bottom: 5px" (click)="addItem(packItem)" class="list-group-item list-group-item-action" value="1">{{packItem?.item.itemName}} - Amount: {{packItem?.count}} - Packed: {{packItem?.packed}}</a>
       </div>
     </div>
-    <div class="col-2"></div>
-    <div class="row">
-    <h4>Currently packed items</h4>
+    <div class="col-4"></div>
     <div class="col-4">
-      <div *ngFor="let packItem of packing?.packItems">
-        <a style="margin-bottom: 5px" (click)="removeItem(colliItem)" class="list-group-item list-group-item-action" >{{packItem?.item.itemName}} - Amount: {{packItem?.count}}
-        </a>
+    <h4>Currently Packed Items</h4>
+      <div *ngFor="let colliItem of colli?.colliItems">
+        <a style="margin-bottom: 5px" (click)="removeItemCurrent(colliItem)" class="list-group-item list-group-item-action" value="1">{{colliItem?.item.itemName}} - Amount: {{colliItem?.count}}
+          <button class="fa fa-trash pull-right btn btn-outline-danger" (click)="removeAllCurrent(colliItem)"></button></a>
       </div>
-    </div>
-    <h4>New items</h4>
-      <div *ngFor="let colliItem of colliItems">
-        <a style="margin-bottom: 5px" (click)="removeItem(colliItem)" class="list-group-item list-group-item-action" >{{colliItem?.item.itemName}} - Amount: {{colliItem?.count}}
+      <br>
+      <h4>New Items</h4>
+      <div *ngFor="let colliItem of newColliItems">
+        <a style="margin-bottom: 5px" (click)="removeItem(colliItem)" class="list-group-item list-group-item-action" value="1">{{colliItem?.item.itemName}} - Amount: {{colliItem?.count}}
           <button class="fa fa-trash pull-right btn btn-outline-danger" (click)="removeAll(colliItem)"></button></a>
       </div>
-    </div>
+  </div>
   </div>
 </div>

@@ -1,5 +1,6 @@
 import {Packing} from '../../../office/packing/shared/packing.model';
 import {IEntity} from "../../../shared/IEntity";
+import {ColliItem} from './colliItem.model';
 
 export class ColliList implements IEntity {
   id?: number;
@@ -13,6 +14,8 @@ export class ColliList implements IEntity {
   packingListIds?: number[];
   packingLists?: Packing[];
   itemType?: string;
+  colliItems?: ColliItem[];
+  colliItemsIds?: number[];
 
   toString(): string {
     return "Colli#" + this.id

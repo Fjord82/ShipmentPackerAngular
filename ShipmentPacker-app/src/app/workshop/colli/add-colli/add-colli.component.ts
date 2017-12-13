@@ -97,7 +97,6 @@ export class AddColliComponent implements OnInit {
         packItem = pi;
       }
     }
-
     const index = this.colliItems.indexOf(colliItem);
     this.colliItems.splice(index, 1);
     packItem.packed = packItem.packed - colliItem.count;
@@ -111,11 +110,9 @@ export class AddColliComponent implements OnInit {
     const values = this.colliGroup.value;
     if (values.totalWeight == "") values.totalWeight = this.colli.totalWeight;
     if (values.dimensions == "") values.dimensions = this.colli.dimensions;
-    if (values.freightType == "") values.freightType = this.colli.freightType;
     this.colli = <ColliList> {
       totalWeight: values.totalWeight,
       dimensions: values.dimensions,
-      freightType: values.freightType,
     };
     this.colli.itemType = 'itemType';
     this.colli.packingListIds = [];
@@ -124,6 +121,7 @@ export class AddColliComponent implements OnInit {
     this.colli.worker = this.worker;
     this.colli.netWeight = this.netWeight;
     this.colli.isActive = true;
+    this.colli.freightType = this.packing.freightType;
     this.colliService.create(this.colli).subscribe(colli => this.handleItems(colli));
   }
 
