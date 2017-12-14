@@ -18,19 +18,23 @@
 
 
         <div class="row">
-          <div class="col-lg-3 col-md-4 col-sm-6" *ngFor="let user of users">
+          <div class="col-lg-4 col-md-4 col-sm-6" *ngFor="let user of users">
             <br>
             <div class="card">
             <div class="card-header card-primary">
-              <h4 class="card-title">{{user?.firstName}} {{user?.lastName}}</h4>
+              <h4 class="card-title shadow">{{user?.firstName}} {{user?.lastName}}</h4>
             </div>
             <div class="card-body">
-              <p class="card-text">Email: {{user?.workEmail}}</p>
-              <p class="card-text">Phone: {{user.workPhoneNumber}}</p>
+              <p class="card-text"><strong>Email:</strong></p>
+              <p class="card-text">{{user?.workEmail}}</p>
+              <hr>
+              <p class="card-text"><strong>Phone:</strong></p>
+              <p class="card-text">+45 {{user.workPhoneNumber}}</p>
+
             </div>
             <div class="card-footer">
               <small>ID: {{user?.id}}</small>
-              <button class="btn btn-outline-warning float-right">
+              <button class="btn btn-outline-warning float-right" (click)="editUser()">
                 <i class="fa fa-wrench" aria-hidden="true"></i>
               </button>
             </div>
@@ -45,21 +49,27 @@
     </ngb-tab>
     <ngb-tab title="Workshop">
       <ng-template ngbTabContent>
-        <br>
-        <div class="col-lg-3 col-md-4 col-sm-6">
-          <div class="card">
-            <div class="card-header card-primary">
-              <h4 class="card-title">Peter Pikfjæs</h4>
-            </div>
-            <div class="card-body">
-              <p class="card-text">Email: mail@meganot.hot</p>
-              <p class="card-text">Phone: +45 80802121</p>
-            </div>
-            <div class="card-footer">
-              <small>ID: 1337</small>
-              <button (click)="edit(user)" class="btn btn-outline-warning float-right">
-                <i class="fa fa-wrench" aria-hidden="true"></i>
-              </button>
+        <div class="row">
+          <div class="col-lg-4 col-md-4 col-sm-6" *ngFor="let user of users">
+            <br>
+            <div class="card">
+              <div class="card-header card-primary">
+                <h4 class="card-title shadow">{{user?.firstName}} {{user?.lastName}}</h4>
+              </div>
+              <div class="card-body">
+                <p class="card-text"><strong>Email:</strong></p>
+                <p class="card-text">{{user?.workEmail}}</p>
+                <hr>
+                <p class="card-text"><strong>Phone:</strong></p>
+                <p class="card-text">+45 {{user.workPhoneNumber}}</p>
+
+              </div>
+              <div class="card-footer">
+                <small>ID: {{user?.id}}</small>
+                <button class="btn btn-outline-warning float-right">
+                  <i class="fa fa-wrench" aria-hidden="true"></i>
+                </button>
+              </div>
             </div>
           </div>
         </div>
