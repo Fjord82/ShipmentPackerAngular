@@ -152,9 +152,6 @@ export class EditColliComponent implements OnInit {
     this.handleLists();
   }
 
-  back() {
-    this.router.navigateByUrl('packingDetailWorkshop/'+this.colli.packingListIds[0])
-  }
   save() {
     const values = this.colliGroup.value;
     if (values.totalWeight == "") values.totalWeight = this.colli.totalWeight;
@@ -226,5 +223,9 @@ export class EditColliComponent implements OnInit {
     }
 
     this.save();
+  }
+
+  back() {
+    this.router.navigateByUrl('packingDetailWorkshop/'+this.colli.packingListIds[0])
   }
 }
