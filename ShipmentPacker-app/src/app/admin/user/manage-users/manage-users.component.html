@@ -11,14 +11,12 @@
     </div>
   </div>
   <hr>
+
   <ngb-tabset>
     <ngb-tab title="Office">
       <ng-template ngbTabContent>
-
-
-
         <div class="row">
-          <div class="col-lg-4 col-md-4 col-sm-6" *ngFor="let user of users">
+          <div class="col-lg-4 col-md-4 col-sm-6" *ngFor="let user of officeWorkers">
             <br>
             <div class="card">
             <div class="card-header card-primary">
@@ -39,7 +37,6 @@
               </button>
             </div>
           </div>
-
         </div>
           <br>
         </div>
@@ -47,10 +44,11 @@
 
       </ng-template>
     </ngb-tab>
+
     <ngb-tab title="Workshop">
       <ng-template ngbTabContent>
         <div class="row">
-          <div class="col-lg-4 col-md-4 col-sm-6" *ngFor="let user of users">
+          <div class="col-lg-4 col-md-4 col-sm-6" *ngFor="let user of workshopEmployees">
             <br>
             <div class="card">
               <div class="card-header card-primary">
@@ -75,6 +73,41 @@
         </div>
       </ng-template>
     </ngb-tab>
+
+    <ngb-tab title="Admin">
+      <ng-template ngbTabContent>
+        <div class="row">
+          <div class="col-lg-4 col-md-4 col-sm-6" *ngFor="let user of admins">
+            <br>
+            <div class="card">
+              <div class="card-header card-primary">
+                <h4 class="card-title shadow">{{user?.firstName}} {{user?.lastName}}</h4>
+              </div>
+              <div class="card-body">
+                <p class="card-text"><strong>Email:</strong></p>
+                <p class="card-text">{{user?.workEmail}}</p>
+                <hr>
+                <p class="card-text"><strong>Phone:</strong></p>
+                <p class="card-text">+45 {{user.workPhoneNumber}}</p>
+
+              </div>
+              <div class="card-footer">
+                <small>ID: {{user?.id}}</small>
+                <button class="btn btn-outline-warning float-right">
+                  <i class="fa fa-wrench" aria-hidden="true"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </ng-template>
+    </ngb-tab>
+
   </ngb-tabset>
+
+
+  <br>
+
+
 
 </div>
