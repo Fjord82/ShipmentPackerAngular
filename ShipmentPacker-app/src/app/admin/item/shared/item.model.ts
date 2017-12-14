@@ -1,5 +1,5 @@
 import {PackItem} from '../../../office/packing/shared/packItem.model';
-import {FreightCondition} from './freightCondition.model';
+import {FreightCondition} from '../../freightCondition/shared/freightCondition.model';
 import {ColliItem} from '../../../workshop/colli/shared/colliItem.model';
 
 export class Item {
