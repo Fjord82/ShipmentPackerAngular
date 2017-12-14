@@ -10,15 +10,41 @@ import {UserService} from '../shared/user.service';
 })
 export class ManageUsersComponent implements OnInit {
 
-  users: User[];
+  officeWorkers: User[];
+  workshopEmployees: User[];
+  admins: User[];
+
   constructor(private router: Router,
-              private userService: UserService) { }
+              private userService: UserService) {
+
+    this.officeWorkers = [];
+    this.workshopEmployees = [];
+    this.admins = [];
+  }
 
   ngOnInit() {
     this.userService.getUsers().subscribe(
       users => {
-        this.users = users;
+                 this.sortUsers(users);
       });
+  }
+
+  sortUsers(users: User[]){
+    for (let user of users)
+    {
+      if(user.workTitle == "Office")
+      {
+        this.officeWorkers.push(user);
+      }
+      if(user.workTitle == "Workshop")
+      {
+        this.workshopEmployees.push(user)   ;
+      }
+      if(user.workTitle == "Admin")
+      {
+        this.admins.push(user);
+      }
+    }
   }
 
   back() {
@@ -32,5 +58,6 @@ export class ManageUsersComponent implements OnInit {
   editUser(user: User) {
     this.router.navigateByUrl('/edit-user/'+user.id);
   }
+
 
 }
