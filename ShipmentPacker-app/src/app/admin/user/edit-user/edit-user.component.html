@@ -4,7 +4,20 @@
     <div class="col-md-12">
       <button class="btn btn-outline-info" (click)="back()">Back</button>
       <h2 class="my-local-center">Edit User</h2>
-      <button class="btn btn-outline-danger pull-right" (click)="delete(user)">Delete user</button>
+      <div *ngIf="!userToDelete || userToDelete.id != user.id" class="pull-right">
+        <button class="btn btn-outline-danger" (click)="deleteUser(user, $event)">
+          <i class="fa fa-trash-o" aria-hidden="true"></i>
+          Delete User
+        </button>
+      </div>
+      <div *ngIf="userToDelete && userToDelete.id == user.id" class="pull-right">
+        <button class="btn btn-outline-info" (click)="deleteAborted($event)">
+          <i class="fa fa-pencil" aria-hidden="true"></i> Cancel
+        </button>
+        <button class="btn btn-outline-danger" (click)="deleteConfirmed($event)">
+          <i class="fa fa-trash-o" aria-hidden="true"></i> Confirm
+        </button>
+      </div>
     </div>
   </div>
   <hr>

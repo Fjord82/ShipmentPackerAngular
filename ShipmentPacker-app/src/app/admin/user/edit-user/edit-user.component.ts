@@ -11,6 +11,7 @@ import {UserService} from '../shared/user.service';
 })
 export class EditUserComponent implements OnInit {
 
+  userToDelete: User;
   user: User;
   formGroup: FormGroup;
   constructor(private router: Router,
@@ -37,8 +38,23 @@ export class EditUserComponent implements OnInit {
     this.router.navigateByUrl('/manage-users');
   }
 
-  delete(user: User) {
-    this.userService.delete(user.id).subscribe(user => this.back())
+  deleteUser(user: User, $event) {
+    this.userToDelete = user;
+    $event.stopPropagation();
+  }
+
+  deleteAborted($event) {
+    this.userToDelete = null;
+    $event.stopPropagation();
+  }
+
+  deleteConfirmed($event) {
+    this.userService.delete(this.userToDelete.id)
+      .subscribe(
+        user => {
+          this.back()
+        });
+    $event.stopPropagation();
   }
 
   update() {
