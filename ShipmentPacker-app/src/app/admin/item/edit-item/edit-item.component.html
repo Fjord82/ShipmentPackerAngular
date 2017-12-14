@@ -9,7 +9,7 @@
   </div>
   <hr>
   <div class="col-12">
-    <form (ngSubmit)="save()" [formGroup]="itemGroup" novalidate>
+    <form [formGroup]="itemGroup" novalidate>
       <dl class="form-row" >
         <dt class="col-md-2">
           Item Name:
@@ -32,11 +32,30 @@
         <dt class="col-md-2">
           Dangerous Goods:
         </dt>
-        <label class="btn btn-outline-success">
-          <input type="checkbox" formControlName="dangerousGoods" [checked]="item?.dangerousGoods" (change)="item.dangerousGoods =!item.dangerousGoods">
-        </label>
+        <button style="margin-bottom: 5px" class="btn btn-lg btn-outline-warning" (click)="open(content)">Choose Freight Conditions</button>
+        <div class="col-8"></div>
+        <div class="row col-4">
+          <div *ngFor="let freightCondition of item?.freightConditions" class="col-12">
+            <button style="margin-bottom: 5px" (click)="removeFreightCondition(freightCondition)" class="btn btn-lg btn-outline-danger col-12">UN: {{freightCondition?.dangerousGoodsNumber}} : {{freightCondition?.dangerousGoodsName}}</button>
+          </div>
+        </div>
       </dl>
     </form>
   </div>
 </div>
-
+<ng-template #content let-c="close" let-d="dismiss">
+  <div class="modal-header">
+    <h4 class="modal-title">Freight Conditions</h4>
+    <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <div *ngFor="let freightCondition of freightConditions">
+      <button style="margin-bottom: 5px" (click)="addFreightCondition(freightCondition)" class="btn btn-lg btn-outline-danger col-12">UN: {{freightCondition?.dangerousGoodsNumber}} : {{freightCondition?.dangerousGoodsName}}</button>
+    </div>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-outline-dark" (click)="c('Close click')">Close</button>
+  </div>
+</ng-template>
