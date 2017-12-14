@@ -1,0 +1,30 @@
+<div class="container">
+  <br>
+  <div class="row">
+    <div class="col-md-12">
+      <button class="btn btn-outline-info" (click)="back()">Back</button>
+      <h2 class="my-local-center">Add Freight Condition</h2>
+      <button class="btn btn-outline-success float-right" type="submit" (click)="save()">Save</button>
+    </div>
+  </div>
+  <hr>
+  <div class="col-12">
+    <form (ngSubmit)="save()" novalidate>
+      <dl class="form-row" [formGroup]="itemGroup">
+        <dt class="col-md-3">
+          Dangerous Goods Name:
+        </dt>
+        <dd class="col-md-4">
+          <input class="form-control" formControlName="name" placeholder="Dangerous Goods Name">
+        </dd>
+        <div class="col-4"></div>
+        <dt class="col-md-3">
+          Dangerous Goods Nr.:
+        </dt>
+        <dd class="col-md-4">
+          <input class="form-control" formControlName="number" placeholder="Dangerous Goods Nr.">
+        </dd>
+      </dl>
+    </form>
+  </div>
+</div>

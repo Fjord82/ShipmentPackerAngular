@@ -9,6 +9,8 @@ import {ColliList} from '../../workshop/colli/shared/colli.model';
 import {ItemService} from '../item/shared/item.service';
 import {Item} from '../item/shared/item.model';
 import {UtilityService} from '../../shared/utility.service';
+import {FreightConditionService} from '../freightCondition/shared/freightCondition.service';
+import {FreightCondition} from '../freightCondition/shared/freightCondition.model';
 
 @Component({
   selector: 'app-admin',
@@ -35,11 +37,14 @@ export class AdminComponent implements OnInit {
   items: Item[];
   item: Item;
 
+  freightConditions: FreightCondition[];
+
   constructor(private router: Router,
               private projectService: ProjectService,
               private packingService: PackingService,
               private colliService: ColliService,
               private itemService: ItemService,
+              private freightConditionService: FreightConditionService,
               private utilityService: UtilityService) { }
 
   ngOnInit() {
@@ -62,6 +67,11 @@ export class AdminComponent implements OnInit {
       items => {
         this.items = items;
       });
+
+    this.freightConditionService.getFreightConditions().subscribe
+    (freightConditions => {
+      this.freightConditions = freightConditions;
+    });
   }
   sortProjects(project: Project[]) {
     this.activeProjects = <Project[]>this.utilityService.activeList(project);
@@ -126,12 +136,24 @@ export class AdminComponent implements OnInit {
     this.router.navigateByUrl('/add-item')
   }
 
+  addFreightCondition() {
+    this.router.navigateByUrl('/add-freightCondition')
+  }
+
   editItem(item: Item) {
     this.router.navigateByUrl('/edit-item/'+item.id)
   }
 
   deleteItem(item: Item) {
     this.itemService.delete(item.id).subscribe(item=> window.location.reload())
+  }
+
+  deleteFreightCondition(freightCondition: FreightCondition){
+    this.freightConditionService.delete(freightCondition.id).subscribe(freightCondition => window.location.reload())
+  }
+
+  editFreightCondition(freightCondition: FreightCondition) {
+    this.router.navigateByUrl('/edit-freightCondition/'+freightCondition.id)
   }
 
   manageUsers() {
