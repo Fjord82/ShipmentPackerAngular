@@ -17,6 +17,7 @@ import {PackItemService} from '../../../office/packing/shared/pack-item.service'
 })
 export class EditColliComponent implements OnInit {
 
+  netWeight: number;
   colli: ColliList;
   colliGroup: FormGroup;
   packing: Packing;
@@ -45,6 +46,7 @@ export class EditColliComponent implements OnInit {
 
   getPacking(colli: ColliList){
     this.colli = colli;
+    this.netWeight = colli.netWeight;
     this.packingService.getById(colli.packingListIds[0]).subscribe(packing => this.packing = packing);
   }
 
@@ -78,6 +80,7 @@ export class EditColliComponent implements OnInit {
         this.newColliItems.push(colliItem);
         packItem.packed++;
       }
+      this.netWeight = this.netWeight + packItem.item.weight;
     }
   }
 
@@ -96,6 +99,7 @@ export class EditColliComponent implements OnInit {
       this.newColliItems.splice(index, 1);
     }
     packItem.packed--;
+    this.netWeight = this.netWeight - packItem.item.weight;
   }
 
   removeItemCurrent(colliItem: ColliItem){
@@ -114,6 +118,7 @@ export class EditColliComponent implements OnInit {
       this.deleteList.push(colliItem.id);
     }
     packItem.packed--;
+    this.netWeight = this.netWeight - packItem.item.weight;
   }
 
   removeAll(colliItem: ColliItem){
@@ -126,6 +131,7 @@ export class EditColliComponent implements OnInit {
     const index = this.newColliItems.indexOf(colliItem);
     this.newColliItems.splice(index, 1);
     packItem.packed = packItem.packed - colliItem.count;
+    this.netWeight = this.netWeight - (packItem.item.weight * colliItem.count);
   }
 
   removeAllCurrent(colliItem: ColliItem){
@@ -138,6 +144,7 @@ export class EditColliComponent implements OnInit {
     const index = this.colli.colliItems.indexOf(colliItem);
     this.colli.colliItems.splice(index, 1);
     packItem.packed = packItem.packed - colliItem.count;
+    this.netWeight = this.netWeight - (packItem.item.weight * colliItem.count);
     this.deleteList.push(colliItem.id);
   }
 
@@ -155,7 +162,7 @@ export class EditColliComponent implements OnInit {
     this.colli = <ColliList> {
       id: this.colli.id,
       projectName: this.colli.projectName,
-      netWeight: this.colli.netWeight,
+      netWeight: this.netWeight,
       worker: this.colli.worker,
       totalWeight: values.totalWeight,
       dimensions: values.dimensions,
@@ -209,8 +216,7 @@ export class EditColliComponent implements OnInit {
           item: colliItem.item,
           itemId: colliItem.itemId
         }
-        console.log(ci);
-        this.colliItemService.update(ci).subscribe(ci => console.log(ci));
+        this.colliItemService.update(ci).subscribe();
       }
 
     if(this.deleteList.length != 0) {
@@ -221,11 +227,4 @@ export class EditColliComponent implements OnInit {
 
     this.save();
   }
-
-  inactive() {
-    this.colli.isActive = false;
-
-    this.colliService.update(this.colli).subscribe(colli => this.back());
-  }
-
 }
