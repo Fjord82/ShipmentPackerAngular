@@ -13,7 +13,6 @@ export class AddFreightConditionComponent implements OnInit {
 
   private itemGroup: FormGroup;
   constructor(private router: Router,
-              private route: ActivatedRoute,
               private freightConditionService: FreightConditionService,
               private fb: FormBuilder) {
     this.itemGroup = this.fb.group({

@@ -41,6 +41,7 @@ import { AddUserComponent } from './admin/user/add-user/add-user.component';
 import {UserService} from './admin/user/shared/user.service';
 import {FreightConditionService} from './admin/freightCondition/shared/freightCondition.service';
 import { AddFreightConditionComponent } from './admin/freightCondition/add-freight-condition/add-freight-condition.component';
+import { EditFreightConditionComponent } from './admin/freightCondition/edit-freight-condition/edit-freight-condition.component';
 
 const appRoutes: Routes = [
   { path: 'login', component: LoginComponent },
@@ -69,6 +70,7 @@ const appRoutes: Routes = [
   { path: 'admin-edit-packing/:id', component: AdminPackingEditComponent },
   { path: 'add-user', component: AddUserComponent },
   { path: 'add-freightCondition', component: AddFreightConditionComponent },
+  { path: 'edit-freightCondition/:id', component: EditFreightConditionComponent},
   {
     path: '',
     redirectTo: '/login',
@@ -103,7 +105,8 @@ const appRoutes: Routes = [
     AdminColliEditComponent,
     AdminPackingEditComponent,
     AddUserComponent,
-    AddFreightConditionComponent
+    AddFreightConditionComponent,
+    EditFreightConditionComponent
   ],
   imports: [
     BrowserModule,
