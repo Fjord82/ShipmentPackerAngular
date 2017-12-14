@@ -36,10 +36,7 @@ export class EditProjectComponent implements OnInit {
   }
 
   inactive() {
-
-
     this.project.isActive = false;
-
     this.projectService.update(this.project).subscribe(proj => this.back());
   }
 

@@ -71,9 +71,9 @@ const appRoutes: Routes = [
   { path: 'admin-edit-colli/:id', component: AdminColliEditComponent },
   { path: 'admin-edit-packing/:id', component: AdminPackingEditComponent },
   { path: 'add-user', component: AddUserComponent },
+  { path: 'edit-user/:id', component: EditUserComponent },
   { path: 'add-freightCondition', component: AddFreightConditionComponent },
   { path: 'edit-freightCondition/:id', component: EditFreightConditionComponent},
-  { path: 'edit-user', component: EditUserComponent },
   {
     path: '',
     redirectTo: '/login',
