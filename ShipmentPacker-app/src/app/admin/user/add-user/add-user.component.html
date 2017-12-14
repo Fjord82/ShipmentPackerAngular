@@ -37,13 +37,13 @@
         <dd class="col-5">
           <div class="input-group">
             <div class="input-group-addon">+45</div>
-            <input type="text" class="form-control col-10" formControlName="privatePhone" placeholder="Private phone">
+            <input type="text" class="form-control" formControlName="privatePhone" placeholder="Private phone">
           </div>
         </dd>
         <dd class="col-5">
           <div class="input-group">
             <div class="input-group-addon">+45</div>
-            <input type="text" class="form-control col-10" formControlName="workPhone" placeholder="Work phone">
+            <input type="text" class="form-control" formControlName="workPhone" placeholder="Work phone">
           </div>
         </dd>
         <dt class="col-2">
@@ -57,24 +57,28 @@
             <option value="Admin">Administration</option>
           </select>
         </dd>
-        <dd class="col-4"></dd>
+        <dd class="col-5">
+          <div></div>
+        </dd>
         <dt class="col-2">
           Password:
         </dt>
-        <dd class="col-6">
-          <input type="text" class="form-control col-10" formControlName="password" placeholder="Password">
+        <dd class="col-5">
+          <input type="text" class="form-control" formControlName="password" placeholder="Password">
         </dd>
-        <dd class="col-4"></dd>
+        <dd class="col-5">
+          <div class="btn-toolbar">
+            <button class="btn btn-outline-danger col-5" (click)="back()">
+              Cancel
+            </button>
+            <nav class="col-2"></nav>
+            <button class="btn btn-outline-success col-5" type="submit">
+              Save
+            </button>
+          </div>
+        </dd>
       </dl>
-      <div class="row justify-content-center">
-        <button class="btn btn-outline-danger" (click)="back()">
-          Cancel
-        </button>
-        <div class="col-2"></div>
-        <button class="btn btn-outline-success" type="submit">
-          Save
-        </button>
-      </div>
     </form>
+
   </div>
 </div>

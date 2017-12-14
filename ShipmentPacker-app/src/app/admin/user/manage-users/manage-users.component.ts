@@ -33,4 +33,8 @@ export class ManageUsersComponent implements OnInit {
     this.router.navigateByUrl('/add-user');
   }
 
+  editUser() {
+    this.router.navigateByUrl('/edit-user');
+  }
+
 }
