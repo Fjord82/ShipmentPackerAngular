@@ -2,7 +2,7 @@
   <br>
   <div class="row">
     <div class="col-12">
-      <h2 class="my-local-center">PackingList</h2>
+      <h2 class="my-local-center">Packing List</h2>
       <button style="display: inline-block;" type="button" class="btn btn-outline-info float-left" (click)="back()">Back</button>
       <button style="display: inline-block;" type="button" class="btn btn-outline-info float-right" (click)="addColli()">Add colli</button>
     </div>
@@ -52,14 +52,13 @@
       </a>
     </div>
     <br>
-    <div class="progress">
-      <div class="progress-bar bg-success" style="width:50%">50</div>
-    </div>
+        <ngb-progressbar showValue="false" type="success" [value]="progress" [max]="100"></ngb-progressbar>
+
   </div>
   <br>
   <div class="row">
     <div class="col-12">
-      <h2 class="my-local-center">ColliList</h2>
+      <h2 class="my-local-center">Colli Lists</h2>
       <br>
     </div>
   </div>
