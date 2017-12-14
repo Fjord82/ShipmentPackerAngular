@@ -111,8 +111,8 @@ export class AddColliComponent implements OnInit {
 
   save() {
     const values = this.colliGroup.value;
-    if (values.totalWeight == "") values.totalWeight = this.colli.totalWeight;
-    if (values.dimensions == "") values.dimensions = this.colli.dimensions;
+    if (values.totalWeight == "") values.totalWeight = 0;
+    if (values.dimensions == "") values.dimensions = '';
     this.colli = <ColliList> {
       totalWeight: values.totalWeight,
       dimensions: values.dimensions,
