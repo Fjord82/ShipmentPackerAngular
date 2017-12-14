@@ -41,23 +41,19 @@ export class EditItemComponent implements OnInit {
 
   }
 
-  setupItem(item: Item){
+  setupItem(item: Item) {
     this.item = item;
-    if (this.item.freightConditionIds == null)
-    {
+    if (this.item.freightConditionIds == null) {
       this.item.freightConditions = [];
     }
     this.freightConditionService.getFreightConditions().subscribe(freightConditions => this.sortFreightConditions(freightConditions));
   }
 
-  sortFreightConditions(freightConditions: FreightCondition[]){
+  sortFreightConditions(freightConditions: FreightCondition[]) {
     this.freightConditions = freightConditions;
-    for (let fc of this.freightConditions)
-    {
-      for (let itemFc of this.item.freightConditions)
-      {
-        if (fc.id == itemFc.id)
-        {
+    for (let itemFc of this.item.freightConditions) {
+      for (let fc of this.freightConditions){
+        if (fc.id == itemFc.id) {
           const index = this.freightConditions.indexOf(fc);
           this.freightConditions.splice(index, 1);
         }
@@ -69,16 +65,20 @@ export class EditItemComponent implements OnInit {
     this.router.navigateByUrl('/admin');
   }
 
-  addFreightCondition(freightCondition: FreightCondition){
+  addFreightCondition(freightCondition: FreightCondition) {
     this.item.freightConditions.push(freightCondition);
+    this.item.freightConditionIds.push(freightCondition.id);
     const index = this.freightConditions.indexOf(freightCondition);
     this.freightConditions.splice(index, 1);
+
   }
 
-  removeFreightCondition(freightCondition: FreightCondition){
+  removeFreightCondition(freightCondition: FreightCondition) {
     this.freightConditions.push(freightCondition);
     const index = this.item.freightConditions.indexOf(freightCondition);
     this.item.freightConditions.splice(index, 1);
+    const idIndex = this.item.freightConditionIds.indexOf(freightCondition.id);
+    this.item.freightConditionIds.splice(idIndex, 1);
   }
 
   save() {
@@ -95,27 +95,14 @@ export class EditItemComponent implements OnInit {
       colliItemsIds: this.item.colliItemsIds,
       freightConditionIds: this.item.freightConditionIds,
       packItems: this.item.packItems,
-      packItemsIds: this.item.packItemsIds,
+      packItemsIds: this.item.packItemsIds
 
     };
     this.itemService.update(item).subscribe(item => this.back());
   }
 
   open(content) {
-    this.modalService.open(content).result.then((result) => {
-      this.closeResult = `Closed with: ${result}`;
-    }, (reason) => {
-      this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
-    });
-  }
-
-  private getDismissReason(reason: any): string {
-    if (reason === ModalDismissReasons.ESC) {
-      return 'by pressing ESC';
-    } else if (reason === ModalDismissReasons.BACKDROP_CLICK) {
-      return 'by clicking on a backdrop';
-    } else {
-      return  `with: ${reason}`;
-    }
+    this.modalService.open(content);
   }
 }
+

@@ -42,24 +42,6 @@ export class AddItemComponent implements OnInit {
     this.router.navigateByUrl('/admin');
   }
 
-  open(content) {
-    this.modalService.open(content).result.then((result) => {
-      this.closeResult = `Closed with: ${result}`;
-    }, (reason) => {
-      this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
-    });
-  }
-
-  private getDismissReason(reason: any): string {
-    if (reason === ModalDismissReasons.ESC) {
-      return 'by pressing ESC';
-    } else if (reason === ModalDismissReasons.BACKDROP_CLICK) {
-      return 'by clicking on a backdrop';
-    } else {
-      return  `with: ${reason}`;
-    }
-  }
-
   addFreightCondition(freightCondition: FreightCondition){
     this.addedFreightCondition.push(freightCondition);
     const index = this.freightConditions.indexOf(freightCondition);
@@ -86,5 +68,9 @@ export class AddItemComponent implements OnInit {
     }
     this.itemService.create(item)
       .subscribe(item => this.back());
+  }
+
+  open(content) {
+    this.modalService.open(content);
   }
 }
