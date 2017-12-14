@@ -4,9 +4,80 @@
     <div class="col-md-12">
       <button class="btn btn-outline-info" (click)="back()">Back</button>
       <h2 class="my-local-center">Edit User</h2>
+      <button class="btn btn-outline-danger pull-right" (click)="delete(user)">Delete user</button>
     </div>
   </div>
   <hr>
+  <div class="col-4">
+    <h5>Enter information:</h5>
+    <br>
+  </div>
+  <div class="col-8 offset-2">
+    <form (ngSubmit)="update()" [formGroup]="formGroup">
+      <dl class="form-row">
+        <dt class="col-2">
+          Name:
+        </dt>
+        <dd class="col-5">
+          <input type="text" class="form-control" formControlName="firstName" value="{{user?.firstName}}">
+        </dd>
+        <dd class="col-5">
+          <input type="text" class="form-control" formControlName="lastName" value="{{user?.lastName}}">
+        </dd>
+        <dt class="col-2">
+          Email:
+        </dt>
+        <dd class="col-10">
+          <input type="text" class="form-control" formControlName="workEmail" value="{{user?.workEmail}}">
+        </dd>
+        <dt class="col-2">
+          Phone:
+        </dt>
+        <dd class="col-5">
+          <div class="input-group">
+            <div class="input-group-addon">+45</div>
+            <input type="text" class="form-control" formControlName="homePhoneNumber" value="{{user?.homePhoneNumber}}">
+          </div>
+        </dd>
+        <dd class="col-5">
+          <div class="input-group">
+            <div class="input-group-addon">+45</div>
+            <input type="text" class="form-control" formControlName="workPhoneNumber" value="{{user?.workPhoneNumber}}">
+          </div>
+        </dd>
+        <dt class="col-2">
+          Role:
+        </dt>
+        <dd class="col-5">
+          <select id="selectbasic"  name="selectbasic" class="form-control" formControlName="workTitle">
+            <option value="" disabled selected>{{user?.workTitle}}</option>
+            <option value="Office">Office</option>
+            <option value="Workshop">Workshop</option>
+            <option value="Admin">Administration</option>
+          </select>
+        </dd>
+        <dd class="col-5">
+          <div></div>
+        </dd>
+        <dt class="col-2">
+          Password:
+        </dt>
+        <dd class="col-5">
+          <input type="text" class="form-control" formControlName="password" placeholder="Password">
+        </dd>
+        <dd class="col-5">
+          <div class="btn-toolbar">
+            <button class="btn btn-outline-danger col-5" (click)="back()">
+              Cancel
+            </button>
+            <nav class="col-2"></nav>
+            <button class="btn btn-outline-success col-5" type="submit">
+              Save
+            </button>
+          </div>
+        </dd>
+      </dl>
+    </form>
+  </div>
 </div>
-<br>
 
