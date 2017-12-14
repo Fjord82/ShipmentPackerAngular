@@ -39,6 +39,7 @@ import { AdminPackingEditComponent } from './admin/admin-packing-edit/admin-pack
 import {ColliItemService} from './workshop/colli/shared/colli-item.service';
 import { AddUserComponent } from './admin/user/add-user/add-user.component';
 import {UserService} from './admin/user/shared/user.service';
+import { EditUserComponent } from './admin/user/edit-user/edit-user.component';
 
 const appRoutes: Routes = [
   { path: 'login', component: LoginComponent },
@@ -66,6 +67,7 @@ const appRoutes: Routes = [
   { path: 'admin-edit-colli/:id', component: AdminColliEditComponent },
   { path: 'admin-edit-packing/:id', component: AdminPackingEditComponent },
   { path: 'add-user', component: AddUserComponent },
+  { path: 'edit-user', component: EditUserComponent },
   {
     path: '',
     redirectTo: '/login',
@@ -99,7 +101,8 @@ const appRoutes: Routes = [
     AdminProjectEditComponent,
     AdminColliEditComponent,
     AdminPackingEditComponent,
-    AddUserComponent
+    AddUserComponent,
+    EditUserComponent
   ],
   imports: [
     BrowserModule,
