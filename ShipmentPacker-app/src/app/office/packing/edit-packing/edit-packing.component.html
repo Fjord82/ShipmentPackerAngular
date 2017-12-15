@@ -1,14 +1,11 @@
 <div class="container">
-  <br>
-  <div class="row">
-    <div class="col-md-12">
-      <button class="btn btn-outline-info" (click)="back()">Back</button>
-        <button *ngIf="packing?.isActive;" style="display: inline-block;" type="button" class="btn btn-outline-danger float-right" (click)="setInactive()">Deactivate</button>
-        <button *ngIf="!packing?.isActive;" style="display: inline-block;" type="button" class="btn btn-outline-success float-right" (click)="setActive()">Activate</button>
-      <h2 class="my-local-center">Edit Packing List</h2>
-    </div>
-  </div>
-  <hr>
+  <nav class="navbar navbar-expand-sm backgroundColor fixed-top">
+    <button class="btn btn-secondary" (click)="back()">Back</button>
+    <button *ngIf="packing?.isActive;" style="display: inline-block;" type="button" class="btn btn-danger ml-md-auto" (click)="setInactive()">Deactivate</button>
+    <button *ngIf="!packing?.isActive;" style="display: inline-block;" type="button" class="btn btn-success ml-md-auto" (click)="setActive()">Activate</button>
+    <h2 class="header">Edit Packing List</h2>
+  </nav>
+  <br><br><br>
   <div class="col-md-12">
     <div class="row">
       <div class="col-md-5">

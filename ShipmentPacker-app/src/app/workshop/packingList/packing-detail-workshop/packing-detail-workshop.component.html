@@ -1,54 +1,51 @@
 <div class="container">
-  <br>
-  <div class="row">
-    <div class="col-12">
-      <h2 class="my-local-center">PackingList</h2>
-      <button style="display: inline-block;" type="button" class="btn btn-outline-info float-left" (click)="back()">Back</button>
-      <button style="display: inline-block;" type="button" class="btn btn-outline-info float-right" (click)="addColli()">Add colli</button>
-    </div>
-  </div>
-  <hr>
-
+  <nav class="navbar navbar-expand-sm backgroundColor fixed-top">
+    <h2 class="header">PackingList</h2>
+    <button style="display: inline-block;" type="button" class="btn btn-secondary" (click)="back()">Back</button>
+  </nav>
+  <br><br><br>
+  <button style="display: inline-block;" type="button" class="btn btn-outline-info float-right" (click)="addColli()">Add colli</button>
+  <br><br>
   <div class="col-12">
     <div class="row">
-        <dt class="col-md-2">
-          Packing Title:
-        </dt>
-        <dd class="col-md-4">
-          <input type="text" placeholder="packingName" value="{{packing?.packingName}}"disabled>
-        </dd>
-        <dt class="col-md-2">
-          Freight Type:
-        </dt>
-        <dd class="col-md-4">
-          <input type="text" placeholder="freightType" value="{{packing?.freightType}}"disabled>
-        </dd>
-        <dt class="col-md-2">
-          Delivery Address:
-        </dt>
-        <dd class="col-md-4">
-          <input type="text" placeholder="deliveryAddress" value="{{packing?.deliveryAddress}}"disabled>
-        </dd>
-        <dt class="col-md-2">
-          Delivery Date:
-        </dt>
-        <dd class="col-md-4">
-          <input type="text" placeholder="deliveryDate" value="{{packing?.deliveryDate}}"disabled>
-        </dd>
+      <dt class="col-md-2">
+        Packing Title:
+      </dt>
+      <dd class="col-md-4">
+        <input type="text" placeholder="packingName" value="{{packing?.packingName}}"disabled>
+      </dd>
+      <dt class="col-md-2">
+        Freight Type:
+      </dt>
+      <dd class="col-md-4">
+        <input type="text" placeholder="freightType" value="{{packing?.freightType}}"disabled>
+      </dd>
+      <dt class="col-md-2">
+        Delivery Address:
+      </dt>
+      <dd class="col-md-4">
+        <input type="text" placeholder="deliveryAddress" value="{{packing?.deliveryAddress}}"disabled>
+      </dd>
+      <dt class="col-md-2">
+        Delivery Date:
+      </dt>
+      <dd class="col-md-4">
+        <input type="text" placeholder="deliveryDate" value="{{packing?.deliveryDate}}"disabled>
+      </dd>
     </div>
   </div>
 
   <div class="col-md-10 offset-1">
     <div *ngFor="let packItem of packing?.packItems" class="list-group">
       <a class="list-group-item list-group-item-action" style="margin-bottom: 5px">
-          <div class="row">
+        <div class="row">
           <h4 class="col-md-3">{{packItem?.item.itemName}}</h4>
           <h4 class="col-md-3">Total: {{packItem?.count}}</h4>
-            <h4 class="col-md-4">Packed: {{packItem?.packed}}</h4>
+          <h4 class="col-md-4">Packed: {{packItem?.packed}}</h4>
           <button class="btn btn-outline-success buttons-right" disabled>
             <input type="checkbox" autocomplete="off" disabled >
           </button>
-          </div>
+        </div>
       </a>
     </div>
     <br>

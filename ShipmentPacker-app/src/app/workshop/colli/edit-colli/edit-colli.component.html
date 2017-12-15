@@ -1,13 +1,11 @@
 <div class="container">
-  <br>
-  <div class="row">
-    <div class="col-12">
-      <h2 class="my-local-center">Edit Colli</h2>
-      <button style="display: inline-block;" type="button" class="btn btn-outline-info float-left" (click)="back()">Back</button>
-      <button style="display: inline-block;" type="button" class="btn btn-outline-success float-right" (click)="submit()">Save</button>
-    </div>
-  </div>
-  <hr>
+  <nav class="navbar navbar-expand-sm backgroundColor fixed-top">
+    <h2 class="header">Edit Colli</h2>
+    <button style="display: inline-block;" type="button" class="btn btn-secondary" (click)="back()">Back</button>
+  </nav>
+  <br><br><br>
+  <button style="display: inline-block;" type="button" class="btn btn-outline-success float-right" (click)="submit()">Save</button>
+  <br><br>
   <div class="col-12">
     <form (ngSubmit)="save()" novalidate>
       <dl class="form-row" [formGroup]="colliGroup">
@@ -53,14 +51,14 @@
   <hr>
   <div class="row">
     <div class="col-4">
-    <h4>PackingList</h4>
+      <h4>PackingList</h4>
       <div *ngFor="let packItem of packing?.packItems">
         <a style="margin-bottom: 5px" (click)="addItem(packItem)" class="list-group-item list-group-item-action" value="1">{{packItem?.item.itemName}} - Amount: {{packItem?.count}} - Packed: {{packItem?.packed}}</a>
       </div>
     </div>
     <div class="col-4"></div>
     <div class="col-4">
-    <h4>Currently Packed Items</h4>
+      <h4>Currently Packed Items</h4>
       <div *ngFor="let colliItem of colli?.colliItems">
         <a style="margin-bottom: 5px" (click)="removeItemCurrent(colliItem)" class="list-group-item list-group-item-action" value="1">{{colliItem?.item.itemName}} - Amount: {{colliItem?.count}}
           <button class="fa fa-trash pull-right btn btn-outline-danger" (click)="removeAllCurrent(colliItem)"></button></a>
@@ -71,6 +69,6 @@
         <a style="margin-bottom: 5px" (click)="removeItem(colliItem)" class="list-group-item list-group-item-action" value="1">{{colliItem?.item.itemName}} - Amount: {{colliItem?.count}}
           <button class="fa fa-trash pull-right btn btn-outline-danger" (click)="removeAll(colliItem)"></button></a>
       </div>
-  </div>
+    </div>
   </div>
 </div>

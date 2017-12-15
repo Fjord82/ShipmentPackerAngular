@@ -1,17 +1,11 @@
 <div class="container">
-  <br>
-  <div class="row">
-    <div class="col-12">
-      <h2 class="my-local-center">
-        Edit project
-      </h2>
-      <button style="display: inline-block;" type="button" class="btn btn-outline-info float-left" (click)="back()">Back</button>
-      <button *ngIf="project?.isActive;" style="display: inline-block;" type="button" class="btn btn-outline-danger float-right" (click)="setInactive()">Deactivate</button>
-      <button *ngIf="!project?.isActive;" style="display: inline-block;" type="button" class="btn btn-outline-success float-right" (click)="setActive()">Activate</button>
-    </div>
-  </div>
-  <hr>
-  <br>
+  <nav class="navbar navbar-expand-sm backgroundColor fixed-top">
+    <h2 class="header">Edit project</h2>
+    <button type="button" class="btn btn-secondary float-left" (click)="back()">Back</button>
+    <button *ngIf="project?.isActive;" type="button" class="btn btn-danger ml-md-auto" (click)="setInactive()">Deactivate</button>
+    <button *ngIf="!project?.isActive;" type="button" class="btn btn-success ml-md-auto" (click)="setActive()">Activate</button>
+  </nav>
+  <br><br><br>
   <div class="col-8 offset-3">
     <form (ngSubmit)="update()" [formGroup]="projectGroup" novalidate>
       <dl class="form-row">
