@@ -1,51 +1,48 @@
 <div class="container">
-  <br>
-  <div class="row">
-    <div class="col-12">
-      <h2 class="my-local-center">Colli Detail</h2>
-      <button style="display: inline-block;" type="button" class="btn btn-outline-info float-left" (click)="back()">Back</button>
-    </div>
-  </div>
-  <hr>
+  <nav class="navbar navbar-expand-sm backgroundColor fixed-top">
+    <h2 class="header">Colli Detail</h2>
+    <button style="display: inline-block;" type="button" class="btn btn-secondary" (click)="back()">Back</button>
+  </nav>
+  <br><br><br>
   <div class="col-12">
-      <dl class="form-row">
-        <dt class="col-md-2">
-          Project Name:
-        </dt>
-        <dd class="col-md-4">
-          <input placeholder="{{colli?.projectName}}" disabled>
-        </dd>
-        <dt class="col-md-2">
-          Dimensions:
-        </dt>
-        <dd class="col-md-4">
-          <input type="text" placeholder="{{colli?.dimensions}}" disabled>
-        </dd>
-        <dt class="col-md-2">
-          Net Weight:
-        </dt>
-        <dd class="col-md-4">
-          <input type="text" placeholder="{{colli?.netWeight}}" disabled>
-        </dd>
-        <dt class="col-md-2">
-          Total weight:
-        </dt>
-        <dd class="col-md-4">
-          <input placeholder="{{colli?.totalWeight}}" disabled>
-        </dd>
-        <dt class="col-md-2">
-          Workshop Worker:
-        </dt>
-        <dd class="col-md-4">
-          <input type="text" placeholder="{{colli?.worker}}" disabled>
-        </dd>
-        <dt class="col-md-2">
-          Freight Type:
-        </dt>
-        <dd class="col-md-4">
-          <input type="text" placeholder="{{colli?.freightType}}" disabled>
-        </dd>
-      </dl>
+    <dl class="form-row">
+      <dt class="col-md-2">
+        Project Name:
+      </dt>
+      <dd class="col-md-4">
+        <input placeholder="{{colli?.projectName}}" disabled>
+      </dd>
+      <dt class="col-md-2">
+        Dimensions:
+      </dt>
+      <dd class="col-md-4">
+        <input type="text" placeholder="{{colli?.dimensions}}" disabled>
+      </dd>
+      <dt class="col-md-2">
+        Net Weight:
+      </dt>
+      <dd class="col-md-4">
+        <input type="text" placeholder="{{colli?.netWeight}}" disabled>
+      </dd>
+      <dt class="col-md-2">
+        Total weight:
+      </dt>
+      <dd class="col-md-4">
+        <input placeholder="{{colli?.totalWeight}}" disabled>
+      </dd>
+      <dt class="col-md-2">
+        Workshop Worker:
+      </dt>
+      <dd class="col-md-4">
+        <input type="text" placeholder="{{colli?.worker}}" disabled>
+      </dd>
+      <dt class="col-md-2">
+        Freight Type:
+      </dt>
+      <dd class="col-md-4">
+        <input type="text" placeholder="{{colli?.freightType}}" disabled>
+      </dd>
+    </dl>
   </div>
   <hr>
   <div class="row">

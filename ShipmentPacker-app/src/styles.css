@@ -5,7 +5,9 @@
 .set-back {
   z-index: -1;
 }
-.my-local-center {
+
+.header {
+  color: white;
   position: absolute;
   width: 100%;
   left: 0;
@@ -14,12 +16,18 @@
   display: inline-block;
   line-height: 0.42 !important;
   z-index: -1;
+
+  text-shadow: 2px 2px #000000;
 }
 
 .titanic {
   float: none;
 }
 
-.shadow {
-  text-shadow: 2px 2px #000000
+.backgroundColor {
+  background: #5bc0de; /* For browsers that do not support gradients */
+  background: -webkit-linear-gradient(left, #5bc0de, #367385); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(right, #5bc0de, #367385); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(right, #5bc0de, #367385); /* For Firefox 3.6 to 15 */
+  background: linear-gradient(to right, #5bc0de , #367385); /* Standard syntax */
 }

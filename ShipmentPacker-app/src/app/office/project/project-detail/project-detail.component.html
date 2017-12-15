@@ -1,17 +1,13 @@
-
-
 <div class="container">
-  <br>
-  <div class="row">
-    <div class="col-md-12">
-    <button class="btn btn-outline-info" (click)="back()">Back</button>
-    <h2 class="my-local-center">{{project?.projectName}}</h2>
-      <button type="button" (click)="addPackingClick()" class="btn btn-outline-primary pull-right"><i class="fa fa-plus" aria-hidden="true"></i>
-         New packing list</button>
-    </div>
-  </div>
-  <hr>
-  <br>
+  <nav class="navbar navbar-expand-sm backgroundColor fixed-top">
+    <button class="btn btn-secondary" (click)="back()">Back</button>
+    <h2 class="header">{{project?.projectName}}</h2>
+    <button type="button" (click)="addPackingClick()" class="btn btn-primary ml-md-auto">
+      <i class="fa fa-plus" aria-hidden="true"></i>
+      New packing list
+    </button>
+  </nav>
+  <br><br><br>
   <div class="row">
     <div class="col-md-4"><h4>Project Name:</h4><p>{{project?.projectName}}</p></div>
     <div class="col-md-4"><h4>Customer Name:</h4><p>{{project?.customerName}}</p></div>
@@ -34,7 +30,7 @@
           <button class="btn btn-outline-warning offset-1" (click)="editPacking(packing)">
             <i class="fa fa-pencil" aria-hidden="true"></i>
           </button>
-         </div>
+        </div>
       </a>
       <hr>
     </div>

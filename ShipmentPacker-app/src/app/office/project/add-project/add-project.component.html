@@ -1,13 +1,11 @@
 <div class="container">
-  <br>
-  <div class="row col-12">
-    <button class="btn btn-outline-info" (click)="back()">Back</button>
-    <h2 class="my-local-center">
+  <nav class="navbar navbar-expand-sm backgroundColor fixed-top">
+  <button class="btn btn-secondary" (click)="back()">Back</button>
+    <h2 class="header">
       Add project
     </h2>
-  </div>
-  <hr>
-  <br>
+  </nav>
+  <br><br><br>
   <div class="col-8 offset-3">
     <form (ngSubmit)="save()" [formGroup]="projectGroup" novalidate>
       <dl class="form-row">

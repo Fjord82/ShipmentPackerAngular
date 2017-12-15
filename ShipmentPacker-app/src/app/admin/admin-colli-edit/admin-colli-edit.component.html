@@ -1,13 +1,11 @@
 <div class="container">
-  <br>
-  <div class="row">
-    <div class="col-12">
-      <h2 class="my-local-center">Edit Colli</h2>
-      <button style="display: inline-block;" type="button" class="btn btn-outline-info float-left" (click)="back()">Back</button>
-      <button style="display: inline-block;" type="button" class="btn btn-outline-success float-right" (click)="submit()">Save</button>
-    </div>
-  </div>
-  <hr>
+  <nav class="navbar navbar-expand-sm backgroundColor fixed-top">
+    <h2 class="header">Edit Colli</h2>
+    <button type="button" class="btn btn-secondary float-left" (click)="back()">Back</button>
+    <button *ngIf="colli?.isActive;" style="display: inline-block;" type="button" class="btn btn-danger ml-md-auto" (click)="setInactive()">Deactivate</button>
+    <button *ngIf="!colli?.isActive;" style="display: inline-block;" type="button" class="btn btn-success ml-md-auto" (click)="setActive()">Activate</button>
+  </nav>
+  <br><br><br>
   <div class="col-12">
     <form (ngSubmit)="save()" novalidate>
       <dl class="form-row" [formGroup]="colliGroup">
@@ -71,6 +69,8 @@
         <a style="margin-bottom: 5px" (click)="removeItem(colliItem)" class="list-group-item list-group-item-action" value="1">{{colliItem?.item.itemName}} - Amount: {{colliItem?.count}}
           <button class="fa fa-trash pull-right btn btn-outline-danger" (click)="removeAll(colliItem)"></button></a>
       </div>
+      <br>
+      <button type="button" class="btn btn-lg btn-outline-success pull-right" (click)="save()">Save</button>
     </div>
   </div>
 </div>

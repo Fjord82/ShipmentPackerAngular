@@ -1,17 +1,17 @@
 <div class="container">
-  <br>
-  <div class="row">
-    <div class="col-md-12">
-      <button class="btn btn-outline-info" (click)="back()">Back</button>
-      <h2 class="my-local-center">Manage Users</h2>
-      <button style="margin-right:5px; display: inline-block;" type="button" class="btn btn-outline-primary float-right" (click)="addUser()">
-        <i class="fa fa-plus" aria-hidden="true"></i>
-        Add user
-      </button>
-    </div>
+  <nav class="navbar navbar-expand-sm backgroundColor fixed-top">
+    <button class="btn btn-secondary" (click)="back()">Back</button>
+    <h2 class="header">Manage Users</h2>
+  </nav>
+  <br><br><br>
+  <div>
+    <button style="margin-right:5px; display: inline-block;" type="button" class="btn btn-outline-primary float-right" (click)="addUser()">
+      <i class="fa fa-plus" aria-hidden="true"></i>
+      Add user
+    </button>
+    <br>
   </div>
-  <hr>
-
+  <br>
   <ngb-tabset>
     <ngb-tab title="Office">
       <ng-template ngbTabContent>
@@ -19,32 +19,29 @@
           <div class="col-lg-4 col-md-4 col-sm-6" *ngFor="let user of officeWorkers">
             <br>
             <div class="card">
-            <div class="card-header card-primary">
-              <h4 class="card-title shadow">{{user?.firstName}} {{user?.lastName}}</h4>
-            </div>
-            <div class="card-body">
-              <p class="card-text"><strong>Email:</strong></p>
-              <p class="card-text">{{user?.workEmail}}</p>
-              <hr>
-              <p class="card-text"><strong>Phone:</strong></p>
-              <p class="card-text">+45 {{user?.workPhoneNumber}}</p>
-
-            </div>
-            <div class="card-footer">
-              <small>ID: {{user?.id}}</small>
-              <button class="btn btn-outline-warning float-right" (click)="editUser(user)">
-                <i class="fa fa-wrench" aria-hidden="true"></i>
-              </button>
+              <div class="card-header card-primary">
+                <h4 class="card-title shadow">{{user?.firstName}} {{user?.lastName}}</h4>
+              </div>
+              <div class="card-body">
+                <p class="card-text"><strong>Email:</strong></p>
+                <p class="card-text">{{user?.workEmail}}</p>
+                <hr>
+                <p class="card-text"><strong>Phone:</strong></p>
+                <p class="card-text">+45 {{user?.workPhoneNumber}}</p>
+              </div>
+              <div class="card-footer">
+                <small>ID: {{user?.id}}</small>
+                <button class="btn btn-outline-warning float-right" (click)="editUser(user)">
+                  <i class="fa fa-wrench" aria-hidden="true"></i>
+                </button>
+              </div>
             </div>
           </div>
-        </div>
           <br>
         </div>
         <br>
-
       </ng-template>
     </ngb-tab>
-
     <ngb-tab title="Workshop">
       <ng-template ngbTabContent>
         <div class="row">
@@ -60,7 +57,6 @@
                 <hr>
                 <p class="card-text"><strong>Phone:</strong></p>
                 <p class="card-text">+45 {{user?.workPhoneNumber}}</p>
-
               </div>
               <div class="card-footer">
                 <small>ID: {{user?.id}}</small>
@@ -73,7 +69,6 @@
         </div>
       </ng-template>
     </ngb-tab>
-
     <ngb-tab title="Admin">
       <ng-template ngbTabContent>
         <div class="row">
@@ -89,7 +84,6 @@
                 <hr>
                 <p class="card-text"><strong>Phone:</strong></p>
                 <p class="card-text">+45 {{user.workPhoneNumber}}</p>
-
               </div>
               <div class="card-footer">
                 <small>ID: {{user?.id}}</small>
@@ -102,12 +96,6 @@
         </div>
       </ng-template>
     </ngb-tab>
-
   </ngb-tabset>
-
-
   <br>
-
-
-
 </div>
