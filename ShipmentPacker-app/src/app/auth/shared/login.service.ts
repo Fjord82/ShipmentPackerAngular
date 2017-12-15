@@ -19,8 +19,6 @@ export class LoginService {
       .set('workEmail', user.workEmail)
       .set('password', user.password);
 
-    console.log(body);
-
     return this.http.post<any>(url, body.toString(), {
         headers: new HttpHeaders()
           .set('Content-Type', 'application/x-www-form-urlencoded')

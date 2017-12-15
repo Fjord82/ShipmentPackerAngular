@@ -30,12 +30,10 @@ export class LoginComponent implements OnInit {
     console.log(this.loginGroup.value);
     this.auth.login(this.loginGroup.value).subscribe(token => {
       if (token) {
-        console.log(token);
         this.redirect();
       } else {
 
       }
-
     });
   }
 
