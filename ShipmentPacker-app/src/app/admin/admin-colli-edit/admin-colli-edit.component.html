@@ -4,9 +4,7 @@
     <div class="col-12">
       <h2 class="my-local-center">Edit Colli</h2>
       <button style="display: inline-block;" type="button" class="btn btn-outline-info float-left" (click)="back()">Back</button>
-      <button style="display: inline-block;" type="button" class="btn btn-outline-success float-right" (click)="save()">Save</button>
-      <button *ngIf="colli?.isActive;" style="display: inline-block;" type="button" class="btn btn-outline-danger float-right" (click)="setInactive()">Deactivate</button>
-      <button *ngIf="!colli?.isActive;" style="display: inline-block;" type="button" class="btn btn-outline-success float-right" (click)="setActive()">Activate</button>
+      <button style="display: inline-block;" type="button" class="btn btn-outline-success float-right" (click)="submit()">Save</button>
     </div>
   </div>
   <hr>
@@ -23,19 +21,19 @@
           Dimensions:
         </dt>
         <dd class="col-md-4">
-          <input type="text" class="form-control" formControlName="dimensions" value="{{colli?.dimensions}}">
+          <input type="text" class="form-control" formControlName="dimensions" placeholder="{{colli?.dimensions}}">
         </dd>
         <dt class="col-md-2">
           Net Weight:
         </dt>
         <dd class="col-md-4">
-          <input type="text" class="form-control" placeholder="{{colli?.netWeight}}" disabled>
+          <input type="text" class="form-control" placeholder="{{netWeight}}" disabled>
         </dd>
         <dt class="col-md-2">
           Total weight:
         </dt>
         <dd class="col-md-4">
-          <input type="text" class="form-control" formControlName="totalWeight" value="{{colli?.totalWeight}}">
+          <input type="text" class="form-control" formControlName="totalWeight" placeholder="{{colli?.totalWeight}}">
         </dd>
         <dt class="col-md-2">
           Workshop Worker:
@@ -47,7 +45,7 @@
           Freight Type:
         </dt>
         <dd class="col-md-4">
-          <input type="text" class="form-control" formControlName="freightType" value="{{colli?.freightType}}">
+          <input type="text" class="form-control" placeholder="{{colli?.freightType}}" disabled>
         </dd>
       </dl>
     </form>
@@ -55,29 +53,23 @@
   <hr>
   <div class="row">
     <div class="col-4">
-      <select id="selectmultiple" name="selectmultiple" class="form-control" multiple="multiple">
-        <option value="1">Option one</option>
-        <option value="2">Option two</option>
-        <option value="3">Option three</option>
-        <option value="4">Option four</option>
-        <option value="5">Option five</option>
-      </select>
+      <h4>PackingList</h4>
+      <div *ngFor="let packItem of packing?.packItems">
+        <a style="margin-bottom: 5px" (click)="addItem(packItem)" class="list-group-item list-group-item-action" value="1">{{packItem?.item.itemName}} - Amount: {{packItem?.count}} - Packed: {{packItem?.packed}}</a>
+      </div>
     </div>
-    <div class="col-1"></div>
-    <div class="col-2">
-      <button class="btn btn-outline-info button-middle" (click)="add()">Move Item To colli</button>
-      <button class="btn btn-outline-danger button-middle" (click)="remove()">Remove from  colli</button>
-    </div>
-    <div class="col-1"></div>
+    <div class="col-4"></div>
     <div class="col-4">
-      <div class="list-group">
-        <select name="selectmultiple" class="form-control" multiple="multiple">
-          <option value="1">This is empty</option>
-          <option value="2">This is empty</option>
-          <option value="3">This is empty</option>
-          <option value="4">This is empty</option>
-          <option value="5">This is empty</option>
-        </select>
+      <h4>Currently Packed Items</h4>
+      <div *ngFor="let colliItem of colli?.colliItems">
+        <a style="margin-bottom: 5px" (click)="removeItemCurrent(colliItem)" class="list-group-item list-group-item-action" value="1">{{colliItem?.item.itemName}} - Amount: {{colliItem?.count}}
+          <button class="fa fa-trash pull-right btn btn-outline-danger" (click)="removeAllCurrent(colliItem)"></button></a>
+      </div>
+      <br>
+      <h4>New Items</h4>
+      <div *ngFor="let colliItem of newColliItems">
+        <a style="margin-bottom: 5px" (click)="removeItem(colliItem)" class="list-group-item list-group-item-action" value="1">{{colliItem?.item.itemName}} - Amount: {{colliItem?.count}}
+          <button class="fa fa-trash pull-right btn btn-outline-danger" (click)="removeAll(colliItem)"></button></a>
       </div>
     </div>
   </div>

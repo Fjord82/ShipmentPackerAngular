@@ -118,9 +118,7 @@ export class EditPackingComponent implements OnInit {
   }
 
 
-  back() {
-    this.router.navigateByUrl('/project-detail/' + this.packing.projectIds[0]);
-  }
+
 
   submit() {
     if (this.newPackItems.length != 0)
@@ -208,4 +206,7 @@ export class EditPackingComponent implements OnInit {
     this.packing.isActive = true;
   }
 
+  back() {
+    this.router.navigateByUrl('/project-detail/' + this.packing.projectIds[0]);
+  }
 }
