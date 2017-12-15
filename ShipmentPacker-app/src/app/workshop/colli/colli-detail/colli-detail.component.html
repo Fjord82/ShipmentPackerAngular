@@ -51,8 +51,14 @@
   <div class="row">
     <div class="col-6">
       <h4>Currently Packed Items</h4>
+      <hr>
       <div *ngFor="let colliItem of colli?.colliItems">
-        <a style="margin-bottom: 5px" class="list-group-item list-group-item-action" value="1">{{colliItem?.item.itemName}} - Amount: {{colliItem?.count}}</a>
+        <a style="margin-bottom: 5px" class="list-group-item list-group-item-action">
+        <div class="row">
+          <h6 class="col-md-8"><strong>Item type:</strong> {{colliItem?.item.itemName}}</h6>
+          <h6 class="col-md-4"><strong>Amount:</strong> {{colliItem?.count}}</h6>
+        </div>
+        </a>
       </div>
     </div>
     </div>
