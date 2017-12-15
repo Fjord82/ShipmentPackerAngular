@@ -33,7 +33,7 @@ export class AddColliComponent implements OnInit {
               private route: ActivatedRoute,
               private colliService: ColliService) {
 
-    this.netWeight = 500;
+    this.netWeight = 0;
     this.worker = 'Billy Placeholder';
     this.colliGroup = this.fb.group({
       totalWeight: ['', Validators.required],
@@ -70,6 +70,7 @@ export class AddColliComponent implements OnInit {
         this.colliItems.push(colliItem);
         packItem.packed++;
       }
+      this.netWeight = this.netWeight + packItem.item.weight;
     }
   }
 
@@ -88,6 +89,7 @@ export class AddColliComponent implements OnInit {
       this.colliItems.splice(index, 1);
     }
     packItem.packed--;
+    this.netWeight = this.netWeight - packItem.item.weight;
   }
 
   removeAll(colliItem: ColliItem){
@@ -100,6 +102,7 @@ export class AddColliComponent implements OnInit {
     const index = this.colliItems.indexOf(colliItem);
     this.colliItems.splice(index, 1);
     packItem.packed = packItem.packed - colliItem.count;
+    this.netWeight = this.netWeight - (packItem.item.weight * colliItem.count);
   }
 
   back() {
@@ -108,8 +111,8 @@ export class AddColliComponent implements OnInit {
 
   save() {
     const values = this.colliGroup.value;
-    if (values.totalWeight == "") values.totalWeight = this.colli.totalWeight;
-    if (values.dimensions == "") values.dimensions = this.colli.dimensions;
+    if (values.totalWeight == "") values.totalWeight = 0;
+    if (values.dimensions == "") values.dimensions = '';
     this.colli = <ColliList> {
       totalWeight: values.totalWeight,
       dimensions: values.dimensions,

@@ -12,15 +12,29 @@ import {PackItem} from '../../../office/packing/shared/packItem.model';
 })
 export class PackingDetailWorkshopComponent implements OnInit {
 
+  progress: number;
   packing: Packing;
   constructor(private router: Router,
               private packingService: PackingService,
               private route: ActivatedRoute){
+    this.progress = 0;
   }
 
   ngOnInit() {
     this.route.paramMap.switchMap(params => this.packingService.getById(+params.get('id')))
-      .subscribe(packing => this.packing = packing);
+      .subscribe(packing => this.setup(packing));
+  }
+
+  setup(packing: Packing){
+    this.packing = packing;
+    let totalPacked: number = 0;
+    let totalCount: number = 0;
+
+    for (let packItem of packing.packItems){
+      totalPacked = totalPacked + packItem.packed;
+      totalCount = totalCount + packItem.count;
+    }
+    this.progress = Math.round((totalPacked / totalCount) * 100);
   }
 
   back() {

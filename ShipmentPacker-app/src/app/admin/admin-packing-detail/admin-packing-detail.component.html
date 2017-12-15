@@ -12,13 +12,13 @@
     <div class="col-md-4"><h4>ID: </h4><p>{{packing?.id}}</p></div>
   </div>
   <br>
-  <div class="col-md-10 offset-1">
-    <div class="list-group">
-      <a class="list-group-item list-group-item-action">
-        <div class="row">
-          <h4 class="col-md-10">Order Item</h4>
-        </div>
-      </a>
-    </div>
+  <div *ngFor="let packItem of packing?.packItems" class="list-group">
+    <a style="margin-bottom: 5px" class="list-group-item list-group-item-action">
+      <div class="row">
+        <h4 class="col-md-4">{{packItem?.item.itemName}}</h4>
+        <h4 class="col-md-4">Amount: {{packItem?.count}}</h4>
+        <h4 class="col-md-4">Packed: {{packItem?.packed}}</h4>
+      </div>
+    </a>
   </div>
 </div>

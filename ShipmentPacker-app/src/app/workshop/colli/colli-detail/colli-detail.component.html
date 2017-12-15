@@ -46,14 +46,17 @@
   </div>
   <hr>
   <div class="row">
-    <div class="col-4">
-      <select id="selectmultiple" name="selectmultiple" class="form-control" multiple="multiple">
-        <option value="1">Option one</option>
-        <option value="2">Option two</option>
-        <option value="3">Option three</option>
-        <option value="4">Option four</option>
-        <option value="5">Option five</option>
-      </select>
+    <div class="col-6">
+      <h4>Currently Packed Items</h4>
+      <hr>
+      <div *ngFor="let colliItem of colli?.colliItems">
+        <a style="margin-bottom: 5px" class="list-group-item list-group-item-action">
+        <div class="row">
+          <h6 class="col-md-8"><strong>Item type:</strong> {{colliItem?.item.itemName}}</h6>
+          <h6 class="col-md-4"><strong>Amount:</strong> {{colliItem?.count}}</h6>
+        </div>
+        </a>
+      </div>
     </div>
-  </div>
+    </div>
 </div>

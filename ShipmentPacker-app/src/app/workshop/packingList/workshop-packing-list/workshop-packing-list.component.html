@@ -5,14 +5,21 @@
   </nav>
   <br><br><br>
   <div class="col-md-10 offset-1">
-    <h4>
+    <div class="row">
+    <h4 class="col-10">
       Active packinglists:
     </h4>
+    <h4 class="col-2">
+      Status:
+    </h4>
+      <div class="col-12">
+        <hr>
     <div *ngFor="let packing of active" class="list-group">
       <a (click)="clickPackingDetail(packing)" class="list-group-item list-group-item-action">
         <div class="row">
-          <h4 class="col-md-5">{{packing?.packingName}}</h4>
-          <h4 class="col-md-5">{{packing?.creatorName}}</h4>
+          <h6 class="col-md-1"><strong>Id:</strong> {{packing?.id}}</h6>
+          <h6 class="col-md-4"><strong>Name:</strong> {{packing?.packingName}}</h6>
+          <h6 class="col-md-5"><strong>Created by:</strong> {{packing?.creatorName}}</h6>
           <div class="col-2">
             <div class="progress">
               <div class="progress-bar bg-success" style="width:100%">100%</div>
@@ -20,7 +27,9 @@
           </div>
         </div>
       </a>
-      <hr>
+      <br>
+    </div>
+    </div>
     </div>
   </div>
 </div>
