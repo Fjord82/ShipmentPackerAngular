@@ -1,18 +1,11 @@
 <div class="container">
-  <br>
-  <div class="row">
-    <div class="col-12">
-      <h2 class="my-local-center">Packing List</h2>
-      <button style="display: inline-block;" type="button" class="btn btn-outline-info float-left" (click)="back()">
-        Back
-      </button>
-      <button style="display: inline-block;" type="button" class="btn btn-outline-info float-right"
-              (click)="addColli()">
-        Add colli
-      </button>
-    </div>
-  </div>
-  <hr>
+  <nav class="navbar navbar-expand-sm backgroundColor fixed-top">
+    <h2 class="header">PackingList</h2>
+    <button style="display: inline-block;" type="button" class="btn btn-secondary" (click)="back()">Back</button>
+  </nav>
+  <br><br><br>
+  <button style="display: inline-block;" type="button" class="btn btn-outline-info float-right" (click)="addColli()">Add colli</button>
+  <br><br>
   <div class="col-12">
     <div class="row">
       <dt class="col-md-2">

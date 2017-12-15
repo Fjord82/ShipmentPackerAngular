@@ -1,17 +1,11 @@
 <div class="container">
-  <br>
-  <div class="row">
-    <div class="col-12">
-      <h2 class="my-local-center">Edit Colli</h2>
-      <button style="display: inline-block;" type="button" class="btn btn-outline-info float-left" (click)="back()">
-        Back
-      </button>
-      <button style="display: inline-block;" type="button" class="btn btn-outline-success float-right"
-              (click)="submit()">Save
-      </button>
-    </div>
-  </div>
-  <hr>
+  <nav class="navbar navbar-expand-sm backgroundColor fixed-top">
+    <h2 class="header">Edit Colli</h2>
+    <button style="display: inline-block;" type="button" class="btn btn-secondary" (click)="back()">Back</button>
+  </nav>
+  <br><br><br>
+  <button style="display: inline-block;" type="button" class="btn btn-outline-success float-right" (click)="submit()">Save</button>
+  <br><br>
   <div class="col-12">
     <form (ngSubmit)="save()" novalidate>
       <dl class="form-row" [formGroup]="colliGroup">
@@ -104,8 +98,6 @@
         </div>
         </div>
       </div>
-
     </div>
   </div>
-
 </div>

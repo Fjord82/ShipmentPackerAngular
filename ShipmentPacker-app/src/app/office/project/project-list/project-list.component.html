@@ -1,12 +1,11 @@
 <div class="container">
-    <br>
-    <div class="row">
-      <div class="col-12">
-        <h2 class="my-local-center">Projects</h2>
-        <button style="display: inline-block;" type="button" class="btn btn-danger float-right" (click)="logout()">Log Out</button>
-      </div>
-    </div>
-    <hr>
+  <nav class="navbar navbar-expand-sm backgroundColor fixed-top">
+    <h2 class="header">Projects</h2>
+    <button style="display: inline-block;" type="button" class="btn btn-danger ml-md-auto" (click)="logout()">
+      Log Out
+    </button>
+  </nav>
+  <br><br><br>
   <button style="margin-right:5px; display: inline-block;" type="button" class="btn btn-outline-primary float-right" (click)="addProject()"><i class="fa fa-plus" aria-hidden="true"></i>
     Add project</button>
   <br>
@@ -18,9 +17,9 @@
         <div class="row">
           <h4 class="col-md-5">{{project.projectName}}</h4>
           <h4 class="col-md-5">{{project.creatorName}}</h4>
-              <button class="btn btn-outline-warning this-button" (click)="edit(project)">
-                <i class="fa fa-pencil" aria-hidden="true"></i>
-              </button>
+          <button class="btn btn-outline-warning this-button" (click)="edit(project)">
+            <i class="fa fa-pencil" aria-hidden="true"></i>
+          </button>
         </div>
       </a>
       <hr>

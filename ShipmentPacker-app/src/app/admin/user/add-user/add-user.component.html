@@ -1,19 +1,14 @@
 <div class="container">
-  <br>
-  <div class="row">
-    <div class="col-12">
-      <button class="btn btn-outline-info" (click)="back()">Back</button>
-      <h2 class="my-local-center">Add user</h2>
-    </div>
-  </div>
-  <hr>
-
+  <nav class="navbar navbar-expand backgroundColor fixed-top">
+    <button class="btn btn-secondary" (click)="back()">Back</button>
+    <h2 class="header">Add user</h2>
+  </nav>
+  <br><br><br>
   <div class="col-4">
     <h5>Enter information about new user</h5>
     <br>
-
   </div>
-  <div class="col-8">
+  <div class="col-8 offset-2">
     <form (ngSubmit)="save()" [formGroup]="formGroup">
       <dl class="form-row">
         <dt class="col-2">
@@ -79,6 +74,5 @@
         </dd>
       </dl>
     </form>
-
   </div>
 </div>

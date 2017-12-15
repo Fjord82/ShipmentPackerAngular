@@ -1,15 +1,11 @@
 <div class="container">
-  <br>
-  <div class="row">
-  <div class="col-12">
-    <h2 class="my-local-center">
+  <nav class="navbar navbar-expand-sm backgroundColor fixed-top">
+    <button style="display: inline-block;" type="button" class="btn btn-secondary" (click)="back()">Back</button>
+    <h2 class="header">
       Edit project
     </h2>
-    <button style="display: inline-block;" type="button" class="btn btn-outline-info float-left" (click)="back()">Back</button>
-  </div>
-  </div>
-  <hr>
-  <br>
+  </nav>
+  <br><br><br>
   <div class="col-8 offset-3">
     <form (ngSubmit)="update()" [formGroup]="projectGroup" novalidate>
       <dl class="form-row">
