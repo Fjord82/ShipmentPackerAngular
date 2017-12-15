@@ -43,6 +43,7 @@ import {FreightConditionService} from './admin/freightCondition/shared/freightCo
 import { AddFreightConditionComponent } from './admin/freightCondition/add-freight-condition/add-freight-condition.component';
 import { EditFreightConditionComponent } from './admin/freightCondition/edit-freight-condition/edit-freight-condition.component';
 import { EditUserComponent } from './admin/user/edit-user/edit-user.component';
+import { NoAccessComponent } from './shared/no-access/no-access.component';
 
 
 const appRoutes: Routes = [
@@ -74,6 +75,7 @@ const appRoutes: Routes = [
   { path: 'edit-user/:id', component: EditUserComponent },
   { path: 'add-freightCondition', component: AddFreightConditionComponent },
   { path: 'edit-freightCondition/:id', component: EditFreightConditionComponent},
+  { path: 'no-access', component: NoAccessComponent},
   {
     path: '',
     redirectTo: '/login',
@@ -110,7 +112,8 @@ const appRoutes: Routes = [
     AddUserComponent,
     AddFreightConditionComponent,
     EditFreightConditionComponent,
-    EditUserComponent
+    EditUserComponent,
+    NoAccessComponent
 
   ],
   imports: [
