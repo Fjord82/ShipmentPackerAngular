@@ -1,12 +1,9 @@
 <div class="container">
-  <br>
-  <div class="row">
-    <div class="col-md-12">
-      <button class="btn btn-outline-info" (click)="back()">Back</button>
-      <h2 class="my-local-center">{{packing?.packingName}}</h2>
-    </div>
-  </div>
-  <hr>
+  <nav class="navbar navbar-expand-sm backgroundColor fixed-top">
+    <button class="btn btn-secondary" (click)="back()">Back</button>
+    <h2 class="header">{{packing?.packingName}}</h2>
+  </nav>
+  <br><br><br>
   <div class="row">
     <div class="col-md-4"><h4>Delivery Date: </h4><p>{{packing?.deliveryDate}}</p></div>
     <div class="col-md-4"><h4>Delivery Address: </h4><p>{{packing?.deliveryAddress}}</p></div>

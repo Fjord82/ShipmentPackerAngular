@@ -1,16 +1,13 @@
 <div class="container">
-  <br>
-  <div class="row">
-    <div class="col-md-12">
-      <button class="btn btn-outline-info" (click)="back()">Back</button>
-      <h2 class="my-local-center">Add Packing List</h2>
-    </div>
-  </div>
-  <hr>
+  <nav class="navbar navbar-expand-sm backgroundColor fixed-top">
+    <button class="btn btn-secondary" (click)="back()">Back</button>
+    <h2 class="header">Add Packing List</h2>
+  </nav>
+  <br><br><br>
   <div class="col-md-12">
     <div class="row">
       <div class="col-md-5">
-       <dl>
+        <dl>
           <form class="form-horizontal" [formGroup]="packingGroup" novalidate>
             <fieldset>
               <dt class="">
@@ -24,7 +21,7 @@
               </dt>
               <dd class="">
                 <select id="selectbasic"  name="selectbasic" class="form-control" formControlName="freightType">
-                  <option value="Courier">Courier</option>
+                  <option value="" disabled selected>Courier</option>
                   <option value="Road">Road</option>
                   <option value="Sea">Sea</option>
                   <option value="Air">Air</option>
@@ -53,7 +50,7 @@
               <dd class="">
                 <select id="selectmultiple" name="selectmultiple" class="form-control" multiple="multiple"> <!--formControlName="itemType"-->
                   <option (click)="addItem(item)" *ngFor="let item of items" value="1">{{item?.itemName}}</option>
-                  </select>
+                </select>
                 <br>
               </dd>
             </fieldset>

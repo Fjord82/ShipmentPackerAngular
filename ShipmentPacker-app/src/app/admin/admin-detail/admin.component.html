@@ -1,17 +1,15 @@
 <div class="container">
-  <br>
-  <div class="row">
-    <div class="col-12">
-      <h2 class="my-local-center">Admin</h2>
-      <button style="display: inline-block;" type="button" class="btn btn-danger float-right"
-              (click)="logout()">Log Out
-      </button>
-    </div>
-  </div>
-  <hr>
+  <nav class="navbar navbar-expand-sm backgroundColor fixed-top">
+    <h2 class="header">Admin</h2>
+    <button style="display: inline-block;" type="button" class="btn btn-danger ml-md-auto" (click)="logout()">
+      Log Out
+    </button>
+    <br>
+  </nav>
+  <br><br><br>
   <div class="row">
     <div class="col-md-12">
-      <button style="margin-right:5px; display: inline-block;" type="button"
+      <button style="margin-right:5px; display: inline-block" type="button"
               class="btn btn-outline-primary float-right" (click)="manageUsers()">
         Manage Users
       </button>

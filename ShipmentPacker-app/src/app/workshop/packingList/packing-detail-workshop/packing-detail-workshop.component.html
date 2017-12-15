@@ -1,80 +1,99 @@
 <div class="container">
-  <br>
-  <div class="row">
-    <div class="col-12">
-      <h2 class="my-local-center">Packing List</h2>
-      <button style="display: inline-block;" type="button" class="btn btn-outline-info float-left" (click)="back()">Back</button>
-      <button style="display: inline-block;" type="button" class="btn btn-outline-info float-right" (click)="addColli()">Add colli</button>
-    </div>
-  </div>
-  <hr>
-
+  <nav class="navbar navbar-expand-sm backgroundColor fixed-top">
+    <h2 class="header">PackingList</h2>
+    <button style="display: inline-block;" type="button" class="btn btn-secondary" (click)="back()">Back</button>
+  </nav>
+  <br><br><br>
+  <button style="display: inline-block;" type="button" class="btn btn-outline-info float-right" (click)="addColli()">Add colli</button>
+  <br><br>
   <div class="col-12">
     <div class="row">
-        <dt class="col-md-2">
-          Packing Title:
-        </dt>
-        <dd class="col-md-4">
-          <input type="text" placeholder="packingName" value="{{packing?.packingName}}"disabled>
-        </dd>
-        <dt class="col-md-2">
-          Freight Type:
-        </dt>
-        <dd class="col-md-4">
-          <input type="text" placeholder="freightType" value="{{packing?.freightType}}"disabled>
-        </dd>
-        <dt class="col-md-2">
-          Delivery Address:
-        </dt>
-        <dd class="col-md-4">
-          <input type="text" placeholder="deliveryAddress" value="{{packing?.deliveryAddress}}"disabled>
-        </dd>
-        <dt class="col-md-2">
-          Delivery Date:
-        </dt>
-        <dd class="col-md-4">
-          <input type="text" placeholder="deliveryDate" value="{{packing?.deliveryDate}}"disabled>
-        </dd>
-    </div>
-  </div>
-
-  <div class="col-md-10 offset-1">
-    <div *ngFor="let packItem of packing?.packItems" class="list-group">
-      <a class="list-group-item list-group-item-action" style="margin-bottom: 5px">
-          <div class="row">
-          <h4 class="col-md-3">{{packItem?.item.itemName}}</h4>
-          <h4 class="col-md-3">Total: {{packItem?.count}}</h4>
-            <h4 class="col-md-4">Packed: {{packItem?.packed}}</h4>
-          <button class="btn btn-outline-success buttons-right" disabled>
-            <input type="checkbox" autocomplete="off" disabled >
-          </button>
-          </div>
-      </a>
-    </div>
-    <br>
-        <ngb-progressbar showValue="false" type="success" [value]="progress" [max]="100"></ngb-progressbar>
-
-  </div>
-  <br>
-  <div class="row">
-    <div class="col-12">
-      <h2 class="my-local-center">Colli Lists</h2>
-      <br>
+      <dt class="col-md-2">
+        Packing Title:
+      </dt>
+      <dd class="col-md-4">
+        <input type="text" placeholder="packingName" value="{{packing?.packingName}}" disabled>
+      </dd>
+      <dt class="col-md-2">
+        Freight Type:
+      </dt>
+      <dd class="col-md-4">
+        <input type="text" placeholder="freightType" value="{{packing?.freightType}}" disabled>
+      </dd>
+      <dt class="col-md-2">
+        Delivery Address:
+      </dt>
+      <dd class="col-md-4">
+        <input type="text" placeholder="deliveryAddress" value="{{packing?.deliveryAddress}}" disabled>
+      </dd>
+      <dt class="col-md-2">
+        Delivery Date:
+      </dt>
+      <dd class="col-md-4">
+        <input type="text" placeholder="deliveryDate" value="{{packing?.deliveryDate}}" disabled>
+      </dd>
     </div>
   </div>
   <hr>
-  <div class="col-md-10 offset-1">
-    <div *ngFor="let colli of packing?.colliLists" class="list-group">
-      <a (click)="colliClick(colli)" class="list-group-item list-group-item-action" style="margin-bottom: 5px">
+  <div class="col-12">
+    <div class="row">
+      <div class="col-8">
         <div class="row">
-          <h4 class="col-md-7">Colli Id: {{colli.id}}</h4>
-          <div class="col-4">
+          <div class="col-3"><strong>Packing status:</strong></div>
+          <div class="col-8">
+            <ngb-progressbar showValue="false" type="success" [value]="progress" [max]="100"></ngb-progressbar>
           </div>
-          <button class="btn btn-outline-warning" (click)="editColli(colli)">
-            <i class="fa fa-pencil" aria-hidden="true"></i>
-          </button>
+          <div class="col-12">
+            <hr>
+          </div>
+          <div class="col-12">
+            <h6 class="col-12"><strong>Units to pack: </strong></h6>
+            <div *ngFor="let packItem of packing?.packItems" class="list-group">
+              <a class="list-group-item list-group-item-action" style="margin-bottom: 5px">
+                <div class="row">
+                  <h6 class="col-md-5">{{packItem?.item.itemName}}</h6>
+                  <h6 class="col-md-3">Required: {{packItem?.count}}</h6>
+                  <h6 class="col-md-2">Packed: {{packItem?.packed}}</h6>
+                  <button class="btn btn-outline-success buttons-right" disabled>
+                    <input type="checkbox" autocomplete="off" disabled>
+                  </button>
+                </div>
+              </a>
+            </div>
+          </div>
         </div>
-      </a>
+      </div>
+      <div class="col-4">
+        <div class="row">
+          <div class="col-12">
+            <div class="row">
+              <div class="col-12">
+                <h5 class="col-12"><strong>Colli list</strong></h5>
+                <hr>
+              </div>
+              <div class="col-md-12">
+                <div class="row">
+                <h6 class="col-6"><strong></strong></h6>
+                  <h6 class="col-6"><strong>Amount: {{packing?.colliLists.length}} </strong></h6>
+                </div>
+                <div *ngFor="let colli of packing?.colliLists" class="list-group">
+                  <a (click)="colliClick(colli)" class="list-group-item list-group-item-action"
+                     style="margin-bottom: 5px">
+                    <div class="row">
+                      <h6 class="col-md-6">Colli Id: {{colli.id}}</h6>
+                      <div class="col-4">
+                      </div>
+                      <button class="btn btn-outline-warning" (click)="editColli(colli)">
+                        <i class="fa fa-pencil" aria-hidden="true"></i>
+                      </button>
+                    </div>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </div>
