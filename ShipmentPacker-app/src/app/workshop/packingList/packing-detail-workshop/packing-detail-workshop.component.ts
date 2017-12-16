@@ -17,7 +17,7 @@ export class PackingDetailWorkshopComponent implements OnInit {
   constructor(private router: Router,
               private packingService: PackingService,
               private route: ActivatedRoute){
-    this.progress = 0;
+    this.progress = 100;
   }
 
   ngOnInit() {

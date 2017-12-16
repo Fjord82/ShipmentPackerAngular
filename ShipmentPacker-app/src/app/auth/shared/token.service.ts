@@ -38,7 +38,6 @@ export class TokenService {
       if (token) {
         const jwt = new JwtHelper();
         decoded = jwt.decodeToken(token);
-        console.log(jwt.decodeToken(token));
       }
       obs.next(decoded);
     });
