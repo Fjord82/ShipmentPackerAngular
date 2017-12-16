@@ -3,6 +3,8 @@ import {Router} from '@angular/router';
 import {FormGroup, FormBuilder, Validators} from '@angular/forms';
 import {Project} from "../shared/project.model";
 import {ProjectService} from "../shared/project.service";
+import {User} from '../../../admin/user/shared/user.model';
+import {TokenService} from '../../../auth/shared/token.service';
 
 @Component({
   selector: 'app-add-project',
@@ -11,19 +13,21 @@ import {ProjectService} from "../shared/project.service";
 })
 export class AddProjectComponent implements OnInit {
 
+  user: User;
   projectGroup: FormGroup;
   constructor(private router: Router,
               private fb: FormBuilder,
-              private projectService: ProjectService) {
+              private projectService: ProjectService,
+              private  tokenService: TokenService) {
     this.projectGroup = this.fb.group({
       projectName: ['', Validators.required],
       customerName: ['', Validators.required],
-      creatorName: ['', Validators.required],
     });
   }
 
 
   ngOnInit() {
+    this.tokenService.getUserFromToken().subscribe(user => this.user = user);
   }
 
   back() {
@@ -35,7 +39,7 @@ export class AddProjectComponent implements OnInit {
     const project: Project = <Project>{
       projectName: values.projectName,
       customerName: values.customerName,
-      creatorName: values.creatorName,
+      creatorName: this.user.firstName + " " + this.user.lastName,
       isActve: true
     };
       this.projectService.create(project).subscribe(proj => this.back());

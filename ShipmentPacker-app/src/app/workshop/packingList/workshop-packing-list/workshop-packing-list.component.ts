@@ -3,6 +3,7 @@ import {ActivatedRoute, Router} from '@angular/router';
 import {Packing} from '../../../office/packing/shared/packing.model';
 import {PackingService} from '../../../office/packing/shared/packing.service';
 import {UtilityService} from '../../../shared/utility.service';
+import {LoginService} from '../../../auth/shared/login.service';
 
 @Component({
   selector: 'app-workshop-project-list',
@@ -17,7 +18,8 @@ export class WorkshopPackingListComponent implements OnInit {
   constructor(private router: Router,
               private packingService: PackingService,
               private route: ActivatedRoute,
-              private utilityService: UtilityService) { }
+              private utilityService: UtilityService,
+              private loginService: LoginService) { }
 
   ngOnInit() {
     this.packingService.getPackings().subscribe(
@@ -32,7 +34,8 @@ export class WorkshopPackingListComponent implements OnInit {
 
 
   logoutbtn() {
-    this.router.navigateByUrl('/login');
+    this.loginService.logout().subscribe(bool => this.router.navigateByUrl('/login'));
+    
   }
 
   clickPackingDetail(packing: Packing) {
