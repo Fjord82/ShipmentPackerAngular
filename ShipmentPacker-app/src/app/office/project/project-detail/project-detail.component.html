@@ -28,10 +28,6 @@
         </h4>
         </div>
           <div class="col-md-3">
-          <button type="button" (click)="addPackingClick()" class="btn btn-primary ml-md-auto">
-            <i class="fa fa-plus" aria-hidden="true"></i>
-            New packing list
-          </button>
           </div>
         </div>
         <br>
@@ -40,12 +36,8 @@
     <div *ngFor="let packing of active" class="list-group">
       <a (click)="packingClick(packing)" class="list-group-item list-group-item-action">
         <div class="row">
-          <h6 class="col-md-6">{{packing.packingName}}</h6>
-          <div class="col-4">
-            <div class="progress">
-              <div class="progress-bar bg-success" style="width:100%">100%</div>
-            </div>
-          </div>
+          <h6 class="col-md-7"><strong>Packing List Name:</strong> {{packing.packingName}}</h6>
+          <h6 class="col-md-3"><strong>Creator:</strong> {{packing.creatorName}}</h6>
           <button class="btn btn-outline-warning offset-1 btn-sm" (click)="editPacking(packing)">
             <i class="fa fa-pencil" aria-hidden="true"></i>
           </button>

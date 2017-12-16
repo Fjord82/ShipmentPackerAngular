@@ -1,11 +1,11 @@
-import {Injectable, Injector} from '@angular/core';
+
 import {Observable} from 'rxjs/Observable';
 import 'rxjs/add/operator/take';
-import {JwtHelper} from 'angular2-jwt';
 import {HttpClient, HttpHeaders, HttpParams} from '@angular/common/http';
 import {environment} from '../../../environments/environment';
 import {TokenService} from './token.service';
 import {User} from '../../admin/user/shared/user.model';
+import {Injectable} from "@angular/core";
 const url = environment.apiEndpoint + '/token';
 
 @Injectable()
