@@ -2,10 +2,7 @@ import {Injectable, Injector} from '@angular/core';
 import {Observable} from 'rxjs/Observable';
 import 'rxjs/add/operator/take';
 import {JwtHelper} from 'angular2-jwt';
-import {HttpHeaders, HttpParams} from '@angular/common/http';
-import {environment} from '../../../environments/environment';
 import {User} from '../../admin/user/shared/user.model';
-const url = environment.apiEndpoint + '/token';
 
 @Injectable()
 export class TokenService {
@@ -38,7 +35,6 @@ export class TokenService {
       if (token) {
         const jwt = new JwtHelper();
         decoded = jwt.decodeToken(token);
-        console.log(jwt.decodeToken(token));
       }
       obs.next(decoded);
     });

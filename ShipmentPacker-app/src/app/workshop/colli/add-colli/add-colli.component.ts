@@ -9,6 +9,8 @@ import {PackItem} from '../../../office/packing/shared/packItem.model';
 import {ColliItem} from '../shared/colliItem.model';
 import {PackItemService} from '../../../office/packing/shared/pack-item.service';
 import {ColliItemService} from '../shared/colli-item.service';
+import {User} from '../../../admin/user/shared/user.model';
+import {TokenService} from '../../../auth/shared/token.service';
 
 @Component({
   selector: 'app-add-colli',
@@ -23,7 +25,7 @@ export class AddColliComponent implements OnInit {
   colliItems: ColliItem[];
 
   netWeight: number;
-  worker: string;
+  user: User;
 
   constructor(private router: Router,
               private fb: FormBuilder,
@@ -31,10 +33,10 @@ export class AddColliComponent implements OnInit {
               private packItemService: PackItemService,
               private colliItemService: ColliItemService,
               private route: ActivatedRoute,
-              private colliService: ColliService) {
+              private colliService: ColliService,
+              private tokenService: TokenService) {
 
     this.netWeight = 0;
-    this.worker = 'Billy Placeholder';
     this.colliGroup = this.fb.group({
       totalWeight: ['', Validators.required],
       dimensions: ['', Validators.required],
@@ -46,6 +48,8 @@ export class AddColliComponent implements OnInit {
   ngOnInit() {
     this.route.paramMap.switchMap(params => this.packingService.getById(+params.get('id')))
       .subscribe(packing => this.packing = packing);
+
+    this.tokenService.getUserFromToken().subscribe(user => this.user = user);
 
     //this.itemService.getItems().subscribe(items => {this.items = items;});
   }
@@ -121,7 +125,7 @@ export class AddColliComponent implements OnInit {
     this.colli.packingListIds = [];
     this.colli.packingListIds.push(this.packing.id);
     this.colli.projectName = this.packing.projects[0].projectName;
-    this.colli.worker = this.worker;
+    this.colli.worker = this.user.firstName + " " + this.user.lastName,
     this.colli.netWeight = this.netWeight;
     this.colli.isActive = true;
     this.colli.freightType = this.packing.freightType;

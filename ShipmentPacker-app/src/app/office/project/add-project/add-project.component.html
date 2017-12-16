@@ -13,7 +13,7 @@
           Project name:
         </dt>
         <dd class="col-md-7">
-          <input class="form-control" id="1" formControlName="projectName" placeholder="Project name">
+          <input class="form-control" id="1" formControlName="projectName" placeholder="Project name" >
         </dd>
         <dt class="col-md-3">
           Customer name:
@@ -25,7 +25,7 @@
           Manager name:
         </dt>
         <dd class="col-md-7">
-          <input class="form-control" id="3" formControlName="creatorName" placeholder="Manager name">
+          <input class="form-control" id="3" value="{{user?.firstName}} {{user?.lastName}}" disabled>
         </dd>
         <div class="row col-md-7 offset-3 justify-content-between">
           <button type="submit" class="btn btn-outline-success">Save</button>

@@ -16,6 +16,8 @@ import {PackItem} from "../shared/packItem.model";
 })
 export class EditPackingComponent implements OnInit {
 
+
+  deleteList: number[];
   currentPackingChanged: boolean = false;
   packing: Packing;
   items: Item[];
@@ -35,6 +37,7 @@ export class EditPackingComponent implements OnInit {
       deliveryDate: ['', Validators.required]
     });
     this.newPackItems = [];
+    this.deleteList = [];
   }
 
   ngOnInit() {
@@ -99,7 +102,7 @@ export class EditPackingComponent implements OnInit {
 
   removeAllCurrent(packItem: PackItem) {
     this.currentPackingChanged = true;
-    this.packItemService.delete(packItem.id).subscribe();
+    this.deleteList.push(packItem.id);
     const index = this.packing.packItems.indexOf(packItem);
     this.packing.packItems.splice(index, 1);
   }
@@ -110,10 +113,9 @@ export class EditPackingComponent implements OnInit {
       packItem.count--;
     }
     else {
-      this.packItemService.delete(packItem.id).subscribe();
+      this.deleteList.push(packItem.id);
       const index = this.packing.packItems.indexOf(packItem);
       this.packing.packItems.splice(index, 1);
-      this.packItemService.delete(packItem.id);
     }
   }
 
@@ -121,6 +123,10 @@ export class EditPackingComponent implements OnInit {
 
 
   submit() {
+    if (this.deleteList.length != 0)
+    {
+      this.deleteCurrentItems();
+    }
     if (this.newPackItems.length != 0)
     {
       this.createPackItems();
@@ -128,6 +134,12 @@ export class EditPackingComponent implements OnInit {
     else
     {
       this.updatePackItems();
+    }
+  }
+
+  deleteCurrentItems(){
+    for (let id of this.deleteList){
+      this.packItemService.delete(id).subscribe();
     }
   }
 

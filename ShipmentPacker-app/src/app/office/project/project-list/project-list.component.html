@@ -8,10 +8,16 @@
   <br><br><br>
   <div class="col-md-10 offset-1">
     <div class="row">
-      <div class="col-md-5" style="padding-left: 30px">
+      <div class="col-md-1" style="padding-left: 30px">
+        <h5><strong>#Id</strong></h5>
+      </div>
+      <div class="col-md-3" style="padding-left: 30px">
         <h5><strong>Project name</strong></h5>
       </div>
-      <div class="col-md-5">
+      <div class="col-md-3">
+        <h5><strong>Customer contact</strong></h5>
+      </div>
+      <div class="col-md-3">
         <h5><strong>Manager name</strong></h5>
       </div>
       <div class="col-md-2">
@@ -30,8 +36,10 @@
     <div *ngFor="let project of projects" class="list-group">
       <a (click)="clickProject(project)" class="list-group-item list-group-item-action">
         <div class="row">
-          <h6 class="col-md-5">{{project.projectName}}</h6>
-          <h6 class="col-md-5">{{project.creatorName}}</h6>
+          <h6 class="col-md-1">{{project.id}}</h6>
+          <h6 class="col-md-3">{{project.projectName}}</h6>
+          <h6 class="col-md-3">{{project.customerName}}</h6>
+          <h6 class="col-md-3">{{project.creatorName}}</h6>
           <button class="btn btn-outline-warning this-button btn-sm" (click)="edit(project)">
             <i class="fa fa-pencil" aria-hidden="true"></i>
           </button>

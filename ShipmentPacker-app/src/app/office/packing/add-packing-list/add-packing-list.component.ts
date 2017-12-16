@@ -10,6 +10,9 @@ import {Item} from '../../../admin/item/shared/item.model';
 import {ItemService} from '../../../admin/item/shared/item.service';
 import {PackItem} from '../shared/packItem.model';
 import {PackItemService} from '../shared/pack-item.service';
+import {User} from '../../../admin/user/shared/user.model';
+import {TokenService} from '../../../auth/shared/token.service';
+import {UserService} from '../../../admin/user/shared/user.service';
 
 @Component({
   selector: 'app-add-packing-list',
@@ -18,7 +21,7 @@ import {PackItemService} from '../shared/pack-item.service';
 })
 export class AddPackingListComponent implements OnInit {
 
-
+  user: User;
   items: Item[];
   project: Project;
   packing: Packing;
@@ -32,6 +35,7 @@ export class AddPackingListComponent implements OnInit {
               private itemService: ItemService,
               private projectService: ProjectService,
               private packItemService: PackItemService,
+              private tokenService: TokenService,
               private ngbDateParserFormatter: NgbDateParserFormatter) {
     this.packingGroup = this.fb.group({
       packingName: ['', Validators.required],
@@ -47,6 +51,8 @@ export class AddPackingListComponent implements OnInit {
   ngOnInit() {
     this.route.paramMap.switchMap(params => this.projectService.getById(+params.get('id')))
       .subscribe(project => this.project = project);
+
+    this.tokenService.getUserFromToken().subscribe(user => this.user = user);
 
     this.itemService.getItems().subscribe(items => {this.items = items;});
   }
@@ -65,7 +71,7 @@ export class AddPackingListComponent implements OnInit {
       isActive: true
     };
     packing.itemType = 'Hej';
-    packing.creatorName = 'Hej';
+    packing.creatorName = this.user.firstName + " " + this.user.lastName;
     packing.projectIds = [];
     packing.projectIds.push(this.project.id);
     this.packingService.create(packing)
