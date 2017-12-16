@@ -11,6 +11,7 @@ import {Item} from '../item/shared/item.model';
 import {UtilityService} from '../../shared/utility.service';
 import {FreightConditionService} from '../freightCondition/shared/freightCondition.service';
 import {FreightCondition} from '../freightCondition/shared/freightCondition.model';
+import {LoginService} from '../../auth/shared/login.service';
 
 @Component({
   selector: 'app-admin',
@@ -45,7 +46,8 @@ export class AdminComponent implements OnInit {
               private colliService: ColliService,
               private itemService: ItemService,
               private freightConditionService: FreightConditionService,
-              private utilityService: UtilityService) { }
+              private utilityService: UtilityService,
+              private loginService: LoginService) { }
 
   ngOnInit() {
     this.projectService.getProjects().subscribe(
@@ -89,7 +91,8 @@ export class AdminComponent implements OnInit {
   }
 
   logout() {
-    this.router.navigateByUrl('/login');
+    this.loginService.logout().subscribe(bool => this.router.navigateByUrl('/login'));
+
   }
 
   clickProject(project: Project) {

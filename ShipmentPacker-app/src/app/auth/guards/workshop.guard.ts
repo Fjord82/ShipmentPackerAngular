@@ -11,7 +11,7 @@ export class WorkshopGuard implements CanActivate {
 
   canActivate(): any {
     return this.tokenService.getUserFromToken().take(1).map(user => {
-      if(user && user.workTitle == 'Workshop' || user.workTitle == 'Admin')
+      if(user && (user.workTitle == 'Workshop' || user.workTitle == 'Admin'))
       {
         return true;
       } else
