@@ -46,40 +46,43 @@ import { EditFreightConditionComponent } from './admin/freightCondition/edit-fre
 import { EditUserComponent } from './admin/user/edit-user/edit-user.component';
 import { NoAccessComponent } from './shared/no-access/no-access.component';
 import { AuthInterceptor } from './auth/interceptors/auth.interceptor';
-import {TokenService} from './auth/shared/token.service';
-import {LoginService} from './auth/shared/login.service';
+import { TokenService } from './auth/shared/token.service';
+import { LoginService } from './auth/shared/login.service';
+import { OfficeGuard } from './auth/guards/office.guard';
+import {WorkshopGuard} from './auth/guards/workshop.guard';
+import {AdminGuard} from './auth/guards/admin.guard';
 
 
 const appRoutes: Routes = [
-  { path: 'login', component: LoginComponent },
-  { path: 'office', component: ProjectListComponent },
-  { path: 'workshop', component: WorkshopPackingListComponent },
-  { path: 'add-project', component: AddProjectComponent },
-  { path: 'packingName', component: PackingDetailComponent },
-  { path: 'packingDetailWorkshop/:id', component: PackingDetailWorkshopComponent },
-  { path: 'addPackingList/:id', component: AddPackingListComponent },
-  { path: 'edit-project/:id', component: EditProjectComponent },
-  { path: 'addColli/:id', component: AddColliComponent },
-  { path: 'project-detail/:id', component: ProjectDetailComponent },
-  { path: 'packing-detail/:id', component: PackingDetailComponent },
-  { path: 'edit-packing/:id', component: EditPackingComponent },
+  { path: 'office', component: ProjectListComponent, canActivate: [OfficeGuard]},
+  { path: 'workshop', component: WorkshopPackingListComponent, canActivate:[WorkshopGuard]},
+  { path: 'add-project', component: AddProjectComponent, canActivate: [OfficeGuard]},
+  { path: 'packingName', component: PackingDetailComponent, canActivate: [OfficeGuard]},
+  { path: 'packingDetailWorkshop/:id', component: PackingDetailWorkshopComponent, canActivate: [WorkshopGuard]},
+  { path: 'addPackingList/:id', component: AddPackingListComponent, canActivate: [OfficeGuard]},
+  { path: 'edit-project/:id', component: EditProjectComponent, canActivate: [OfficeGuard]},
+  { path: 'addColli/:id', component: AddColliComponent, canActivate: [WorkshopGuard]},
+  { path: 'project-detail/:id', component: ProjectDetailComponent, canActivate: [OfficeGuard] },
+  { path: 'packing-detail/:id', component: PackingDetailComponent, canActivate: [OfficeGuard] },
+  { path: 'edit-packing/:id', component: EditPackingComponent, canActivate: [OfficeGuard] },
   { path: 'admin', component: AdminComponent },
   { path: 'admin-project-detail/:id', component: AdminProjectDetailComponent },
   { path: 'admin-packing-detail/:id', component: AdminPackingDetailComponent },
   { path: 'admin-colli-detail/:id', component: AdminColliDetailComponent },
   { path: 'manage-users', component: ManageUsersComponent },
-  { path: 'colli-detail/:id', component: ColliDetailComponent },
-  { path: 'edit-colli/:id', component: EditColliComponent },
-  { path: 'add-item', component: AddItemComponent },
-  { path: 'edit-item/:id', component: EditItemComponent },
-  { path: 'admin-edit-project/:id', component: AdminProjectEditComponent },
-  { path: 'admin-edit-colli/:id', component: AdminColliEditComponent },
-  { path: 'admin-edit-packing/:id', component: AdminPackingEditComponent },
-  { path: 'add-user', component: AddUserComponent },
-  { path: 'edit-user/:id', component: EditUserComponent },
-  { path: 'add-freightCondition', component: AddFreightConditionComponent },
-  { path: 'edit-freightCondition/:id', component: EditFreightConditionComponent},
+  { path: 'colli-detail/:id', component: ColliDetailComponent, canActivate: [WorkshopGuard] },
+  { path: 'edit-colli/:id', component: EditColliComponent, canActivate: [WorkshopGuard]},
+  { path: 'add-item', component: AddItemComponent, canActivate: [AdminGuard]},
+  { path: 'edit-item/:id', component: EditItemComponent, canActivate: [AdminGuard] },
+  { path: 'admin-edit-project/:id', component: AdminProjectEditComponent, canActivate: [AdminGuard] },
+  { path: 'admin-edit-colli/:id', component: AdminColliEditComponent, canActivate: [AdminGuard] },
+  { path: 'admin-edit-packing/:id', component: AdminPackingEditComponent, canActivate: [AdminGuard] },
+  { path: 'add-user', component: AddUserComponent, canActivate: [AdminGuard] },
+  { path: 'edit-user/:id', component: EditUserComponent, canActivate: [AdminGuard] },
+  { path: 'add-freightCondition', component: AddFreightConditionComponent, canActivate: [AdminGuard] },
+  { path: 'edit-freightCondition/:id', component: EditFreightConditionComponent, canActivate: [AdminGuard]},
   { path: 'no-access', component: NoAccessComponent},
+  { path: 'login', component: LoginComponent },
   {
     path: '',
     redirectTo: '/login',
@@ -118,7 +121,6 @@ const appRoutes: Routes = [
     EditFreightConditionComponent,
     EditUserComponent,
     NoAccessComponent
-
   ],
   imports: [
     BrowserModule,
