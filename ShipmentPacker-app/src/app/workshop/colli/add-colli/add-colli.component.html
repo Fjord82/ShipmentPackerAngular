@@ -49,20 +49,26 @@
     </form>
   </div>
   <hr>
+  <div class="col-md-12">
   <div class="row">
-    <div class="col-4">
+    <div class="col-md-6">
+      <h4>Items from PackingList</h4>
+      <hr>
       <div *ngFor="let packItem of packing?.packItems">
         <a style="margin-bottom: 5px" (click)="addItem(packItem)" class="list-group-item list-group-item-action" value="1">{{packItem?.item.itemName}} - Amount: {{packItem?.count}} - Packed: {{packItem?.packed}}</a>
       </div>
     </div>
-    <div class="col-2"></div>
-    <div class="col-2"></div>
-    <div class="col-4">
+    <div class="col-md-6">
+        <h4>Items added to colli: </h4>
+      <hr>
+    <div class="col-md-12">
       <div *ngFor="let colliItem of colliItems">
         <a style="margin-bottom: 5px" (click)="removeItem(colliItem)" class="list-group-item list-group-item-action" >{{colliItem?.item.itemName}} - Amount: {{colliItem?.count}}
           <button class="fa fa-trash pull-right btn btn-outline-danger" (click)="removeAll(colliItem)">
           </button></a>
-      </div>
+    </div>
+    </div>
     </div>
   </div>
+</div>
 </div>
