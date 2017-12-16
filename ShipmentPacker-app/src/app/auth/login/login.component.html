@@ -23,6 +23,8 @@
             <input class="form-control" formControlName="password" placeholder="Password" id="password" type="password">
           </div>
           <input class="btn btn-lg btn-info btn-block" type="submit" value="Login">
+          <br>
+          <div *ngIf="loginGroup.controls['workEmail'].invalid" class="alert-danger"> You forgot something</div>
         </fieldset>
       </form>
     </div>
