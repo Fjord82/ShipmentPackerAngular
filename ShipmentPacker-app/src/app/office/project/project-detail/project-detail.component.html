@@ -9,25 +9,44 @@
   </nav>
   <br><br><br>
   <div class="row">
-    <div class="col-md-4"><h4>Project Name:</h4><p>{{project?.projectName}}</p></div>
-    <div class="col-md-4"><h4>Customer Name:</h4><p>{{project?.customerName}}</p></div>
-    <div class="col-md-4"><h4>Manager Name:</h4><p>{{project?.creatorName}}</p></div>
+    <div class="col-md-4"><h4>Project Name:</h4>
+      <p>{{project?.projectName}}</p></div>
+    <div class="col-md-4"><h4>Customer Name:</h4>
+      <p>{{project?.customerName}}</p></div>
+    <div class="col-md-4"><h4>Manager Name:</h4>
+      <p>{{project?.creatorName}}</p></div>
   </div>
+  <hr>
   <br>
-  <div class="col-md-12">
-    <h4>
-      Active packing lists:
-    </h4>
+  <div class="col-md-10 offset-1">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="row">
+        <div class="col-md-9">
+        <h4>
+          Active packing lists:
+        </h4>
+        </div>
+          <div class="col-md-3">
+          <button type="button" (click)="addPackingClick()" class="btn btn-primary ml-md-auto">
+            <i class="fa fa-plus" aria-hidden="true"></i>
+            New packing list
+          </button>
+          </div>
+        </div>
+        <br>
+      </div>
+    </div>
     <div *ngFor="let packing of active" class="list-group">
       <a (click)="packingClick(packing)" class="list-group-item list-group-item-action">
         <div class="row">
-          <h4 class="col-md-6">{{packing.packingName}}</h4>
+          <h6 class="col-md-6">{{packing.packingName}}</h6>
           <div class="col-4">
             <div class="progress">
               <div class="progress-bar bg-success" style="width:100%">100%</div>
             </div>
           </div>
-          <button class="btn btn-outline-warning offset-1" (click)="editPacking(packing)">
+          <button class="btn btn-outline-warning offset-1 btn-sm" (click)="editPacking(packing)">
             <i class="fa fa-pencil" aria-hidden="true"></i>
           </button>
         </div>
