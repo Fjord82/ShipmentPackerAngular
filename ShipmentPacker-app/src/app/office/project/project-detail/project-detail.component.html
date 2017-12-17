@@ -26,6 +26,7 @@
         <input class="form-control col-md-12" type="text" placeholder="packingName" value="{{project?.creatorName}}"
                disabled>
       </dd>
+      
     </div>
   </div>
   <hr>
@@ -38,12 +39,7 @@
           Active packing lists:
         </h4>
         </div>
-          <div class="col-md-3">
-            <button type="button" (click)="addPackingClick()" class="btn btn-outline-info float-right btn-sm">
-              <i class="fa fa-plus" aria-hidden="true"></i>
-              New packing list
-            </button>
-          </div>
+
         </div>
         <br>
     </div>
@@ -55,9 +51,15 @@
     <div class="col-md-4" style="padding-left: 30px">
       <h6><strong>Packing list name</strong></h6>
     </div>
-    <div class="col-md-4">
+    <div class="col-md-3">
       <h6><strong>Manager name</strong></h6>
     </div>
+        <div class="col-md-3">
+          <button type="button" (click)="addPackingClick()" class="btn btn-outline-info float-right btn-sm">
+            <i class="fa fa-plus" aria-hidden="true"></i>
+            New packing list
+          </button>
+        </div>
     </div>
       <hr>
     </div>
