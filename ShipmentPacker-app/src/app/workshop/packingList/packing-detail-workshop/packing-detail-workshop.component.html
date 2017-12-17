@@ -4,10 +4,20 @@
     <button style="display: inline-block;" type="button" class="btn btn-secondary" (click)="back()">Back</button>
   </nav>
   <br><br><br>
-  <button style="display: inline-block;" type="button" class="btn btn-outline-info float-right" (click)="addColli()">Add colli</button>
-  <br><br>
   <div class="col-12">
     <div class="row">
+      <div class="col-md-12">
+        <div class="row">
+      <dt class="col-md-2">
+        Packing list Id:
+      </dt>
+      <dd class="col-md-9">
+        <input style="border-color: transparent" type="text" placeholder="packingName" value="{{packing?.id}}" di bled>
+      </dd>
+      <button style="display: inline-block;" type="button" class="btn btn-outline-info btn-sm float-right" (click)="addColli()"><i class="fa fa-plus" aria-hidden="true"></i> Add colli</button>
+        </div>
+        <br>
+        </div>
       <dt class="col-md-2">
         Packing Title:
       </dt>
