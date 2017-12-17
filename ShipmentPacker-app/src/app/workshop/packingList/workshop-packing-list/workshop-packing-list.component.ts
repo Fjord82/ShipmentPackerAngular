@@ -4,6 +4,8 @@ import {Packing} from '../../../office/packing/shared/packing.model';
 import {PackingService} from '../../../office/packing/shared/packing.service';
 import {UtilityService} from '../../../shared/utility.service';
 import {LoginService} from '../../../auth/shared/login.service';
+import {Project} from '../../../office/project/shared/project.model';
+import {ProjectService} from '../../../office/project/shared/project.service';
 
 @Component({
   selector: 'app-workshop-project-list',
@@ -26,6 +28,8 @@ export class WorkshopPackingListComponent implements OnInit {
       packings => {
         this.sortLists(packings);
       });
+
+
   }
 
   sortLists(packing: Packing[]) {
@@ -33,9 +37,10 @@ export class WorkshopPackingListComponent implements OnInit {
   }
 
 
+
   logoutbtn() {
     this.loginService.logout().subscribe(bool => this.router.navigateByUrl('/login'));
-    
+
   }
 
   clickPackingDetail(packing: Packing) {
