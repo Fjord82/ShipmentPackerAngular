@@ -4,29 +4,75 @@
     <h2 class="header">{{packing?.packingName}}</h2>
   </nav>
   <br><br><br>
-  <div class="row">
-    <div class="col-md-4"><h4>Delivery Date: </h4><p>{{packing?.deliveryDate}}</p></div>
-    <div class="col-md-4"><h4>Delivery Address: </h4><p>{{packing?.deliveryAddress}}</p></div>
-    <div class="col-md-4"><h4>Manager Name: </h4><p>{{packing?.creatorName}}</p></div>
-    <div class="col-md-4"><h4>Freight Type: </h4><p>{{packing?.freightType}}</p></div>
-    <div class="col-md-4"><h4>ID: </h4><p>{{packing?.id}}</p></div>
-  </div>
-  <br>
-  <div class="row">
-    <div class="col-1"></div>
-  <div class="col-10">
-    <ngb-progressbar showValue="false" type="success" [value]="progress" [max]="100"></ngb-progressbar>
-  </div>
+  <div class="col-12">
+    <div class="row">
+      <dt class="col-md-2">
+        Packing list Id:
+      </dt>
+      <dd class="col-md-10">
+        <input style="border-color: transparent" type="text" placeholder="packingName" value="{{packing?.id}}" di bled>
+      </dd>
+      <dt class="col-md-2">
+        Manager Name:
+      </dt>
+      <dd class="col-md-4">
+        <input class="form-control col-md-12" type="text" placeholder="packingName" value="{{packing?.creatorName}}"
+               disabled>
+      </dd>
+      <dt class="col-md-2">
+        Delivery Address:
+      </dt>
+      <dd class="col-md-4">
+        <input class="form-control col-md-12" type="text" placeholder="freightType" value="{{packing?.deliveryAddress}}"
+               disabled>
+      </dd>
+      <dt class="col-md-2">
+        Frieght Type:
+      </dt>
+      <dd class="col-md-4">
+        <input class="form-control col-md-12" type="text" placeholder="deliveryAddress" value="{{packing?.freightType}}"
+               disabled>
+      </dd>
+      <dt class="col-md-2">
+        Delivery Date:
+      </dt>
+      <dd class="col-md-4">
+        <input class="form-control col-md-12" type="text" placeholder="deliveryDate" value="{{packing?.deliveryDate}}"
+               disabled>
+      </dd>
+    </div>
   </div>
   <hr>
-  <br>
-    <div *ngFor="let packItem of packing?.packItems" class="list-group">
-      <a style="margin-bottom: 5px" class="list-group-item list-group-item-action">
-        <div class="row">
-          <h4 class="col-md-6">{{packItem?.item.itemName}}</h4>
-          <h4 class="col-md-3"><strong>Amount:</strong> {{packItem?.count}}</h4>
-          <h4 class="col-md-3"><strong>Packed:</strong> {{packItem?.packed}}</h4>
-        </div>
-      </a>
+  <div class="col-md-12">
+  <div class="row">
+    <div class="col-8">
+    <div class="row">
+      <div class="col-3"><strong>Packing status:</strong></div>
+      <div class="col-md-8">
+      <ngb-progressbar showValue="false" type="success" [value]="progress" [max]="100"></ngb-progressbar>
+      </div>
     </div>
+    </div>
+    <div class="col-md-4">
+      <h6><strong>Amount of collies: {{packing?.colliLists.length}} </strong></h6>
+    </div>
+    </div>
+  </div>
+  <br>
+  <div class="col-md-12">
+    <div class="row">
+  <h6 class="col-md-9"><strong>Units to pack: </strong></h6>
+  <h6 class="col-md-3"><strong>Dangerous Goods declaration: </strong></h6>
+    </div>
+  </div>
+  <div *ngFor="let packItem of packing?.packItems" class="list-group">
+    <a style="margin-bottom: 5px" class="list-group-item list-group-item-action">
+      <div class="row">
+        <h6 class="col-md-3">{{packItem?.item.itemName}}</h6>
+        <h6 class="col-md-3"><strong>Amount:</strong> {{packItem?.count}}</h6>
+        <h6 class="col-md-3"><strong>Packed:</strong> {{packItem?.packed}}</h6>
+        <h6 class="col-md-3"> frieghtCondition Number</h6>
+      </div>
+    </a>
+  </div>
 </div>
