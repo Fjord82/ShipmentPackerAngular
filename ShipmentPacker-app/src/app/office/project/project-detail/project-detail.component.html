@@ -2,22 +2,34 @@
   <nav class="navbar navbar-expand-sm backgroundColor fixed-top">
     <button class="btn btn-secondary" (click)="back()">Back</button>
     <h2 class="header">{{project?.projectName}}</h2>
-    <button type="button" (click)="addPackingClick()" class="btn btn-primary ml-md-auto">
-      <i class="fa fa-plus" aria-hidden="true"></i>
-      New packing list
-    </button>
   </nav>
   <br><br><br>
-  <div class="row">
-    <div class="col-md-4"><h4>Project Name:</h4>
-      <p>{{project?.projectName}}</p></div>
-    <div class="col-md-4"><h4>Customer Contact:</h4>
-      <p>{{project?.customerName}}</p></div>
-    <div class="col-md-4"><h4>Manager Name:</h4>
-      <p>{{project?.creatorName}}</p></div>
+  <div class="col-12">
+    <div class="row">
+      <dt class="col-md-2">
+        Project Id:
+      </dt>
+      <dd class="col-md-10">
+        <input style="border-color: transparent" type="text" placeholder="packingName" value="{{project?.id}}" di bled>
+      </dd>
+      <dt class="col-md-2">
+        Customer Contact:
+      </dt>
+      <dd class="col-md-4">
+        <input class="form-control col-md-12" type="text" placeholder="packingName" value="{{project?.customerName}}"
+               disabled>
+      </dd>
+      <dt class="col-md-2">
+        Manager Name:
+      </dt>
+      <dd class="col-md-4">
+        <input class="form-control col-md-12" type="text" placeholder="packingName" value="{{project?.creatorName}}"
+               disabled>
+      </dd>
+      
+    </div>
   </div>
   <hr>
-  <br>
   <div class="col-md-10 offset-1">
     <div class="row">
       <div class="col-md-12">
@@ -27,23 +39,43 @@
           Active packing lists:
         </h4>
         </div>
-          <div class="col-md-3">
-          </div>
+
         </div>
         <br>
-      </div>
+    </div>
+    <div class="col-md-12">
+      <div class="row">
+    <div class="col-md-2" style="padding-left: 30px">
+      <h6><strong>#Id</strong></h6>
+    </div>
+    <div class="col-md-4" style="padding-left: 30px">
+      <h6><strong>Packing list name</strong></h6>
+    </div>
+    <div class="col-md-3">
+      <h6><strong>Manager name</strong></h6>
+    </div>
+        <div class="col-md-3">
+          <button type="button" (click)="addPackingClick()" class="btn btn-outline-info float-right btn-sm">
+            <i class="fa fa-plus" aria-hidden="true"></i>
+            New packing list
+          </button>
+        </div>
+    </div>
+      <hr>
+    </div>
     </div>
     <div *ngFor="let packing of active" class="list-group">
       <a (click)="packingClick(packing)" class="list-group-item list-group-item-action">
         <div class="row">
-          <h6 class="col-md-7"><strong>Packing List Name:</strong> {{packing.packingName}}</h6>
-          <h6 class="col-md-3"><strong>Creator:</strong> {{packing.creatorName}}</h6>
+          <h6 class="col-md-2">{{packing.id}}</h6>
+          <h6 class="col-md-4">{{packing.packingName}}</h6>
+          <h6 class="col-md-4">{{packing.creatorName}}</h6>
           <button class="btn btn-outline-warning offset-1 btn-sm" (click)="editPacking(packing)">
             <i class="fa fa-pencil" aria-hidden="true"></i>
           </button>
         </div>
       </a>
-      <hr>
+      <br>
     </div>
     <h4>
       Inactive packing lists:

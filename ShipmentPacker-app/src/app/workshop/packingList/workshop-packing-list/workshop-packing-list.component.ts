@@ -16,6 +16,7 @@ export class WorkshopPackingListComponent implements OnInit {
 
   active: Packing[];
   packing: Packing;
+  projects: Project[];
   packings: Packing[];
   constructor(private router: Router,
               private packingService: PackingService,
