@@ -140,8 +140,6 @@ export class AddColliComponent implements OnInit {
         setTimeout(() => {
           this.handleItems(colli);
         }, 3000)
-
-        
       });
   }
 

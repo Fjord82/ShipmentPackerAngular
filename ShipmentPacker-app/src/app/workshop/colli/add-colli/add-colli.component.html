@@ -7,7 +7,7 @@
   <div class="col-md-12">
     <div class="row">
       <div class="col-md-10">
-        <ngb-alert *ngIf="colliAdded" type="success">Colli has been added to packing list! </ngb-alert>
+        <ngb-alert *ngIf="colliAdded" [dismissible]="false"  type="success">Colli has been added to packing list! </ngb-alert>
       </div>
       <div class="col-md-2">
       <button style="display: inline-block;" type="button" class="btn btn-outline-success float-right" (click)="save()">

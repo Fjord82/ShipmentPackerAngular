@@ -4,8 +4,17 @@
     <button style="display: inline-block;" type="button" class="btn btn-secondary" (click)="back()">Back</button>
   </nav>
   <br><br><br>
-  <button style="display: inline-block;" type="button" class="btn btn-outline-success float-right" (click)="submit()">Save</button>
-  <br><br>
+  <div class="col-md-12">
+    <div class="row">
+      <div class="col-md-10">
+        <ngb-alert *ngIf="colliModified" [dismissible]="false"  type="success">Colli has been modified! </ngb-alert>
+      </div>
+      <div class="col-md-2">
+        <button style="display: inline-block;" type="button" class="btn btn-outline-success float-right" (click)="submit()">Save</button>
+      </div>
+    </div>
+  </div>
+  <br>
   <div class="col-12">
     <form (ngSubmit)="save()" novalidate>
       <dl class="form-row" [formGroup]="colliGroup">
