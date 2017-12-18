@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute, Router} from '@angular/router';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {ColliService} from '../shared/colli.service';
@@ -11,6 +11,7 @@ import {PackItemService} from '../../../office/packing/shared/pack-item.service'
 import {ColliItemService} from '../shared/colli-item.service';
 import {User} from '../../../admin/user/shared/user.model';
 import {TokenService} from '../../../auth/shared/token.service';
+import {setTimeout} from 'timers';
 
 @Component({
   selector: 'app-add-colli',
@@ -23,6 +24,7 @@ export class AddColliComponent implements OnInit {
   packing: Packing;
   colli: ColliList;
   colliItems: ColliItem[];
+  colliAdded = false;
 
   netWeight: number;
   user: User;
@@ -55,7 +57,7 @@ export class AddColliComponent implements OnInit {
   }
 
   addItem(packItem: PackItem) {
-    if(packItem.packed != packItem.count) {
+    if (packItem.packed != packItem.count) {
       let exists: boolean = false;
       for (let colliItem of this.colliItems) {
         if (colliItem.item.id == packItem.item.id) {
@@ -78,14 +80,14 @@ export class AddColliComponent implements OnInit {
     }
   }
 
-  removeItem(colliItem: ColliItem){
+  removeItem(colliItem: ColliItem) {
     let packItem: PackItem;
-    for (let pi of this.packing.packItems){
-      if(pi.itemId == colliItem.itemId){
+    for (let pi of this.packing.packItems) {
+      if (pi.itemId == colliItem.itemId) {
         packItem = pi;
       }
     }
-    if(colliItem.count >1){
+    if (colliItem.count > 1) {
       colliItem.count--;
     }
     else {
@@ -96,10 +98,10 @@ export class AddColliComponent implements OnInit {
     this.netWeight = this.netWeight - packItem.item.weight;
   }
 
-  removeAll(colliItem: ColliItem){
+  removeAll(colliItem: ColliItem) {
     let packItem: PackItem;
-    for (let pi of this.packing.packItems){
-      if(pi.itemId == colliItem.itemId){
+    for (let pi of this.packing.packItems) {
+      if (pi.itemId == colliItem.itemId) {
         packItem = pi;
       }
     }
@@ -110,7 +112,7 @@ export class AddColliComponent implements OnInit {
   }
 
   back() {
-    this.router.navigateByUrl('packingDetailWorkshop/'+this.packing.id)
+    this.router.navigateByUrl('packingDetailWorkshop/' + this.packing.id)
   }
 
   save() {
@@ -126,21 +128,32 @@ export class AddColliComponent implements OnInit {
     this.colli.packingListIds.push(this.packing.id);
     this.colli.projectName = this.packing.projects[0].projectName;
     this.colli.worker = this.user.firstName + " " + this.user.lastName,
-    this.colli.netWeight = this.netWeight;
+      this.colli.netWeight = this.netWeight;
     this.colli.isActive = true;
     this.colli.freightType = this.packing.freightType;
-    this.colliService.create(this.colli).subscribe(colli => this.handleItems(colli));
+
+
+    this.colliService.create(this.colli)
+      .subscribe(colli => {
+        this.colliGroup.reset();
+        this.colliAdded = true;
+        setTimeout(() => {
+          this.handleItems(colli);
+        }, 3000)
+
+        
+      });
   }
 
-  handleItems(colli: ColliList){
-    if(this.colliItems.length != 0){
-      for(let colliItem of this.colliItems){
+  handleItems(colli: ColliList) {
+    if (this.colliItems.length != 0) {
+      for (let colliItem of this.colliItems) {
         colliItem.colliListId = colli.id;
         colliItem.colliList = colli;
 
         this.colliItemService.create(colliItem).subscribe();
       }
-      for(let packItem of this.packing.packItems){
+      for (let packItem of this.packing.packItems) {
         let pack: PackItem = <PackItem>{
           id: packItem.id,
           packed: packItem.packed,
@@ -152,7 +165,7 @@ export class AddColliComponent implements OnInit {
       }
       this.back();
     }
-    else{
+    else {
       this.back();
     }
   }
