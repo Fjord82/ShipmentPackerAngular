@@ -8,8 +8,4 @@ export class Project implements IEntity{
   customerName?: string;
   isActive?: boolean;
   packingLists?: Packing[];
-
-  toString(): string {
-    return "#" + this.id + " " + this.projectName
-  }
 }

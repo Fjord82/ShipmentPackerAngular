@@ -18,8 +18,4 @@ export class Packing implements IEntity {
   isActive?: boolean;
   packItemsIds?: number[];
   packItems?: PackItem[];
-
-  toString(): string {
-    return "#" + this.id + " " + this.packingName;
-  }
 }

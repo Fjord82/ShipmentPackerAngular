@@ -28,9 +28,9 @@
                   <h5><strong>Active Projects:</strong></h5>
                 </div>
                 <div class="input-group col-md-7">
-                  <input type="text" class="form-control" placeholder="Search projects">
+                  <input [(ngModel)]="filter" type="text" class="form-control" placeholder="Search projects">
                   <span class="input-group-btn">
-                <button class="btn btn-success" type="button"> <i class="fa fa-search" aria-hidden="true"></i></button>
+                <button (click)="searchProjects()" class="btn btn-success" type="button"> <i class="fa fa-search" aria-hidden="true"></i></button>
               </span>
                 </div>
                 <div class="col-md-2">
@@ -129,9 +129,9 @@
                   <h5><strong>Active Lists:</strong></h5>
                 </div>
                 <div class="input-group col-md-7">
-                  <input type="text" class="form-control" placeholder="Search packings">
+                  <input [(ngModel)]="filter" type="text" class="form-control" placeholder="Search packings">
                   <span class="input-group-btn">
-                <button class="btn btn-success" type="button"><i class="fa fa-search" aria-hidden="true"></i></button>
+                <button (click)="searchPackings()" class="btn btn-success" type="button"><i class="fa fa-search" aria-hidden="true"></i></button>
               </span>
                 </div>
                 <div class="col-md-2">
@@ -229,9 +229,9 @@
                   <h5><strong>Active Collis:</strong></h5>
                 </div>
                 <div class="input-group col-md-7">
-                  <input type="text" class="form-control" placeholder="Search collis">
+                  <input [(ngModel)]="filter" type="text" class="form-control" placeholder="Search collis">
                   <span class="input-group-btn">
-                <button class="btn btn-success" type="button"><i class="fa fa-search" aria-hidden="true"></i></button>
+                <button (click)="searchColliLists()" class="btn btn-success" type="button"><i class="fa fa-search" aria-hidden="true"></i></button>
               </span>
                 </div>
                 <div class="col-md-2">
@@ -319,9 +319,9 @@
                   <h5><strong>Items List:</strong></h5>
                 </div>
                 <div class="input-group col-md-7">
-                  <input type="text" class="form-control" placeholder="Search items">
+                  <input [(ngModel)]="filter" type="text" class="form-control" placeholder="Search items">
                   <span class="input-group-btn">
-                <button class="btn btn-success" type="button"> <i class="fa fa-search" aria-hidden="true"></i></button>
+                <button (click)="searchItems()" class="btn btn-success" type="button"> <i class="fa fa-search" aria-hidden="true"></i></button>
               </span>
                 </div>
                 <div class="col-md-2">
@@ -347,26 +347,26 @@
                   <hr>
                 </div>
                 <div class="col-md-12">
-                <div *ngFor="let item of items" class="list-group">
-                  <a (click)="editItem(item)" style="margin-bottom: 5px" class="list-group-item list-group-item-action">
-                    <div class="row">
-                      <h6 class="col-md-1">{{item?.id}}</h6>
-                      <h6 class="col-md-4">{{item?.itemName}}</h6>
-                      <h6 class="col-md-3">{{item?.dimension}}</h6>
-                      <h6 class="col-md-2">{{item?.weight}} kg</h6>
-                      <button style="margin-right:10px;" class="btn btn-outline-warning btn-sm" (click)="editItem(item)">
-                        <i class="fa fa-pencil" aria-hidden="true"></i>
-                      </button>
-                      <button class="btn btn-outline-danger fa fa-trash btn-sm float-right" (click)="deleteItem(item)"></button>
-                    </div>
-                  </a>
+                  <div *ngFor="let item of filteredItems" class="list-group">
+                    <a (click)="editItem(item)" style="margin-bottom: 5px" class="list-group-item list-group-item-action">
+                      <div class="row">
+                        <h6 class="col-md-1">{{item?.id}}</h6>
+                        <h6 class="col-md-4">{{item?.itemName}}</h6>
+                        <h6 class="col-md-3">{{item?.dimension}}</h6>
+                        <h6 class="col-md-2">{{item?.weight}} kg</h6>
+                        <button style="margin-right:10px;" class="btn btn-outline-warning btn-sm" (click)="editItem(item)">
+                          <i class="fa fa-pencil" aria-hidden="true"></i>
+                        </button>
+                        <button class="btn btn-outline-danger fa fa-trash btn-sm float-right" (click)="deleteItem(item)"></button>
+                      </div>
+                    </a>
+                  </div>
                 </div>
               </div>
             </div>
-            </div>
           </ng-template>
         </ngb-tab>
-        <ngb-tab title="Freight Condition">
+        <ngb-tab title="Freight Conditions">
           <ng-template ngbTabContent>
             <br>
             <div class="col-md-12">
@@ -375,9 +375,9 @@
                   <h5><strong>Dangerous Types:</strong></h5>
                 </div>
                 <div class="input-group col-md-7">
-                  <input type="text" class="form-control" placeholder="Search dangerous goods types">
+                  <input [(ngModel)]="filter" type="text" class="form-control" placeholder="Search dangerous goods types">
                   <span class="input-group-btn">
-                <button class="btn btn-success" type="button"> <i class="fa fa-search" aria-hidden="true"></i></button>
+                <button (click)="searchFreightConditions()" class="btn btn-success" type="button"> <i class="fa fa-search" aria-hidden="true"></i></button>
               </span>
                 </div>
                 <div class="col-md-2">
@@ -400,23 +400,23 @@
                   <hr>
                 </div>
                 <div class="col-md-12">
-            <div *ngFor="let freightCondition of freightConditions" class="list-group">
-              <a (click)="editItem(dangerousGoods)" style="margin-bottom: 5px" class="list-group-item list-group-item-action">
-                <div class="row">
-                  <h6 class="col-md-1">{{freightCondition?.id}}</h6>
-                  <h6 class="col-md-5">UN {{freightCondition?.dangerousGoodsNumber}}</h6>
-                  <h6 class="col-md-4">{{freightCondition?.dangerousGoodsName}}</h6>
-                  <button style="margin-right:10px;" class="btn btn-outline-warning btn-sm"
-                          (click)="editFreightCondition(freightCondition)">
-                    <i class="fa fa-pencil" aria-hidden="true"></i>
-                  </button>
-                  <button class="btn btn-outline-danger fa fa-trash btn-sm"
-                          (click)="deleteFreightCondition(freightCondition)"></button>
+                  <div *ngFor="let freightCondition of filteredFreightConditions" class="list-group">
+                    <a (click)="editFreightCondition(freightCondition)" style="margin-bottom: 5px" class="list-group-item list-group-item-action">
+                      <div class="row">
+                        <h6 class="col-md-1">{{freightCondition?.id}}</h6>
+                        <h6 class="col-md-5">UN {{freightCondition?.dangerousGoodsNumber}}</h6>
+                        <h6 class="col-md-4">{{freightCondition?.dangerousGoodsName}}</h6>
+                        <button style="margin-right:10px;" class="btn btn-outline-warning btn-sm"
+                                (click)="editFreightCondition(freightCondition)">
+                          <i class="fa fa-pencil" aria-hidden="true"></i>
+                        </button>
+                        <button class="btn btn-outline-danger fa fa-trash btn-sm"
+                                (click)="deleteFreightCondition(freightCondition)"></button>
+                      </div>
+                    </a>
+                  </div>
                 </div>
-              </a>
-            </div>
-            </div>
-            </div>
+              </div>
             </div>
           </ng-template>
         </ngb-tab>

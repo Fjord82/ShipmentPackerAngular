@@ -1,8 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
-
-
 import { AppComponent } from './app.component';
 import { LoginComponent } from './auth/login/login.component';
 import { ProjectListComponent } from './office/project/project-list/project-list.component';
@@ -51,7 +48,6 @@ import { LoginService } from './auth/shared/login.service';
 import { OfficeGuard } from './auth/guards/office.guard';
 import {WorkshopGuard} from './auth/guards/workshop.guard';
 import {AdminGuard} from './auth/guards/admin.guard';
-
 
 const appRoutes: Routes = [
   { path: 'office', component: ProjectListComponent, canActivate: [OfficeGuard]},

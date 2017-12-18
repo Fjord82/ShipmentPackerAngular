@@ -32,7 +32,7 @@ export class ColliService {
   }
 
   update(colli: ColliList): Observable<ColliList> {
-    return this.http.put(url + '/' + colli.id, colli);
+    return this.http.put<ColliList>(url + '/' + colli.id, colli);
   }
 
 }

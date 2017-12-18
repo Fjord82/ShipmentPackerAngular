@@ -11,7 +11,6 @@ import {PackItemService} from '../../../office/packing/shared/pack-item.service'
 import {ColliItemService} from '../shared/colli-item.service';
 import {User} from '../../../admin/user/shared/user.model';
 import {TokenService} from '../../../auth/shared/token.service';
-import {setTimeout} from 'timers';
 
 @Component({
   selector: 'app-add-colli',
@@ -141,7 +140,7 @@ export class AddColliComponent implements OnInit {
           this.handleItems(colli);
         }, 3000)
 
-        
+
       });
   }
 

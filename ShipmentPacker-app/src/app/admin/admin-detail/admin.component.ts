@@ -20,6 +20,8 @@ import {LoginService} from '../../auth/shared/login.service';
 })
 export class AdminComponent implements OnInit {
 
+  filter: string;
+
   packing: Packing;
   packings: Packing[];
   inactivePacking: Packing[];
@@ -35,10 +37,13 @@ export class AdminComponent implements OnInit {
   inactiveProjects: Project[];
   activeProjects: Project[];
 
+  filteredItems: Item[];
   items: Item[];
   item: Item;
 
+  filteredFreightConditions: FreightCondition[];
   freightConditions: FreightCondition[];
+  freightCondition: FreightCondition;
 
   constructor(private router: Router,
               private projectService: ProjectService,
@@ -47,47 +52,123 @@ export class AdminComponent implements OnInit {
               private itemService: ItemService,
               private freightConditionService: FreightConditionService,
               private utilityService: UtilityService,
-              private loginService: LoginService) { }
+              private loginService: LoginService) {
+    this.projects = [];
+  }
 
   ngOnInit() {
     this.projectService.getProjects().subscribe(
       projects => {
-        this.sortProjects(projects);
+        this.setupProjects(projects);
       });
 
     this.packingService.getPackings().subscribe(
       packings => {
-        this.sortPackinglists(packings);
+        this.setupPackingLists(packings);
       });
 
     this.colliService.getCollis().subscribe(
       collis => {
-        this.sortColliLists(collis);
+        this.setupColliLists(collis);
       });
 
     this.itemService.getItems().subscribe(
       items => {
-        this.items = items;
+        this.setupItems(items);
       });
 
     this.freightConditionService.getFreightConditions().subscribe
     (freightConditions => {
-      this.freightConditions = freightConditions;
+      this.setupFreightConditions(freightConditions);
     });
   }
-  sortProjects(project: Project[]) {
-    this.activeProjects = <Project[]>this.utilityService.activeList(project);
-    this.inactiveProjects = <Project[]>this.utilityService.inactiveList(project);
+
+  setupProjects(projects: Project[]){
+    this.projects = projects;
+    this.sortProjects(projects);
   }
 
-  sortPackinglists(packing: Packing[]) {
-    this.activePacking = <Packing[]>this.utilityService.activeList(packing);
-    this.inactivePacking = <Packing[]>this.utilityService.inactiveList(packing);
+  sortProjects(projects: Project[]) {
+    this.activeProjects = <Project[]>this.utilityService.activeList(projects);
+    this.inactiveProjects = <Project[]>this.utilityService.inactiveList(projects);
   }
 
-  sortColliLists(colli: ColliList[]) {
-    this.activeColli = <ColliList[]>this.utilityService.activeList(colli);
-    this.inactiveColli = <ColliList[]>this.utilityService.inactiveList(colli);
+  searchProjects() {
+    if(this.filter == "") {
+      this.sortProjects(this.projects);
+    }
+    else {
+      let filteredProjects = this.utilityService.filterProjects(this.projects, this.filter);
+      this.sortProjects(filteredProjects);
+    }
+  }
+
+  setupPackingLists(packings: Packing[]){
+    this.packings = packings;
+    this.sortPackinglists(packings);
+  }
+
+  sortPackinglists(packings: Packing[]) {
+    this.activePacking = <Packing[]>this.utilityService.activeList(packings);
+    this.inactivePacking = <Packing[]>this.utilityService.inactiveList(packings);
+  }
+
+  searchPackings() {
+    if(this.filter == "") {
+      this.sortPackinglists(this.packings);
+    }
+    else {
+      let filteredPackings = this.utilityService.filterPackings(this.packings, this.filter);
+      this.sortPackinglists(filteredPackings);
+    }
+  }
+
+  setupColliLists(collis: ColliList[]){
+    this.collis = collis;
+    this.sortColliLists(collis);
+  }
+
+  sortColliLists(collis: ColliList[]) {
+    this.activeColli = <ColliList[]>this.utilityService.activeList(collis);
+    this.inactiveColli = <ColliList[]>this.utilityService.inactiveList(collis);
+  }
+
+  searchColliLists() {
+    if(this.filter == "") {
+      this.sortColliLists(this.collis);
+    }
+    else {
+      let filteredColliLists = this.utilityService.filterCollis(this.collis, this.filter);
+      this.sortColliLists(filteredColliLists);
+    }
+  }
+
+  setupItems(items: Item[]) {
+    this.items = items;
+    this.filteredItems = items;
+  }
+
+  searchItems() {
+    if(this.filter == "") {
+      this.filteredItems = this.items;
+    }
+    else {
+      this.filteredItems = this.utilityService.filterItems(this.items, this.filter);
+    }
+  }
+
+  setupFreightConditions(freightConditions: FreightCondition[]) {
+    this.freightConditions = freightConditions;
+    this.filteredFreightConditions = freightConditions;
+  }
+
+  searchFreightConditions() {
+    if(this.filter == "") {
+      this.filteredFreightConditions = this.freightConditions;
+    }
+    else {
+      this.filteredFreightConditions = this.utilityService.filterFreightConditions(this.freightConditions, this.filter);
+    }
   }
 
   logout() {
@@ -104,7 +185,7 @@ export class AdminComponent implements OnInit {
   }
 
   deleteProject(project: Project) {
-    this.projectService.delete(project.id).subscribe(project=> window.location.reload())
+    this.projectService.delete(project.id).subscribe(project=> window.location.reload());
   }
 
   clickPacking(packing: Packing) {
@@ -116,7 +197,7 @@ export class AdminComponent implements OnInit {
   }
 
   deletePacking(packing: Packing) {
-    this.packingService.delete(packing.id).subscribe(packing=> window.location.reload())
+    this.packingService.delete(packing.id).subscribe(packing=> window.location.reload());
   }
 
   clickColli(colli: ColliList) {
@@ -128,35 +209,37 @@ export class AdminComponent implements OnInit {
   }
 
   deleteColli(colli: ColliList) {
-    this.colliService.delete(colli.id).subscribe(colli=> window.location.reload())
+    this.colliService.delete(colli.id).subscribe(colli=> window.location.reload());
   }
 
   clickItem(item: Item) {
-    this.router.navigateByUrl('/edit-item/'+item.id)
+    this.router.navigateByUrl('/edit-item/'+item.id);
   }
 
   addItem() {
-    this.router.navigateByUrl('/add-item')
+    this.router.navigateByUrl('/add-item');
   }
 
   addFreightCondition() {
-    this.router.navigateByUrl('/add-freightCondition')
+    this.router.navigateByUrl('/add-freightCondition');
   }
 
   editItem(item: Item) {
-    this.router.navigateByUrl('/edit-item/'+item.id)
+    this.router.navigateByUrl('/edit-item/'+item.id);
   }
 
   deleteItem(item: Item) {
-    this.itemService.delete(item.id).subscribe(item=> window.location.reload())
+    this.itemService.delete(item.id).subscribe(item=> window.location.reload());
   }
 
   deleteFreightCondition(freightCondition: FreightCondition){
-    this.freightConditionService.delete(freightCondition.id).subscribe(freightCondition => window.location.reload())
+    this.freightConditionService.delete(freightCondition.id).subscribe(
+      freightCondition => window.location.reload()
+    );
   }
 
   editFreightCondition(freightCondition: FreightCondition) {
-    this.router.navigateByUrl('/edit-freightCondition/'+freightCondition.id)
+    this.router.navigateByUrl('/edit-freightCondition/'+freightCondition.id);
   }
 
   manageUsers() {

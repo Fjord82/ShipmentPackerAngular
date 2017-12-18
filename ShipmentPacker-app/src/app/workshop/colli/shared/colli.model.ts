@@ -16,10 +16,4 @@ export class ColliList implements IEntity {
   itemType?: string;
   colliItems?: ColliItem[];
   colliItemsIds?: number[];
-
-  toString(): string {
-    return "Colli#" + this.id
-  }
-
-
 }

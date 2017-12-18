@@ -33,7 +33,7 @@ export class ProjectService {
   }
 
   update(project: Project): Observable<Project> {
-    return this.http.put(url + '/' + project.id, project);
+    return this.http.put<Project>(url + '/' + project.id, project);
   }
 
 

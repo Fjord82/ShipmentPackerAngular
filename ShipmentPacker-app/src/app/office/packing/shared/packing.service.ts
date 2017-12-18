@@ -33,7 +33,7 @@ export class PackingService {
   }
 
   update(packing: Packing): Observable<Packing> {
-    return this.http.put(url + '/' + packing.id, packing);
+    return this.http.put<Packing>(url + '/' + packing.id, packing);
   }
 
 }
