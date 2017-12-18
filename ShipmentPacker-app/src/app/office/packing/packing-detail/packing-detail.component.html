@@ -62,7 +62,6 @@
   <div class="col-md-12">
     <div class="row">
   <h6 class="col-md-9"><strong>Units to pack: </strong></h6>
-  <h6 class="col-md-3"><strong>Dangerous Goods declaration: </strong></h6>
     </div>
   </div>
   <div *ngFor="let packItem of packing?.packItems" class="list-group">
@@ -71,7 +70,6 @@
         <h6 class="col-md-3">{{packItem?.item.itemName}}</h6>
         <h6 class="col-md-3"><strong>Amount:</strong> {{packItem?.count}}</h6>
         <h6 class="col-md-3"><strong>Packed:</strong> {{packItem?.packed}}</h6>
-        <h6 class="col-md-3"> frieghtCondition Number</h6>
       </div>
     </a>
   </div>
