@@ -13,6 +13,8 @@ import {User} from '../../admin/user/shared/user.model';
 })
 export class LoginComponent implements OnInit {
 
+  failLogin = false;
+  model: any = {};
   loginGroup: FormGroup;
   constructor(private router: Router,
               private auth: LoginService,
@@ -27,14 +29,19 @@ export class LoginComponent implements OnInit {
   }
 
   login() {
-    console.log(this.loginGroup.value);
-    this.auth.login(this.loginGroup.value).subscribe(token => {
+    this.failLogin = false;
+
+    this
+      .auth.login(this.loginGroup.value).subscribe(token => {
       if (token) {
         this.redirect();
-      } else {
-
       }
-    });
+    },
+      err => {
+        if (err.status === 401) {
+          this.failLogin = true;
+        }
+      });
   }
 
   redirect() {

@@ -12,7 +12,7 @@
         <fieldset>
           <div class="form-group">
             <label for="workEmail"><strong>Email:</strong></label>
-            <input class="form-control" formControlName="workEmail" placeholder="Email" id="workEmail" type="text">
+            <input [(ngModel)]="model.workEmail"  class="form-control" formControlName="workEmail" placeholder="Email" id="workEmail" type="text">
           </div>
           <div class="form-group">
             <label for="password">
@@ -20,11 +20,11 @@
                 Password:
               </strong>
             </label>
-            <input class="form-control" formControlName="password" placeholder="Password" id="password" type="password">
+            <input [(ngModel)]="model.password" class="form-control" formControlName="password" placeholder="Password" id="password" type="password">
           </div>
           <input class="btn btn-lg btn-info btn-block" type="submit" value="Login">
           <br>
-          <div *ngIf="loginGroup.controls['workEmail'].invalid" class="alert-danger"> You forgot something</div>
+          <ngb-alert class="this-center" *ngIf="failLogin" [dismissible]="false"  type="danger">Incorrect username or password!</ngb-alert>
         </fieldset>
       </form>
     </div>
