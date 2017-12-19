@@ -4,43 +4,78 @@
     <h2 class="header">{{project?.projectName}}</h2>
   </nav>
   <br><br><br>
-  <div class="row">
-    <div class="col-md-4"><h4>Project Name:</h4><p>{{project?.projectName}}</p></div>
-    <div class="col-md-4"><h4>Customer Name:</h4><p>{{project?.customerName}}</p></div>
-    <div class="col-md-4"><h4>Manager Name:</h4><p>{{project?.creatorName}}</p></div>
+  <div class="col-12">
+    <div class="row">
+      <dt class="col-md-2">
+        Customer Contact:
+      </dt>
+      <dd class="col-md-4">
+        <input class="form-control col-md-12" type="text" placeholder="packingName" value="{{project?.customerName}}"
+               disabled>
+      </dd>
+      <dt class="col-md-2">
+        Manager Name:
+      </dt>
+      <dd class="col-md-4">
+        <input class="form-control col-md-12" type="text" placeholder="packingName" value="{{project?.creatorName}}"
+               disabled>
+      </dd>
+      <dt class="col-md-2">
+        Project Id:
+      </dt>
+      <dd class="col-md-10">
+        <input style="border-color: transparent" type="text" placeholder="packingName" value="{{project?.id}}" di bled>
+      </dd>
+    </div>
   </div>
-  <br>
-  <div class="col-md-12">
-    <h4>
-      Active packing lists:
-    </h4>
-    <div *ngFor="let packing of active" class="list-group">
-      <a class="list-group-item list-group-item-action">
+  <hr>
+  <div class="col-md-10 offset-1">
+    <div class="row">
+      <div class="col-md-12">
         <div class="row">
-          <h4 class="col-md-6">{{packing.packingName}}</h4>
-          <div class="col-4">
-            <div class="progress">
-              <div class="progress-bar bg-success" style="width:100%">100%</div>
-            </div>
+          <div class="col-md-9">
+            <h4>
+              Active packing lists:
+            </h4>
           </div>
         </div>
-      </a>
-      <hr>
+        <br>
+      </div>
+      <div class="col-md-12">
+        <div class="row">
+          <div class="col-md-2" style="padding-left: 30px">
+            <h6><strong>#Id</strong></h6>
+          </div>
+          <div class="col-md-4" style="padding-left: 30px">
+            <h6><strong>Packing list name</strong></h6>
+          </div>
+          <div class="col-md-3">
+            <h6><strong>Manager name</strong></h6>
+          </div>
+        </div>
+        <hr>
+      </div>
     </div>
+    <div *ngFor="let packing of active" class="list-group">
+      <div class="list-group-item list-group-item-action">
+        <div class="row">
+          <h6 class="col-md-2">{{packing.id}}</h6>
+          <h6 class="col-md-4">{{packing.packingName}}</h6>
+          <h6 class="col-md-4">{{packing.creatorName}}</h6>
+        </div>
+      </div>
+      <br>
+    </div>
+    <br>
     <h4>
       Inactive packing lists:
     </h4>
     <div *ngFor="let packing of inactive" class="list-group">
-      <a class="list-group-item list-group-item-action">
+      <div class="list-group-item list-group-item-action">
         <div class="row">
           <h4 class="col-md-6">{{packing.packingName}}</h4>
-          <div class="col-4">
-            <div class="progress">
-              <div class="progress-bar bg-success" style="width:100%">100%</div>
-            </div>
-          </div>
         </div>
-      </a>
+      </div>
       <hr>
     </div>
     <br>
