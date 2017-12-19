@@ -1,0 +1,61 @@
+<div class="container">
+  <nav class="navbar navbar-expand backgroundColor fixed-top">
+    <button style="display: inline-block;" class="btn btn-secondary" (click)="back()">Back</button>
+    <h2 class="header">Add Item</h2>
+  </nav>
+  <br><br><br>
+  <div class="col-12">
+    <form novalidate>
+      <dl class="form-row" [formGroup]="itemGroup">
+        <dt class="col-md-2">
+          Item Name:
+        </dt>
+        <dd class="col-md-4">
+          <input class="form-control" formControlName="itemName" placeholder="Item Name">
+        </dd>
+        <dt class="col-md-2">
+          Dimension:
+        </dt>
+        <dd class="col-md-4">
+          <input class="form-control" formControlName="dimension" placeholder="Length x Hight x Width">
+        </dd>
+        <dt class="col-md-2">
+          Weight:
+        </dt>
+        <dd class="col-md-4">
+          <input class="form-control" formControlName="weight" placeholder="Weight">
+        </dd>
+        <dt class="col-md-2">
+          Dangerous Goods:
+        </dt>
+        <button style="margin-bottom: 5px" class="btn btn-lg btn-outline-warning" (click)="open(content)">Choose Freight Conditions</button>
+        <div class="col-8"></div>
+        <div class="row col-4">
+          <div *ngFor="let freightCondition of addedFreightCondition" class="col-12">
+            <button style="margin-bottom: 5px" (click)="removeFreightCondition(freightCondition)" class="btn btn-lg btn-outline-danger col-12">UN: {{freightCondition?.dangerousGoodsNumber}} : {{freightCondition?.dangerousGoodsName}}</button>
+          </div>
+        </div>
+      </dl>
+    </form>
+  </div>
+  <ng-template #content let-c="close" let-d="dismiss">
+    <div class="modal-header">
+      <h4 class="modal-title">Freight Conditions</h4>
+      <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+      <div *ngFor="let freightCondition of freightConditions">
+        <button style="margin-bottom: 5px" (click)="addFreightCondition(freightCondition)" class="btn btn-lg btn-outline-danger col-12">UN: {{freightCondition?.dangerousGoodsNumber}} : {{freightCondition?.dangerousGoodsName}}</button>
+      </div>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-outline-dark" (click)="c('Close click')">Close</button>
+    </div>
+  </ng-template>
+  <ngb-alert class="this-center" *ngIf="failSave" [dismissible]="false" type="danger">
+    Please fill out all fields with proper data!
+  </ngb-alert>
+  <button class="btn btn-outline-success float-right" type="submit" (click)="save()">Save</button>
+</div>

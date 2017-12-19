@@ -1,0 +1,102 @@
+<div class="container">
+  <nav class="navbar navbar-expand-sm backgroundColor fixed-top">
+    <button class="btn btn-secondary" (click)="back()">Back</button>
+    <button *ngIf="packing?.isActive;" style="display: inline-block;" type="button" class="btn btn-danger ml-md-auto" (click)="setInactive()">Deactivate</button>
+    <button *ngIf="!packing?.isActive;" style="display: inline-block;" type="button" class="btn btn-success ml-md-auto" (click)="setActive()">Activate</button>
+    <h2 class="header">Edit Packing List</h2>
+  </nav>
+  <br><br><br>
+  <div class="col-md-12">
+    <div class="row">
+      <div class="col-md-5">
+        <dl>
+          <form class="form-horizontal" [formGroup]="packingGroup" novalidate>
+            <fieldset>
+              <dt class="">
+                Packing Title
+              </dt>
+              <dd class="">
+                <input type="text" formControlName="packingName" placeholder="{{packing?.packingName}}"  value="{{packing?.packingName}}" class="form-control">
+              </dd>
+              <dt class="">
+                Creator Name
+              </dt>
+              <dd class="">
+                <input type="text" formControlName="creatorName" placeholder="{{packing?.creatorName}}" value="{{packing?.creatorName}}" class="form-control disabled">
+              </dd>
+              <dt class="">
+                Delivery Address
+              </dt>
+              <dd class="">
+                <input type="text" formControlName="deliveryAddress" placeholder="{{packing?.deliveryAddress}}" value="{{packing?.deliveryAddress}}" class="form-control">
+              </dd>
+              <dt class="">
+                Delivery Date
+              </dt>
+              <dd class="">
+                <div class="input-group">
+                  <input class="form-control" formControlName="deliveryDate" placeholder="{{packing?.deliveryDate}}" ngbDatepicker #d="ngbDatepicker">
+                  <button class="input-group-addon" (click)="d.toggle()" type="button">
+                    <i class="fa fa-calendar" aria-hidden="true"></i>
+                  </button>
+                </div>
+              </dd>
+              <dt class="">
+                Freight type:
+              </dt>
+              <dd class="">
+                <select id="selectbasic"  name="selectbasic" class="form-control"> <!--formControlName="freightType"-->
+                  <option value="" disabled selected>{{packing?.freightType}}</option>
+                  <option value="">Road</option>
+                  <option value="">Sea</option>
+                  <option value="">Air</option>
+                </select>
+              </dd>
+              <dt class="">
+                Order items:
+              </dt>
+              <dd class="">
+                <select id="selectmultiple" name="selectmultiple" class="form-control" multiple="multiple"> <!--formControlName="itemType"-->
+                  <option (click)="addItem(item)" *ngFor="let item of items" value="1">{{item?.itemName}}</option>
+                </select>
+                <br>
+              </dd>
+            </fieldset>
+          </form>
+        </dl>
+      </div>
+      <div class="col-2"></div>
+      <div class="col-md-5">
+        <dl>
+          <dt>
+            Current packing list:
+          </dt>
+          <dd>
+          <dd>
+            <div *ngFor="let packItem of packing?.packItems">
+              <a style="margin-bottom: 5px" (click)="removeItemCurrent(packItem)" class="list-group-item list-group-item-action" >{{packItem?.item.itemName}} - Amount: {{packItem?.count}}
+                <button class="fa fa-trash pull-right btn btn-outline-danger" (click)="removeAllCurrent(packItem)">
+                </button></a>
+            </div>
+          </dd>
+        </dl>
+        <dl>
+          <dt>
+            New items:
+          </dt>
+          <dd>
+          <dd>
+            <div *ngFor="let packItem of newPackItems">
+              <a style="margin-bottom: 5px" (click)="removeItem(packItem)" class="list-group-item list-group-item-action" >{{packItem?.item.itemName}} - Amount: {{packItem?.count}}
+                <button class="fa fa-trash pull-right btn btn-outline-danger" (click)="removeAll(packItem)">
+                </button></a>
+            </div>
+          </dd>
+        </dl>
+      </div>
+    </div>
+  </div>
+  <button type="button" (click)="submit()" class="btn btn-lg btn-outline-success float-right">
+    Accept
+  </button>
+</div>

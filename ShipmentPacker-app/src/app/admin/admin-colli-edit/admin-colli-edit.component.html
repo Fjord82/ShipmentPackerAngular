@@ -1,0 +1,76 @@
+<div class="container">
+  <nav class="navbar navbar-expand-sm backgroundColor fixed-top">
+    <h2 class="header">Edit Colli</h2>
+    <button type="button" class="btn btn-secondary float-left" (click)="back()">Back</button>
+    <button *ngIf="colli?.isActive;" style="display: inline-block;" type="button" class="btn btn-danger ml-md-auto" (click)="setInactive()">Deactivate</button>
+    <button *ngIf="!colli?.isActive;" style="display: inline-block;" type="button" class="btn btn-success ml-md-auto" (click)="setActive()">Activate</button>
+  </nav>
+  <br><br><br>
+  <div class="col-12">
+    <form (ngSubmit)="save()" novalidate>
+      <dl class="form-row" [formGroup]="colliGroup">
+        <dt class="col-md-2">
+          Project Name:
+        </dt>
+        <dd class="col-md-4">
+          <input class="form-control" placeholder="{{colli?.projectName}}" disabled>
+        </dd>
+        <dt class="col-md-2">
+          Dimensions:
+        </dt>
+        <dd class="col-md-4">
+          <input type="text" class="form-control" formControlName="dimensions" placeholder="{{colli?.dimensions}}">
+        </dd>
+        <dt class="col-md-2">
+          Net Weight:
+        </dt>
+        <dd class="col-md-4">
+          <input type="text" class="form-control" placeholder="{{netWeight}}" disabled>
+        </dd>
+        <dt class="col-md-2">
+          Total weight:
+        </dt>
+        <dd class="col-md-4">
+          <input type="text" class="form-control" formControlName="totalWeight" placeholder="{{colli?.totalWeight}}">
+        </dd>
+        <dt class="col-md-2">
+          Workshop Worker:
+        </dt>
+        <dd class="col-md-4">
+          <input type="text" class="form-control" placeholder="{{colli?.worker}}" disabled>
+        </dd>
+        <dt class="col-md-2">
+          Freight Type:
+        </dt>
+        <dd class="col-md-4">
+          <input type="text" class="form-control" placeholder="{{colli?.freightType}}" disabled>
+        </dd>
+      </dl>
+    </form>
+  </div>
+  <hr>
+  <div class="row">
+    <div class="col-4">
+      <h4>PackingList</h4>
+      <div *ngFor="let packItem of packing?.packItems">
+        <a style="margin-bottom: 5px" (click)="addItem(packItem)" class="list-group-item list-group-item-action" value="1">{{packItem?.item.itemName}} - Amount: {{packItem?.count}} - Packed: {{packItem?.packed}}</a>
+      </div>
+    </div>
+    <div class="col-4"></div>
+    <div class="col-4">
+      <h4>Currently Packed Items</h4>
+      <div *ngFor="let colliItem of colli?.colliItems">
+        <a style="margin-bottom: 5px" (click)="removeItemCurrent(colliItem)" class="list-group-item list-group-item-action" value="1">{{colliItem?.item.itemName}} - Amount: {{colliItem?.count}}
+          <button class="fa fa-trash pull-right btn btn-outline-danger" (click)="removeAllCurrent(colliItem)"></button></a>
+      </div>
+      <br>
+      <h4>New Items</h4>
+      <div *ngFor="let colliItem of newColliItems">
+        <a style="margin-bottom: 5px" (click)="removeItem(colliItem)" class="list-group-item list-group-item-action" value="1">{{colliItem?.item.itemName}} - Amount: {{colliItem?.count}}
+          <button class="fa fa-trash pull-right btn btn-outline-danger" (click)="removeAll(colliItem)"></button></a>
+      </div>
+      <br>
+      <button type="button" class="btn btn-lg btn-outline-success pull-right" (click)="save()">Save</button>
+    </div>
+  </div>
+</div>

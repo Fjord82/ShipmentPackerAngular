@@ -1,0 +1,37 @@
+<div class="container">
+  <nav class="navbar navbar-expand-sm backgroundColor fixed-top">
+    <h2 class="header">Edit project</h2>
+    <button type="button" class="btn btn-secondary float-left" (click)="back()">Back</button>
+    <button *ngIf="project?.isActive;" type="button" class="btn btn-danger ml-md-auto" (click)="setInactive()">Deactivate</button>
+    <button *ngIf="!project?.isActive;" type="button" class="btn btn-success ml-md-auto" (click)="setActive()">Activate</button>
+  </nav>
+  <br><br><br>
+  <div class="col-8 offset-3">
+    <form (ngSubmit)="update()" [formGroup]="projectGroup" novalidate>
+      <dl class="form-row">
+        <dt class="col-md-3">
+          Project name:
+        </dt>
+        <dd class="col-md-7">
+          <input type="text" class="form-control" formControlName="projectName" placeholder="projName" value="{{project?.projectName}}">
+        </dd>
+        <dt class="col-md-3">
+          Customer name:
+        </dt>
+        <dd class="col-md-7">
+          <input type="text" class="form-control" formControlName="customerName" placeholder="custName" value="{{project?.customerName}}">
+        </dd>
+        <dt class="col-md-3">
+          Creator name:
+        </dt>
+        <dd class="col-md-7">
+          <input type="text" class="form-control" formControlName="creatorName" placeholder="creatorName" value="{{project?.creatorName}}">
+        </dd>
+      </dl>
+      <div class="row col-md-7 offset-3 justify-content-between">
+        <button class="btn btn-outline-danger" (click)="back()">Cancel</button>
+        <button type="submit" class="btn btn-outline-success">Save</button>
+      </div>
+    </form>
+  </div>
+</div>

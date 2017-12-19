@@ -1,0 +1,96 @@
+<div class="container">
+  <nav class="navbar navbar-expand-sm backgroundColor fixed-top">
+    <h2 class="header">Add Colli</h2>
+    <button style="display: inline-block;" type="button" class="btn btn-secondary" (click)="back()">Back</button>
+  </nav>
+  <br><br><br>
+  <div class="col-md-12">
+    <div class="row">
+      <div class="col-md-10">
+        <ngb-alert *ngIf="colliAdded" [dismissible]="false"  type="success">Colli has been added to packing list! </ngb-alert>
+      </div>
+      <div class="col-md-2">
+      <button style="display: inline-block;" type="button" class="btn btn-outline-success float-right" (click)="save()">
+        Save
+      </button>
+      </div>
+    </div>
+  </div>
+  <br>
+  <div class="col-12">
+    <form (ngSubmit)="save()" novalidate>
+      <dl class="form-row" [formGroup]="colliGroup">
+        <dt class="col-md-2">
+          Project Name:
+        </dt>
+        <dd class="col-md-4">
+          <input class="form-control" placeholder="{{packing?.projects[0].projectName}}" disabled>
+        </dd>
+        <dt class="col-md-2">
+          Dimensions:
+        </dt>
+        <dd class="col-md-4">
+          <input type="text" class="form-control" formControlName="dimensions" placeholder="Length x Weidth x hight">
+        </dd>
+        <dt class="col-md-2">
+          Net Weight:
+        </dt>
+        <dd class="col-md-4">
+          <input type="text" class="form-control" placeholder="{{netWeight}}" disabled>
+        </dd>
+        <dt class="col-md-2">
+          Total weight:
+        </dt>
+        <dd class="col-md-4">
+          <input class="form-control" formControlName="totalWeight" placeholder="Total Kg">
+        </dd>
+        <dt class="col-md-2">
+          Workshop Worker:
+        </dt>
+        <dd class="col-md-4">
+          <input type="text" class="form-control" placeholder="{{user?.firstName}} {{user?.lastName}}" disabled>
+        </dd>
+        <dt class="col-md-2">
+          Freight Type:
+        </dt>
+        <dd class="col-md-4">
+          <input type="text" class="form-control" placeholder="{{packing?.freightType}}" disabled>
+        </dd>
+      </dl>
+    </form>
+  </div>
+  <hr>
+  <div class="col-md-12">
+    <div class="row">
+      <div class="col-md-6">
+        <h4>Items from packing list</h4>
+        <hr>
+        <div *ngFor="let packItem of packing?.packItems">
+          <a style="margin-bottom: 5px" (click)="addItem(packItem)" class="list-group-item list-group-item-action">
+            <div class="row">
+              <h6 class="col-md-6"><strong>Item type: </strong>{{packItem?.item.itemName}}</h6>
+              <h6 class="col-md-3"><strong>Amount: </strong>{{packItem?.count}}</h6>
+              <h6 class="col-md-3"><strong>Packed: </strong>{{packItem?.packed}}</h6>
+            </div>
+          </a>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <h4>Items added to colli: </h4>
+        <hr>
+        <div class="col-md-12">
+          <div *ngFor="let colliItem of colliItems">
+            <a style="margin-bottom: 5px" (click)="removeItem(colliItem)" class="list-group-item list-group-item-action">
+              <div class="row">
+              <h6 class="col-md-6">{{colliItem?.item.itemName}}</h6>
+                <h6 class="col-md-4"><strong>Amount: </strong>{{colliItem?.count}}</h6>
+              <button class="fa fa-trash pull-right btn btn-outline-danger" (click)="removeAll(colliItem)">
+              </button>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

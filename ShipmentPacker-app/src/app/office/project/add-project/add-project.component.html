@@ -1,0 +1,40 @@
+<div class="container">
+  <nav class="navbar navbar-expand-sm backgroundColor fixed-top">
+  <button class="btn btn-secondary" (click)="back()">Back</button>
+    <h2 class="header">
+      Add project
+    </h2>
+  </nav>
+  <br><br><br>
+  <div class="col-8 offset-3">
+    <form (ngSubmit)="save()" [formGroup]="projectGroup" novalidate>
+      <dl class="form-row">
+        <dt class="col-md-3">
+          Project name:
+        </dt>
+        <dd class="col-md-7">
+          <input class="form-control" id="1" formControlName="projectName" placeholder="Project name" >
+        </dd>
+        <dt class="col-md-3">
+          Customer name:
+        </dt>
+        <dd class="col-md-7">
+          <input class="form-control" id="2" formControlName="customerName" placeholder="Customer name">
+        </dd>
+        <dt class="col-md-3">
+          Manager name:
+        </dt>
+        <dd class="col-md-7">
+          <input class="form-control" id="3" value="{{user?.firstName}} {{user?.lastName}}" disabled>
+        </dd>
+        <div class="row col-md-7 offset-3 justify-content-between">
+          <ngb-alert class="this-center" *ngIf="failSave" [dismissible]="false" type="danger">
+            Please fill out all fields!
+          </ngb-alert>
+          <button type="submit" class="btn btn-outline-success">Save</button>
+          <button class="btn btn-outline-danger" (click)="back()">Cancel</button>
+        </div>
+     </dl>
+    </form>
+  </div>
+</div>

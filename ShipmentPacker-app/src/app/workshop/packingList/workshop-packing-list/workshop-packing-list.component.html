@@ -1,0 +1,45 @@
+<div class="container">
+  <nav class="navbar navbar-expand-sm backgroundColor fixed-top">
+    <h2 class="header">Workshop</h2>
+    <button style="display: inline-block;" type="button" class="btn btn-danger ml-md-auto" (click)="logoutbtn()">Log
+      Out
+    </button>
+  </nav>
+  <br><br><br>
+  <div class="col-md-10 offset-1">
+    <div class="row">
+      <h4 class="col-10">
+        Active packinglists:
+      </h4>
+      <div class="col-md-12">
+        <hr>
+        <div class="col-md-12">
+        <div class="row">
+          <div class="col-md-1">
+            <h6><strong>#Id</strong></h6>
+          </div>
+          <div class="col-md-4">
+            <h6><strong>Packing list</strong></h6>
+          </div>
+          <div class="col-md-4">
+            <h6><strong>Manager name</strong></h6>
+          </div>
+          <div class="col-md-3">
+          </div>
+        </div>
+        </div>
+        <hr>
+            <div *ngFor="let packing of active" class="list-group">
+              <a (click)="clickPackingDetail(packing)" class="list-group-item list-group-item-action">
+                <div class="row">
+                  <h6 class="col-md-1"> {{packing?.id}}</h6>
+                  <h6 class="col-md-4"> {{packing?.packingName}}</h6>
+                  <h6 class="col-md-4"> {{packing?.creatorName}}</h6>
+                </div>
+              </a>
+              <br>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

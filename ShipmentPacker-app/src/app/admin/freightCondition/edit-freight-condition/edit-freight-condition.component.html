@@ -1,0 +1,26 @@
+<div class="container">
+  <nav class="navbar navbar-expand backgroundColor fixed-top">
+    <button class="btn btn-secondary" (click)="back()">Back</button>
+    <h2 class="header">Edit Freight Condition</h2>
+  </nav>
+  <br><br><br>
+  <div class="col-8 offset-2">
+    <form (ngSubmit)="save()" novalidate>
+      <dl class="form-row" [formGroup]="itemGroup">
+        <dt class="col-md-5">
+          Dangerous Goods Name:
+        </dt>
+        <dd class="col-md-7">
+          <input class="form-control" formControlName="name" placeholder="{{freightCondition?.dangerousGoodsName}}">
+        </dd>
+        <dt class="col-md-5">
+          Dangerous Goods Nr.:
+        </dt>
+        <dd class="col-md-7">
+          <input class="form-control" formControlName="number" placeholder="{{freightCondition?.dangerousGoodsNumber}}">
+        </dd>
+      </dl>
+      <button class="btn btn-success pull-right" type="submit" (click)="save()">Save</button>
+    </form>
+  </div>
+</div>

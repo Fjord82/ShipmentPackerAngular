@@ -1,0 +1,91 @@
+<div class="container">
+  <nav class="navbar navbar-expand backgroundColor fixed-top">
+    <button class="btn btn-secondary" (click)="back()">Back</button>
+    <h2 class="header">Edit User</h2>
+    <div *ngIf="!userToDelete || userToDelete.id != user.id" class="ml-md-auto">
+      <button class="btn btn-danger" (click)="deleteUser(user, $event)">
+        <i class="fa fa-trash-o" aria-hidden="true"></i>
+        Delete User
+      </button>
+    </div>
+    <div *ngIf="userToDelete && userToDelete.id == user.id" class="ml-md-auto">
+      <button class="btn btn-info" (click)="deleteAborted($event)">
+        <i class="fa fa-pencil" aria-hidden="true"></i> Cancel
+      </button>
+      <button class="btn btn-danger" (click)="deleteConfirmed($event)">
+        <i class="fa fa-trash-o" aria-hidden="true"></i> Confirm
+      </button>
+    </div>
+  </nav>
+  <br><br><br>
+  <div class="col-8 offset-2">
+    <h5>Enter information:</h5>
+    <br>
+    <form (ngSubmit)="update()" [formGroup]="formGroup">
+      <dl class="form-row">
+        <dt class="col-2">
+          Name:
+        </dt>
+        <dd class="col-5">
+          <input type="text" class="form-control" formControlName="firstName" value="{{user?.firstName}}">
+        </dd>
+        <dd class="col-5">
+          <input type="text" class="form-control" formControlName="lastName" value="{{user?.lastName}}">
+        </dd>
+        <dt class="col-2">
+          Email:
+        </dt>
+        <dd class="col-10">
+          <input type="text" class="form-control" formControlName="workEmail" value="{{user?.workEmail}}">
+        </dd>
+        <dt class="col-2">
+          Phone:
+        </dt>
+        <dd class="col-5">
+          <div class="input-group">
+            <div class="input-group-addon">+45</div>
+            <input type="text" class="form-control" formControlName="homePhoneNumber" value="{{user?.homePhoneNumber}}">
+          </div>
+        </dd>
+        <dd class="col-5">
+          <div class="input-group">
+            <div class="input-group-addon">+45</div>
+            <input type="text" class="form-control" formControlName="workPhoneNumber" value="{{user?.workPhoneNumber}}">
+          </div>
+        </dd>
+        <dt class="col-2">
+          Role:
+        </dt>
+        <dd class="col-5">
+          <select id="selectbasic"  name="selectbasic" class="form-control" formControlName="workTitle">
+            <option value="" disabled selected>{{user?.workTitle}}</option>
+            <option value="Office">Office</option>
+            <option value="Workshop">Workshop</option>
+            <option value="Admin">Administration</option>
+          </select>
+        </dd>
+        <dd class="col-5">
+          <div></div>
+        </dd>
+        <dt class="col-2">
+          Password:
+        </dt>
+        <dd class="col-5">
+          <input type="text" class="form-control" formControlName="password" placeholder="Password">
+        </dd>
+        <dd class="col-5">
+          <div class="btn-toolbar">
+            <button class="btn btn-outline-danger col-5" (click)="back()">
+              Cancel
+            </button>
+            <nav class="col-2"></nav>
+            <button class="btn btn-outline-success col-5" type="submit">
+              Save
+            </button>
+          </div>
+        </dd>
+      </dl>
+    </form>
+  </div>
+</div>
+

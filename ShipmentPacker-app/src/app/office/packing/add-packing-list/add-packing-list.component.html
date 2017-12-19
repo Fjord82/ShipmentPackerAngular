@@ -1,0 +1,83 @@
+<div class="container">
+  <nav class="navbar navbar-expand-sm backgroundColor fixed-top">
+    <button class="btn btn-secondary" (click)="back()">Back</button>
+    <h2 class="header">Add Packing List</h2>
+  </nav>
+  <br><br><br>
+  <div class="col-md-12">
+    <div class="row">
+      <div class="col-md-5">
+        <dl>
+          <form class="form-horizontal" [formGroup]="packingGroup" novalidate>
+            <fieldset>
+              <dt class="">
+                Title
+              </dt>
+              <dd class="">
+                <input type="text" formControlName="packingName" placeholder="Packing title" class="form-control">
+              </dd>
+              <dt class="">
+                Freight type:
+              </dt>
+              <dd class="">
+                <select id="selectbasic"  name="selectbasic" class="form-control" formControlName="freightType">
+                  <option value="" disabled selected>Courier</option>
+                  <option value="Road">Road</option>
+                  <option value="Sea">Sea</option>
+                  <option value="Air">Air</option>
+                </select>
+              </dd>
+              <dt class="">
+                Delivery address:
+              </dt>
+              <dd class="">
+                <input class="form-control" formControlName="deliveryAddress" id="4" placeholder="Country, City, Zip, Street, Nr">
+              </dd>
+              <dt class="">
+                Delivery date:
+              </dt>
+              <dd class="">
+                <div class="input-group">
+                  <input class="form-control" formControlName="deliveryDate" placeholder="yyyy-mm-dd" ngbDatepicker #d="ngbDatepicker">
+                  <button class="input-group-addon" (click)="d.toggle()" type="button">
+                    <i class="fa fa-calendar" aria-hidden="true"></i>
+                  </button>
+                </div>
+              </dd>
+              <dt class="">
+                Order items:
+              </dt>
+              <dd class="">
+                <select id="selectmultiple" name="selectmultiple" class="form-control" multiple="multiple"> <!--formControlName="itemType"-->
+                  <option (click)="addItem(item)" *ngFor="let item of items" value="1">{{item?.itemName}}</option>
+                </select>
+                <br>
+              </dd>
+            </fieldset>
+          </form>
+          <ngb-alert class="this-center" *ngIf="failSave" [dismissible]="false" type="danger">
+            Please fill in all fields!
+          </ngb-alert>
+        </dl>
+      </div>
+      <div class="col-2"></div>
+      <div class="col-md-5">
+        <dl>
+          <dt>
+            Packing List:
+          </dt>
+          <dd>
+            <div *ngFor="let packItem of packItems">
+              <a style="margin-bottom: 5px" (click)="removeItem(packItem)" class="list-group-item list-group-item-action" >{{packItem?.item.itemName}} - Amount: {{packItem?.count}}
+                <button class="fa fa-trash pull-right btn btn-outline-danger" (click)="removeAll(packItem)">
+                </button></a>
+            </div>
+          </dd>
+        </dl>
+      </div>
+    </div>
+  </div>
+  <button type="submit" (click)="submit()" class="btn btn-lg btn-outline-success float-right">
+    Accept
+  </button>
+</div>

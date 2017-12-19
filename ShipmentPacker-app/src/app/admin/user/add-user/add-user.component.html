@@ -1,0 +1,78 @@
+<div class="container">
+  <nav class="navbar navbar-expand backgroundColor fixed-top">
+    <button class="btn btn-secondary" (click)="back()">Back</button>
+    <h2 class="header">Add user</h2>
+  </nav>
+  <br><br><br>
+  <div class="col-4">
+    <h5>Enter information about new user</h5>
+    <br>
+  </div>
+  <div class="col-8 offset-2">
+    <form (ngSubmit)="save()" [formGroup]="formGroup">
+      <dl class="form-row">
+        <dt class="col-2">
+          Name:
+        </dt>
+        <dd class="col-5">
+          <input type="text" class="form-control" formControlName="firstName" placeholder="Firstname">
+        </dd>
+        <dd class="col-5">
+          <input type="text" class="form-control" formControlName="lastName" placeholder="Lastname">
+        </dd>
+        <dt class="col-2">
+          Email:
+        </dt>
+        <dd class="col-10">
+          <input type="text" class="form-control" formControlName="email" placeholder="example@mail.com">
+        </dd>
+        <dt class="col-2">
+          Phone:
+        </dt>
+        <dd class="col-5">
+          <div class="input-group">
+            <div class="input-group-addon">+45</div>
+            <input type="text" class="form-control" formControlName="privatePhone" placeholder="Private phone">
+          </div>
+        </dd>
+        <dd class="col-5">
+          <div class="input-group">
+            <div class="input-group-addon">+45</div>
+            <input type="text" class="form-control" formControlName="workPhone" placeholder="Work phone">
+          </div>
+        </dd>
+        <dt class="col-2">
+          Role:
+        </dt>
+        <dd class="col-5">
+          <select id="selectbasic"  name="selectbasic" class="form-control" formControlName="workTitle">
+            <option value="" disabled selected>Select role</option>
+            <option value="Office">Office</option>
+            <option value="Workshop">Workshop</option>
+            <option value="Admin">Administration</option>
+          </select>
+        </dd>
+        <dd class="col-5">
+          <div></div>
+        </dd>
+        <dt class="col-2">
+          Password:
+        </dt>
+        <dd class="col-5">
+          <input type="text" class="form-control" formControlName="password" type="password" placeholder="Password">
+        </dd>
+        <dd class="col-5">
+          <div class="btn-toolbar">
+            <button class="btn btn-outline-danger col-5" (click)="back()">
+              Cancel
+            </button>
+            <nav class="col-2"></nav>
+            <button class="btn btn-outline-success col-5" type="submit">
+              Save
+            </button>
+          </div>
+        </dd>
+      </dl>
+    </form>
+  </div>
+</div>
