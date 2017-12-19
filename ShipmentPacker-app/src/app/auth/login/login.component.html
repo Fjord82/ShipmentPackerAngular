@@ -11,8 +11,8 @@
       <form (ngSubmit)="login()" [formGroup]="loginGroup" class="login-form" accept-charset="UTF-8" role="form">
         <fieldset>
           <div class="form-group">
-            <label for="workEmail"><strong>Email:</strong></label>
-            <input [(ngModel)]="model.workEmail"  class="form-control" formControlName="workEmail" placeholder="Email" id="workEmail" type="text">
+            <label for="workEmail"><strong>Username:</strong></label>
+            <input [(ngModel)]="model.workEmail"  class="form-control" formControlName="workEmail" placeholder="Username" id="workEmail" type="text">
           </div>
           <div class="form-group">
             <label for="password">
@@ -24,7 +24,9 @@
           </div>
           <input class="btn btn-lg btn-info btn-block" type="submit" value="Login">
           <br>
-          <ngb-alert class="this-center" *ngIf="failLogin" [dismissible]="false"  type="danger">Incorrect username or password!</ngb-alert>
+          <ngb-alert class="this-center" *ngIf="failLogin" [dismissible]="false" type="danger">
+            Incorrect username or password!
+          </ngb-alert>
         </fieldset>
       </form>
     </div>

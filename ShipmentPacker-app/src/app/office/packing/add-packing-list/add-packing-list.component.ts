@@ -21,6 +21,7 @@ import {UserService} from '../../../admin/user/shared/user.service';
 })
 export class AddPackingListComponent implements OnInit {
 
+  failSave = false;
   user: User;
   items: Item[];
   project: Project;
@@ -62,6 +63,7 @@ export class AddPackingListComponent implements OnInit {
   }
 
   save() {
+    this.failSave = false;
     const values = this.packingGroup.value;
     const packing: Packing = <Packing> {
       packingName: values.packingName,
@@ -75,7 +77,13 @@ export class AddPackingListComponent implements OnInit {
     packing.projectIds = [];
     packing.projectIds.push(this.project.id);
     this.packingService.create(packing)
-      .subscribe(pack => this.createPackItems(pack));
+      .subscribe(pack => {
+      this.createPackItems(pack)
+    },
+    err => {
+      if (err.status === 400) {
+        this.failSave = true;
+      }});
   }
 
   createPackItems(packing: Packing){

@@ -14,7 +14,7 @@ import {FreightCondition} from '../../freightCondition/shared/freightCondition.m
 })
 export class AddItemComponent implements OnInit {
 
-  closeResult: string;
+  failSave = false;
   freightConditions: FreightCondition[];
   addedFreightCondition: FreightCondition[];
 
@@ -55,6 +55,7 @@ export class AddItemComponent implements OnInit {
   }
 
   save() {
+    this.failSave = false;
     const values = this.itemGroup.value;
     const item: Item = <Item> {
       itemName: values.itemName,
@@ -67,8 +68,14 @@ export class AddItemComponent implements OnInit {
       item.freightConditionIds.push(freightCondition.id);
     }
     this.itemService.create(item)
-      .subscribe(item => this.back());
-  }
+        .subscribe(item => {
+            this.back()
+          },
+          err => {
+            if (err.status === 400) {
+              this.failSave = true;
+            }});
+      }
 
   open(content) {
     this.modalService.open(content);

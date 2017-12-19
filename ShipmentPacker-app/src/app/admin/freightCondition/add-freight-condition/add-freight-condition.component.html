@@ -19,6 +19,9 @@
         <dd class="col-md-7">
           <input class="form-control" formControlName="number" placeholder="Dangerous Goods Nr.">
         </dd>
+        <ngb-alert class="this-center" *ngIf="failSave" [dismissible]="false" type="danger">
+          Please fill out all fields with proper data!
+        </ngb-alert>
       </dl>
       <button class="btn btn-success float-right" type="submit">Save</button>
     </form>

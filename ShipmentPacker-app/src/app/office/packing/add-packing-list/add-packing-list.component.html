@@ -55,6 +55,9 @@
               </dd>
             </fieldset>
           </form>
+          <ngb-alert class="this-center" *ngIf="failSave" [dismissible]="false" type="danger">
+            Please fill in all fields!
+          </ngb-alert>
         </dl>
       </div>
       <div class="col-2"></div>

@@ -11,6 +11,7 @@ import {FreightCondition} from '../shared/freightCondition.model';
 })
 export class AddFreightConditionComponent implements OnInit {
 
+  failSave = false;
   private itemGroup: FormGroup;
   constructor(private router: Router,
               private freightConditionService: FreightConditionService,
@@ -25,13 +26,20 @@ export class AddFreightConditionComponent implements OnInit {
   }
 
   save() {
+    this.failSave = false;
     const values = this.itemGroup.value;
     const freightCondition: FreightCondition = <FreightCondition> {
       dangerousGoodsName: values.name,
       dangerousGoodsNumber: values.number,
     };
     this.freightConditionService.create(freightCondition)
-      .subscribe(freightCondition => this.back());
+      .subscribe(freightCondition => {
+        this.back()
+        },
+        err => {
+          if (err.status === 400) {
+            this.failSave = true;
+          }});
   }
 
   back() {

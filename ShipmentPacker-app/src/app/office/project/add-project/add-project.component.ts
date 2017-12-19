@@ -13,6 +13,7 @@ import {TokenService} from '../../../auth/shared/token.service';
 })
 export class AddProjectComponent implements OnInit {
 
+  failSave = false;
   user: User;
   projectGroup: FormGroup;
   constructor(private router: Router,
@@ -34,7 +35,9 @@ export class AddProjectComponent implements OnInit {
     this.router.navigateByUrl('/office');
   }
 
-    save() {
+  save() {
+    this.failSave = false;
+
     const values = this.projectGroup.value;
     const project: Project = <Project>{
       projectName: values.projectName,
@@ -42,7 +45,13 @@ export class AddProjectComponent implements OnInit {
       creatorName: this.user.firstName + " " + this.user.lastName,
       isActve: true
     };
-      this.projectService.create(project).subscribe(proj => this.back());
-    }
+    this.projectService.create(project).subscribe(proj => { this.back()
+      },
+      err => {
+        if (err.status === 400) {
+          this.failSave = true;
+        }
+      });
+  }
 }
 

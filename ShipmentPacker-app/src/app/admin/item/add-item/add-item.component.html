@@ -54,7 +54,8 @@
       <button type="button" class="btn btn-outline-dark" (click)="c('Close click')">Close</button>
     </div>
   </ng-template>
+  <ngb-alert class="this-center" *ngIf="failSave" [dismissible]="false" type="danger">
+    Please fill out all fields with proper data!
+  </ngb-alert>
   <button class="btn btn-outline-success float-right" type="submit" (click)="save()">Save</button>
 </div>
-
-
