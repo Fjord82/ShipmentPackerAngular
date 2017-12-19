@@ -180,11 +180,13 @@ export class AdminComponent implements OnInit {
     this.router.navigateByUrl('/admin-project-detail/'+project.id);
   }
 
-  editProject(project: Project) {
+  editProject(project: Project, $event) {
+    $event.stopPropagation();
     this.router.navigateByUrl('/admin-edit-project/'+project.id);
   }
 
-  deleteProject(project: Project) {
+  deleteProject(project: Project, $event) {
+    $event.stopPropagation();
     this.projectService.delete(project.id).subscribe(project=> window.location.reload());
   }
 
@@ -192,11 +194,13 @@ export class AdminComponent implements OnInit {
     this.router.navigateByUrl('/admin-packing-detail/'+packing.id);
   }
 
-  editPacking(packing: Packing) {
+  editPacking(packing: Packing, $event) {
+    $event.stopPropagation();
     this.router.navigateByUrl('/admin-edit-packing/'+packing.id);
   }
 
-  deletePacking(packing: Packing) {
+  deletePacking(packing: Packing, $event) {
+    $event.stopPropagation();
     this.packingService.delete(packing.id).subscribe(packing=> window.location.reload());
   }
 
@@ -204,16 +208,14 @@ export class AdminComponent implements OnInit {
     this.router.navigateByUrl('/admin-colli-detail/'+colli.id);
   }
 
-  editColli(colli: ColliList) {
+  editColli(colli: ColliList, $event) {
+    $event.stopPropagation();
     this.router.navigateByUrl('/admin-edit-colli/'+colli.id);
   }
 
-  deleteColli(colli: ColliList) {
+  deleteColli(colli: ColliList, $event) {
+    $event.stopPropagation();
     this.colliService.delete(colli.id).subscribe(colli=> window.location.reload());
-  }
-
-  clickItem(item: Item) {
-    this.router.navigateByUrl('/edit-item/'+item.id);
   }
 
   addItem() {
@@ -224,21 +226,25 @@ export class AdminComponent implements OnInit {
     this.router.navigateByUrl('/add-freightCondition');
   }
 
-  editItem(item: Item) {
+  editItem(item: Item, $event) {
+    $event.stopPropagation();
     this.router.navigateByUrl('/edit-item/'+item.id);
   }
 
-  deleteItem(item: Item) {
+  deleteItem(item: Item, $event) {
+    $event.stopPropagation();
     this.itemService.delete(item.id).subscribe(item=> window.location.reload());
   }
 
-  deleteFreightCondition(freightCondition: FreightCondition){
+  deleteFreightCondition(freightCondition: FreightCondition, $event){
+    $event.stopPropagation();
     this.freightConditionService.delete(freightCondition.id).subscribe(
       freightCondition => window.location.reload()
     );
   }
 
-  editFreightCondition(freightCondition: FreightCondition) {
+  editFreightCondition(freightCondition: FreightCondition, $event) {
+    $event.stopPropagation();
     this.router.navigateByUrl('/edit-freightCondition/'+freightCondition.id);
   }
 

@@ -106,11 +106,11 @@
                         <h6 class="col-md-4">{{project?.projectName}}</h6>
                         <h6 class="col-md-4">{{project?.creatorName}}</h6>
                         <button style="margin-right:10px;" class="btn btn-outline-warning this-button btn-sm"
-                                (click)="editProject(project)">
+                                (click)="editProject(project, $event)">
                           <i class="fa fa-pencil" aria-hidden="true"></i>
                         </button>
                         <button class="btn btn-outline-danger btn-sm fa fa-trash"
-                                (click)="deleteProject(project)"></button>
+                                (click)="deleteProject(project, $event)"></button>
                       </div>
                     </a>
                     <br>
@@ -161,11 +161,11 @@
                         <h6 class="col-md-4">{{packing?.packingName}}</h6>
                         <h6 class="col-md-4">{{packing?.creatorName}}</h6>
                         <button style="margin-right:10px;" class="btn btn-outline-warning btn-sm"
-                                (click)="editPacking(packing)">
+                                (click)="editPacking(packing, $event)">
                           <i class="fa fa-pencil" aria-hidden="true"></i>
                         </button>
                         <button class="btn btn-outline-danger fa fa-trash btn-sm"
-                                (click)="deletePacking(packing)"></button>
+                                (click)="deletePacking(packing, $event)"></button>
                       </div>
                     </a>
                     <br>
@@ -206,11 +206,11 @@
                         <h6 class="col-md-4">{{packing?.packingNameName}}</h6>
                         <h6 class="col-md-4">{{packing?.creatorName}}</h6>
                         <button style="margin-right:10px;" class="btn btn-outline-warning btn-sm"
-                                (click)="editPacking(packing)">
+                                (click)="editPacking(packing, $event)">
                           <i class="fa fa-pencil" aria-hidden="true"></i>
                         </button>
                         <button class="btn btn-outline-danger fa fa-trash btn-sm"
-                                (click)="deletePacking(packing)"></button>
+                                (click)="deletePacking(packing, $event)"></button>
                       </div>
                     </a>
                     <br>
@@ -257,10 +257,10 @@
                         <h6 class="col-md-2">{{colli?.id}}</h6>
                         <h6 class="col-md-8">{{colli?.worker}}</h6>
                         <button style="margin-right:10px;" class="btn btn-outline-warning this-button btn-sm"
-                                (click)="editColli(colli)">
+                                (click)="editColli(colli, $event)">
                           <i class="fa fa-pencil" aria-hidden="true"></i>
                         </button>
-                        <button class="btn btn-outline-danger fa fa-trash btn-sm" (click)="deleteColli(colli)"></button>
+                        <button class="btn btn-outline-danger fa fa-trash btn-sm" (click)="deleteColli(colli, $event)"></button>
                       </div>
                     </a>
                     <br>
@@ -297,10 +297,10 @@
                         <h6 class="col-md-2">{{colli?.id}}</h6>
                         <h6 class="col-md-8">{{colli?.worker}}</h6>
                         <button style="margin-right:10px;" class="btn btn-outline-warning this-button btn-sm"
-                                (click)="editColli(colli)">
+                                (click)="editColli(colli, $event)">
                           <i class="fa fa-pencil" aria-hidden="true"></i>
                         </button>
-                        <button class="btn btn-outline-danger fa fa-trash btn-sm" (click)="deleteColli(colli)"></button>
+                        <button class="btn btn-outline-danger fa fa-trash btn-sm" (click)="deleteColli(colli, $event)"></button>
                       </div>
                     </a>
                     <br>
@@ -348,18 +348,18 @@
                 </div>
                 <div class="col-md-12">
                   <div *ngFor="let item of filteredItems" class="list-group">
-                    <a (click)="editItem(item)" style="margin-bottom: 5px" class="list-group-item list-group-item-action">
+                    <div style="margin-bottom: 5px" class="list-group-item list-group-item-action">
                       <div class="row">
                         <h6 class="col-md-1">{{item?.id}}</h6>
                         <h6 class="col-md-4">{{item?.itemName}}</h6>
                         <h6 class="col-md-3">{{item?.dimension}}</h6>
                         <h6 class="col-md-2">{{item?.weight}} kg</h6>
-                        <button style="margin-right:10px;" class="btn btn-outline-warning btn-sm" (click)="editItem(item)">
+                        <button style="margin-right:10px;" class="btn btn-outline-warning btn-sm" (click)="editItem(item, $event)">
                           <i class="fa fa-pencil" aria-hidden="true"></i>
                         </button>
-                        <button class="btn btn-outline-danger fa fa-trash btn-sm float-right" (click)="deleteItem(item)"></button>
+                        <button class="btn btn-outline-danger fa fa-trash btn-sm float-right" (click)="deleteItem(item, $event)"></button>
                       </div>
-                    </a>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -401,19 +401,19 @@
                 </div>
                 <div class="col-md-12">
                   <div *ngFor="let freightCondition of filteredFreightConditions" class="list-group">
-                    <a (click)="editFreightCondition(freightCondition)" style="margin-bottom: 5px" class="list-group-item list-group-item-action">
+                    <div style="margin-bottom: 5px" class="list-group-item list-group-item-action">
                       <div class="row">
                         <h6 class="col-md-1">{{freightCondition?.id}}</h6>
                         <h6 class="col-md-5">UN {{freightCondition?.dangerousGoodsNumber}}</h6>
                         <h6 class="col-md-4">{{freightCondition?.dangerousGoodsName}}</h6>
                         <button style="margin-right:10px;" class="btn btn-outline-warning btn-sm"
-                                (click)="editFreightCondition(freightCondition)">
+                                (click)="editFreightCondition(freightCondition, $event)">
                           <i class="fa fa-pencil" aria-hidden="true"></i>
                         </button>
                         <button class="btn btn-outline-danger fa fa-trash btn-sm"
-                                (click)="deleteFreightCondition(freightCondition)"></button>
+                                (click)="deleteFreightCondition(freightCondition, $event)"></button>
                       </div>
-                    </a>
+                    </div>
                   </div>
                 </div>
               </div>
